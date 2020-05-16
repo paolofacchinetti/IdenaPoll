@@ -1,5 +1,8 @@
 # IdenaPoll
 
+Polling website built for [Idena](https://idena.io/) identities, thus guaranteeing the uniqueness of each vote.
+Poll creators will be able to change vote settings (such as Human status requirement for voters) and vote weight, based on the different statuses of the Idena identities.
+
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 9.1.6.
 
 ## Development server
