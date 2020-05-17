@@ -1,0 +1,31 @@
+<script src="../../../../../JacMobile/src/app/core/core.module.ts"></script>
+<div class="container" fxFill fxFlex fxLayout="row">
+  <div class="logo">
+    <img src="assets/img/idena-poll-logo.png">
+  </div>
+  <span fxFlex></span>
+  <!--  TODO age check-->
+  <div class="create" *ngIf="true">
+    <a class="create-btn" fxLayout="row">
+      <span class="circle" fxLayout="row" aria-hidden="true">
+        <span class="material-icons icon">add</span>
+        <span class="button-text" >New Poll</span>
+      </span>
+    </a>
+  </div>
+  <div class="user">
+    <ng-container *ngIf="session">
+      <div class="user-pic">
+        <img
+          class="user-avatar"
+          src="https://robohash.org/{{session.address}}"
+          alt="pic"
+          width="50"
+        />
+      </div>
+      <li>
+        <a class="btn btn-small btn-icon"> <span>Log out</span> </a>
+      </li>
+    </ng-container>
+  </div>
+</div>
