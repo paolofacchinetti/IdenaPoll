@@ -36,7 +36,6 @@ app.route('/auth/v1/new-token').get((_, res) => {
 });
 
 app.route('/auth/v1/start-session').post((req, res) => {
-  console.log(req.body)
   const {token, address} = req.body;
   const nonce = `signin-${uuidv4()}`;
   sessionCache.set(token, {address, nonce});
@@ -87,7 +86,6 @@ app.route('/auth/v1/session').get((req, res) => {
   }
 
   const sessionToken = req.cookies[IDENA_SESSION_TOKEN_COOKIE];
-  console.log(sessionToken)
   if (sessionToken) {
     const data = sessionCache.get(sessionToken);
     if (data) {
