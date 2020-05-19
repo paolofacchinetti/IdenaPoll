@@ -6,10 +6,10 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./topbar.component.scss']
 })
 export class TopbarComponent implements OnInit {
-  session= {
-    address: '0x3852c4498b329627dd47a587d0de63860313524e'
-  };
-
+  // session= {
+  //   address: '0x3852c4498b329627dd47a587d0de63860313524e'
+  // };
+session:any;
   constructor() { }
 
   ngOnInit(): void {

@@ -5,27 +5,33 @@
   </div>
   <span fxFlex></span>
   <!--  TODO age check-->
-  <div class="create" *ngIf="true">
+  <div class="create" *ngIf="session && true">
     <a class="create-btn" fxLayout="row">
       <span class="circle" fxLayout="row" aria-hidden="true">
         <span class="material-icons icon">add</span>
-        <span class="button-text" >New Poll</span>
+        <span class="button-text">New Poll</span>
       </span>
     </a>
   </div>
-  <div class="user">
-    <ng-container *ngIf="session">
-      <div class="user-pic">
-        <img
-          class="user-avatar"
-          src="https://robohash.org/{{session.address}}"
-          alt="pic"
-          width="50"
-        />
+  <div class="user" fxLayout="row">
+    <ng-container *ngIf="session else signin">
+      <div class="user-pic" fxLayout="row">
+        <img class="user-avatar" src="https://robohash.org/{{session.address}}" alt="pic" width="50"/>
+        <span class="material-icons">keyboard_arrow_down</span>
       </div>
-      <li>
+      <div class="dropdown">
         <a class="btn btn-small btn-icon"> <span>Log out</span> </a>
-      </li>
+      </div>
     </ng-container>
+    <ng-template #signin>
+      <a class="btn btn-signin" href="/signin?callback_url=%2F&amp;attempt=1">
+        <img alt="signin" src="assets/img/idena_white_small.svg" class="icon icon-logo-white-small " width="24px">
+        <div class="spinner hidden">
+          <div class="small progress">
+            <div></div>
+          </div>
+        </div>
+        <span>Sign-in with Idena</span></a>
+    </ng-template>
   </div>
 </div>
