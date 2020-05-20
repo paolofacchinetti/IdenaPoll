@@ -4,8 +4,7 @@ import {PollBean} from './model/poll.bean';
 import {Store} from '@ngrx/store';
 import {Router} from '@angular/router';
 import {State, getSession} from '@app-redux/index';
-import {HttpClient} from "@angular/common/http";
-
+import {HttpClient, HttpHeaders} from '@angular/common/http';
 
 @Injectable({
   providedIn: 'root'
@@ -15,6 +14,8 @@ import {HttpClient} from "@angular/common/http";
  */
 export class DataService {
   private SERVER_URL = 'http://localhost:80';
+  private IDENA_URL = 'http://api.idena.io/api/';
+  private EXPRESS_URL = 'localhost:8000';
   private session: SessionBean = null;
 
   constructor(private httpClient: HttpClient, protected store: Store<State>, protected router: Router) {
@@ -23,10 +24,10 @@ export class DataService {
     });
   }
 
-  getById(id: string): PollBean {
+  getPollById(id: string): PollBean {
     let poll: PollBean;
     const FINAL_URL = this.SERVER_URL + '/polls/' + id;
-    this.httpClient.get<any>(FINAL_URL.toString()).subscribe((p) => {
+    this.httpClient.get<any>(FINAL_URL).subscribe((p) => {
       poll = new PollBean(p);
     });
     return poll;
@@ -42,4 +43,53 @@ export class DataService {
     });
     return polls;
   }
+
+  getIdentityData(id: string): SessionBean{
+    let session: SessionBean;
+    let CALL_URL = this.IDENA_URL + '/Identity/' + id;
+    this.httpClient.get<any>(CALL_URL).subscribe((p) =>{
+      const json = p['result'];
+      session.address = json['address'];
+      session.status = json['state'];
+    });
+    CALL_URL += '/age';
+    this.httpClient.get<any>(CALL_URL).subscribe((p) =>{
+      session.age = p['result'];
+    });
+    return session;
+  }
+
+  votePoll(pollId: string, optionValue: string){
+    const CALL_URL = this.EXPRESS_URL + '/vote';
+    let body = 'poll-id=' + pollId + '&option-value=' + optionValue;
+    this.httpClient.post<any>(CALL_URL, body).subscribe((p)=>{
+      //TODO ADD CONFIRMATION
+    });
+  }
+
+  editPoll(poll: PollBean){
+    const CALL_URL = this.EXPRESS_URL + '/vote';
+    let body = 'poll=' + poll.toString();
+    this.httpClient.post<any>(CALL_URL, body).subscribe((p)=>{
+
+    });
+  }
+
+  deletePoll(pollId: string){
+    const CALL_URL = this.EXPRESS_URL + '/delete';
+    let body = 'poll-id=' + pollId;
+    this.httpClient.post<any>(CALL_URL, body).subscribe((p)=>{
+
+    });
+  }
+
+  createPoll(poll: PollBean){
+    const CALL_URL = this.EXPRESS_URL + '/vote';
+    let body = 'poll=' + poll.toString();
+    this.httpClient.post<any>(CALL_URL, body).subscribe((p)=>{
+
+    });
+  }
+
+
 }
