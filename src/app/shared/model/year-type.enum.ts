@@ -1,0 +1,9 @@
+export enum StatusEnum {
+  CANDIDATE = 'CANDIDATE',
+  NEWBIE = 'NEWBIE',
+  VERFIED = 'VERFIED',
+  HUMAN = 'HUMAN',
+  SUSPENDED = 'SUSPENDED',
+  ZOMBIE = 'ZOMBIE',
+  KILLED = 'KILLED',
+}
