@@ -2,8 +2,6 @@ import {Action, createReducer, on} from '@ngrx/store';
 import * as coreActions from './core.actions';
 import {SessionBean} from '../shared/model/session.bean';
 
-
-
 export interface State {
   session: SessionBean;
 }
@@ -19,8 +17,6 @@ const coreReducer = createReducer(
   })),
 
 );
-
-
 
 export function reducer(state: State | undefined, action: Action) {
   return coreReducer(state, action);

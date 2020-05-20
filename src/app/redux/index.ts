@@ -1,7 +1,8 @@
 import {ActionReducerMap, createSelector} from '@ngrx/store';
 import * as fromCore from '../redux/core.reducers';
+
 export interface State {
-  core: fromCore.State
+  core: fromCore.State;
 }
 
 export const reducers: ActionReducerMap<State> = {
