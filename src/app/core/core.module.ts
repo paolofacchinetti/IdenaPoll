@@ -2,11 +2,12 @@ import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { TopbarComponent } from './topbar/topbar.component';
 import {FlexModule} from "@angular/flex-layout";
+import { SigninComponent } from './signin/signin.component';
 
 
 
 @NgModule({
-  declarations: [TopbarComponent],
+  declarations: [TopbarComponent, SigninComponent],
   exports: [
     TopbarComponent
   ],

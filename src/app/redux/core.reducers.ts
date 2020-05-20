@@ -1,6 +1,6 @@
 import {Action, createReducer, on} from '@ngrx/store';
 import * as coreActions from './core.actions';
-import {SessionBean} from "../shared/model/session.bean";
+import {SessionBean} from '../shared/model/session.bean';
 
 
 

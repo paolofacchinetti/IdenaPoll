@@ -1,4 +1,4 @@
-import {StatusEnum} from "./year-type.enum";
+import {StatusEnum} from './status.enum';
 
 export class SessionBean {
   auth: AuthBean;
@@ -6,11 +6,11 @@ export class SessionBean {
 }
 
 export class AuthBean{
-  authentificated:boolean;
-  address:string;
-  constructor(json?:string) {
+  authenticated: boolean;
+  address: string;
+  constructor(json?: string) {
     if(json){
-      this.authentificated = json['authentificated'];
+      this.authenticated = json['authenticated'];
       this.address = json['address'];
     }
   }

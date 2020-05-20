@@ -1,5 +1,5 @@
 import {createAction, props} from '@ngrx/store';
-import {SessionBean} from "../shared/model/session.bean";
+import {SessionBean} from '../shared/model/session.bean';
 
 
 
