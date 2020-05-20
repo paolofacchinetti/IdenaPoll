@@ -1,0 +1,40 @@
+{
+  "polls": [
+    {
+      "id": "SDASD1",
+      "status": "active",
+      "title": "",
+      "description": "",
+      "creator": "",
+      "options": [
+        {
+          "value": 0,
+          "description": "Yes",
+          "votes": 0
+        },
+        {
+          "value": 1,
+          "description": "No",
+          "votes": 0
+        }
+      ],
+      "editAt": 1589974295490
+    },
+    {
+      "id": "u6CpU8o",
+      "votes": [
+        {
+          "address": "wadasdasda"
+        }
+      ]
+    },
+    {
+      "createdAt": 1589977386710,
+      "id": "Mc6GZWA"
+    },
+    {
+      "createdAt": 1589977394765,
+      "id": "yV-ZVbq"
+    }
+  ]
+}

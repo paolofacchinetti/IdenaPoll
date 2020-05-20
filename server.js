@@ -5,7 +5,7 @@ const {v4: uuidv4} = require('uuid');
 const {checkSignature} = require('./ether');
 const bodyParser = require('body-parser');
 const cookieParser = require('cookie-parser');
-app.listen(3000, () => {
+app.listen(8000, () => {
   console.log('Server started!')
 });
 const sessionCache = new NodeCache({
