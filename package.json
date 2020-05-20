@@ -6,7 +6,8 @@
     "start": "ng serve",
     "build": "ng build",
     "test": "ng test",
-    "json:server": "json-server --watch db.json",
+    "json:server": "node db-server.js --no-cors",
+    "server": "node server.js",
     "lint": "ng lint",
     "e2e": "ng e2e"
   },
