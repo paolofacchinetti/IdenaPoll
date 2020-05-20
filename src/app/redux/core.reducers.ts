@@ -5,7 +5,7 @@ import {SessionBean} from '../shared/model/session.bean';
 
 
 export interface State {
-  session: SessionBean,
+  session: SessionBean;
 }
 
 const INITIAL_STATE: State = {
@@ -15,7 +15,7 @@ const coreReducer = createReducer(
   INITIAL_STATE,
   on(coreActions.setSession, (state, payload) => ({
     ...state,
-    darkTheme: payload.value,
+    session: payload.value,
   })),
 
 );
