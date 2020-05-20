@@ -10,11 +10,8 @@ server.use((req, res, next) => {
     if (req.method === 'POST') {
       req.body.createdAt = Date.now()
     }
-    if (req.method === 'PATCH') {
-      req.body.editAt = Date.now()
-    }
-    if (req.method === 'PUT') {
-      req.body.editAt = Date.now()
+    if (req.method === 'PATCH' || req.method === 'PUT') {
+      req.body.editedAt = Date.now()
     }
     next() // continue to JSON Server router
   } else {
@@ -25,6 +22,7 @@ server.use(router);
 server.listen(80, () => {
   console.log('JSON Server is running')
 });
-function isAuthorized(req){
+
+function isAuthorized(req) {
   return req.headers.origin === "localhost:8000";
 }

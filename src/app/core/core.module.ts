@@ -3,6 +3,7 @@ import { CommonModule } from '@angular/common';
 import { TopbarComponent } from './topbar/topbar.component';
 import {FlexModule} from "@angular/flex-layout";
 import { SigninComponent } from './signin/signin.component';
+import {SharedModule} from "@app-shared/shared.module";
 
 
 
@@ -13,7 +14,8 @@ import { SigninComponent } from './signin/signin.component';
   ],
   imports: [
     CommonModule,
-    FlexModule
+    FlexModule,
+    SharedModule
   ]
 })
 export class CoreModule { }

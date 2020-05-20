@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import {Component, OnInit} from '@angular/core';
 import {DataService} from '@app-shared/data.service';
 
 @Component({
@@ -10,7 +10,8 @@ export class TopbarComponent implements OnInit {
   // session= {
   //   address: '0x3852c4498b329627dd47a587d0de63860313524e'
   // };
-session:any;
+  session: any;
+
   constructor(protected dataService: DataService) {
     console.log(this.dataService.getActivePolls());
   }

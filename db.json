@@ -10,15 +10,15 @@
         {
           "value": 0,
           "description": "Yes",
-          "votes": 0
+          "votes": []
         },
         {
           "value": 1,
           "description": "No",
-          "votes": 0
+          "votes": []
         }
       ],
-      "editAt": 1589974295490
+      "editedAt": 1589974295490
     },
     {
       "id": "u6CpU8o",

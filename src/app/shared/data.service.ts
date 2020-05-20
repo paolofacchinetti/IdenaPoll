@@ -1,11 +1,11 @@
 import {Injectable} from '@angular/core';
-import {HttpClient, HttpHeaders} from '@angular/common/http';
 import {SessionBean} from '../shared/model/session.bean';
 import {PollBean} from './model/poll.bean';
 import {Store} from '@ngrx/store';
 import {Router} from '@angular/router';
 import {State, getSession} from '@app-redux/index';
-import {F} from '@angular/cdk/keycodes';
+import {HttpClient} from "@angular/common/http";
+
 
 @Injectable({
   providedIn: 'root'
@@ -14,8 +14,7 @@ import {F} from '@angular/cdk/keycodes';
  * Class responsible for the API Calls to retrieve data from the Backend
  */
 export class DataService {
-  private SERVER_URL = 'localhost:80';
-  private headers: HttpHeaders;
+  private SERVER_URL = 'http://localhost:80';
   private session: SessionBean = null;
 
   constructor(private httpClient: HttpClient, protected store: Store<State>, protected router: Router) {
@@ -26,7 +25,7 @@ export class DataService {
 
   getById(id: string): PollBean {
     let poll: PollBean;
-    const FINAL_URL = new URL('/polls/' + id, this.SERVER_URL);
+    const FINAL_URL = this.SERVER_URL + '/polls/' + id;
     this.httpClient.get<any>(FINAL_URL.toString()).subscribe((p) => {
       poll = new PollBean(p);
     });
@@ -35,8 +34,8 @@ export class DataService {
 
   getActivePolls(): PollBean[] {
     let polls: PollBean[] = [];
-    const FINAL_URL = new URL('/polls?status=active', this.SERVER_URL);
-    this.httpClient.get<any>(FINAL_URL.toString()).subscribe((p) => {
+    const FINAL_URL = this.SERVER_URL + '/polls?status=active';
+    this.httpClient.get<any>(FINAL_URL).subscribe((p) => {
       for (let j of p) {
         polls.push(new PollBean(j));
       }
