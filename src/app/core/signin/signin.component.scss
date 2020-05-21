@@ -1,0 +1,10 @@
+:host{
+  width: 100%;
+  .signin-container{
+    display: flex;
+    justify-content: center;
+    align-content: center;
+    align-items: center;
+    flex-direction: row;
+  }
+}
