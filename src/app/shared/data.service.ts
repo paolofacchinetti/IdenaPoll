@@ -45,7 +45,7 @@ export class DataService {
   }
 
   getIdentityData(id: string): SessionBean{
-    let session: SessionBean;
+    let session = new SessionBean();
     let CALL_URL = this.IDENA_URL + '/Identity/' + id;
     this.httpClient.get<any>(CALL_URL).subscribe((p) =>{
       const json = p['result'];

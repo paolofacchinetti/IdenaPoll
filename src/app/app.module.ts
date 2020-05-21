@@ -8,6 +8,19 @@ import {CoreModule} from "./core/core.module";
 import {CommonModule} from "@angular/common";
 import {HttpClientModule} from "@angular/common/http";
 import {StoreModule} from "@ngrx/store";
+import {RouterModule, Routes} from '@angular/router';
+import {SigninComponent} from '@app-core/signin/signin.component';
+
+const appRoutes: Routes = [
+  {path: 'signin', component: SigninComponent}
+  /*
+  {
+    path: '**',
+    redirectTo: '/home',
+    pathMatch: 'full'
+  }
+  */
+];
 
 @NgModule({
   declarations: [
@@ -15,6 +28,9 @@ import {StoreModule} from "@ngrx/store";
   ],
   imports: [
     StoreModule.forRoot({ core: fromCore.reducer }),
+    RouterModule.forRoot(
+      appRoutes
+    ),
     CommonModule,
     HttpClientModule,
     BrowserModule,
