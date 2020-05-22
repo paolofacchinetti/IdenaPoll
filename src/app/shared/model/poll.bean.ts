@@ -6,7 +6,6 @@ export class PollBean {
   creator: string;
   options: OptionBean[] = [];
   createdAt: Date;
-  editedAt: Date;
   endsAt: Date;
   constructor(json?: string){
     if (json){
@@ -16,7 +15,6 @@ export class PollBean {
       this.description = json['description'];
       this.creator = json['creator'];
       this.createdAt = new Date(json['createdAt']);
-      this.editedAt = new Date(json['editedAt']);
       this.endsAt = new Date(json['endsAt']);
       for (let j of json['options']){
         this.options.push(new OptionBean(j));

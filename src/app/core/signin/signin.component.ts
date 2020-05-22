@@ -25,7 +25,6 @@ export class SigninComponent implements OnInit {
 
   ngOnInit(): void {
     let callbackUrl = '/home';
-    this.ds.votePoll("SDASD1",0);
     this.dnaUrl = this.buildDnaUrl(this.token, this.EXPRESS_URL, callbackUrl);
 
   }

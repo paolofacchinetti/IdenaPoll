@@ -10,9 +10,6 @@ server.use((req, res, next) => {
     if (req.method === 'POST') {
       req.body.createdAt = Date.now()
     }
-    if (req.method === 'PUT') {
-      req.body.editedAt = Date.now()
-    }
     next() // continue to JSON Server router
   } else {
     res.sendStatus(401)
