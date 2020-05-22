@@ -24,7 +24,7 @@ export class DataService {
     });
   }
 
-  getSession() {
+  getSession():any {
     const CALL_URL = this.EXPRESS_URL + '/auth/v1/session';
     this.httpClient.get<any>(CALL_URL).subscribe((p) => {
       return p;

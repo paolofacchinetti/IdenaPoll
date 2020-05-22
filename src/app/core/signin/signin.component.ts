@@ -3,6 +3,7 @@ import {DataService} from '@app-shared/data.service';
 import {State} from '@app-redux/index';
 import {Store} from '@ngrx/store';
 import {setSession} from "@app-redux/core.actions";
+import {async} from "rxjs/internal/scheduler/async";
 
 
 @Component({
@@ -18,42 +19,43 @@ export class SigninComponent implements OnInit {
   dnaUrl: string;
   EXPRESS_URL = 'http://localhost:8000';
   token: string;
-
+  count = 0;
   constructor(protected store: Store<State>, protected ds: DataService) {
+
     this.token = ds.getAuthToken();
+
   }
 
   ngOnInit(): void {
     let callbackUrl = '/home';
     this.dnaUrl = this.buildDnaUrl(this.token, this.EXPRESS_URL, callbackUrl);
-
+    this.createSession()
   }
 
   createSession() {
-    let count = 0;
+
     const MAX_COUNT = 60;
     let sessionReturn = false;
     let address: string;
-    let json;
-    setTimeout(function timeoutfun() {
-      json = this.ds.getSession();
-      sessionReturn = json['authenticated'];
-      if (sessionReturn) {
-        address = json['address'];
-        this.store.dispatch(setSession({
-          value: this.ds.getIdentityData(address)
-        }));
-      } else if(count<MAX_COUNT) {
-        timeoutfun();
-      }
-    }, 5000);
+    // @ts-ignore
+    let json = this.ds.getSession() | async;
+    sessionReturn = json['authenticated'];
+    if (!!sessionReturn) {
+      address = json['address'];
+      this.store.dispatch(setSession({
+        value: this.ds.getIdentityData(address)
+      }));
+    } else if (this.count < MAX_COUNT) {
+      this.count++;
+      setTimeout(() => this.createSession(), 5000);
+    }
   }
 
   /**
    Builds the DNA URL used for the in-app sign-in
    */
   buildDnaUrl(token: string, baseUrl: string, callbackUrl: string): string {
-    const callback = new URL(callbackUrl,'http://localhost:4200');
+    const callback = new URL(callbackUrl, 'http://localhost:4200');
     const startSession = new URL('/auth/v1/start-session', baseUrl);
     const authenticate = new URL('/auth/v1/authenticate', baseUrl);
 
