@@ -24,6 +24,15 @@ export class DataService {
     });
   }
 
+  getAuthToken(): string{
+    let token: string;
+    const CALL_URL = this.EXPRESS_URL + '/auth/v1/new-token';
+    this.httpClient.get<any>(CALL_URL).subscribe((p) => {
+      token = p['token'];
+    });
+    return token;
+  }
+
   getPollById(id: string): PollBean {
     let poll: PollBean;
     const FINAL_URL = this.SERVER_URL + '/polls/' + id;

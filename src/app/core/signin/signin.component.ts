@@ -17,15 +17,17 @@ export class SigninComponent implements OnInit {
   signinState: string;
   dnaUrl: string;
   EXPRESS_URL = 'localhost:8000';
-  constructor() { }
+  token: string;
+
+  constructor(protected store: Store<State>, protected ds: DataService) {
+    this.token = ds.getAuthToken();
+  }
 
   ngOnInit(): void {
     let callbackUrl;
-    let token;
-    this.dnaUrl = this.buildDnaUrl(token, this.EXPRESS_URL, callbackUrl);
+    this.dnaUrl = this.buildDnaUrl(this.token, this.EXPRESS_URL, callbackUrl);
 
   }
-
 
   /**
     Builds the DNA URL used for the in-app sign-in
@@ -36,6 +38,7 @@ export class SigninComponent implements OnInit {
     const authenticate = new URL('/auth/v1/authenticate', baseUrl)
 
     // TODO add favicon_url= parameter with IDENAPOLL Logo
+
     const dnaUrl = `dna://signin/v1?callback_url=${encodeURIComponent(
       callback.href
     )}&token=${token}&nonce_endpoint=${encodeURIComponent(
