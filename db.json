@@ -10,7 +10,41 @@
         {
           "value": 0,
           "description": "Yes",
-          "votes": []
+          "votes": [
+            {
+              "voter": "asdadada"
+            },
+            {
+              "voter": "asdadada"
+            },
+            {
+              "voter": "asdadada"
+            },
+            {
+              "voter": "asdadada"
+            },
+            {
+              "voter": "asdadada"
+            },
+            {
+              "voter": "asdadada"
+            },
+            {
+              "voter": "asdadada"
+            },
+            {
+              "voter": "asdadada"
+            },
+            {
+              "voter": "asdadada"
+            },
+            {
+              "voter": "asdadada"
+            },
+            {
+              "voter": "asdadada"
+            }
+          ]
         },
         {
           "value": 1,
@@ -18,7 +52,7 @@
           "votes": []
         }
       ],
-      "editedAt": 1589974295490
+      "editedAt": 1590157608384
     },
     {
       "id": "u6CpU8o",

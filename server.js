@@ -5,6 +5,9 @@ const {v4: uuidv4} = require('uuid');
 const {checkSignature} = require('./ether');
 const bodyParser = require('body-parser');
 const cookieParser = require('cookie-parser');
+const cors = require('cors');
+const request = require('request');
+app.use(cors());
 app.listen(8000, () => {
   console.log('Server started!')
 });
@@ -15,6 +18,7 @@ const sessionCache = new NodeCache({
 const SESSION_COOKIE_TIME = 5 * 60 * 1000;
 const AUTH_COOKIE_TIME = 24 * 60 * 60 * 1000;
 app.use(bodyParser.json());
+app.use(bodyParser.text());
 app.use(cookieParser());
 const IDENA_SESSION_TOKEN_COOKIE = 'IDENA_SESSION_TOKEN';
 const IDENA_AUTH_COOKIE = 'IDENA_AUTH';
@@ -106,4 +110,35 @@ app.route('/auth/v1/session').get((req, res) => {
   }
 
   return res.sendStatus(403)
+});
+app.route("/vote").post((req, res) => {
+  const body = JSON.parse(req.body);
+  const {poll, option} = body;
+  let polljs;
+  let options = {
+    'method': 'GET',
+    'url': 'http://localhost/polls/' + poll,
+    'headers': {}
+  };
+  request(options, function (error, response) {
+    if (error) throw new Error(error);
+    polljs = JSON.parse(response.body);
+    polljs.options[option].votes.push({
+      voter: "asdadada"
+    });
+
+    options = {
+      'method': 'PATCH',
+      'url': 'http://localhost/polls/' + poll,
+      'headers': {
+        'Origin': 'localhost:8000',
+        'Content-Type': 'application/json'
+      },
+      'body': JSON.stringify(polljs)
+    };
+    request(options, function (error, response) {
+      if (error) throw new Error(error);
+    });
+  });
+  return res.status(200).json({status: "ok"});
 });

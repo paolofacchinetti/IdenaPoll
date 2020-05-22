@@ -1,9 +1,8 @@
 import {Component, OnInit} from '@angular/core';
-import {FormBuilder} from '@angular/forms';
 import {DataService} from '@app-shared/data.service';
 import {State} from '@app-redux/index';
 import {Store} from '@ngrx/store';
-import {setSession} from '@app-redux/core.actions';
+import {setSession} from "@app-redux/core.actions";
 
 
 @Component({
@@ -17,7 +16,7 @@ export class SigninComponent implements OnInit {
   SUCCESS = 'success';
   signinState: string;
   dnaUrl: string;
-  EXPRESS_URL = 'localhost:8000';
+  EXPRESS_URL = 'http://localhost:8000';
   token: string;
 
   constructor(protected store: Store<State>, protected ds: DataService) {
@@ -25,8 +24,8 @@ export class SigninComponent implements OnInit {
   }
 
   ngOnInit(): void {
-    // TODO Change callback URL
-    let callbackUrl = 'http://localhost:4200/home';
+    let callbackUrl = '/home';
+    this.ds.votePoll("SDASD1",0);
     this.dnaUrl = this.buildDnaUrl(this.token, this.EXPRESS_URL, callbackUrl);
 
   }
@@ -55,16 +54,15 @@ export class SigninComponent implements OnInit {
    Builds the DNA URL used for the in-app sign-in
    */
   buildDnaUrl(token: string, baseUrl: string, callbackUrl: string): string {
-    const callback = new URL(callbackUrl, baseUrl);
+    const callback = new URL(callbackUrl,'http://localhost:4200');
     const startSession = new URL('/auth/v1/start-session', baseUrl);
     const authenticate = new URL('/auth/v1/authenticate', baseUrl);
 
-    const dnaUrl = `dna://signin/v1?callback_url=${encodeURIComponent(
+    return `dna://signin/v1?callback_url=${encodeURIComponent(
       callback.href
     )}&token=${token}&nonce_endpoint=${encodeURIComponent(
       startSession.href
     )}&authentication_endpoint=${encodeURIComponent(authenticate.href)}`;
-    return dnaUrl;
   }
 
 }
