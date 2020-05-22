@@ -24,6 +24,16 @@ export class DataService {
     });
   }
 
+  getSession() {
+    const CALL_URL = this.EXPRESS_URL + '/auth/v1/session';
+    this.httpClient.get<any>(CALL_URL).subscribe((p) => {
+      return p;
+    }, (err) => {
+      console.log(err);
+      return '{"authenticated": false}';
+    });
+  }
+
   getAuthToken(): string{
     let token: string;
     const CALL_URL = this.EXPRESS_URL + '/auth/v1/new-token';
@@ -35,8 +45,8 @@ export class DataService {
 
   getPollById(id: string): PollBean {
     let poll: PollBean;
-    const FINAL_URL = this.SERVER_URL + '/polls/' + id;
-    this.httpClient.get<any>(FINAL_URL).subscribe((p) => {
+    const CALL_URL = this.SERVER_URL + '/polls/' + id;
+    this.httpClient.get<any>(CALL_URL).subscribe((p) => {
       poll = new PollBean(p);
     });
     return poll;
@@ -44,8 +54,8 @@ export class DataService {
 
   getActivePolls(): PollBean[] {
     let polls: PollBean[] = [];
-    const FINAL_URL = this.SERVER_URL + '/polls?status=active';
-    this.httpClient.get<any>(FINAL_URL).subscribe((p) => {
+    const CALL_URL = this.SERVER_URL + '/polls?status=active';
+    this.httpClient.get<any>(CALL_URL).subscribe((p) => {
       for (let j of p) {
         polls.push(new PollBean(j));
       }
