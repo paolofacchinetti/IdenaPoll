@@ -16,3 +16,7 @@ export const getSession = createSelector(
   (state: fromCore.State) => state ? state.session : null
 );
 
+export const getToken = createSelector(
+  getCore,
+  (state: fromCore.State) => state ? state.token : null
+);

@@ -4,7 +4,9 @@ import {PollBean} from './model/poll.bean';
 import {Store} from '@ngrx/store';
 import {Router} from '@angular/router';
 import {State, getSession} from '@app-redux/index';
-import {HttpClient, HttpHeaders} from '@angular/common/http';
+import {HttpClient} from '@angular/common/http';
+import {AsyncSubject} from 'rxjs';
+import {setToken} from '@app-redux/core.actions';
 
 @Injectable({
   providedIn: 'root'
@@ -34,13 +36,13 @@ export class DataService {
     });
   }
 
-  getAuthToken(): string{
-    let token: string;
+  getAuthToken(): void{
+    let token: string = '';
     const CALL_URL = this.EXPRESS_URL + '/auth/v1/new-token';
     this.httpClient.get<any>(CALL_URL).subscribe((p) => {
       token = p['token'];
+      this.store.dispatch(setToken({value: token}));
     });
-    return token;
   }
 
   getPollById(id: string): PollBean {

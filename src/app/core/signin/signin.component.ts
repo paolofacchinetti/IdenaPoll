@@ -1,9 +1,10 @@
-import {Component, OnInit} from '@angular/core';
+import {AfterViewInit, Component, OnInit} from '@angular/core';
 import {DataService} from '@app-shared/data.service';
-import {State} from '@app-redux/index';
-import {Store} from '@ngrx/store';
+import {getToken, State} from '@app-redux/index';
+import {select, Store} from '@ngrx/store';
 import {setSession} from "@app-redux/core.actions";
 import {async} from "rxjs/internal/scheduler/async";
+import {filter} from 'rxjs/operators';
 
 
 @Component({
@@ -11,29 +12,35 @@ import {async} from "rxjs/internal/scheduler/async";
   templateUrl: './signin.component.html',
   styleUrls: ['./signin.component.scss']
 })
-export class SigninComponent implements OnInit {
+export class SigninComponent implements OnInit, AfterViewInit {
   LOADING = 'loading';
-  ERROR = 'error';
+  FAILED = 'failed';
   SUCCESS = 'success';
   signinState: string;
   dnaUrl: string;
   EXPRESS_URL = 'http://localhost:8000';
   token: string;
   count = 0;
+
   constructor(protected store: Store<State>, protected ds: DataService) {
-
-    this.token = ds.getAuthToken();
-
+    this.ds.getAuthToken();
+    this.store.pipe(select(getToken), filter((p)=>p!=null)).subscribe((s) => {
+      this.token = s;
+      let callbackUrl = '/home';
+      this.dnaUrl = this.buildDnaUrl(this.token, this.EXPRESS_URL, callbackUrl);
+      this.createSession();
+      window.location.href = this.dnaUrl;
+    });
   }
 
   ngOnInit(): void {
-    let callbackUrl = '/home';
-    this.dnaUrl = this.buildDnaUrl(this.token, this.EXPRESS_URL, callbackUrl);
-    this.createSession()
+  }
+
+  ngAfterViewInit(): void {
   }
 
   createSession() {
-
+    this.signinState = 'loading';
     const MAX_COUNT = 60;
     let sessionReturn = false;
     let address: string;
@@ -45,10 +52,12 @@ export class SigninComponent implements OnInit {
       this.store.dispatch(setSession({
         value: this.ds.getIdentityData(address)
       }));
+      this.signinState = 'success';
     } else if (this.count < MAX_COUNT) {
       this.count++;
       setTimeout(() => this.createSession(), 5000);
     }
+    this.signinState = 'failed';
   }
 
   /**

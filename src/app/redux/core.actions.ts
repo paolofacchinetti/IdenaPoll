@@ -5,3 +5,8 @@ export const setSession = createAction(
   '[Core] setSession',
   props<{ value: SessionBean }>()
 );
+
+export const setToken = createAction(
+  '[Core] setToken',
+  props<{ value: string }>()
+);

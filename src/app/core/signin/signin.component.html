@@ -10,20 +10,20 @@
   </div>
 
   <div [ngSwitch]="signinState" class="signin-wrapper">
-    <div *ngSwitchCase="LOADING">
+    <div *ngSwitchCase=LOADING>
       <h3>Launching Idena App...</h3>
       <div class="text-wrapper">
         If you do not have Idena app installed on your computer, please open <br/>the
         <a href="https://idena.io?view=download">download page</a>to install it and then try again
       </div>
     </div>
-    <div *ngSwitchCase="ERROR">
+    <div *ngSwitchCase=FAILED>
       <div class="text-wrapper">
       If you're not seeing prompts from your browser, you may need to
       <a href="https://idena.io?view=download">download the Idena App</a> and try again
       </div>
     </div>
-    <div *ngSwitchCase="SUCCESS">
+    <div *ngSwitchCase=SUCCESS>
       <div class="text-wrapper">
         Successful Login!
       </div>

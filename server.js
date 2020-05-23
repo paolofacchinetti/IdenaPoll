@@ -92,9 +92,12 @@ app.route('/auth/v1/session').get((req, res) => {
   const sessionToken = req.cookies[IDENA_SESSION_TOKEN_COOKIE];
   if (sessionToken) {
     const data = sessionCache.get(sessionToken);
+    console.log('GETS TO IF(SESSIONTOKEN)');
     if (data) {
+      console.log('GETS TO IF(DATA)');
       const {address, authenticated} = data;
       if (authenticated) {
+        console.log('GETS TO IF(AUTHENTICATED)');
         res.clearCookie(IDENA_SESSION_TOKEN_COOKIE);
         res.cookie(
           IDENA_AUTH_COOKIE,
@@ -104,6 +107,7 @@ app.route('/auth/v1/session').get((req, res) => {
             httpOnly: true,
           }
         );
+        console.log('GETS TO RETURN');
         return res.status(200).json({authenticated: true, address})
       }
     }
