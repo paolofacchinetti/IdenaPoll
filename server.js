@@ -36,6 +36,10 @@ app.route('/auth/v1/new-token').get((_, res) => {
     maxAge: SESSION_COOKIE_TIME,
     httpOnly: true,
   });
+  res.set('Access-Control-Allow-Origin', [_.header('origin')]);
+  res.append('Access-Control-Allow-Methods', 'GET,PUT,POST,DELETE');
+  res.append('Access-Control-Allow-Headers', 'Content-Type');
+  res.set('Access-Control-Allow-Credentials', 'true');
   return res.json({token})
 });
 
@@ -80,6 +84,10 @@ app.route('/auth/v1/authenticate').post((req, res) => {
   })
 });
 app.route('/auth/v1/session').get((req, res) => {
+  res.set('Access-Control-Allow-Origin', [req.header('origin')]);
+  res.append('Access-Control-Allow-Methods', 'GET,PUT,POST,DELETE');
+  res.append('Access-Control-Allow-Headers', 'Content-Type');
+  res.set('Access-Control-Allow-Credentials', 'true');
   const session = req.cookies[IDENA_AUTH_COOKIE];
   if (session) {
     return res.json({authenticated: true, address: session.address})
@@ -92,12 +100,9 @@ app.route('/auth/v1/session').get((req, res) => {
   const sessionToken = req.cookies[IDENA_SESSION_TOKEN_COOKIE];
   if (sessionToken) {
     const data = sessionCache.get(sessionToken);
-    console.log('GETS TO IF(SESSIONTOKEN)');
     if (data) {
-      console.log('GETS TO IF(DATA)');
       const {address, authenticated} = data;
       if (authenticated) {
-        console.log('GETS TO IF(AUTHENTICATED)');
         res.clearCookie(IDENA_SESSION_TOKEN_COOKIE);
         res.cookie(
           IDENA_AUTH_COOKIE,
@@ -107,7 +112,6 @@ app.route('/auth/v1/session').get((req, res) => {
             httpOnly: true,
           }
         );
-        console.log('GETS TO RETURN');
         return res.status(200).json({authenticated: true, address})
       }
     }

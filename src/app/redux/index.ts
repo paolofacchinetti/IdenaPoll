@@ -20,3 +20,7 @@ export const getToken = createSelector(
   getCore,
   (state: fromCore.State) => state ? state.token : null
 );
+export const getAuth = createSelector(
+  getCore,
+  (state: fromCore.State) => state ? state.auth : ''
+);

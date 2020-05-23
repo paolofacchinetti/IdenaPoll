@@ -10,3 +10,7 @@ export const setToken = createAction(
   '[Core] setToken',
   props<{ value: string }>()
 );
+export const setAuth = createAction(
+  '[Core] setAuth',
+  props<{ value: string }>()
+);

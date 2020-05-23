@@ -1,6 +1,6 @@
 import {AfterViewInit, Component, OnInit} from '@angular/core';
 import {DataService} from '@app-shared/data.service';
-import {getToken, State} from '@app-redux/index';
+import {getAuth, getSession, getToken, State} from '@app-redux/index';
 import {select, Store} from '@ngrx/store';
 import {setSession} from "@app-redux/core.actions";
 import {async} from "rxjs/internal/scheduler/async";
@@ -22,42 +22,42 @@ export class SigninComponent implements OnInit, AfterViewInit {
   token: string;
   count = 0;
 
+
   constructor(protected store: Store<State>, protected ds: DataService) {
     this.ds.getAuthToken();
-    this.store.pipe(select(getToken), filter((p)=>p!=null)).subscribe((s) => {
+    this.store.pipe(select(getToken), filter((p) => p != null)).subscribe((s) => {
       this.token = s;
       let callbackUrl = '/home';
       this.dnaUrl = this.buildDnaUrl(this.token, this.EXPRESS_URL, callbackUrl);
-      this.createSession();
       window.location.href = this.dnaUrl;
     });
+    this.store.pipe(select(getSession), filter((p) => p != null)).subscribe(s => {
+      this.signinState = 'success';
+    });
+    this.store.select(getAuth).subscribe(s => {
+      this.signinState = 'loading';
+      const MAX_COUNT = 60;
+      let sessionReturn;
+      let address: string;
+      sessionReturn = s['authenticated'];
+      if (!!sessionReturn) {
+        address = s['address'];
+        this.store.dispatch(setSession({
+          value: this.ds.getIdentityData(address)
+        }));
+      } else if (this.count < MAX_COUNT) {
+        this.count++;
+        setTimeout(() => this.ds.getSession(), 5000);
+      }
+      this.signinState = 'failed';
+    })
   }
 
   ngOnInit(): void {
   }
 
   ngAfterViewInit(): void {
-  }
 
-  createSession() {
-    this.signinState = 'loading';
-    const MAX_COUNT = 60;
-    let sessionReturn = false;
-    let address: string;
-    // @ts-ignore
-    let json = this.ds.getSession() | async;
-    sessionReturn = json['authenticated'];
-    if (!!sessionReturn) {
-      address = json['address'];
-      this.store.dispatch(setSession({
-        value: this.ds.getIdentityData(address)
-      }));
-      this.signinState = 'success';
-    } else if (this.count < MAX_COUNT) {
-      this.count++;
-      setTimeout(() => this.createSession(), 5000);
-    }
-    this.signinState = 'failed';
   }
 
   /**

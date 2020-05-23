@@ -3,10 +3,10 @@ import {SessionBean} from '../shared/model/session.bean';
 import {PollBean} from './model/poll.bean';
 import {Store} from '@ngrx/store';
 import {Router} from '@angular/router';
-import {State, getSession} from '@app-redux/index';
+import {State, getSession, getAuth} from '@app-redux/index';
 import {HttpClient} from '@angular/common/http';
 import {AsyncSubject} from 'rxjs';
-import {setToken} from '@app-redux/core.actions';
+import {setAuth, setToken} from '@app-redux/core.actions';
 
 @Injectable({
   providedIn: 'root'
@@ -19,6 +19,7 @@ export class DataService {
   private IDENA_URL = 'http://api.idena.io/api/';
   private EXPRESS_URL = 'http://localhost:8000';
   private session: SessionBean = null;
+  private auth: string="";
 
   constructor(private httpClient: HttpClient, protected store: Store<State>, protected router: Router) {
     this.store.select(getSession).subscribe(value => {
@@ -26,20 +27,27 @@ export class DataService {
     });
   }
 
-  getSession():any {
+  getSession(): any {
     const CALL_URL = this.EXPRESS_URL + '/auth/v1/session';
-    this.httpClient.get<any>(CALL_URL).subscribe((p) => {
-      return p;
+    this.httpClient.get<any>(CALL_URL, {withCredentials: true}).subscribe((p) => {
+      this.store.dispatch(setAuth({value: p}));
     }, (err) => {
       console.log(err);
-      return '{"authenticated": false}';
+      this.auth += "1";
+      this.store.dispatch(setAuth({value: this.auth}));
     });
   }
 
-  getAuthToken(): void{
+  getAuthToken(): void {
     let token: string = '';
     const CALL_URL = this.EXPRESS_URL + '/auth/v1/new-token';
-    this.httpClient.get<any>(CALL_URL).subscribe((p) => {
+    this.httpClient.get<JSON>(CALL_URL, {
+      withCredentials: true,
+      responseType: "json",
+      headers: {
+        'Accept': 'application/json; charset=utf-8',
+      }
+    }).subscribe((p) => {
       token = p['token'];
       this.store.dispatch(setToken({value: token}));
     });
@@ -83,7 +91,7 @@ export class DataService {
   votePoll(pollId: string, optionValue: number) {
     const CALL_URL = this.EXPRESS_URL + '/vote';
     let body = JSON.stringify({"poll": pollId, "option": optionValue});
-    this.httpClient.post<any>(CALL_URL, body, {responseType:"json"}).subscribe((p) => {
+    this.httpClient.post<any>(CALL_URL, body, {responseType: "json"}).subscribe((p) => {
       //TODO ADD CONFIRMATION
       console.log(p)
     });
