@@ -3,7 +3,6 @@ import {DataService} from '@app-shared/data.service';
 import {getAuth, getSession, getToken, State} from '@app-redux/index';
 import {select, Store} from '@ngrx/store';
 import {setSession} from "@app-redux/core.actions";
-import {async} from "rxjs/internal/scheduler/async";
 import {filter} from 'rxjs/operators';
 
 
