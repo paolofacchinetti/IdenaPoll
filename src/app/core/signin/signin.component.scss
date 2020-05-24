@@ -1,16 +1,19 @@
 :host{
-  width: 100%;
   .signin-container{
+    overflow: hidden;
+    position: absolute;
+    width: 100%;
+    height: 60%;
     display: flex;
     justify-content: center;
-    align-content: center;
     align-items: center;
-    flex-direction: row;
+    flex-direction: column;
 
     .signin-wrapper{
-
+      margin: 25px 10px 10px 20px;
       .text-wrapper{
-
+        align-content: center;
+        font-size: 18px;
       }
 
     }
