@@ -33,9 +33,11 @@ export class SigninComponent implements OnInit, AfterViewInit {
     });
     this.store.pipe(select(getSession), filter((p) => p != null)).subscribe(s => {
       this.signinState = 'success';
+      console.log(this.signinState);
     });
     this.store.select(getAuth).subscribe(s => {
       this.signinState = 'loading';
+      console.log(this.signinState);
       const MAX_COUNT = 60;
       let sessionReturn;
       let address: string;
@@ -49,7 +51,10 @@ export class SigninComponent implements OnInit, AfterViewInit {
         this.count++;
         setTimeout(() => this.ds.getSession(), 5000);
       }
-      this.signinState = 'failed';
+      if (this.count == MAX_COUNT){
+        this.signinState = 'failed';
+        console.log(this.signinState);
+      }
     })
   }
 

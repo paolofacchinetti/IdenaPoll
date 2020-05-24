@@ -10,16 +10,17 @@ import {HttpClientModule} from "@angular/common/http";
 import {StoreModule} from "@ngrx/store";
 import {RouterModule, Routes} from '@angular/router';
 import {SigninComponent} from '@app-core/signin/signin.component';
+import {HomeComponent} from '@app-core/home/home.component';
 
 const appRoutes: Routes = [
-  {path: 'signin', component: SigninComponent}
-  /*
+  {path: 'signin', component: SigninComponent},
+  {path: 'home', component: HomeComponent},
   {
     path: '**',
     redirectTo: '/home',
     pathMatch: 'full'
   }
-  */
+
 ];
 
 @NgModule({
