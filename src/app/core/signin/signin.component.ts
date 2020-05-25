@@ -43,9 +43,7 @@ export class SigninComponent implements OnInit, AfterViewInit {
       sessionReturn = s['authenticated'];
       if (!!sessionReturn) {
         address = s['address'];
-        this.store.dispatch(setSession({
-          value: this.ds.getIdentityData(address)
-        }));
+        this.ds.getIdentityData(address);
       } else if (this.count < MAX_COUNT) {
         this.count++;
         setTimeout(() => this.ds.getSession(), 5000);

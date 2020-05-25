@@ -3,6 +3,7 @@ import {DataService} from '@app-shared/data.service';
 import {select, Store} from '@ngrx/store';
 import {getSession, State} from '@app-redux/index';
 import {SessionBean} from '@app-shared/model/session.bean';
+import {filter} from 'rxjs/operators';
 
 @Component({
   selector: 'app-topbar',
@@ -13,7 +14,7 @@ export class TopbarComponent implements OnInit {
   session: SessionBean;
 
   constructor(protected dataService: DataService, protected store: Store<State>) {
-    this.store.select(getSession).subscribe( (s) => {
+    this.store.pipe(select(getSession), filter((p) => p != null)).subscribe( (s) => {
       this.session = s;
     });
     this.dataService.getSessionOnlyCheck();

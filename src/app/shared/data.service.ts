@@ -19,7 +19,7 @@ export class DataService {
   private IDENA_URL = 'http://api.idena.io/api/';
   private EXPRESS_URL = 'http://localhost:8000';
   private session: SessionBean = null;
-  private auth: string="";
+  private auth: string = '';
 
   constructor(private httpClient: HttpClient, protected store: Store<State>, protected router: Router) {
     this.store.select(getSession).subscribe(value => {
@@ -27,12 +27,31 @@ export class DataService {
     });
   }
 
-  getSessionOnlyCheck(): any {
-    const CALL_URL = this.EXPRESS_URL + 'auth/v1/session?onlyCheck=true';
-    this.httpClient.get<any>(CALL_URL, {withCredentials: true}).subscribe( (p) => {
-      let address = p['address'];
-      this.store.dispatch(setSession({value: this.getIdentityData(address)}));
+  getIdentityData(id: string) {
+    console.log(id);
+    let session = new SessionBean();
+    let CALL_URL = this.IDENA_URL + '/Identity/' + id;
+    this.httpClient.get<any>(CALL_URL).subscribe((p) => {
+      const json = p['result'];
+      session.address = json['address'];
+      session.status = json['state'];
     });
+    CALL_URL += '/age';
+    this.httpClient.get<any>(CALL_URL).subscribe((p) => {
+      session.age = p['result'];
+      this.store.dispatch(setSession({value: session}));
+    });
+  }
+
+  getSessionOnlyCheck() {
+    const CALL_URL = this.EXPRESS_URL + '/auth/v1/session?onlyCheck=true';
+    let address;
+    this.httpClient.get<any>(CALL_URL, {withCredentials: true}).subscribe((p) => {
+      address = p['address'];
+      this.getIdentityData(address);
+    });
+
+
   }
 
   getSession(): any {
@@ -41,7 +60,7 @@ export class DataService {
       this.store.dispatch(setAuth({value: p}));
     }, (err) => {
       console.log(err);
-      this.auth += "1";
+      this.auth += '1';
       this.store.dispatch(setAuth({value: this.auth}));
     });
   }
@@ -51,7 +70,7 @@ export class DataService {
     const CALL_URL = this.EXPRESS_URL + '/auth/v1/new-token';
     this.httpClient.get<JSON>(CALL_URL, {
       withCredentials: true,
-      responseType: "json",
+      responseType: 'json',
       headers: {
         'Accept': 'application/json; charset=utf-8',
       }
@@ -92,27 +111,13 @@ export class DataService {
     return polls;
   }
 
-  getIdentityData(id: string): SessionBean {
-    let session = new SessionBean();
-    let CALL_URL = this.IDENA_URL + '/Identity/' + id;
-    this.httpClient.get<any>(CALL_URL).subscribe((p) => {
-      const json = p['result'];
-      session.address = json['address'];
-      session.status = json['state'];
-    });
-    CALL_URL += '/age';
-    this.httpClient.get<any>(CALL_URL).subscribe((p) => {
-      session.age = p['result'];
-    });
-    return session;
-  }
 
   votePoll(pollId: string, optionValue: number) {
     const CALL_URL = this.EXPRESS_URL + '/vote';
-    let body = JSON.stringify({"poll": pollId, "option": optionValue});
-    this.httpClient.post<any>(CALL_URL, body, {responseType: "json"}).subscribe((p) => {
+    let body = JSON.stringify({'poll': pollId, 'option': optionValue});
+    this.httpClient.post<any>(CALL_URL, body, {responseType: 'json'}).subscribe((p) => {
       //TODO ADD CONFIRMATION
-      console.log(p)
+      console.log(p);
     });
   }
 
