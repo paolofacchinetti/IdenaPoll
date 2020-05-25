@@ -115,7 +115,7 @@ export class DataService {
   votePoll(pollId: string, optionValue: number) {
     const CALL_URL = this.EXPRESS_URL + '/vote';
     let body = JSON.stringify({'poll': pollId, 'option': optionValue});
-    this.httpClient.post<any>(CALL_URL, body, {responseType: 'json'}).subscribe((p) => {
+    this.httpClient.post<any>(CALL_URL, body, {responseType: 'json', withCredentials:true}).subscribe((p) => {
       //TODO ADD CONFIRMATION
       console.log(p);
     });

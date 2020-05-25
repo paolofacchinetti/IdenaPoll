@@ -6,7 +6,7 @@
     "start": "ng serve",
     "build": "ng build",
     "test": "ng test",
-    "json:server": "node db-server.js --no-cors",
+    "json:server": "node db-server.js",
     "server": "node server.js",
     "lint": "ng lint",
     "e2e": "ng e2e"
