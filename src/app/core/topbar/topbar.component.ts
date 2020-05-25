@@ -18,17 +18,18 @@ export class TopbarComponent implements OnInit {
   constructor(protected dataService: DataService, protected store: Store<State>) {
     this.store.pipe(select(getSession), filter((p) => p != null)).subscribe((s) => {
       this.session = s;
+      /**
+       Conditions for being able to create a new poll
+       */
+      if(this.session.status == StatusEnum.HUMAN || this.session.status == StatusEnum.VERIFIED){
+        this.canCreate = true;
+      }else{
+        this.canCreate = false;
+      }
     });
     this.dataService.getSessionOnlyCheck();
 
-    /**
-    Conditions for being able to create a new poll
-     */
-    if(this.session.status==StatusEnum.HUMAN || this.session.status == StatusEnum.VERIFIED){
-      this.canCreate = true;
-    }else{
-      this.canCreate = false;
-    }
+
   }
 
   ngOnInit(): void {

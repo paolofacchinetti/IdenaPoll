@@ -34,7 +34,7 @@ export class DataService {
     this.httpClient.get<any>(CALL_URL).subscribe((p) => {
       const json = p['result'];
       session.address = json['address'];
-      session.status = json['state'];
+      session.status = json['state'].toUpperCase();
     });
     CALL_URL += '/age';
     this.httpClient.get<any>(CALL_URL).subscribe((p) => {
@@ -109,6 +109,19 @@ export class DataService {
       }
     });
     return polls;
+  }
+
+  getPopularPolls(): PollBean[] {
+    let polls: PollBean[] = this.getActivePolls();
+    polls.sort((a, b) => {
+      if (a.totalVotes > b.totalVotes){
+        return 1;
+      }else if (a.totalVotes < b.totalVotes){
+        return -1;
+      }
+      return 0;
+    })
+    return polls.splice(0,11);
   }
 
 

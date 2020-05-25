@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import {PollBean} from '@app-shared/model/poll.bean';
 
 @Component({
   selector: 'app-home',
@@ -6,7 +7,7 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./home.component.scss']
 })
 export class HomeComponent implements OnInit {
-
+  recentPolls: PollBean[];
   constructor() { }
 
   ngOnInit(): void {
