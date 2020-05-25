@@ -113,15 +113,18 @@ export class DataService {
 
   getPopularPolls(): PollBean[] {
     let polls: PollBean[] = this.getActivePolls();
-    polls.sort((a, b) => {
-      if (a.totalVotes > b.totalVotes){
-        return 1;
-      }else if (a.totalVotes < b.totalVotes){
-        return -1;
-      }
-      return 0;
-    })
-    return polls.splice(0,11);
+    if(polls.length>1) {
+      polls.sort((a, b) => {
+        if (a.totalVotes > b.totalVotes) {
+          return 1;
+        } else if (a.totalVotes < b.totalVotes) {
+          return -1;
+        }
+        return 0;
+      });
+    }
+    polls.splice(0,11);
+    return polls;
   }
 
 
