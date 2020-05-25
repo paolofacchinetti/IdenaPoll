@@ -121,18 +121,9 @@ export class DataService {
     });
   }
 
-  deletePoll(pollId: string) {
-    const CALL_URL = this.EXPRESS_URL + '/delete';
-    let body = 'poll-id=' + pollId;
-    this.httpClient.post<any>(CALL_URL, body).subscribe((p) => {
-
-    });
-  }
-
   createPoll(poll: PollBean) {
     const CALL_URL = this.EXPRESS_URL + '/create';
-    let body = 'poll=' + poll.toString();
-    this.httpClient.post<any>(CALL_URL, body).subscribe((p) => {
+    this.httpClient.post<any>(CALL_URL, JSON.stringify(poll)).subscribe((p) => {
 
     });
   }

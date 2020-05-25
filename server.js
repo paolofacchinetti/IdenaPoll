@@ -7,6 +7,7 @@ const bodyParser = require('body-parser');
 const cookieParser = require('cookie-parser');
 const cors = require('cors');
 const request = require('request');
+const fetch = require('node-fetch');
 app.use(cors());
 app.listen(8000, () => {
   console.log('Server started!')
@@ -119,7 +120,7 @@ app.route('/auth/v1/session').get((req, res) => {
 
   return res.sendStatus(403)
 });
-app.route("/vote").post((req, res) => {
+app.route("/vote").post(async (req, res) => {
   res.set('Access-Control-Allow-Origin', [req.header('origin')]);
   res.append('Access-Control-Allow-Methods', 'POST');
   res.append('Access-Control-Allow-Headers', 'Content-Type');
@@ -127,15 +128,13 @@ app.route("/vote").post((req, res) => {
   const body = JSON.parse(req.body);
   const {poll, option} = body;
   const voter = req.cookies[IDENA_AUTH_COOKIE].address;
-  let polljs;
-  let options = {
-    'method': 'GET',
-    'url': 'http://localhost/polls/' + poll,
-    'headers': {}
+  let headers = {
+    'Origin': 'localhost:8000',
+    'Content-Type': 'application/json'
   };
-  request(options, function (error, response) {
-    if (error) throw new Error(error);
-    polljs = JSON.parse(response.body);
+  let status= {status: "ok"};
+  const fe= await fetch("http://localhost/polls/" + poll, {method: 'GET'});
+  const polljs= await fe.json();
     let found;
     for (o of polljs.options) {
       let search = o.votes.find((v) => {
@@ -148,19 +147,32 @@ app.route("/vote").post((req, res) => {
       polljs.options[option].votes.push({
         voter: voter
       });
-      options = {
-        'method': 'PATCH',
-        'url': 'http://localhost/polls/' + poll,
-        'headers': {
-          'Origin': 'localhost:8000',
-          'Content-Type': 'application/json'
-        },
-        'body': JSON.stringify(polljs)
+      let headers = {
+        'Origin': 'localhost:8000',
+        'Content-Type': 'application/json'
       };
-      request(options, function (error, response) {
-        if (error) throw new Error(error);
-      });
+      const fe= await fetch("http://localhost:80/polls/"+poll, {method: 'PATCH', body: JSON.stringify(polljs), headers: headers});
+      const jsonres= await fe.json();
     }
-  });
-  return res.status(200).json({status: "ok"});
+    else {
+      status={status: "dup"}
+    }
+   return res.status(200).json(status);
 });
+
+app.route("/create").post(async (req, res, next) => {
+  res.set('Access-Control-Allow-Origin', [req.header('origin')]);
+  res.append('Access-Control-Allow-Methods', 'POST');
+  res.append('Access-Control-Allow-Headers', 'Content-Type');
+  res.set('Access-Control-Allow-Credentials', 'true');
+  const poll = req.body;
+  let headers = {
+    'Origin': 'localhost:8000',
+    'Content-Type': 'application/json'
+  };
+  const fe= await fetch("http://localhost:80/polls", {method: 'POST', body: JSON.stringify(poll), headers: headers})
+  const json= await fe.json();
+  return res.status(200).json(json);
+
+});
+
