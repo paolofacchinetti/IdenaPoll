@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import {PollBean} from '@app-shared/model/poll.bean';
-import {DataService} from '@app-shared/data.service';
+import {getPopularPolls, getRecentPolls, State} from '@app-redux/index';
+import {Store} from '@ngrx/store';
 
 @Component({
   selector: 'app-home',
@@ -10,9 +11,15 @@ import {DataService} from '@app-shared/data.service';
 export class HomeComponent implements OnInit {
   recentPolls: PollBean[];
   popularPolls: PollBean[];
-  constructor(protected ds: DataService) {
-    this.recentPolls = ds.getRecentPolls();
-    this.popularPolls = ds.getPopularPolls();
+  constructor(protected store: Store<State>) {
+    this.store.select(getRecentPolls).subscribe((p)=>{
+      this.recentPolls = p;
+    });
+    this.store.select(getPopularPolls).subscribe((j) =>{
+      this.popularPolls = j;
+    })
+    console.log(this.recentPolls);
+    console.log(this.popularPolls);
   }
 
   ngOnInit(): void {

@@ -16,6 +16,21 @@ export const getSession = createSelector(
   (state: fromCore.State) => state ? state.session : null
 );
 
+export const getActivePolls = createSelector(
+  getCore,
+  (state: fromCore.State) => state ? state.activePolls : null
+);
+
+export const getPopularPolls = createSelector(
+  getCore,
+  (state: fromCore.State) => state ? state.popularPolls : null
+);
+
+export const getRecentPolls = createSelector(
+  getCore,
+  (state: fromCore.State) => state ? state.recentPolls : null
+);
+
 export const getToken = createSelector(
   getCore,
   (state: fromCore.State) => state ? state.token : null

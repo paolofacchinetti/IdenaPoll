@@ -3,10 +3,10 @@ import {SessionBean} from '../shared/model/session.bean';
 import {PollBean} from './model/poll.bean';
 import {Store} from '@ngrx/store';
 import {Router} from '@angular/router';
-import {State, getSession, getAuth} from '@app-redux/index';
+import {State, getSession, getAuth, getActivePolls} from '@app-redux/index';
 import {HttpClient} from '@angular/common/http';
 import {AsyncSubject} from 'rxjs';
-import {setAuth, setSession, setToken} from '@app-redux/core.actions';
+import {setActivePolls, setAuth, setPopularPolls, setRecentPolls, setSession, setToken} from '@app-redux/core.actions';
 
 @Injectable({
   providedIn: 'root'
@@ -89,42 +89,45 @@ export class DataService {
     return poll;
   }
 
-  getRecentPolls(): PollBean[] {
+  getRecentPolls() {
     let polls: PollBean[] = [];
     const CALL_URL = this.SERVER_URL + '/polls?_sort=createdAt&_order=desc&_limit=10&status=active';
     this.httpClient.get<any>(CALL_URL).subscribe((p) => {
       for (let j of p) {
         polls.push(new PollBean(j));
       }
+      this.store.dispatch(setRecentPolls({value: polls}));
     });
-    return polls;
   }
 
-  getActivePolls(): PollBean[] {
+  getActivePolls() {
     let polls: PollBean[] = [];
     const CALL_URL = this.SERVER_URL + '/polls?status=active';
     this.httpClient.get<any>(CALL_URL).subscribe((p) => {
       for (let j of p) {
         polls.push(new PollBean(j));
       }
+      this.store.dispatch(setActivePolls({value: polls}));
     });
     return polls;
   }
 
-  getPopularPolls(): PollBean[] {
-    let polls: PollBean[] = this.getActivePolls();
-    if(polls.length>1) {
-      polls.sort((a, b) => {
-        if (a.totalVotes > b.totalVotes) {
-          return 1;
-        } else if (a.totalVotes < b.totalVotes) {
-          return -1;
-        }
-        return 0;
-      });
-    }
-    polls.splice(0,11);
-    return polls;
+  getPopularPolls() {
+    this.getActivePolls();
+    this.store.select(getActivePolls).subscribe((p) =>{
+      if(p.length>1) {
+        p.sort((a, b) => {
+          if (a.totalVotes > b.totalVotes) {
+            return 1;
+          } else if (a.totalVotes < b.totalVotes) {
+            return -1;
+          }
+          return 0;
+        });
+      }
+      p.splice(0,11);
+      this.store.dispatch(setPopularPolls({value: p}));
+    });
   }
 
 
