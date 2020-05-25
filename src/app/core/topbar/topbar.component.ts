@@ -1,5 +1,8 @@
 import {Component, OnInit} from '@angular/core';
 import {DataService} from '@app-shared/data.service';
+import {select, Store} from '@ngrx/store';
+import {getSession, State} from '@app-redux/index';
+import {SessionBean} from '@app-shared/model/session.bean';
 
 @Component({
   selector: 'app-topbar',
@@ -7,16 +10,18 @@ import {DataService} from '@app-shared/data.service';
   styleUrls: ['./topbar.component.scss']
 })
 export class TopbarComponent implements OnInit {
-  // session= {
-  //   address: '0x3852c4498b329627dd47a587d0de63860313524e'
-  // };
-  session: any;
+  session: SessionBean;
 
-  constructor(protected dataService: DataService) {
-    console.log(this.dataService.getActivePolls());
+  constructor(protected dataService: DataService, protected store: Store<State>) {
+    this.store.select(getSession).subscribe( (s) => {
+      this.session = s;
+    });
+    this.dataService.getSessionOnlyCheck();
   }
 
   ngOnInit(): void {
   }
+
+
 
 }

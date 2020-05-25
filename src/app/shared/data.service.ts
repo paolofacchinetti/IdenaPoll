@@ -6,7 +6,7 @@ import {Router} from '@angular/router';
 import {State, getSession, getAuth} from '@app-redux/index';
 import {HttpClient} from '@angular/common/http';
 import {AsyncSubject} from 'rxjs';
-import {setAuth, setToken} from '@app-redux/core.actions';
+import {setAuth, setSession, setToken} from '@app-redux/core.actions';
 
 @Injectable({
   providedIn: 'root'
@@ -24,6 +24,14 @@ export class DataService {
   constructor(private httpClient: HttpClient, protected store: Store<State>, protected router: Router) {
     this.store.select(getSession).subscribe(value => {
       this.session = value;
+    });
+  }
+
+  getSessionOnlyCheck(): any {
+    const CALL_URL = this.EXPRESS_URL + 'auth/v1/session?onlyCheck=true';
+    this.httpClient.get<any>(CALL_URL, {withCredentials: true}).subscribe( (p) => {
+      let address = p['address'];
+      this.store.dispatch(setSession({value: this.getIdentityData(address)}));
     });
   }
 
@@ -60,6 +68,17 @@ export class DataService {
       poll = new PollBean(p);
     });
     return poll;
+  }
+
+  getRecentPolls(): PollBean[] {
+    let polls: PollBean[] = [];
+    const CALL_URL = this.SERVER_URL + '/polls?_sort=createdAt&_order=desc&_limit=10&status=active';
+    this.httpClient.get<any>(CALL_URL).subscribe((p) => {
+      for (let j of p) {
+        polls.push(new PollBean(j));
+      }
+    });
+    return polls;
   }
 
   getActivePolls(): PollBean[] {
