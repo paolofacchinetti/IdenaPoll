@@ -14,7 +14,7 @@ export class TopbarComponent implements OnInit {
   session: SessionBean;
 
   constructor(protected dataService: DataService, protected store: Store<State>) {
-    this.store.pipe(select(getSession), filter((p) => p != null)).subscribe( (s) => {
+    this.store.pipe(select(getSession), filter((p) => p != null)).subscribe((s) => {
       this.session = s;
     });
     this.dataService.getSessionOnlyCheck();
@@ -24,5 +24,7 @@ export class TopbarComponent implements OnInit {
   }
 
 
-
+  vote() {
+    this.dataService.votePoll('SDASD1', 0);
+  }
 }

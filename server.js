@@ -120,8 +120,13 @@ app.route('/auth/v1/session').get((req, res) => {
   return res.sendStatus(403)
 });
 app.route("/vote").post((req, res) => {
+  res.set('Access-Control-Allow-Origin', [req.header('origin')]);
+  res.append('Access-Control-Allow-Methods', 'POST');
+  res.append('Access-Control-Allow-Headers', 'Content-Type');
+  res.set('Access-Control-Allow-Credentials', 'true');
   const body = JSON.parse(req.body);
   const {poll, option} = body;
+  const voter = req.cookies[IDENA_AUTH_COOKIE].address;
   let polljs;
   let options = {
     'method': 'GET',
@@ -131,22 +136,31 @@ app.route("/vote").post((req, res) => {
   request(options, function (error, response) {
     if (error) throw new Error(error);
     polljs = JSON.parse(response.body);
-    polljs.options[option].votes.push({
-      voter: "asdadada"
-    });
+    let found;
+    for (o of polljs.options) {
+      let search = o.votes.find((v) => {
+        return v.voter === voter
+      });
 
-    options = {
-      'method': 'PATCH',
-      'url': 'http://localhost/polls/' + poll,
-      'headers': {
-        'Origin': 'localhost:8000',
-        'Content-Type': 'application/json'
-      },
-      'body': JSON.stringify(polljs)
-    };
-    request(options, function (error, response) {
-      if (error) throw new Error(error);
-    });
+      found = search !== undefined ? search : found;
+    }
+    if (found == null) {
+      polljs.options[option].votes.push({
+        voter: voter
+      });
+      options = {
+        'method': 'PATCH',
+        'url': 'http://localhost/polls/' + poll,
+        'headers': {
+          'Origin': 'localhost:8000',
+          'Content-Type': 'application/json'
+        },
+        'body': JSON.stringify(polljs)
+      };
+      request(options, function (error, response) {
+        if (error) throw new Error(error);
+      });
+    }
   });
   return res.status(200).json({status: "ok"});
 });

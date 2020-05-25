@@ -5,6 +5,7 @@ import {FlexModule} from "@angular/flex-layout";
 import { SigninComponent } from './signin/signin.component';
 import {SharedModule} from "@app-shared/shared.module";
 import { HomeComponent } from './home/home.component';
+import {RouterModule} from "@angular/router";
 
 
 
@@ -13,10 +14,11 @@ import { HomeComponent } from './home/home.component';
   exports: [
     TopbarComponent
   ],
-  imports: [
-    CommonModule,
-    FlexModule,
-    SharedModule
-  ]
+    imports: [
+        CommonModule,
+        FlexModule,
+        SharedModule,
+        RouterModule
+    ]
 })
 export class CoreModule { }

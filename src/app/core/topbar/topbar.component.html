@@ -1,12 +1,12 @@
 <script src="../../../../../JacMobile/src/app/core/core.module.ts"></script>
 <div class="container" fxFill fxFlex fxLayout="row">
-  <div class="logo">
+  <a routerLink="/home" class="logo">
     <img src="assets/img/idena-poll-logo.png">
-  </div>
+  </a>
   <span fxFlex></span>
   <!--  TODO age check-->
   <div class="create" *ngIf="session && true">
-    <a class="create-btn" fxLayout="row">
+    <a class="create-btn" (click)="vote()" fxLayout="row">
       <span class="circle" fxLayout="row" aria-hidden="true">
         <span class="material-icons icon">add</span>
         <span class="button-text">New Poll</span>
