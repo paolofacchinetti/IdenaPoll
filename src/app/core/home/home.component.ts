@@ -1,4 +1,4 @@
-import {Component, OnInit} from '@angular/core';
+import {Component, OnDestroy, OnInit} from '@angular/core';
 import {PollBean} from '@app-shared/model/poll.bean';
 import {getPopularPolls, getRecentPolls, State} from '@app-redux/index';
 import {select, Store} from '@ngrx/store';
@@ -10,11 +10,13 @@ import {filter} from 'rxjs/operators';
   templateUrl: './home.component.html',
   styleUrls: ['./home.component.scss']
 })
-export class HomeComponent implements OnInit {
+export class HomeComponent implements OnInit, OnDestroy {
   recentPolls: PollBean[];
   popularPolls: PollBean[];
+  private interval;
+
   constructor(protected store: Store<State>, protected ds: DataService) {
-    setInterval(() => {
+    this.interval = setInterval(() => {
       this.ds.getActivePolls();
       this.ds.getRecentPolls();
     }, 60000);
@@ -32,6 +34,10 @@ export class HomeComponent implements OnInit {
 
   ngOnInit(): void {
 
+  }
+
+  ngOnDestroy(): void {
+    clearInterval(this.interval);
   }
 
 }
