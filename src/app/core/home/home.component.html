@@ -1,24 +1,14 @@
 <div class="home-container">
 
-  <div class ='home-header'>
-
-    <h1>Welcome to IdenaPoll!</h1>
-    <div class="logo">
-      <img src="assets/img/idena-poll-logo.png">
-    </div>
-
-  </div>
-
-
   <div class ='popular-polls-wrapper'>
-    <div *ngFor="let poll of popularPolls" class="popular-fored">
-
+    <div *ngFor="let poll of popularPolls" class="popular-polls">
+      {{poll.id}}
     </div>
   </div>
 
   <div class ='recent-polls-wrapper'>
-    <div *ngFor="let poll of recentPolls" class="recent-fored">
-      <
+    <div *ngFor="let poll of recentPolls" class="recent-polls">
+      {{poll.id}}
     </div>
   </div>
 
