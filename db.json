@@ -1,39 +1,6 @@
 {
   "polls": [
     {
-      "id": "SDASD1",
-      "status": "active",
-      "title": "",
-      "description": "",
-      "creator": "",
-      "options": [
-        {
-          "value": 0,
-          "description": "Yes",
-          "votes": [
-            {
-              "voter": "0x3852c4498b329627dd47a587d0de63860313524e"
-            },
-            {
-              "voter": "asdadada"
-            },
-            {
-              "voter": "asdadada"
-            },
-            {
-              "voter": "0x3b264ce7beaac6408c77e9f080508a55f7451d75"
-            }
-          ]
-        },
-        {
-          "value": 1,
-          "description": "No",
-          "votes": []
-        }
-      ],
-      "editedAt": 1590157608384
-    },
-    {
       "status": "active",
       "title": "",
       "description": "",
@@ -54,7 +21,6 @@
           "votes": []
         }
       ],
-      "editedAt": 1590157608384,
       "createdAt": 1590420661706,
       "id": "H9Is9Nq"
     },
@@ -79,7 +45,6 @@
           "votes": []
         }
       ],
-      "editedAt": 1590157608384,
       "createdAt": 1590420698224,
       "id": "eCIcWdr"
     },
@@ -104,7 +69,6 @@
           "votes": []
         }
       ],
-      "editedAt": 1590157608384,
       "createdAt": 1590421420648,
       "id": "SbjlhEt"
     },
@@ -129,7 +93,6 @@
           "votes": []
         }
       ],
-      "editedAt": 1590157608384,
       "createdAt": 1590421436075,
       "id": "6XqXS3Q"
     },
@@ -154,7 +117,6 @@
           "votes": []
         }
       ],
-      "editedAt": 1590157608384,
       "createdAt": 1590421437162,
       "id": "lYsaNuf"
     },
@@ -179,7 +141,6 @@
           "votes": []
         }
       ],
-      "editedAt": 1590157608384,
       "createdAt": 1590421507158,
       "id": "R9gK-M_"
     },
@@ -204,7 +165,6 @@
           "votes": []
         }
       ],
-      "editedAt": 1590157608384,
       "createdAt": 1590421803292,
       "id": "Aqg6eBq"
     },
@@ -229,7 +189,6 @@
           "votes": []
         }
       ],
-      "editedAt": 1590157608384,
       "createdAt": 1590421877818,
       "id": "k0Tny4a"
     },
@@ -254,7 +213,6 @@
           "votes": []
         }
       ],
-      "editedAt": 1590157608384,
       "createdAt": 1590421889212,
       "id": "bfxkDYS"
     },
@@ -279,7 +237,6 @@
           "votes": []
         }
       ],
-      "editedAt": 1590157608384,
       "createdAt": 1590421987936,
       "id": "IcOA1E4"
     },
@@ -304,7 +261,6 @@
           "votes": []
         }
       ],
-      "editedAt": 1590157608384,
       "createdAt": 1590422022102,
       "id": "f5teLAD"
     },
@@ -329,7 +285,6 @@
           "votes": []
         }
       ],
-      "editedAt": 1590157608384,
       "createdAt": 1590422092882,
       "id": "OdMQEKz"
     },
@@ -354,7 +309,6 @@
           "votes": []
         }
       ],
-      "editedAt": 1590157608384,
       "createdAt": 1590422136233,
       "id": "P0ll-pC"
     },
@@ -379,7 +333,6 @@
           "votes": []
         }
       ],
-      "editedAt": 1590157608384,
       "createdAt": 1590422149820,
       "id": "W-1MPnY"
     },
@@ -404,7 +357,6 @@
           "votes": []
         }
       ],
-      "editedAt": 1590157608384,
       "createdAt": 1590422435264,
       "id": "xlHTSsG"
     },
@@ -429,7 +381,6 @@
           "votes": []
         }
       ],
-      "editedAt": 1590157608384,
       "createdAt": 1590422858792,
       "id": "B8yyaSl"
     },
@@ -454,7 +405,6 @@
           "votes": []
         }
       ],
-      "editedAt": 1590157608384,
       "createdAt": 1590422884471,
       "id": "Zjo6mCr"
     },
@@ -479,7 +429,6 @@
           "votes": []
         }
       ],
-      "editedAt": 1590157608384,
       "createdAt": 1590422913970,
       "id": "GGBA9Zj"
     },
@@ -504,7 +453,6 @@
           "votes": []
         }
       ],
-      "editedAt": 1590157608384,
       "createdAt": 1590422931604,
       "id": "1LhQ8Xn"
     },
@@ -529,7 +477,6 @@
           "votes": []
         }
       ],
-      "editedAt": 1590157608384,
       "createdAt": 1590422960490,
       "id": "D5sS1PG"
     },
@@ -554,7 +501,6 @@
           "votes": []
         }
       ],
-      "editedAt": 1590157608384,
       "createdAt": 1590422991665,
       "id": "QxDaKSB"
     },
@@ -579,7 +525,6 @@
           "votes": []
         }
       ],
-      "editedAt": 1590157608384,
       "createdAt": 1590424202716,
       "id": "HlNhjt1"
     },
@@ -604,7 +549,6 @@
           "votes": []
         }
       ],
-      "editedAt": 1590157608384,
       "createdAt": 1590424883896,
       "id": "cZlpQ6c"
     },
@@ -629,7 +573,6 @@
           "votes": []
         }
       ],
-      "editedAt": 1590157608384,
       "createdAt": 1590424928477,
       "id": "5pl8nm1"
     },
@@ -654,7 +597,6 @@
           "votes": []
         }
       ],
-      "editedAt": 1590157608384,
       "createdAt": 1590424948822,
       "id": "Hypvdyk"
     },
@@ -679,7 +621,6 @@
           "votes": []
         }
       ],
-      "editedAt": 1590157608384,
       "createdAt": 1590424962753,
       "id": "vTh6hIL"
     },
@@ -704,7 +645,6 @@
           "votes": []
         }
       ],
-      "editedAt": 1590157608384,
       "createdAt": 1590425010892,
       "id": "9dY4085"
     },
@@ -729,7 +669,6 @@
           "votes": []
         }
       ],
-      "editedAt": 1590157608384,
       "createdAt": 1590425033780,
       "id": "VBLu4Uq"
     },
@@ -754,7 +693,6 @@
           "votes": []
         }
       ],
-      "editedAt": 1590157608384,
       "createdAt": 1590425173030,
       "id": "EteSm7X"
     },
@@ -779,7 +717,6 @@
           "votes": []
         }
       ],
-      "editedAt": 1590157608384,
       "createdAt": 1590425316156,
       "id": "o7ZD01N"
     },
@@ -804,7 +741,6 @@
           "votes": []
         }
       ],
-      "editedAt": 1590157608384,
       "createdAt": 1590425431604,
       "id": "Jr1iU3S"
     },
@@ -829,7 +765,6 @@
           "votes": []
         }
       ],
-      "editedAt": 1590157608384,
       "createdAt": 1590425440797,
       "id": "xb8qjEA"
     },
@@ -854,7 +789,6 @@
           "votes": []
         }
       ],
-      "editedAt": 1590157608384,
       "createdAt": 1590425444759,
       "id": "R6jCNYO"
     },
@@ -879,7 +813,6 @@
           "votes": []
         }
       ],
-      "editedAt": 1590157608384,
       "createdAt": 1590425477069,
       "id": "N4NlqAr"
     },
@@ -904,7 +837,6 @@
           "votes": []
         }
       ],
-      "editedAt": 1590157608384,
       "createdAt": 1590425961781,
       "id": "4flzay1"
     },
@@ -929,9 +861,106 @@
           "votes": []
         }
       ],
-      "editedAt": 1590157608384,
       "createdAt": 1590425963418,
       "id": "nb29kft"
+    },
+    {
+      "status": "active",
+      "title": "",
+      "description": "",
+      "creator": "",
+      "options": [
+        {
+          "value": 0,
+          "description": "Yes",
+          "votes": [
+            {
+              "voter": "0x3852c4498b329627dd47a587d0de63860313524e"
+            }
+          ]
+        },
+        {
+          "value": 1,
+          "description": "No",
+          "votes": []
+        }
+      ],
+      "createdAt": 1590505436982,
+      "id": "wVt3mTH"
+    },
+    {
+      "status": "active",
+      "title": "",
+      "description": "",
+      "creator": "",
+      "options": [
+        {
+          "value": 0,
+          "description": "Yes",
+          "votes": [
+            {
+              "voter": "0x3852c4498b329627dd47a587d0de63860313524e"
+            }
+          ]
+        },
+        {
+          "value": 1,
+          "description": "No",
+          "votes": []
+        }
+      ],
+      "createdAt": 1590505458760,
+      "id": "sH34x-f"
+    },
+    {
+      "status": "ended",
+      "title": "",
+      "description": "",
+      "creator": "",
+      "options": [
+        {
+          "value": 0,
+          "description": "Yes",
+          "votes": [
+            {
+              "voter": "0x3852c4498b329627dd47a587d0de63860313524e"
+            }
+          ]
+        },
+        {
+          "value": 1,
+          "description": "No",
+          "votes": []
+        }
+      ],
+      "endsAt": 1590505624000,
+      "createdAt": 1590505555980,
+      "id": "2L94tTB"
+    },
+    {
+      "status": "ended",
+      "title": "",
+      "description": "",
+      "creator": "",
+      "options": [
+        {
+          "value": 0,
+          "description": "Yes",
+          "votes": [
+            {
+              "voter": "0x3852c4498b329627dd47a587d0de63860313524e"
+            }
+          ]
+        },
+        {
+          "value": 1,
+          "description": "No",
+          "votes": []
+        }
+      ],
+      "endsAt": 1590505624000,
+      "createdAt": 1590510928085,
+      "id": "SxT_ALH"
     }
   ]
 }

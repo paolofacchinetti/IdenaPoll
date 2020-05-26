@@ -4,7 +4,7 @@
     <h1 class="title">Popular Polls</h1>
     <div class="grid-wrapper">
       <div *ngFor="let poll of popularPolls" class="popular-polls">
-        {{poll.id}}
+        {{poll.id + "  " + poll.totalVotes}}
       </div>
     </div>
   </div>
@@ -13,7 +13,7 @@
     <h1 class="title">Recent Polls</h1>
     <div class="grid-wrapper">
       <div *ngFor="let poll of recentPolls" class="recent-polls">
-        {{poll.id}}
+        {{poll.id + "  " + poll.createdAt.toDateString()}}
       </div>
     </div>
   </div>
