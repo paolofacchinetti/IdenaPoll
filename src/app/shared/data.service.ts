@@ -6,7 +6,7 @@ import {Router} from '@angular/router';
 import {State, getSession, getAuth, getActivePolls} from '@app-redux/index';
 import {HttpClient} from '@angular/common/http';
 import {AsyncSubject} from 'rxjs';
-import {setActivePolls, setAuth, setPopularPolls, setRecentPolls, setSession, setToken} from '@app-redux/core.actions';
+import {setActivePolls, setAuth, setRecentPolls, setSession, setToken} from '@app-redux/core.actions';
 
 @Injectable({
   providedIn: 'root'
@@ -109,27 +109,7 @@ export class DataService {
       }
       this.store.dispatch(setActivePolls({value: polls}));
     });
-    return polls;
   }
-
-  getPopularPolls() {
-    this.getActivePolls();
-    this.store.select(getActivePolls).subscribe((p) =>{
-      if(p.length>1) {
-        p.sort((a, b) => {
-          if (a.totalVotes > b.totalVotes) {
-            return 1;
-          } else if (a.totalVotes < b.totalVotes) {
-            return -1;
-          }
-          return 0;
-        });
-      }
-      p.splice(0,11);
-      this.store.dispatch(setPopularPolls({value: p}));
-    });
-  }
-
 
   votePoll(pollId: string, optionValue: number) {
     const CALL_URL = this.EXPRESS_URL + '/vote';

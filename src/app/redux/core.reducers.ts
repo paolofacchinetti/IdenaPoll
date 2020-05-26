@@ -6,16 +6,14 @@ import {PollBean} from '@app-shared/model/poll.bean';
 export interface State {
   activePolls: PollBean[];
   recentPolls: PollBean[];
-  popularPolls: PollBean[];
   session: SessionBean;
   token: string;
   auth: string;
 }
 
 const INITIAL_STATE: State = {
-  activePolls: null,
-  popularPolls: null,
-  recentPolls: null,
+  activePolls: [],
+  recentPolls: [],
   session: null,
   token: null,
   auth:''
@@ -37,10 +35,6 @@ const coreReducer = createReducer(
   on(coreActions.setRecentPolls, (state, payload) => ({
     ...state,
     recentPolls: payload.value,
-  })),
-  on(coreActions.setPopularPolls, (state, payload) => ({
-    ...state,
-    popularPolls: payload.value,
   })),
   on(coreActions.setAuth, (state, payload) => ({
     ...state,

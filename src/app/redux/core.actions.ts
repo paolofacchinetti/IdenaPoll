@@ -6,22 +6,14 @@ export const setSession = createAction(
   '[Core] setSession',
   props<{ value: SessionBean }>()
 );
-
-export const setPopularPolls = createAction(
-  '[Core] Set Popular Polls',
-  props<{ value: PollBean[] }>()
-)
-
 export const setActivePolls = createAction(
   '[Core] Set Active Polls',
   props<{ value: PollBean[] }>()
-)
-
+);
 export const setRecentPolls = createAction(
   '[Core] Set Recent Polls',
   props<{ value: PollBean[] }>()
-)
-
+);
 export const setToken = createAction(
   '[Core] setToken',
   props<{ value: string }>()

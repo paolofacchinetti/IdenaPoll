@@ -1,5 +1,6 @@
 import {ActionReducerMap, createSelector} from '@ngrx/store';
 import * as fromCore from '../redux/core.reducers';
+import {PollBean} from '@app-shared/model/poll.bean';
 
 export interface State {
   core: fromCore.State;
@@ -22,8 +23,18 @@ export const getActivePolls = createSelector(
 );
 
 export const getPopularPolls = createSelector(
-  getCore,
-  (state: fromCore.State) => state ? state.popularPolls : null
+  getActivePolls,
+  (activePolls) => {
+    let popularPolls: PollBean[];
+    popularPolls = activePolls;
+    if(popularPolls.length>1) {
+      popularPolls = popularPolls.slice().sort((a, b) =>
+        a.totalVotes - b.totalVotes
+      );
+      popularPolls.splice(10,popularPolls.length);
+    }
+    return popularPolls;
+  }
 );
 
 export const getRecentPolls = createSelector(
