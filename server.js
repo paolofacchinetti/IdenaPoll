@@ -127,14 +127,11 @@ app.route("/vote").post(async (req, res) => {
   res.set('Access-Control-Allow-Credentials', 'true');
   const body = JSON.parse(req.body);
   const {poll, option} = body;
-  const voter = req.cookies[IDENA_AUTH_COOKIE].address;
-  let headers = {
-    'Origin': 'localhost:8000',
-    'Content-Type': 'application/json'
-  };
-  let status= {status: "ok"};
-  const fe= await fetch("http://localhost/polls/" + poll, {method: 'GET'});
-  const polljs= await fe.json();
+  if (req.cookies[IDENA_AUTH_COOKIE].authenticated) {
+    const voter = req.cookies[IDENA_AUTH_COOKIE].address;
+    let status = {status: "ok"};
+    const fe = await fetch("http://localhost/polls/" + poll, {method: 'GET'});
+    const polljs = await fe.json();
     let found;
     for (o of polljs.options) {
       let search = o.votes.find((v) => {
@@ -151,28 +148,40 @@ app.route("/vote").post(async (req, res) => {
         'Origin': 'localhost:8000',
         'Content-Type': 'application/json'
       };
-      const fe= await fetch("http://localhost:80/polls/"+poll, {method: 'PATCH', body: JSON.stringify(polljs), headers: headers});
-      const jsonres= await fe.json();
+      const fe = await fetch("http://localhost:80/polls/" + poll, {
+        method: 'PATCH',
+        body: JSON.stringify(polljs),
+        headers: headers
+      });
+      const jsonres = await fe.json();
+    } else {
+      status = {status: "dup"}
     }
-    else {
-      status={status: "dup"}
-    }
-   return res.status(200).json(status);
+    return res.status(200).json(status);
+  } else
+    return res.sendStatus(403);
 });
 
 app.route("/create").post(async (req, res, next) => {
-  res.set('Access-Control-Allow-Origin', [req.header('origin')]);
-  res.append('Access-Control-Allow-Methods', 'POST');
-  res.append('Access-Control-Allow-Headers', 'Content-Type');
-  res.set('Access-Control-Allow-Credentials', 'true');
-  const poll = req.body;
-  let headers = {
-    'Origin': 'localhost:8000',
-    'Content-Type': 'application/json'
-  };
-  const fe= await fetch("http://localhost:80/polls", {method: 'POST', body: JSON.stringify(poll), headers: headers})
-  const json= await fe.json();
-  return res.status(200).json(json);
-
-});
+    res.set('Access-Control-Allow-Origin', [req.header('origin')]);
+    res.append('Access-Control-Allow-Methods', 'POST');
+    res.append('Access-Control-Allow-Headers', 'Content-Type');
+    res.set('Access-Control-Allow-Credentials', 'true');
+    const poll = req.body;
+    if (req.cookies[IDENA_AUTH_COOKIE] && req.cookies[IDENA_AUTH_COOKIE].authenticated) {
+      let headers = {
+        'Origin': 'localhost:8000',
+        'Content-Type': 'application/json'
+      };
+      const fe = await fetch("http://localhost:80/polls", {
+        method: 'POST',
+        body: JSON.stringify(poll),
+        headers: headers
+      });
+      const json = await fe.json();
+      return res.status(200).json(json);
+    } else
+      return res.sendStatus(403)
+  }
+);
 

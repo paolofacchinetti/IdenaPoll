@@ -1,4 +1,4 @@
-:host{
+:host {
   height: 100%;
   width: 100%;
   display: flex;
@@ -6,7 +6,8 @@
   align-content: center;
   align-items: center;
   flex-direction: row;
-  .home-container{
+
+  .home-container {
     overflow: hidden;
     position: absolute;
     width: 95%;
@@ -14,26 +15,38 @@
     border-radius: 25px;
     background-color: #fff;
     display: grid;
+    padding: 10px;
     grid-template-rows: auto auto;
     grid-template-columns: auto;
-    grid-row-gap: 5px;
+    grid-gap: 5px;
 
-    .popular-polls-wrapper, .recent-polls-wrapper{
-      display: grid;
-      grid-template-rows: auto;
-      grid-row-gap: 5px;
-      grid-auto-rows: auto;
+    .popular-polls-wrapper, .recent-polls-wrapper {
+      .title {
+        grid-row: 1;
+        display:block;
+        height: 80px;
+        margin: 0 20px;
+      }
 
-      .popular-polls, .recent-polls{
-        width: 250px;
-        display: inline-block;
+      .grid-wrapper {
+        width: 100%;
+        height: calc(100% - 80px);
+        display: inline-grid;
+        grid-template-rows: auto auto;
+        grid-gap: 5px;
+        grid-auto-flow: column;
+
+        .popular-polls, .recent-polls {
+          display: inline-block;
+          grid-row: auto;
+        }
       }
     }
-
   }
 
 
 }
+
 /*
 :host{
   height: 100%;

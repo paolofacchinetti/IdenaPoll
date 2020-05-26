@@ -1,14 +1,20 @@
 <div class="home-container">
 
-  <div class ='popular-polls-wrapper'>
-    <div *ngFor="let poll of popularPolls" class="popular-polls">
-      {{poll.id}}
+  <div class='popular-polls-wrapper'>
+    <h1 class="title">Popular Polls</h1>
+    <div class="grid-wrapper">
+      <div *ngFor="let poll of popularPolls" class="popular-polls">
+        {{poll.id}}
+      </div>
     </div>
   </div>
 
-  <div class ='recent-polls-wrapper'>
-    <div *ngFor="let poll of recentPolls" class="recent-polls">
-      {{poll.id}}
+  <div class='recent-polls-wrapper'>
+    <h1 class="title">Recent Polls</h1>
+    <div class="grid-wrapper">
+      <div *ngFor="let poll of recentPolls" class="recent-polls">
+        {{poll.id}}
+      </div>
     </div>
   </div>
 
