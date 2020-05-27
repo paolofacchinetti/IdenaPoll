@@ -1,4 +1,3 @@
-$grey: #f5f6f7;
 :host {
   height: 100%;
   width: 100%;
@@ -17,23 +16,24 @@ $grey: #f5f6f7;
     background-color: #fff;
     display: grid;
     padding: 10px;
-    grid-template-rows: auto auto;
+    grid-template-rows: 50% 50%;
     grid-template-columns: auto;
     grid-gap: 5px;
 
     .popular-polls-wrapper, .recent-polls-wrapper {
       .title {
+        padding: 15px;
         grid-row: 1;
-        display:block;
-        height: 80px;
-        margin: 0 20px;
+        margin: 0;
+        display: block;
       }
 
       .grid-wrapper {
         width: 100%;
         height: calc(100% - 80px);
+        position: relative;
         display: inline-grid;
-        grid-template-rows: auto auto;
+        grid-template-rows: 48% 48%;
         grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
         grid-gap: 15px;
         grid-auto-flow: column;
@@ -47,24 +47,29 @@ $grey: #f5f6f7;
 
           .poll-title {
             font-weight: bold;
+            padding: 10px 10px 2.5px;
+            height: calc(100% / 3 - 17.5px);
+            overflow: hidden;
           }
 
           .poll-desc {
             text-align: left;
-            padding: 20px 10px 5px;
+            padding: 2.5px 10px;
+            height: calc(100% / 2 - 17.5px);
+            overflow: hidden;
           }
 
           .poll-votes {
             font-weight: bold;
             position: absolute;
             bottom: 10px;
-            left: 5px;
+            left: 10px;
           }
 
           .poll-time {
             position: absolute;
             bottom: 10px;
-            right: 5px;
+            right: 10px;
           }
         }
       }

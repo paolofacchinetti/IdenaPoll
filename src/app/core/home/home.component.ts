@@ -24,11 +24,9 @@ export class HomeComponent implements OnInit, OnDestroy {
     this.ds.getRecentPolls();
     this.store.pipe(select(getRecentPolls), filter((f) => (f instanceof Array && f.length > 0) && f != null)).subscribe((p) => {
       this.recentPolls = p;
-      console.log(this.recentPolls);
     });
     this.store.pipe(select(getPopularPolls), filter((f) => (f instanceof Array && f.length > 0) && f != null)).subscribe((j) => {
       this.popularPolls = j;
-      console.log(this.popularPolls);
     });
   }
 
