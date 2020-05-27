@@ -2,13 +2,13 @@
   "polls": [
     {
       "status": "active",
-      "title": "",
-      "description": "",
+      "title": "What do you think of Pizza?",
+      "description": "Your opinion on the famous italian dish, specifically about pizza Margherita, made with tomatoes, mozzarella and some basil.",
       "creator": "",
       "options": [
         {
           "value": 0,
-          "description": "Yes",
+          "description": "I like it",
           "votes": [
             {
               "voter": "0x3852c4498b329627dd47a587d0de63860313524e"
@@ -17,7 +17,7 @@
         },
         {
           "value": 1,
-          "description": "No",
+          "description": "I don't like it",
           "votes": []
         }
       ],
