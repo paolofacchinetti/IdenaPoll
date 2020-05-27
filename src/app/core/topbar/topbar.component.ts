@@ -21,22 +21,19 @@ export class TopbarComponent implements OnInit {
       /**
        Conditions for being able to create a new poll
        */
-      if(this.session.status == StatusEnum.HUMAN || this.session.status == StatusEnum.VERIFIED){
+      if (this.session.status == StatusEnum.HUMAN || this.session.status == StatusEnum.VERIFIED) {
         this.canCreate = true;
-      }else{
+      } else {
         this.canCreate = false;
       }
     });
     this.dataService.getSessionOnlyCheck();
-
+    setTimeout(() => this.dataService.getSessionOnlyCheck(), 5000);
 
   }
 
   ngOnInit(): void {
+
   }
 
-
-  vote() {
-    this.dataService.votePoll('SDASD1', 0);
-  }
 }

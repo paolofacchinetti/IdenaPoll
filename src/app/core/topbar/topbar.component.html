@@ -4,9 +4,8 @@
     <img src="assets/img/idena-poll-logo.png">
   </a>
   <span fxFlex></span>
-  <!--  TODO age check-->
   <div class="create" *ngIf="session && canCreate">
-    <a class="create-btn" (click)="vote()" fxLayout="row">
+    <a class="create-btn" fxLayout="row" routerLink="/create">
       <span class="circle" fxLayout="row" aria-hidden="true">
         <span class="material-icons icon">add</span>
         <span class="button-text">New Poll</span>
@@ -24,7 +23,7 @@
       </div>
     </ng-container>
     <ng-template #signin>
-      <a class="btn btn-signin" href="/signin">
+      <a class="btn btn-signin" routerLink="/signin">
         <img alt="signin" src="assets/img/idena_white_small.svg" class="icon icon-logo-white-small " width="24px">
         <div class="spinner hidden">
           <div class="small progress">
