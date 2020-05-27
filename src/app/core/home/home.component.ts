@@ -22,10 +22,10 @@ export class HomeComponent implements OnInit, OnDestroy {
     }, 60000);
     this.ds.getActivePolls();
     this.ds.getRecentPolls();
-    this.store.pipe(select(getRecentPolls), filter((f) => (f instanceof Array && f.length > 0) && f != null)).subscribe((p) => {
+    this.store.pipe(select(getRecentPolls), filter((f) => f != null && (f instanceof Array && f.length > 0))).subscribe((p) => {
       this.recentPolls = p;
     });
-    this.store.pipe(select(getPopularPolls), filter((f) => (f instanceof Array && f.length > 0) && f != null)).subscribe((j) => {
+    this.store.pipe(select(getPopularPolls), filter((f) => f != null && (f instanceof Array && f.length > 0))).subscribe((j) => {
       this.popularPolls = j;
     });
   }

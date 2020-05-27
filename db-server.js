@@ -1,12 +1,12 @@
 const jsonServer = require('json-server');
 const server = jsonServer.create();
 const router = jsonServer.router('db.json');
-const middlewares = jsonServer.defaults(["noCors"]);
+const middlewares = jsonServer.defaults();
 const bodyParser = require('body-parser');
 server.use(bodyParser.json());
 server.use(middlewares);
 server.use((req, res, next) => {
-  if (isAuthorized(req) || req.method === 'GET') { // add your authorization logic here
+  if (isAuthorized(req) || (req.method === 'GET' && req.url.substring(0, 6) === "/polls")) { // add your authorization logic here
     if (req.method === 'POST') {
       req.body.createdAt = Date.now()
     }
@@ -21,5 +21,5 @@ server.listen(80, () => {
 });
 
 function isAuthorized(req) {
-  return req.headers.origin === "localhost:8000";
+  return req.headers.authorization === "0000000000000000";
 }

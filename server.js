@@ -16,7 +16,7 @@ const sessionCache = new NodeCache({
   checkperiod: 60,
 });
 const SESSION_COOKIE_TIME = 5 * 60 * 1000;
-const AUTH_COOKIE_TIME = 24 * 60 * 60 * 1000;
+const AUTH_COOKIE_TIME = 8 * 60 * 60 * 1000;
 app.use(bodyParser.json());
 app.use(bodyParser.text());
 app.use(cookieParser());
@@ -83,7 +83,7 @@ app.route('/auth/v1/authenticate').post((req, res) => {
     },
   })
 });
-app.route('/auth/v1/session').get((req, res) => {
+app.route('/auth/v1/session').get(async (req, res) => {
   res.set('Access-Control-Allow-Origin', [req.header('origin')]);
   res.append('Access-Control-Allow-Methods', 'GET,PUT,POST,DELETE');
   res.append('Access-Control-Allow-Headers', 'Content-Type');
@@ -112,11 +112,38 @@ app.route('/auth/v1/session').get((req, res) => {
             httpOnly: true,
           }
         );
+        let session = {
+          address: address,
+          expiresAt: new Date().getTime() + AUTH_COOKIE_TIME
+        };
+        let headers = {
+          'Authorization': '0000000000000000',
+          'Content-Type': 'application/json'
+        };
+        let fe = await fetch(`http://localhost/sessions?address=${address}`, {
+          method: 'GET',
+          headers: headers
+        });
+        const sessions = await fe.json();
+        if (sessions)
+          for (let session of sessions) {
+            fe = await fetch(`http://localhost:80/sessions/${session.id}`, {
+              method: 'DELETE',
+              headers: headers
+            });
+            const json = await fe.json();
+          }
+        fe = await fetch("http://localhost:80/sessions", {
+          method: 'POST',
+          body: JSON.stringify(session),
+          headers: headers
+        });
+
+        const json = await fe.json();
         return res.status(200).json({authenticated: true, address})
       }
     }
   }
-
   return res.sendStatus(403)
 });
 app.route("/vote").post(async (req, res) => {
@@ -126,49 +153,64 @@ app.route("/vote").post(async (req, res) => {
   res.set('Access-Control-Allow-Credentials', 'true');
   const body = JSON.parse(req.body);
   const {poll, option} = body;
-  if (req.cookies[IDENA_AUTH_COOKIE].authenticated) {
+  let headers = {
+    'Authorization': '0000000000000000',
+    'Content-Type': 'application/json'
+  };
+  if (req.cookies[IDENA_AUTH_COOKIE]) {
     const voter = req.cookies[IDENA_AUTH_COOKIE].address;
-    let status = {status: "ok"};
-    const fe = await fetch(`http://localhost/polls/${poll}`, {method: 'GET'});
-    const polljs = await fe.json();
-    let found;
-    for (o of polljs.options) {
-      let search = o.votes.find((v) => {
-        return v.voter === voter
-      });
-      found = search !== undefined ? search : found;
-    }
-    if (found == null) {
-      polljs.options[option].votes.push({
-        voter: voter
-      });
-      let headers = {
-        'Origin': 'localhost:8000',
-        'Content-Type': 'application/json'
-      };
-      const fe = await fetch(`http://localhost/polls/${poll}`, {
-        method: 'PATCH',
-        body: JSON.stringify(polljs),
-        headers: headers
-      });
-      const jsonres = await fe.json();
-    } else {
-      status = {status: "dup"}
-    }
-    return res.status(200).json(status);
+    let fe = await fetch(`http://localhost/sessions?address=${voter}`, {
+      method: 'GET',
+      headers: headers
+    });
+    const sessions = await fe.json();
+    if (sessions[0].expiresAt > new Date().getTime()) {
+      let status = {status: "ok"};
+      fe = await fetch(`http://localhost/polls/${poll}`, {method: 'GET'});
+      const polljs = await fe.json();
+      let found;
+      for (o of polljs.options) {
+        let search = o.votes.find((v) => {
+          return v.voter === voter
+        });
+        found = search !== undefined ? search : found;
+      }
+      if (found == null) {
+        polljs.options[option].votes.push({
+          voter: voter
+        });
+        const fe = await fetch(`http://localhost/polls/${poll}`, {
+          method: 'PATCH',
+          body: JSON.stringify(polljs),
+          headers: headers
+        });
+        const jsonres = await fe.json();
+      } else {
+        status = {status: "dup"}
+      }
+      return res.status(200).json(status);
+    } else
+      return res.sendStatus(403);
   } else
     return res.sendStatus(403);
 });
 
 app.route("/create").post(async (req, res, next) => {
-    res.set('Access-Control-Allow-Origin', [req.header('origin')]);
-    res.append('Access-Control-Allow-Methods', 'POST');
-    res.append('Access-Control-Allow-Headers', 'Content-Type');
-    res.set('Access-Control-Allow-Credentials', 'true');
-    const poll = req.body;
-    if (req.cookies[IDENA_AUTH_COOKIE] && req.cookies[IDENA_AUTH_COOKIE].authenticated) {
+  res.set('Access-Control-Allow-Origin', [req.header('origin')]);
+  res.append('Access-Control-Allow-Methods', 'POST');
+  res.append('Access-Control-Allow-Headers', 'Content-Type');
+  res.set('Access-Control-Allow-Credentials', 'true');
+  const poll = req.body;
+  if (req.cookies[IDENA_AUTH_COOKIE]) {
+    const voter = req.cookies[IDENA_AUTH_COOKIE].address;
+    let fe = await fetch(`http://localhost/sessions?address=${voter}`, {
+      method: 'GET',
+      headers: headers
+    });
+    const sessions = await fe.json();
+    if (sessions[0].expiresAt > new Date().getTime()) {
       let headers = {
-        'Origin': 'localhost:8000',
+        'Authorization': '0000000000000000',
         'Content-Type': 'application/json'
       };
       const fe = await fetch("http://localhost:80/polls", {
@@ -180,23 +222,37 @@ app.route("/create").post(async (req, res, next) => {
       return res.status(200).json(json);
     } else
       return res.sendStatus(403)
-  }
-);
+  } else
+    return res.sendStatus(403)
+});
 setInterval(async () => {
   let fe = await fetch(`http://localhost/polls?endsAt_lte=${new Date().getTime()}&status=active`, {method: 'GET'});
   const polljs = await fe.json();
   let headers = {
-    'Origin': 'localhost:8000',
+    'Authorization': '0000000000000000',
     'Content-Type': 'application/json'
   };
-  for (let poll of polljs) {
-    poll.status = "ended";
-    fe = await fetch(`http://localhost:80/polls/${poll.id}`, {
-      method: 'PATCH',
-      body: JSON.stringify(poll),
-      headers: headers
-    });
-    const json = await fe.json();
-  }
-
+  if (polljs)
+    for (let poll of polljs) {
+      poll.status = "ended";
+      fe = await fetch(`http://localhost:80/polls/${poll.id}`, {
+        method: 'PATCH',
+        body: JSON.stringify(poll),
+        headers: headers
+      });
+      const json = await fe.json();
+    }
+  fe = await fetch(`http://localhost/sessions?expiresAt_lte=${new Date().getTime()}`, {
+    method: 'GET',
+    headers: headers
+  });
+  const sessions = await fe.json();
+  if (sessions)
+    for (let session of sessions) {
+      fe = await fetch(`http://localhost:80/sessions/${session.id}`, {
+        method: 'DELETE',
+        headers: headers
+      });
+      const json = await fe.json();
+    }
 }, 60000);
