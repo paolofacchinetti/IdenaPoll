@@ -7,6 +7,7 @@ import {SharedModule} from '@app-shared/shared.module';
 import {HomeComponent} from './home/home.component';
 import {RouterModule} from '@angular/router';
 import {CreateComponent} from './create/create.component';
+import {ReactiveFormsModule} from '@angular/forms';
 
 
 @NgModule({
@@ -18,7 +19,8 @@ import {CreateComponent} from './create/create.component';
     CommonModule,
     FlexModule,
     SharedModule,
-    RouterModule
+    RouterModule,
+    ReactiveFormsModule
   ]
 })
 export class CoreModule { }
