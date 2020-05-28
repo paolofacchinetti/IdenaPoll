@@ -1,6 +1,6 @@
 <div class="create-container">
 
-  <form (ngSubmit)="onSubmit()" [formGroup]="pollForm" class="input-form">
+  <form (ngSubmit)="onSubmit(pollForm.value)" [formGroup]="pollForm" class="input-form">
 
     <div class="form-title">
       <input formControlName="title" id="title" placeholder="Title / Question" type="text">
