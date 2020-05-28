@@ -2,7 +2,6 @@ import {AfterViewInit, Component, OnInit} from '@angular/core';
 import {DataService} from '@app-shared/data.service';
 import {getAuth, getSession, getToken, State} from '@app-redux/index';
 import {select, Store} from '@ngrx/store';
-import {setSession} from "@app-redux/core.actions";
 import {filter} from 'rxjs/operators';
 
 
@@ -17,7 +16,7 @@ export class SigninComponent implements OnInit, AfterViewInit {
   SUCCESS = 'success';
   signinState: string;
   dnaUrl: string;
-  EXPRESS_URL = 'http://localhost:8000';
+  EXPRESS_URL = 'http://64.52.84.83:8000';
   token: string;
   count = 0;
 

@@ -24,7 +24,6 @@ export class SessionBean {
   }
 
   set address(value: string) {
-    console.log(this)
     this._address = value;
   }
 

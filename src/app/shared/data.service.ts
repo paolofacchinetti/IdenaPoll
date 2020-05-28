@@ -14,9 +14,9 @@ import {setActivePolls, setAuth, setRecentPolls, setSelectedPoll, setSession, se
  * Class responsible for the API Calls to retrieve data from the Backend
  */
 export class DataService {
-  private SERVER_URL = 'http://localhost:80';
+  private SERVER_URL = 'http://64.52.84.83:3000';
   private IDENA_URL = 'http://api.idena.io/api/';
-  private EXPRESS_URL = 'http://localhost:8000';
+  private EXPRESS_URL = 'http://64.52.84.83:8000';
   private session: SessionBean = null;
   private auth: string = '';
 
