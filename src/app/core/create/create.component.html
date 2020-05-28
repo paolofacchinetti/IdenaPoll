@@ -1,1 +1,27 @@
-<p>create works!</p>
+<div class="create-container">
+
+  <form [formGroup]="headerForm" class="input-form">
+
+    <div class="form-title">
+      <input formControlName="title" id="title" placeholder="Title / Question" type="text">
+    </div>
+
+    <div class="form-desc">
+      <input formControlName="description" id="description" placeholder="Description" type="text">
+    </div>
+
+  </form>
+
+  <form [formGroup]="optionForm">
+    <ng-container *ngFor="let option of optionForm.controls">
+      <input formControlName="opt" id="{{option}}" placeholder="{{option}}" type="text">
+    </ng-container>
+  </form>
+
+  <div class="option-form">
+
+  </div>
+
+  <!--todo button submit-->
+
+</div>

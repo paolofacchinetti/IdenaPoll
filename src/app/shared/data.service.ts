@@ -3,9 +3,8 @@ import {SessionBean} from '../shared/model/session.bean';
 import {PollBean} from './model/poll.bean';
 import {Store} from '@ngrx/store';
 import {Router} from '@angular/router';
-import {State, getSession, getAuth, getActivePolls} from '@app-redux/index';
+import {getSession, State} from '@app-redux/index';
 import {HttpClient} from '@angular/common/http';
-import {AsyncSubject} from 'rxjs';
 import {setActivePolls, setAuth, setRecentPolls, setSession, setToken} from '@app-redux/core.actions';
 
 @Injectable({
@@ -32,6 +31,7 @@ export class DataService {
     let session = new SessionBean();
     let CALL_URL = this.IDENA_URL + '/Identity/' + id;
     this.httpClient.get<any>(CALL_URL).subscribe((p) => {
+      console.log(p);
       const json = p['result'];
       session.address = json['address'];
       session.status = json['state'].toUpperCase();
