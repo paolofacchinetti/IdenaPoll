@@ -11,8 +11,9 @@ $green: #41B602;
   width: 100%;
   height: 80px;
 
-  .container {
+  .topbar-container {
     width: 100%;
+    max-width: 100%;
     height: 80px;
     box-shadow: 1px 3px 22px 13px rgba(0, 0, 0, 0.25);
     justify-content: center;

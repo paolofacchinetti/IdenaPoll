@@ -20,7 +20,15 @@
     </div>
   </form>
   <div class="option-form">
-
+    <h3>Poll Expiration Date</h3>
+    <dl-date-time-picker
+      [(ngModel)]="expirationDate"
+      maxView="year"
+      minView="minute"
+      minuteStep="5"
+      startView="day"
+    >
+    </dl-date-time-picker>
   </div>
 
   <!--todo button submit-->
