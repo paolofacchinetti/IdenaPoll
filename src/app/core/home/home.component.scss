@@ -22,6 +22,8 @@
 
     .popular-polls-wrapper, .recent-polls-wrapper {
       .title {
+        letter-spacing: 0.8px;
+        color: #53565c;
         padding: 15px;
         grid-row: 1;
         margin: 0;
@@ -31,6 +33,7 @@
       .grid-wrapper {
         width: 100%;
         height: calc(100% - 80px);
+        padding: 0px 10px;
         position: relative;
         display: inline-grid;
         grid-template-rows: 48% 48%;
