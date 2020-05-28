@@ -19,10 +19,7 @@ export class CreateComponent implements OnInit {
       title: [''],
       description: [''],
       settings: this.fb.group({
-        street: [''],
-        city: [''],
-        state: [''],
-        zip: ['']
+        // ADD SETTINGS
       }),
       options: this.fb.array([
         this.fb.control('', Validators.required),
