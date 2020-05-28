@@ -1,5 +1,5 @@
 import {Component, OnInit} from '@angular/core';
-import {FormBuilder} from '@angular/forms';
+import {FormArray, FormBuilder, Validators} from '@angular/forms';
 import {Store} from '@ngrx/store';
 import {State} from '@app-redux/index';
 
@@ -9,20 +9,31 @@ import {State} from '@app-redux/index';
   styleUrls: ['./create.component.scss']
 })
 export class CreateComponent implements OnInit {
-  headerForm;
-  optionForm;
-  settingForm;
+  pollForm;
 
-  constructor(private formBuilder: FormBuilder, protected store: Store<State>) {
-    this.headerForm = this.formBuilder.group({
-      title: ['Title / Question'],
-      description: ['Description']
+  constructor(private fb: FormBuilder, protected store: Store<State>) {
+    this.pollForm = this.fb.group({
+      title: [''],
+      description: [''],
+      settings: this.fb.group({
+        street: [''],
+        city: [''],
+        state: [''],
+        zip: ['']
+      }),
+      options: this.fb.array([
+        this.fb.control('', Validators.required),
+        this.fb.control('')
+      ])
     });
-    this.optionForm = this.formBuilder.group({
-      option_0: ['Option 1'],
-      option_1: ['Option 2']
-    });
-    console.log(this.optionForm);
+  }
+
+  get options() {
+    return this.pollForm.get('options') as FormArray;
+  }
+
+  addOption() {
+    this.options.push(this.fb.control(''));
   }
 
   ngOnInit(): void {

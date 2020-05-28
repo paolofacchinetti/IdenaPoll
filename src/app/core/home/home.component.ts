@@ -13,13 +13,8 @@ import {filter} from 'rxjs/operators';
 export class HomeComponent implements OnInit, OnDestroy {
   recentPolls: PollBean[];
   popularPolls: PollBean[];
-  private interval;
 
   constructor(protected store: Store<State>, protected ds: DataService) {
-    this.interval = setInterval(() => {
-      this.ds.getActivePolls();
-      this.ds.getRecentPolls();
-    }, 60000);
     this.ds.getActivePolls();
     this.ds.getRecentPolls();
     this.store.pipe(select(getRecentPolls), filter((f) => f != null && (f instanceof Array && f.length > 0))).subscribe((p) => {
@@ -35,7 +30,6 @@ export class HomeComponent implements OnInit, OnDestroy {
   }
 
   ngOnDestroy(): void {
-    clearInterval(this.interval);
   }
 
 }

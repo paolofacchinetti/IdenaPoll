@@ -1,23 +1,23 @@
 <div class="create-container">
 
-  <form [formGroup]="headerForm" class="input-form">
+  <form (ngSubmit)="onSubmit()" [formGroup]="pollForm" class="input-form">
 
     <div class="form-title">
       <input formControlName="title" id="title" placeholder="Title / Question" type="text">
     </div>
 
     <div class="form-desc">
-      <input formControlName="description" id="description" placeholder="Description" type="text">
+      <textarea formControlName="description" id="description" placeholder="Description"></textarea>
     </div>
+    <div formArrayName="options">
+      <h3>Options</h3>
+      <button (click)="addOption()">Add options</button>
 
+      <div *ngFor="let option of options.controls; let i=index">
+        <input [formControlName]="i" placeholder="Option {{i+1}}" type="text">
+      </div>
+    </div>
   </form>
-
-  <form [formGroup]="optionForm">
-    <ng-container *ngFor="let option of optionForm.controls">
-      <input formControlName="opt" id="{{option}}" placeholder="{{option}}" type="text">
-    </ng-container>
-  </form>
-
   <div class="option-form">
 
   </div>

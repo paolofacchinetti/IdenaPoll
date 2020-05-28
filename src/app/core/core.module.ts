@@ -8,10 +8,11 @@ import {HomeComponent} from './home/home.component';
 import {RouterModule} from '@angular/router';
 import {CreateComponent} from './create/create.component';
 import {ReactiveFormsModule} from '@angular/forms';
+import {PollComponent} from './poll/poll.component';
 
 
 @NgModule({
-  declarations: [TopbarComponent, SigninComponent, HomeComponent, CreateComponent],
+  declarations: [TopbarComponent, SigninComponent, HomeComponent, CreateComponent, PollComponent],
   exports: [
     TopbarComponent
   ],

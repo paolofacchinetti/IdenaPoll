@@ -79,7 +79,6 @@ export class DataService {
       this.store.dispatch(setToken({value: token}));
     });
   }
-
   getPollById(id: string): PollBean {
     let poll: PollBean;
     const CALL_URL = this.SERVER_URL + '/polls/' + id;

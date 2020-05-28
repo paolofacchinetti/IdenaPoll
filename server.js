@@ -255,4 +255,4 @@ setInterval(async () => {
       });
       const json = await fe.json();
     }
-}, 60000);
+}, 1800000);
