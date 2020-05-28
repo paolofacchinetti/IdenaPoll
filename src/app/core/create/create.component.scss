@@ -1,7 +1,14 @@
 :host {
+  width: 95%;
+  height: calc(95% - 80px);
 
-  .input-form {
+  .create-container {
+    width: 100%;
+
+    .setting-form {
+      display: flex;
+      width: 100%;
+    }
 
   }
-
 }

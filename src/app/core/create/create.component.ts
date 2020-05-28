@@ -2,6 +2,7 @@ import {Component, OnInit} from '@angular/core';
 import {FormArray, FormBuilder, Validators} from '@angular/forms';
 import {Store} from '@ngrx/store';
 import {State} from '@app-redux/index';
+import * as moment from 'moment';
 
 @Component({
   selector: 'app-create',
@@ -10,16 +11,15 @@ import {State} from '@app-redux/index';
 })
 export class CreateComponent implements OnInit {
   pollForm;
+  expirationDate;
 
   constructor(private fb: FormBuilder, protected store: Store<State>) {
+    this.expirationDate = moment().add(7, 'days').toDate();
     this.pollForm = this.fb.group({
       title: [''],
       description: [''],
       settings: this.fb.group({
-        street: [''],
-        city: [''],
-        state: [''],
-        zip: ['']
+        // ADD SETTINGS
       }),
       options: this.fb.array([
         this.fb.control('', Validators.required),

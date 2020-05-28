@@ -1,5 +1,5 @@
 <div class="create-container">
-
+  <h1>Create a new Poll</h1>
   <form (ngSubmit)="onSubmit(pollForm.value)" [formGroup]="pollForm" class="input-form">
 
     <div class="form-title">
@@ -18,11 +18,23 @@
       </div>
       <input (click)="addOption()" placeholder="Add options">
     </div>
+
+    <div class="setting-form" formGroupName="settings">
+
+    </div>
+
+
   </form>
-  <div class="option-form">
 
-  </div>
-
+  <h3>Poll Expiration Date</h3>
+  <dl-date-time-picker
+    [(ngModel)]="expirationDate"
+    maxView="year"
+    minView="minute"
+    minuteStep="5"
+    startView="day"
+  >
+  </dl-date-time-picker>
   <!--todo button submit-->
 
 </div>
