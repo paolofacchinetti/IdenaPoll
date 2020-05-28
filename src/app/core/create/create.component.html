@@ -11,11 +11,12 @@
     </div>
     <div formArrayName="options">
       <h3>Options</h3>
-      <button (click)="addOption()">Add options</button>
+
 
       <div *ngFor="let option of options.controls; let i=index">
-        <input [formControlName]="i" placeholder="Option {{i+1}}" type="text">
+        <input [formControlName]="i" id="option-{{i+1}}" placeholder="Option {{i+1}}" type="text">
       </div>
+      <input (click)="addOption()" placeholder="Add options">
     </div>
   </form>
   <div class="option-form">

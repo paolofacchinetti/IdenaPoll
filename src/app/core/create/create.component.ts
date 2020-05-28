@@ -34,6 +34,7 @@ export class CreateComponent implements OnInit {
 
   addOption() {
     this.options.push(this.fb.control(''));
+    setTimeout(() => document.getElementById("option-" + this.options.controls.length).focus(), 0)
   }
 
   ngOnInit(): void {
