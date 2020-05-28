@@ -50,3 +50,8 @@ export const getAuth = createSelector(
   getCore,
   (state: fromCore.State) => state ? state.auth : ''
 );
+
+export const getSelectedPoll = createSelector(
+  getCore,
+  (state: fromCore.State) => state ? state.selectedPoll : null
+);

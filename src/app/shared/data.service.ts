@@ -5,7 +5,7 @@ import {Store} from '@ngrx/store';
 import {Router} from '@angular/router';
 import {getSession, State} from '@app-redux/index';
 import {HttpClient} from '@angular/common/http';
-import {setActivePolls, setAuth, setRecentPolls, setSession, setToken} from '@app-redux/core.actions';
+import {setActivePolls, setAuth, setRecentPolls, setSelectedPoll, setSession, setToken} from '@app-redux/core.actions';
 
 @Injectable({
   providedIn: 'root'
@@ -28,18 +28,20 @@ export class DataService {
 
   getIdentityData(id: string) {
     console.log(id);
-    let session = new SessionBean();
+    let age;
+    let address;
+    let status;
     let CALL_URL = this.IDENA_URL + '/Identity/' + id;
     this.httpClient.get<any>(CALL_URL).subscribe((p) => {
       console.log(p);
       const json = p['result'];
-      session.address = json['address'];
-      session.status = json['state'].toUpperCase();
+      address = json['address'];
+      status = json['state'].toUpperCase();
     });
     CALL_URL += '/age';
     this.httpClient.get<any>(CALL_URL).subscribe((p) => {
-      session.age = p['result'];
-      this.store.dispatch(setSession({value: session}));
+      age = p['result'];
+      this.store.dispatch(setSession({value: new SessionBean(parseInt(age), address, status)}));
     });
   }
 
@@ -79,13 +81,14 @@ export class DataService {
       this.store.dispatch(setToken({value: token}));
     });
   }
-  getPollById(id: string): PollBean {
+
+  getPollById(id: string) {
     let poll: PollBean;
     const CALL_URL = this.SERVER_URL + '/polls/' + id;
     this.httpClient.get<any>(CALL_URL).subscribe((p) => {
       poll = new PollBean(p);
+      this.store.dispatch(setSelectedPoll({value: poll}))
     });
-    return poll;
   }
 
   getRecentPolls() {

@@ -14,6 +14,10 @@ export const setRecentPolls = createAction(
   '[Core] Set Recent Polls',
   props<{ value: PollBean[] }>()
 );
+export const setSelectedPoll = createAction(
+  '[Core] Set Seleted Poll',
+  props<{ value: PollBean }>()
+);
 export const setToken = createAction(
   '[Core] setToken',
   props<{ value: string }>()
