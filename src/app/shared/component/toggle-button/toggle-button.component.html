@@ -1,0 +1,27 @@
+<div [formGroup]="parentFormGroup">
+  <mat-button-toggle-group #togroup='matButtonToggleGroup'
+                           (change)="onChangeEvent()"
+                           *ngIf="buttonToggleListItem && checkActiveButton().length > 1"
+                           [attr.aria-label]="toggleGroupAriaLabel"
+                           [formControlName]="parentControlName"
+                           [id]="id"
+                           color="primary">
+    <ng-container *ngIf="buttonToggleListItem">
+      <ng-container *ngFor="let item of buttonToggleListItem; trackBy:trackByLabel">
+        <mat-button-toggle (click)="selectionEvent(item)"
+                           *ngIf="item.isButtonVisible || item.isButtonVisible === undefined"
+                           [disableRipple]="item.canDisableRipple"
+                           [disabled]="item.disabled"
+                           [id]="id + '-' + item.value"
+                           [value]="item.value"
+                           tabindex="-1">
+          {{item.label}}
+          <ng-container *ngIf="item.additionalLabelVisible">{{item.additionalLabel}}</ng-container>
+        </mat-button-toggle>
+      </ng-container>
+    </ng-container>
+  </mat-button-toggle-group>
+  <ng-container *ngIf="buttonToggleListItem && checkActiveButton().length === 1">
+    <p>{{checkActiveButton()[0].label}}</p>
+  </ng-container>
+</div>

@@ -1,0 +1,167 @@
+@import "../../../assets/sass/variables";
+@import "../../../assets/sass/mixins";
+
+@mixin mix-app-theme() {
+  .mat-checkbox-layout {
+    margin-left: 2px;
+  }
+  .mat-checkbox-checked.mat-accent .mat-checkbox-background,
+  .mat-checkbox-indeterminate.mat-accent .mat-checkbox-background {
+    background-color: $primary-colors-second-100-lightblue;
+  }
+
+  mat-checkbox.app-checkbox.mat-checkbox {
+    .mat-checkbox-input.cdk-visually-hidden.cdk-focused.cdk-program-focused ~ .mat-checkbox-frame,
+    .mat-checkbox-input.cdk-visually-hidden.cdk-focused.cdk-keyboard-focused ~ .mat-checkbox-frame {
+      border: $border-size-medium solid $primary-colors-second-100-lightblue;
+      box-shadow: 0 0 $box-shadow-offset $box-shadow-offset $primary-colors-second-50-lightblue;
+
+    }
+  }
+  mat-checkbox.app-checkbox.mat-checkbox.mat-checkbox-checked {
+    .mat-checkbox-input.cdk-visually-hidden ~ .mat-checkbox-frame,
+    .mat-checkbox-input.cdk-visually-hidden ~ .mat-checkbox-frame {
+      border: $border-size-medium solid $primary-colors-second-100-lightblue;
+      box-shadow: none;
+    }
+
+    .mat-checkbox-input.cdk-visually-hidden.cdk-focused.cdk-program-focused ~ .mat-checkbox-frame,
+    .mat-checkbox-input.cdk-visually-hidden.cdk-focused.cdk-keyboard-focused ~ .mat-checkbox-frame {
+      border: $border-size-medium solid $neutral-colors-backgrounds-white;
+      box-shadow: 0 0 $box-shadow-offset $box-shadow-offset $primary-colors-second-50-lightblue;
+
+    }
+
+    .mat-checkbox-background {
+      background-color: $primary-colors-second-100-lightblue;
+    }
+  }
+
+  mat-checkbox.app-checkbox.mat-checkbox:hover {
+    .mat-checkbox-layout {
+      .mat-checkbox-inner-container {
+        .mat-checkbox-frame {
+          border-color: $primary-colors-second-100-lightblue;
+        }
+      }
+    }
+  }
+  .mat-checkbox-background {
+    background: $neutral-colors-backgrounds-white;
+    margin-top: 1px;
+    margin-bottom: 2px;
+    margin-left: 1px;
+    margin-right: 2px;
+
+  }
+
+  mat-checkbox.app-checkbox.mat-checkbox.mat-checkbox-disabled, mat-checkbox.app-checkbox.mat-checkbox.mat-checkbox-disabled:hover {
+    .mat-checkbox-layout {
+      .mat-checkbox-inner-container {
+        .mat-checkbox-frame {
+          border-color: $paperclip-icon-color;
+        }
+      }
+    }
+  }
+  mat-checkbox.app-checkbox.mat-checkbox.mat-checkbox-checked:active {
+    .mat-checkbox-layout {
+      .mat-checkbox-inner-container {
+        .mat-checkbox-background {
+          background: $primary-colors-second-100-lightblue;
+        }
+
+        .mat-checkbox-frame {
+          color: $primary-colors-second-100-lightblue;
+        }
+      }
+    }
+  }
+
+  .mat-ripple-element {
+    display: none;
+  }
+  .mat-checkbox-ripple.mat-ripple {
+    display: none;
+  }
+  mat-checkbox .mat-checkbox-frame {
+    width: 16px;
+    height: 16px;
+  }
+
+  mat-checkbox .mat-checkbox-inner-container {
+    width: 17px;
+    height: 17px;
+  }
+
+  mat-checkbox span {
+    font-size: $headings-paragraph;
+    font-weight: $font-weight-light;
+    font-style: normal;
+    font-stretch: normal;
+    line-height: 1.71;
+    letter-spacing: normal;
+    color: $neutral-colors-text-grey;
+  }
+
+  .mat-form-field-appearance-outline .mat-form-field-wrapper {
+    margin: 0px 2px !important;
+    padding-bottom: $input-hint-height;
+  }
+
+  mat-form-field.mat-form-field {
+    &.mat-focused {
+      .mat-form-field-label {
+        font-weight: $font-weight-semibold;
+      }
+    }
+
+    .mat-form-field-label, .mat-form-field-label.mat-focused,
+    .mat-form-field.mat-focused.matform-field-should-float {
+      font-weight: $font-weight-semibold;
+    }
+  }
+
+  .mat-form-field-label {
+    font-weight: $font-weight-semibold;
+    margin-top: -5px !important;
+  }
+
+  .mat-form-field-appearance-outline.mat-form-field-can-float.mat-form-field-should-float .mat-form-field-label, .mat-form-field-appearance-outline.mat-form-field-can-float .mat-input-server:focus + .mat-form-field-label-wrapper .mat-form-field-label {
+    font-weight: $font-weight-semibold !important;
+  }
+
+  .mat-form-field-appearance-outline {
+    &.mat-form-field-can-float {
+      &.mat-form-field-should-float .mat-form-field-label,
+      .mat-input-server:focus + .mat-form-field-label-wrapper .mat-form-field-label {
+        font-weight: $font-weight-semibold !important;
+        color: $primary-colors-first-100;
+      }
+    }
+  }
+
+  .mat-focused.ng-invalid.ng-dirty.mat-form-field-appearance-outline {
+    &.mat-form-field-can-float {
+      &.mat-form-field-should-float .mat-form-field-label,
+      .mat-input-server:focus + .mat-form-field-label-wrapper .mat-form-field-label {
+        font-weight: $font-weight-semibold !important;
+        color: $primary-colors-second-100-red;
+      }
+    }
+  }
+
+
+  @include css-for-ie {
+    .mat-form-field-appearance-outline .mat-form-field-wrapper {
+      margin: 0px !important;
+    }
+
+    .mat-form-field-flex {
+      align-items: center !important;
+    }
+
+  }
+}
+
+@include mix-app-theme();

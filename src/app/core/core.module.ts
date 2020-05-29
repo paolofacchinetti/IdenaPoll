@@ -8,7 +8,6 @@ import {HomeComponent} from './home/home.component';
 import {RouterModule} from '@angular/router';
 import {CreateComponent} from './create/create.component';
 import {FormsModule, ReactiveFormsModule} from '@angular/forms';
-import {DlDateTimeDateModule, DlDateTimePickerModule} from 'angular-bootstrap-datetimepicker';
 import {PollComponent} from './poll/poll.component';
 
 
@@ -23,8 +22,6 @@ import {PollComponent} from './poll/poll.component';
     SharedModule,
     RouterModule,
     ReactiveFormsModule,
-    DlDateTimeDateModule,  // <--- Determines the data type of the model
-    DlDateTimePickerModule,
     FormsModule
   ],
   providers: [FormsModule]

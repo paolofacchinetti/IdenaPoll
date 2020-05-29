@@ -1,0 +1,55 @@
+@import "../../../../assets/sass/variables";
+@import "../../../../assets/sass/mixins";
+
+$status-label-margin: 8px;
+.circle-status-active {
+  .circle-status-container {
+    .circle {
+      background-color: $extra-colors-green;
+    }
+  }
+}
+
+.circle-status-error {
+  .circle-status-container {
+    .circle {
+      background-color: $extra-colors-red;
+    }
+  }
+}
+
+.circle-status-warning {
+  .circle-status-container {
+    .circle {
+      background-color: $extra-colors-yellow;
+    }
+  }
+}
+
+.circle-status-null {
+  .circle-status-container {
+
+    .circle {
+      background-color: $extra-colors-grey;
+    }
+  }
+}
+
+.circle-status-container {
+  display: inline-flex;
+  align-items: center;
+  justify-content: flex-start;
+  margin: $grid-row-gap-xs 0;
+}
+
+@include circle($circle-size, $circle-radius);
+
+.status-label {
+  margin-left: $status-label-margin;
+  margin-top: 0;
+  color: $primary-colors-second-100-dark;
+}
+
+
+
+

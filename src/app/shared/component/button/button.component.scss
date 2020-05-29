@@ -1,0 +1,358 @@
+@import "../../../../assets/sass/variables";
+
+.icon-on-left {
+  .label-container {
+    .icon {
+      order: 1;
+      margin-right: $grid-row-gap-s;
+    }
+
+    .button-label {
+      order: 2;
+    }
+  }
+}
+
+.icon-on-right {
+  .label-container {
+
+    .button-label {
+      order: 1;
+    }
+
+    .icon {
+      order: 2;
+      margin-left: $grid-row-gap-s;
+    }
+  }
+}
+
+
+.primary-button-blue,
+.primary-button-red,
+.secondary-button-blue,
+.secondary-button-red,
+.secondary-button-transparent,
+.ghost-button-blue,
+.ghost-button-red {
+  .mat-button {
+    border-radius: $border-radius-medium;
+    margin: 0 2px;
+    height: 48px;
+
+    &:disabled {
+      opacity: $opacity-30;
+    }
+
+    .label-container {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+
+      .icon {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+      }
+
+      span.button-label {
+        font-weight: $font-weight-semibold;
+        font-size: $headings-paragraph;
+        line-height: 1.9;
+      }
+    }
+  }
+
+  &.pospo-button-small {
+    .mat-button {
+      height: 40px;
+    }
+  }
+}
+
+.primary-button-blue {
+  .mat-button {
+    background-color: $primary-colors-second-100-lightblue;
+    border: $border-size-medium solid transparent;
+    color: #ffffff;
+
+    &:not(:disabled) {
+      &:hover {
+        background: $primary-colors-second-70-lightblue radial-gradient(circle, transparent 1%, $primary-colors-second-70-lightblue 1%) center/15000%;
+      }
+
+      &:active {
+        transition: background 0s;
+        background-color: $primary-colors-second-lightblue-30-black;
+      }
+
+      &:not(:active):focus {
+        background-color: $primary-colors-second-70-lightblue;
+        border: $border-size-medium solid $neutral-colors-backgrounds-white;
+        box-shadow: 0 0 $box-shadow-offset $box-shadow-offset $primary-colors-second-50-lightblue;
+      }
+    }
+
+    .label-container {
+      i,
+      mat-icon {
+        color: $neutral-colors-backgrounds-white;
+      }
+
+      span.button-label {
+        color: $neutral-colors-backgrounds-white;
+      }
+    }
+  }
+}
+
+.primary-button-red {
+  .mat-button {
+    color: $neutral-colors-backgrounds-white;
+    border: $border-size-medium solid transparent;
+    background-color: $primary-colors-second-100-red;
+
+    &:not(:disabled) {
+      &:hover {
+        background-color: $primary-colors-second-70-red;
+      }
+
+      &:active {
+        background-color: $primary-colors-second-red-10-black;
+        background-size: 100%;
+        transition: background 0s;
+      }
+
+      &:not(:active):focus {
+        background-color: $primary-colors-second-70-red;
+        border: $border-size-medium solid $neutral-colors-backgrounds-white;
+        box-shadow: $primary-colors-second-50-red 0 0 $box-shadow-offset $box-shadow-offset;
+      }
+    }
+
+    .label-container {
+      i,
+      mat-icon {
+        color: $neutral-colors-backgrounds-white;
+      }
+
+      span.button-label {
+        color: $neutral-colors-backgrounds-white;
+      }
+    }
+  }
+}
+
+.secondary-button-blue {
+  .mat-button {
+    border: $border-size-medium solid $primary-colors-second-100-lightblue;
+    background-color: $neutral-colors-backgrounds-white;
+    color: $primary-colors-second-100-lightblue;
+
+    &:not(:disabled) {
+      &:hover {
+        background-color: $primary-colors-second-10-lightblue;
+      }
+
+      &:active {
+        border: $border-size-medium solid $primary-colors-second-100-lightblue;
+        background-color: $primary-colors-second-30-lightblue;
+        background-size: 100%;
+        transition: background 0s;
+      }
+
+      &:not(:active):focus {
+        background-color: $primary-colors-second-10-lightblue;
+        border-width: $border-size-medium;
+        box-shadow: 0 0 $box-shadow-offset $box-shadow-offset $primary-colors-second-50-lightblue;
+      }
+    }
+
+    .label-container {
+      i,
+      mat-icon {
+        color: $primary-colors-second-100-lightblue;
+      }
+
+      span.button-label {
+        color: $primary-colors-second-100-lightblue;
+      }
+    }
+  }
+}
+
+.secondary-button-red {
+  .mat-button {
+    border: $border-size-medium solid $primary-colors-second-100-red;
+    background-color: $neutral-colors-backgrounds-white;
+    color: $primary-colors-second-100-red;
+
+    &:not(:disabled) {
+      &:hover {
+        background-color: $primary-colors-second-10-red;
+      }
+
+      &:active {
+        border: $border-size-medium solid $primary-colors-second-100-red;
+        background-color: $primary-colors-second-30-red;
+        background-size: 100%;
+        transition: background 0s;
+      }
+
+      &:not(:active):focus {
+        background-color: $primary-colors-second-10-red;
+        box-shadow: $primary-colors-second-50-red 0 0 $box-shadow-offset $box-shadow-offset;
+      }
+    }
+
+    .label-container {
+      i,
+      mat-icon {
+        color: $primary-colors-second-100-red;
+      }
+
+      img {
+        margin-left: $size-10;
+      }
+
+      span.button-label {
+        color: $primary-colors-second-100-red;
+        font-weight: $font-weight-semibold;
+        font-size: $headings-paragraph;
+      }
+    }
+  }
+}
+
+.ghost-button-blue {
+  .mat-button {
+    background-color: $neutral-colors-backgrounds-white;
+    border: none;
+    color: $primary-colors-second-100-lightblue;
+
+    &:not(:disabled) {
+      &:hover {
+        background-color: $primary-colors-second-10-lightblue;
+
+        .label-container span.button-label {
+          color: $neutral-colors-text-grey;
+        }
+      }
+
+      &:active {
+        background-color: $primary-colors-second-30-lightblue;
+        background-size: 100%;
+        transition: background 0s;
+
+        .label-container span.button-label {
+          color: $neutral-colors-text-grey;
+        }
+      }
+
+      &:not(:active):focus {
+        background-color: $primary-colors-second-10-lightblue;
+        box-shadow: 0 0 $box-shadow-offset $box-shadow-offset $primary-colors-second-50-lightblue;
+
+        .label-container span.button-label {
+          color: $neutral-colors-text-grey;
+        }
+      }
+    }
+
+    .label-container {
+      i,
+      mat-icon {
+        color: $primary-colors-second-100-lightblue;
+        margin-left: $size-10;
+      }
+
+      img {
+        margin-left: $size-10;
+      }
+
+      span.button-label {
+        color: $neutral-colors-text-middle-grey;
+        font-size: $headings-paragraph;
+      }
+    }
+  }
+}
+
+.ghost-button-red {
+  .mat-button {
+    background-color: $neutral-colors-backgrounds-white;
+    border: none;
+    color: $primary-colors-second-100-red;
+
+    &:not(:disabled) {
+      &:hover {
+        background-color: $primary-colors-second-10-red;
+
+        .label-container span.button-label {
+          color: $neutral-colors-text-grey;
+        }
+      }
+
+      &:active {
+        background-color: $primary-colors-second-30-red;
+        background-size: 100%;
+        transition: background 0s;
+
+        .label-container span.button-label {
+          color: $neutral-colors-text-grey;
+        }
+      }
+
+      &:not(:active):focus {
+        background-color: $primary-colors-second-10-red;
+        box-shadow: 0 0 $box-shadow-offset $box-shadow-offset $primary-colors-second-50-red;
+
+        .label-container span.button-label {
+          color: $neutral-colors-text-grey;
+        }
+      }
+    }
+
+    .label-container {
+      i,
+      mat-icon {
+        color: $primary-colors-second-100-red;
+        margin-left: $size-10;
+      }
+
+      img {
+        margin-left: $size-10;
+      }
+
+      span.button-label {
+        color: $neutral-colors-text-middle-grey;
+        font-size: $headings-paragraph;
+      }
+    }
+  }
+}
+
+.secondary-button-transparent {
+  .mat-button {
+    border: $border-size-medium solid $primary-colors-second-100-lightblue;
+    background-color: transparent;
+    color: $primary-colors-second-100-lightblue;
+
+    &:not(:active):focus {
+      border-width: $border-size-medium;
+      box-shadow: $primary-colors-second-50-lightblue 0 0 $box-shadow-offset $box-shadow-offset;
+    }
+
+    .label-container {
+      i,
+      mat-icon {
+        color: $primary-colors-second-100-lightblue;
+      }
+
+      span.button-label {
+        color: $primary-colors-second-100-lightblue;
+      }
+    }
+  }
+}
+

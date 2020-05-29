@@ -1,0 +1,159 @@
+@import "variables";
+@import "mixins";
+@import '~@angular/material/theming';
+// Define a custom typography config that overrides the font-family as well as the
+// typography levels
+@include mat-core();
+$custom-typography: mat-typography-config(// $font-family: 'Signika, sans-serif',
+  $font-family: 'Titillium Web, sans-serif',
+  $headline: mat-typography-level($headings-title, $heading-title-large, $font-weight-semibold),
+  $title: mat-typography-level($headings-subtitle, $headings-title, $font-weight-semibold),
+  $subheading-2: mat-typography-level($subheading-min, $subheading-max, $font-weight-semibold),
+  $subheading-1: mat-typography-level($subheading-min, $subheading-max, $font-weight-medium),
+  $body-1: mat-typography-level($headings-paragraph, $headings-subtitle, $font-weight-light),
+  $body-2: mat-typography-level($subheading-min, $headings-subtitle, $font-weight-500),
+  $caption: mat-typography-level($headings-small, $subheading-min, $font-weight-light),
+  $button: mat-typography-level($subheading-min, $button-font-size-large, $font-weight-500));
+@include angular-material-typography($custom-typography);
+
+//BASE CLASS WITHOUT COLOR, FONT WEIGHT AND TEXT ALIGNMENT VARIABLES
+
+// TODO DOPO CHE SARANNO SOSTITUITE TUTTE ME CLASSI MAT TYPOGRAPHY ELIMINARE LA CASISTICA
+
+h1,
+.mat-h1, .mat-headline, .mat-typography h1 {
+  @include typography-h1();
+  font-weight: $font-weight-semibold;
+  color: $primary-colors-first-100;
+  margin: 0;
+}
+
+h2,
+.app-subtitle h2,
+.mat-typography .app-subtitle,
+.app-subtitle,
+.mat-h2, .mat-title, .mat-typography h2 {
+
+  @include typography-h2();
+  @include set-typography-variants($primary-colors-first-100, $font-weight-semibold);
+  margin: 0;
+
+  &-light {
+    font-weight: $font-weight-light;
+  }
+}
+
+.app-subtitle-light {
+  font-weight: 300 !important;
+}
+
+h3,
+.app-subtitle h3,
+.mat-typography .app-subtitle,
+.app-subtitle,
+.mat-h3, .mat-title, .mat-typography h3 {
+
+  @include typography-h3();
+  @include set-typography-variants($primary-colors-first-100, $font-weight-semibold);
+  margin: 0;
+
+  &-light {
+    font-weight: $font-weight-light;
+  }
+}
+
+p,
+.mat-typography p,
+.heading-paragraph,
+.mat-typography .app-paragraph {
+
+  @include typography-p();
+  @include set-typography-variants($primary-colors-second-100-dark, $font-weight-light);
+  margin: 0;
+
+  &-white {
+    color: $neutral-colors-backgrounds-white;
+  }
+
+  &-semibold,
+  p > b {
+    @include set-typography-variants($primary-colors-second-100-dark, $font-weight-semibold);
+  }
+
+  &-light {
+    font-weight: $font-weight-light;
+  }
+
+  &-bold {
+    font-weight: $font-weight-bold;
+  }
+
+  &-inline,
+  &.inline {
+    display: inline;
+  }
+
+  &-blue {
+    color: $primary-colors-first-100;
+  }
+
+  &-error {
+    @include set-typography-variants($extra-colors-red, $font-weight-light);
+
+    &.app-paragraph-semibold {
+      @include set-typography-variants($extra-colors-red, $font-weight-semibold);
+    }
+  }
+
+  &-grey {
+    color: $primary-colors-second-100-grey;
+  }
+
+
+}
+
+button label,
+button span {
+  @include typography-p();
+  font-weight: $font-weight-semibold;
+}
+
+small,
+.heading-small,
+.mat-typography .heading-small,
+.mat-typography .app-small,
+.app-small {
+  @include typography-small();
+  @include set-typography-variants($neutral-colors-text-grey, $font-weight-light);
+  margin: 0;
+
+  &-semibold,
+  .mat-header-cell {
+    @include set-typography-variants($neutral-colors-text-grey, $font-weight-semibold);
+  }
+
+  &-white {
+    color: $neutral-colors-backgrounds-white;
+  }
+
+  &-blue {
+    color: $primary-colors-first-100;
+  }
+
+  &-grey {
+
+    color: $neutral-colors-text-middle-grey;
+  }
+
+  &-light-grey {
+    color: $primary-colors-second-100-grey;
+  }
+
+
+}
+
+
+//Typography utilities classes
+.app-break-word {
+  word-wrap: break-word;
+}

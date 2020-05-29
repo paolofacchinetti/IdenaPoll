@@ -1,0 +1,35 @@
+$dropdown-default-option: 32px;
+
+.app-dropdown {
+  .mat-form-field-appearance-outline {
+    .mat-form-field-wrapper {
+      padding-bottom: 0;
+    }
+  }
+
+  .mat-form-field-appearance-outline {
+    height: 40px;
+
+    .mat-form-field-label-wrapper {
+      top: -1em;
+    }
+
+    .mat-form-field-outline {
+      height: 40px;
+    }
+  }
+
+  .mat-option {
+    height: $dropdown-default-option;
+  }
+
+  .input-no-form {
+    text-overflow: ellipsis
+  }
+
+  input {
+    caret-color: transparent;
+    height: 24px;
+    line-height: 1.71 !important;
+  }
+}

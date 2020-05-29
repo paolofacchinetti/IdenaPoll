@@ -1,0 +1,21 @@
+<div [formGroup]="parentFormGroup">
+  <mat-form-field [id]="formFieldId"
+                  [ngClass]="formFieldClass?formFieldClass:''" appUpdateOutlineGap
+                  appearance="outline">
+    <mat-label *ngIf="label">{{label}}</mat-label>
+    <input (focusout)="onInputFocusOut()" (keydown)="preventInput($event)" [formControlName]="parentControlName"
+           [id]="id" [matAutocomplete]="autocompleteRefName"
+           [placeholder]="placeholder"
+           [required]="requiredCondition" matInput
+           tabindex="{{tabindex}}"
+           type="text">
+    <mat-icon class="material-icons">keyboard_arrow_down</mat-icon>
+    <mat-autocomplete #autocompleteRefName="matAutocomplete"
+                      (optionSelected)="onOptionSelected($event)"
+                      [displayWith]="displayFn.bind(this)">
+      <mat-option *ngFor="let option of optionList; trackBy: trackByFn" [value]="optionValue(option.value)">
+        {{option.label}}
+      </mat-option>
+    </mat-autocomplete>
+  </mat-form-field>
+</div>

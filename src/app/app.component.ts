@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import {Component} from '@angular/core';
 import {HttpClient} from "@angular/common/http";
 
 @Component({
@@ -7,7 +7,7 @@ import {HttpClient} from "@angular/common/http";
   styleUrls: ['./app.component.scss']
 })
 export class AppComponent {
-  title = 'IdenaPoll';7
+  title = 'IdenaPoll';
   constructor(s: HttpClient) {
   }
 }

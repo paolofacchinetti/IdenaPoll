@@ -1,0 +1,561 @@
+@import "./reset",
+"./fonts",
+"./mixins",
+"./variables",
+"./icons",
+"./typography",
+"./utilities",
+"./components/tab-group",
+"./components/autocomplete",
+"./components/checkbox",
+"./components/table";
+
+
+$button-toggle-padding: 40px;
+
+* {
+  box-sizing: border-box;
+}
+
+html,
+body {
+  @extend %no-margin-no-padding;
+  overflow-x: visible;
+  width: $app-container-scroll-width;
+}
+
+body {
+  font-family: 'Titillium Web', sans-serif;
+  overflow-y: hidden;
+}
+
+.condensed {
+  @extend %no-margin-no-padding;
+}
+
+.complete {
+  width: $percent-full;
+}
+
+:focus {
+  outline: none;
+}
+
+.page-loading {
+  background-color: rgb(0, 59, 92);
+}
+
+.page-loading-img {
+  position: absolute;
+  margin: auto;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 128px;
+}
+
+.page-loading-load-font {
+  font-family: 'Material Icons';
+  display: none;
+}
+
+button label {
+  cursor: pointer;
+}
+
+button:disabled label {
+  cursor: default;
+}
+
+.app-input-unwrapped {
+  &:not(.is-in-table) .mat-form-field-appearance-outline {
+    height: 40px;
+
+    .mat-form-field-label-wrapper {
+      top: -1em;
+    }
+
+    .mat-form-field-outline {
+      height: 40px;
+    }
+  }
+}
+
+
+.mat-option:focus:not(.mat-option-disabled),
+.mat-option:hover:not(.mat-option-disabled) {
+  background: rgba(0, 0, 0, .15);
+}
+
+@mixin mix-app-theme() {
+
+  // Required input
+  .mat-focused:not(.ng-dirty) .mat-placeholder-required.mat-form-field-required-marker {
+    color: $primary-colors-first-100;
+  }
+
+  .mat-focused.ng-dirty:not(.ng-invalid) .mat-placeholder-required.mat-form-field-required-marker {
+    color: $primary-colors-first-100;
+  }
+
+  .mat-focused.ng-invalid:not(.ng-untouched) .mat-placeholder-required.mat-form-field-required-marker {
+    color: $primary-colors-second-100-red;;
+  }
+
+  .mat-placeholder-required.mat-form-field-required-marker {
+    padding-left: $asterisk-spacing;
+  }
+
+  // material aggiunge dinamicamente uno style inline nell'html che va a sovrascrivere qualsiasi modifica apportata in file .css
+  .mat-button-toggle-group,
+  .mat-button-toggle-standalone {
+    border: $border-size-medium solid $neutral-colors-backgrounds-white;
+    margin: 0 2px;
+    box-shadow: none !important;
+    background-color: $neutral-colors-backgrounds-white;
+    border-radius: 4px;
+
+    &:active {
+      background-color: $neutral-colors-backgrounds-white;
+      opacity: $opacity-30;
+      background-size: 100%;
+      transition: background 0s;
+    }
+
+    &:not(:active):focus {
+      background-color: $primary-colors-second-10-lightblue;
+      border: $border-size-medium solid $neutral-colors-backgrounds-white;
+      box-shadow: 0 0 $box-shadow-offset $box-shadow-offset $primary-colors-second-50-lightblue !important;
+    }
+  }
+
+  // toggle button
+  .mat-button-toggle {
+    background-color: $neutral-colors-backgrounds-white;
+    color: $primary-colors-second-100-lightblue;
+    border: solid $border-size-small $primary-colors-second-100-lightblue;
+    border-width: $border-size-small $border-size-small;
+    font-size: $button-font-size;
+    font-weight: $font-weight-semibold;
+    font-style: normal;
+    font-stretch: normal;
+    line-height: 1.71;
+    letter-spacing: normal;
+    text-align: center;
+
+    &:hover {
+      background-color: $primary-colors-second-10-lightblue;
+    }
+
+    &:active {
+      border: $border-size-medium solid $primary-colors-second-100-lightblue;
+      background-color: $primary-colors-second-30-lightblue;
+      background-size: 100%;
+      transition: background 0s;
+    }
+
+    button {
+      padding: $padding-none $button-toggle-padding;
+      cursor: pointer;
+    }
+  }
+
+  // material aggiunge dinamicamente uno style inline nell'html che va a sovrascrivere qualsiasi modifica apportata in file .css
+  .mat-button-toggle-label-content {
+    padding: $padding-none !important;
+  }
+
+  .mat-button-toggle:first-child {
+    border-left-width: $border-size-medium;
+  }
+
+  .mat-button-toggle:last-child {
+    border-right-width: $border-size-medium;
+  }
+
+  .mat-button-toggle-disabled {
+    background-color: #EEEEEE;
+    color: #9E9E9E;
+
+    button {
+      cursor: context-menu;
+    }
+  }
+
+  .mat-button-toggle-checked {
+    background-color: $primary-colors-second-30-lightblue;
+    color: $primary-colors-second-100-lightblue;
+  }
+
+  // mat-form-field
+  .mat-form-field.as-block {
+    display: block;
+  }
+
+  .mat-form-field-appearance-outline .mat-form-field-infix {
+    height: $input-height;
+    display: flex;
+    align-items: center;
+    top: $size-negative-xs;
+  }
+
+  .mat-form-field-appearance-outline .mat-select-trigger {
+    top: $grid-row-gap-s;
+  }
+
+  .mat-form-field-appearance-outline .mat-form-field-outline {
+    color: $primary-colors-first-100;
+
+  }
+
+  div.ng-dirty .mat-form-field-appearance-outline.mat-form-field-invalid .mat-form-field-outline-thick,
+  div.ng-dirty .mat-form-field-appearance-outline.mat-focused.ng-invalid .mat-form-field-outline-thick,
+  div.ng-dirty .mat-form-field.mat-focused.ng-invalid.ng-touched .mat-form-field-label,
+  div.ng-dirty .mat-form-field.mat-form-field-invalid.ng-touched .mat-form-field-label,
+  .mat-focused:not(.ng-untouched).mat-form-field-appearance-outline.mat-focused.ng-invalid .mat-form-field-outline-thick .mat-focused:not(.ng-pristine).ng-invalid.mat-form-field-label,
+  .mat-focused:not(.ng-pristine).mat-form-field.mat-form-field-invalid .mat-form-field-label,
+  .mat-form-field.ng-invalid.ng-touched .mat-form-field-infix .mat-form-field-label-wrapper .mat-form-field-label {
+    color: $primary-colors-second-100-red;
+    border-color: $primary-colors-second-100-red;
+
+  }
+
+  div.ng-pristine .mat-form-field-appearance-outline.mat-form-field-invalid .mat-form-field-outline-thick {
+    color: $primary-colors-second-100-lightblue;
+    border-color: $primary-colors-second-100-lightblue;
+  }
+
+
+  //MAT-FORM-FIELD-INVALID
+  .mat-form-field.ng-invalid.ng-touched .mat-form-field-suffix .mat-autocomplete .mat-icon-button .mat-icon,
+  .mat-form-field.ng-invalid.ng-touched .mat-form-field-outline.mat-form-field-outline-thick,
+  .mat-form-field.mat-form-field-appearance-outline.ng-touched.ng-invalid .mat-form-field-outline.mat-form-field-outline-thick {
+    color: $primary-colors-second-100-red;
+    border-radius: $border-radius-material-input;
+  }
+
+
+  //MAT-FORM-FIELD-FOCUS (default)
+  .mat-form-field-appearance-outline.mat-focused .mat-form-field-outline-thick,
+  .mat-focused.ng-pristine.mat-form-field-appearance-outline.mat-focused.ng-invalid:not(.ng-touched) .mat-form-field-outline.mat-form-field-outline-thick {
+    box-shadow: 0 0 2px $box-shadow-offset $primary-colors-second-50-lightblue;
+    border-radius: $border-radius-material-input;
+    color: $primary-colors-second-100-lightblue;
+    border-color: $primary-colors-second-100-lightblue;
+  }
+
+
+  //MAT-FORM-FIELD-FOCUS (errors)
+  div.ng-dirty .mat-form-field-appearance-outline.mat-focused.ng-invalid .mat-form-field-outline-thick,
+  div.ng-dirty .mat-form-field-appearance-outline.mat-focused.ng-invalid.ng-touched .mat-form-field-outline-thick,
+  div.ng-pristine.mat-form-field-appearance-outline.mat-focused.ng-invalid.ng-touched .mat-form-field-outline-thick,
+  div.ng-untouched.mat-form-field-appearance-outline.mat-focused.ng-invalid .mat-form-field-outline-thick,
+  .mat-focused:not(.ng-pristine).mat-form-field-appearance-outline.mat-focused.ng-invalid .mat-form-field-outline-thick,
+  .mat-focused.mat-form-field.ng-touched.ng-invalid .mat-form-field-outline.mat-form-field-outline-thick,
+  div.ng-invalid.ng-touched .mat-focused.mat-form-field.ng-touched.ng-invalid .mat-form-field-outline.mat-form-field-outline-thick {
+    box-shadow: 0 0 2px $box-shadow-offset $primary-colors-second-50-red;
+    color: $primary-colors-second-100-red;
+    border-radius: $border-radius-material-input;
+
+  }
+
+
+  .mat-form-field-appearance-outline.mat-form-field-can-float.matform-field-should-float .mat-form-field-can-float {
+    border-top: 2px solid $primary-colors-second-50-lightblue !important;
+  }
+
+  .mat-form-field-label {
+    mat-label {
+      background-color: $neutral-colors-backgrounds-white;
+      padding: $padding-size-medium;
+      // margin-top: -5px !important;
+    }
+  }
+
+  .mat-form-field-outline.mat-form-field-outline-thick {
+    .mat-form-field-outline-gap {
+      border-top: $border-size-medium solid currentColor !important;
+    }
+  }
+
+  .mat-placeholder-required.mat-form-field-required-marker {
+    background: $neutral-colors-backgrounds-white;
+    padding: 2*$asterisk-spacing;
+    margin-left: $size-negative-xxs;
+  }
+
+  /* Font color */
+  input.mat-input-element,
+  input.mat-input-element.ng-invalid.ng-untouched {
+    color: $primary-colors-first-100;
+    caret-color: $primary-colors-first-100;
+    line-height: 1.71em;
+  }
+
+  input.mat-input-element.ng-invalid.ng-touched,
+  .mat-form-field-invalid:not(.ng-touched) .mat-input-element,
+  .mat-form-field-invalid.mat-focused .mat-input-element,
+  .mat-warn .mat-input-element,
+  .mat-form-field-invalid:not(.mat-focused) .mat-input-element,
+  .mat-form-field-invalid.ng-touched:not(.mat.focused) .mat-input-element {
+    color: $primary-colors-second-100-red;
+    caret-color: $primary-colors-second-100-red;
+  }
+
+
+  .mat-form-field-should-float .mat-form-field-infix,
+  .mat-form-field-should-float .mat-select-trigger {
+    top: 0;
+  }
+
+  .mat-form-field {
+    width: $grid-full-width !important;
+  }
+
+  // Custom Material Dialog
+  .mat-dialog-container {
+    padding: $padding-none !important;
+    border-radius: $border-radius-medium !important;
+  }
+
+  .home-panel .mat-dialog-container {
+    box-shadow: none !important;
+    background: transparent;
+  }
+
+  .mat-button.mat-primary .mat-button-focus-overlay,
+  .mat-icon-button.mat-primary .mat-button-focus-overlay,
+  .mat-stroked-button.mat-primary .mat-button-focus-overlay,
+  .mat-button .mat-button-focus-overlay {
+    background-color: rgba(0, 0, 0, 0);
+  }
+
+  .mat-form-field-appearance-outline.mat-form-field-should-float .mat-form-field-label,
+  .mat-form-field-appearance-outline.mat-focused .mat-form-field-outline {
+    color: $primary-colors-second-100-lightblue
+  }
+
+  .mat-form-field-appearance-outline .mat-form-field-outline {
+    color: $primary-colors-first-100;
+  }
+
+  // customize chip background
+  .mat-chip.mat-standard-chip {
+    background-color: $neutral-colors-backgrounds-whitesmoke;
+  }
+
+  .mat-progress-spinner circle,
+  .mat-spinner circle {
+    stroke: $primary-colors-first-100 !important;
+  }
+
+}
+
+.menu-backdrop {
+  background-color: rgba(255, 255, 255, 0.95);
+}
+
+// è necessario l'important perchè l'overlay viene iniettatto dinamicamente da material quando necessario
+.cdk-overlay-backdrop.cdk-overlay-dark-backdrop.cdk-overlay-backdrop-showing {
+  background-color: $primary-colors-first-50 !important;
+}
+
+// Include the mixin
+@include mix-app-theme();
+
+.toastr-info {
+  background-color: $primary-colors-second-100-lightblue;
+}
+
+// * Campi obbligatori label
+.legenda {
+  font-size: $headings-small;
+  font-weight: $font-weight-light;
+  font-style: normal;
+  font-stretch: normal;
+  line-height: 1.33;
+  letter-spacing: normal;
+  color: $primary-colors-first-10-black;
+}
+
+// icon transformation
+.rotation-icon-left {
+
+  i,
+  .mat-icon {
+    transform: rotate(-$rotate-positive);
+  }
+}
+
+.rotation-icon-right {
+
+  i,
+  .mat-icon {
+    transform: rotate(90deg);
+  }
+}
+
+// perfect scrollbar visibility
+perfect-scrollbar.app-scrollbar-theme.ps-show-active > .ps.ps--active-y > .ps-overlay:not(.ps-at-bottom) .ps-indicator-bottom {
+  opacity: 1 !important;
+  background: linear-gradient(to top, rgba(255, 255, 255, 1) 0%, rgba(255, 255, 255, 0) 100%) !important;
+}
+
+perfect-scrollbar.app-scrollbar-theme.ps-show-active > .ps.ps--active-y > .ps-overlay:not(.ps-at-top) .ps-indicator-top {
+  opacity: 1;
+  background: linear-gradient(to bottom, rgba(255, 255, 255, 1) 0%, rgba(255, 255, 255, 0) 100%);
+}
+
+
+perfect-scrollbar.app-scrollbar-theme.just-created > .ps.ps--active-y > .ps__rail-y {
+  opacity: $opaque;
+}
+
+perfect-scrollbar.app-scrollbar-theme > .ps.ps--active-y > .ps__rail-y {
+  background-color: $scrollbar-container-background;
+  width: $scrollbar-container;
+  cursor: pointer;
+}
+
+perfect-scrollbar.app-scrollbar-theme > .ps.ps--scrolling-y > .ps__rail-y,
+perfect-scrollbar.app-scrollbar-theme > .ps.ps--scrolling-x > .ps__rail-x {
+  background-color: $scrollbar-container-background;
+}
+
+perfect-scrollbar.app-scrollbar-theme .ps__thumb-y,
+perfect-scrollbar.app-scrollbar-theme .ps__rail-y:hover > .ps__thumb-y,
+perfect-scrollbar.app-scrollbar-theme .ps__rail-y:focus > .ps__thumb-y,
+perfect-scrollbar.app-scrollbar-theme .ps__rail-y.ps--clicking .ps__thumb-y {
+  opacity: $opaque;
+  width: $scrollbar-width;
+  background-color: $primary-colors-second-100-lightblue;
+  margin: 0 $scrollbar-spacing;
+  right: 0;
+}
+
+.mat-progress-bar-fill::after {
+  background-color: $neutral-colors-backgrounds-white;
+}
+
+.mat-progress-bar-buffer {
+  background-color: $blue-calypso;
+}
+
+// material aggiunge dinamicamente uno style inline nell'html che va a sovrascrivere qualsiasi modifica apportata in file .css
+.app-action-button .mat-fab .mat-button-wrapper {
+  padding: $padding-none !important;
+}
+
+.mat-select-panel .mat-optgroup-label,
+.mat-select-panel .mat-option {
+  background-color: $neutral-colors-backgrounds-white;
+}
+
+
+.mat-option,
+.mat-autocomplete-panel .mat-option.mat-selected:not(.mat-active):not(:hover) {
+  background: $neutral-colors-backgrounds-white;
+  color: $gray-searchbar;
+}
+
+.mat-option.mat-option-disabled {
+  color: $extra-colors-grey;
+}
+
+.mat-option:not(.mat-option-disabled),
+.mat-option:not(.mat-option-disabled) {
+  background-color: $neutral-colors-backgrounds-white;
+}
+
+.mat-option:focus:not(.mat-option-disabled),
+.mat-option:hover:not(.mat-option-disabled),
+.mat-option.mat-active {
+  background-color: $primary-colors-second-30-lightblue;
+}
+
+.mat-select-panel .mat-option.mat-selected:not(.mat-option-multiple) {
+  background: $primary-colors-second-30-lightblue;
+}
+
+.mat-primary .mat-option.mat-selected:not(.mat-option-disabled) {
+  color: $gray-searchbar;
+}
+
+
+@media only screen and (max-width: $adaptive-view-width) {
+
+  .app-grid-container,
+  .app-grid-spalla-container,
+  .app-centered-grid-container {
+    width: $app-container-scroll-width;
+  }
+}
+
+@media only screen and (max-height: $sidebar-max-height) {
+
+  .app-grid-container,
+  .app-grid-spalla-container,
+  .app-centered-grid-container {
+    min-height: calc(100vh - 56px);
+  }
+
+  .app-overlay-grid-container {
+    height: $percent-full;
+    overflow-y: auto;
+  }
+}
+
+.cdk-global-scrollblock {
+  overflow: hidden;
+}
+
+// toastr global style ( per classi definite in string template)
+
+.app-toast-message,
+.app-toast-message > * {
+  display: flex;
+  align-items: flex-start;
+  justify-content: flex-start;
+  font-size: $headings-small;
+
+  p {
+    color: $neutral-colors-text-middle-grey;
+    font-size: $headings-small;
+  }
+
+}
+
+.app-toast-message:hover {
+  color: $neutral-colors-text-middle-grey-opacity-50;
+  margin-right: $grid-row-gap-xs;
+
+  p {
+    color: $neutral-colors-text-middle-grey-opacity-50;
+  }
+}
+
+.toastr-icon {
+  position: absolute;
+  top: $grid-row-gap-s;
+  right: $grid-row-gap-s;
+}
+
+.overlay-spinner-container {
+  z-index: 2;
+  padding-top: 80px;
+  position: fixed;
+  margin: 0;
+  left: 0;
+  top: 80px;
+  overflow: hidden;
+  text-transform: none;
+  width: 100%;
+  min-height: calc(100% - 100px);
+  max-height: calc(100% - 100px);
+  background-color: white;
+}
+
+.app-autocomplete .app-icon .material-icons,
+.app-dropdown .app-icon .material-icons {
+  pointer-events: none;
+}

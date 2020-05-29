@@ -1,0 +1,27 @@
+<ng-container *ngIf="checkboxValue != null; else checkBoxWithoutModel">
+  <mat-checkbox
+    (click)="checkBoxClick($event)"
+    [(ngModel)]="checkboxValue"
+    [color]="'$primary-colors-second-100-lightblue'" [disableRipple]="true"
+    [disabled]="disabledCondition"
+    [id]="id"
+    [name]="checkboxName"
+    class="app-checkbox">
+    {{label}}
+  </mat-checkbox>
+</ng-container>
+<ng-template #checkBoxWithoutModel>
+  <mat-checkbox
+    (change)="eventChangeWithoutModel($event)"
+    (click)="checkBoxClick($event)"
+    [checked]="checked"
+    [color]="'$primary-colors-second-100-lightblue'"
+    [disabled]="disabledCondition"
+    [id]="id"
+    class="app-checkbox"
+    disableRipple="true">
+    {{label}}
+  </mat-checkbox>
+
+</ng-template>
+

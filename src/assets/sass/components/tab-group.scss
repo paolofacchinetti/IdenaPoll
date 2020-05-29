@@ -1,0 +1,78 @@
+@import "../../../assets/sass/variables";
+@import "../../../assets/sass/mixins";
+
+@mixin mix-app-theme() {
+  @include css-for-ie {
+    .mat-tab-label {
+      width: $tab-label-width;
+      height: $tab-label-height !important;
+      opacity: 1 !important;
+      border-top-left-radius: $border-radius-medium;
+      border-top-right-radius: $border-radius-medium;
+    }
+  }
+
+  .mat-tab-body-wrapper {
+    height: 100%;
+  }
+
+  .mat-tab-header {
+    border-bottom: none;
+  }
+
+  .mat-tab-label-container {
+    margin: 2*$border-size-medium;
+    border-radius: $border-radius-medium $border-radius-medium 0 0;
+  }
+
+  .mat-tab-label-container.tab-header-focused {
+    box-shadow: 0 0 $box-shadow-offset $box-shadow-offset $primary-colors-first-50;
+  }
+
+  .mat-tab-label.mat-ripple.mat-tab-disabled {
+    border-bottom: $border-size-medium solid rgba(0, 0, 0, 0.38);
+  }
+
+  .mat-tab-label-content {
+    font: $font-weight-medium $subheading-min/$headings-subtitle Titillium Web, sans-serif;
+    font-family: Titillium Web, sans-serif;
+    font-size: $headings-paragraph;
+    font-weight: $font-weight-semibold;
+    font-style: normal;
+    font-stretch: normal;
+    line-height: 1.71;
+    letter-spacing: normal;
+    opacity: 1 !important;
+  }
+
+  .mat-tab-label:not(.mat-tab-disabled) {
+    color: $primary-colors-first-100 !important;
+    opacity: 1;
+    border-bottom: $border-size-medium solid $primary-colors-first-10-black;
+  }
+
+  .mat-tab-group.mat-primary .mat-ink-bar,
+  .mat-tab-nav-bar.mat-primary .mat-ink-bar {
+    height: $tabgroup-height;
+    border-radius: $border-radius-medium;
+    z-index: -1111;
+    background-color: $primary-colors-first-30;
+  }
+
+  .mat-tab-body-content {
+    overflow: hidden !important;
+  }
+
+  .mat-tab-group .mat-tab-label {
+    height: $tab-label-height;
+  }
+  .mat-tab-group.mat-primary .mat-tab-label.cdk-focused:not(.cdk-mouse-focused):not(.mat-tab-disabled) {
+    background-color: transparent;
+  }
+
+  .mat-tab-body-wrapper {
+    height: 100%;
+  }
+}
+
+@include mix-app-theme();

@@ -1,0 +1,171 @@
+@import "./variables",
+"./mixins";
+
+%no-margin-no-padding {
+  margin: 0;
+  padding: $padding-none;
+}
+
+%extralarge-gap {
+  margin: $grid-row-gap-xl;
+}
+
+//class used in section title
+.app-spacebetween-title-subtitle {
+  margin-top: $grid-row-gap-s;
+  margin-bottom: $grid-row-gap-xl;
+}
+
+// spacing  top classes
+
+.app-top-spacing {
+  &-s {
+    margin-top: $grid-row-gap-s;
+  }
+
+  &-m {
+    margin-top: $grid-row-gap-m;
+  }
+
+  &-l {
+    margin-top: $grid-row-gap-l;
+  }
+
+  &-xl {
+    margin-top: $grid-row-gap-xl;
+  }
+
+  &-xxl {
+    margin-top: $grid-row-gap-xxl;
+  }
+
+  &-xxxl {
+    margin-top: $grid-row-gap-xxxl;
+  }
+}
+
+// spacing bottom classes
+
+.app-bottom-spacing {
+  &-s {
+    margin-bottom: $grid-row-gap-s;
+  }
+
+  &-m {
+    margin-bottom: $grid-row-gap-m;
+  }
+
+  &-l {
+    margin-bottom: $grid-row-gap-l;
+  }
+
+  &-xl {
+    margin-bottom: $grid-row-gap-xl;
+  }
+
+  &-xxl {
+    margin-bottom: $grid-row-gap-xxl;
+  }
+
+  &-xxxl {
+    margin-bottom: $grid-row-gap-xxxl;
+  }
+}
+
+.app-vertical-center-alignment {
+  display: flex;
+  align-items: center;
+}
+
+// paragraphs alignment
+.paragraphs-space-between {
+  display: inline-flex;
+  justify-content: space-between;
+  align-items: baseline;
+}
+
+.paragraphs-flex-center-space-between {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.paragraph-break {
+  word-break: break-all;
+}
+
+// Button alignment
+.app-button-footer {
+  margin-top: $grid-row-gap-s;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.app-button-footer-start-s {
+  margin-top: $grid-row-gap-s;
+  display: flex;
+  justify-content: space-between;
+  align-items: start;
+}
+
+.app-button-footer-start-m {
+  margin-top: $grid-row-gap-m;
+  display: flex;
+  justify-content: space-between;
+  align-items: start;
+}
+
+.app-button-footer-spacer {
+  margin-right: $grid-row-gap-xxl;
+}
+
+.app-container-flexend {
+  @include display-flex-Y-center-X-end();
+}
+
+.app-centered-button {
+  @include display-flex-center();
+}
+
+.app-button-start {
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+}
+
+.app-button-end {
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+}
+
+.single-button-container-inline,
+.risultati-trovati-container {
+  display: flex;
+  align-items: baseline;
+  justify-content: flex-end;
+}
+
+.single-button-flexend {
+  @include display-flex-Y-center-X-end();
+}
+
+.single-button-align-flexend {
+  @include display-flex-Y-end-X-center();
+}
+
+// Lists alignment
+.flex-list {
+  display: flex;
+  flex-flow: column nowrap;
+}
+
+// hide elements
+.app-grid-cell-hidden {
+  display: none;
+}
+
+.hidden-visibility {
+  visibility: hidden;
+}

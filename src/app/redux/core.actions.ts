@@ -1,6 +1,7 @@
 import {createAction, props} from '@ngrx/store';
 import {SessionBean} from '../shared/model/session.bean';
 import {PollBean} from '@app-shared/model/poll.bean';
+import {MatSnackBarConfig} from "@angular/material/snack-bar";
 
 export const setSession = createAction(
   '[Core] setSession',
@@ -25,4 +26,13 @@ export const setToken = createAction(
 export const setAuth = createAction(
   '[Core] setAuth',
   props<{ value: string }>()
+);
+export const dismissStatusBar = createAction(
+  '[Core] dismissStatusBar',
+  props()
+);
+
+export const openStatusBar = createAction(
+  '[Core] openStatusBar',
+  props<{ value: MatSnackBarConfig }>()
 );

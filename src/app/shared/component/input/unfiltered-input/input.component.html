@@ -1,0 +1,22 @@
+<div [formGroup]="parentFormGroup">
+  <mat-form-field (focus)="onAutofocus()" appearance="outline" class="full-width" tabindex="2">
+    <mat-label *ngIf="inputLabel">{{inputLabel}}</mat-label>
+    <input #inputTextField (blur)="onBlur()" (focus)="onInputFocus()" (focusout)="onInputFocusOut()"
+           (keydown)="onKeydown($event)"
+           [formControlName]="parentControlName"
+           [id]="id"
+           [maxlength]="maxLength"
+           [minlength]="minLength"
+           [placeholder]="placeholder"
+           [required]="required"
+           appInputNoNumber
+           autocomplete="off"
+           matInput>
+    <mat-icon (click)="onClick()" *ngIf="icon" [ngClass]="dynamicIconClass"
+              class="app-icon"
+              matSuffix>{{icon}}</mat-icon>
+    <mat-hint *ngIf="leftHint">{{leftHint}}</mat-hint>
+    <mat-hint *ngIf="rightHint" align="end">{{rightHint}}</mat-hint>
+  </mat-form-field>
+
+</div>

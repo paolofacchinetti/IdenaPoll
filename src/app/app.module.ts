@@ -8,6 +8,9 @@ import {CoreModule} from './core/core.module';
 import {CommonModule} from '@angular/common';
 import {HttpClientModule} from '@angular/common/http';
 import {StoreModule} from '@ngrx/store';
+import {EffectsModule} from "@ngrx/effects";
+import {CoreEffects} from "@app-redux/core.effects";
+import {MatSnackBar} from "@angular/material/snack-bar";
 
 @NgModule({
   declarations: [
@@ -15,6 +18,7 @@ import {StoreModule} from '@ngrx/store';
   ],
   imports: [
     StoreModule.forRoot({core: fromCore.reducer}),
+    EffectsModule.forRoot([CoreEffects]),
     CommonModule,
     HttpClientModule,
     BrowserModule,
@@ -22,7 +26,7 @@ import {StoreModule} from '@ngrx/store';
     BrowserAnimationsModule,
     CoreModule
   ],
-  providers: [],
+  providers: [MatSnackBar],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

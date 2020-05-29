@@ -1,0 +1,413 @@
+//GRID SYSTEM CONFIGURATION
+$mdc-layout-grid-breakpoints: (
+  desktop: 1px,
+  tablet: 1px,
+  phone: 1px
+);
+$mdc-layout-grid-columns: (
+  desktop: 12,
+  tablet: 12,
+  phone: 12
+);
+$mdc-layout-grid-default-margin: (
+  desktop: 24px,
+  tablet: 0px,
+  phone: 0px
+);
+$mdc-layout-grid-default-gutter: (
+  desktop: 16px,
+  tablet: 0px,
+  phone: 0px
+);
+$mdc-layout-grid-column-width: (
+  desktop: 72px,
+  tablet: 72px,
+  phone: 72px
+);
+
+/* Qui andranno le variabili quali: font, colori e misure*/
+
+$f: #3f3f3f;
+
+//ICON VARIABLES
+$icon-small: 24px;
+$icon-large: 40px;
+$icon-disabled: 0.3;
+
+//TYPOGRAPHY VARIABLES
+//FONT SIZE
+$headings-title: 24px;
+$heading-title-large: 32px;
+$headings-subtitle: 20px;
+$headings-subtitle-small: 18px;
+$subheading-min: 16px;
+$subheading-max: 22px;
+$headings-paragraph: 14px;
+$headings-small: 12px;
+$button-font-size-large: 36px;
+$button-font-size: 14px;
+
+//FONT WEIGHT
+//light
+$font-weight-light: 300;
+//regular
+$font-weight-medium: 400;
+$font-weight-500: 500;
+//SEMIBOLD
+$font-weight-semibold: 600;
+//BOLD
+$font-weight-700: 700;
+$font-weight-bold: bold;
+
+//CHECKBOX
+$checkbox-size: 16px;
+
+
+//BOOT
+$input-height: 27px;
+$input-width: 293px;
+$input-hint-height: 1em;
+
+//REQUIRED FIELDS
+$asterisk-spacing: 3px;
+
+// COLORS
+$primary-colors-first-100: rgba(0, 59, 92, 1);
+$primary-colors-first-70: rgba(0, 59, 92, 0.7);
+$primary-colors-first-50: rgba(0, 59, 92, 0.5);
+$primary-colors-first-30: rgba(0, 59, 92, 0.3);
+$primary-colors-first-20: rgba(0, 59, 92, 0.2);
+$primary-colors-first-10: rgba(0, 59, 92, 0.1);
+$primary-colors-first-30-black: rgba(0, 41, 64, 1);
+$primary-colors-first-10-black: rgba(0, 52, 82, 1);
+$primary-colors-second-100-lightblue: rgba(63, 186, 202, 1);
+$primary-colors-second-90-lightblue: rgba(63, 186, 202, 0.9);
+$primary-colors-second-70-lightblue: rgba(63, 186, 202, 0.7);
+$primary-colors-second-60-lightblue: rgba(63, 186, 202, 0.6);
+$primary-colors-second-50-lightblue: rgba(63, 186, 202, 0.5);
+$primary-colors-second-30-lightblue: rgba(63, 186, 202, 0.3);
+$primary-colors-second-10-lightblue: rgba(63, 186, 202, 0.1);
+$primary-colors-second-lightblue-30-black: rgba(43, 129, 141, 1);
+$primary-colors-second-lightblue-10-black: rgba(56, 167, 181, 1);
+$neutral-colors-text-grey: rgba(63, 63, 63, 1);
+$neutral-colors-text-middle-grey: rgba(159, 159, 159, 1);
+$neutral-colors-text-middle-grey-opacity-50: rgba(159, 159, 159, 0.5);
+$neutral-colors-text-light-grey: rgba(211, 210, 216, 1);
+$neutral-colors-backgrounds-white: rgba(255, 255, 255, 1);
+$neutral-colors-backgrounds-whitesmoke: rgba(245, 245, 245, 1);
+$scrollbar-backgrounds-whitesmoke: rgba(245, 245, 245, 0.8);
+$neutral-colors-backgrounds-light-grey: rgba(232, 231, 234, 1);
+$neutral-colors-backgrounds-light-grey-50-opacity: rgba(232, 231, 234, 0.5);
+$extra-colors-green: rgba(22, 175, 151, 1);
+$extra-colors-green-70: rgba(22, 175, 151, 0.7);
+$extra-colors-green-50: rgba(22, 175, 151, 0.5);
+$extra-colors-green-30: rgba(22, 175, 151, 0.3);
+$extra-colors-yellow: rgba(232, 175, 4, 1);
+$extra-colors-second-70-yellow: rgba(232, 175, 4, 0.7);
+$extra-colors-red: rgba(229, 76, 60, 1);
+$extra-colors-grey: rgba(159, 159, 159, 1);
+$primary-colors-second-100-red: rgba(229, 76, 60, 1);
+$primary-colors-second-70-red: rgba(229, 76, 60, 0.7);
+$primary-colors-second-50-red: rgba(229, 76, 60, 0.5);
+$primary-colors-second-30-red: rgba(229, 76, 60, 0.3);
+$primary-colors-second-10-red: rgba(229, 76, 60, 0.1);
+$primary-colors-second-red-30-black: rgba(159, 53, 41, 1);
+$primary-colors-second-red-10-black: rgba(205, 68, 53, 1);
+$primary-colors-second-100-grey: rgba(159, 159, 159, 1);
+$primary-colors-second-70-grey: rgba(159, 159, 159, 0.7);
+$primary-colors-second-30-grey: rgba(159, 159, 159, 0.3);
+$primary-colors-second-grey-30-black: rgba(83, 83, 83, 1);
+$primary-colors-second-grey-10-black: rgba(134, 134, 134, 1);
+$primary-colors-second-100-dark: rgba(63, 63, 63, 1);
+$primary-colors-second-70-dark: rgba(63, 63, 63, 0.7);
+$primary-colors-second-30-dark: rgba(63, 63, 63, 0.3);
+$primary-colors-second-dark-30-black: rgba(0, 0, 0, 1);
+$primary-colors-second-dark-10-black: rgba(38, 38, 38, 1);
+$no-preferiti-message-color: rgba(159, 159, 159, 1);
+$separator-border-color-grey: rgba(224, 224, 224, 1);
+$black-54: rgba(0, 0, 0, 0.54);
+$black-20: rgba(33, 33, 33, 0.2);
+$darkgrey: rgb(169, 169, 169);
+$dodgerblue: rgb(30, 144, 255);
+$aliceblue: rgb(240, 248, 255);
+$irisblue: rgb(1, 179, 191);
+$navyblue: rgb(0, 116, 217);
+$blue-calypso: rgba(59, 114, 131, 1);
+$light-grey-whisper: rgba(232, 232, 232, 1);
+$light-grey-whisper-semiopaque: rgba(232, 232, 232, 0.85);
+$html-gray-color: rgba(128, 128, 128, 1);
+$red-color: rgba(255, 0, 0, 1);
+$grey-aluminium: rgba(128, 130, 131, 1);
+$pattens-blue: rgba(207, 216, 220, 1);
+$paperclip-icon-color: rgba(176, 176, 176, 1);
+$notification-border-color-grey: rgba(151, 151, 151, 1);
+
+//searchbar homepage
+$gray-searchbar: rgba(63, 63, 63, 1);
+
+// boot
+$boot-top-margin: 312px;
+$boot-logo-width: 631.5px;
+$boot-logo-height: 56px;
+$boot-logo-margin-bottom: 64px;
+$boot-progress-bar-width: 430px;
+$boot-progress-bar-height: 2px;
+$boot-progress-description-margin-top: 14px;
+$boot-progress-description-width: 299px;
+$boot-progress-description-height: 24px;
+$boot-error-message-max-width: 600px;
+$boot-error-block-margin: 40px;
+$boot-help-message-margin: 40px;
+
+// menu
+$menu-top-margin: 64px;
+$home-container-width: 880px;
+$home-input-height: 56px;
+$home-input-margin-top: 16px;
+$home-input-margin-bottom: 24px;
+$input-fields-height: 40px;
+// notification
+$notification-selected_color: rgba(190, 235, 238, 1);
+$notification-active_color: rgba(233, 248, 249, 1);
+
+//home button state colors
+$home-button-30: rgba(0, 59, 92, 0.7);
+$home-button-dark-grey: rgba(0, 0, 0, 0.3);
+$home-button-shadow: rgba(0, 59, 92, 0.5);
+
+
+//link-button-status-color
+$sidebar-hover-focus-color: rgba(0, 59, 92, 0.1);
+$sidebar-active-color: rgba(0, 59, 92, 0.3);
+
+$link-button-blue-hover: rgba(120, 206, 217, 1);
+$link-button-blue-active: rgba(56, 167, 181, 1);
+$button-link-height: 24px;
+$inner-spacing-button: 12px;
+$link-button-side-margin: 2px;
+$link-button-side-padding: 4px;
+
+// border and box-shadow
+$border-size-small: 1px;
+$border-size-medium: 2px;
+$box-shadow-offset: 2px;
+$box-shadow-offset-tostr: 4px;
+
+//border-radius variants
+$border-radius-small: 2px;
+$border-radius-medium: 4px;
+$border-radius-material-input: 5px;
+$sidebar-radius: 20px;
+
+//spacing
+$padding-none: 0;
+$padding-size-small: 2px;
+$padding-size-medium: 4px;
+$padding-size-large: 8px;
+
+// circle status
+$circle-radius: 50%;
+$circle-size: 24px;
+
+//perfect scrollbar
+$scrollbar-width: 4px;
+$scrollbar-spacing: 6px;
+$scrollbar-container: 16px;
+$scrollbar-container-background: rgba(255, 255, 255, .5);
+
+//dialog
+$dialog-header: 28px;
+$dialog-content-width: 450px;
+$dialog-content-height: 266px;
+$dialog-container-spacing: 12px;
+$dialog-content-text-height: 170px;
+
+//loader
+$loader-dialog-content-text-height: 142px;
+$loader-dialog-content-spinner-height: 114px;
+$loader-dialog-spinner-container-wh: 160px;
+$loader-dialog-spinner-wh: 40px;
+$loader-dialog-icon-wh: 24px;
+$loader-dialog-icon-margin: 8px;
+
+//button
+$button-large: 64px;
+
+//media queries
+$size-negative-xxs: -1px;
+$size-negative-xs: -4px;
+$size-negative-s: -8px;
+$size-negative-m: -10px;
+$size-negative-l: -12px;
+$size-negative-xl: -18px;
+
+$size-10: 10px;
+
+// Z-INDEX
+$default-z-index-1: 1;
+$spalla-adaptive-icon-z-index: 900;
+$spalla-z-index: 700;
+$session-bar-z-index: 800;
+$skeleton-container-z-index: 999;
+
+//LOADER IMAGE
+$loader-z-index: 99999;
+$loader-image-width: 620px;
+$loader-image-height: 372px;
+
+//tab group
+$tabgroup-height: 40px;
+$tab-label-width: 50%;
+$tab-label-height: 40px;
+
+//TAB CONTENT SIZE
+$tab-height: 416px;
+$tab-divise-height: 294px;
+$tab-details-extralarge: 690px;
+$tab-details-large: 650px;
+$tab-details-medium: 600px;
+$tab-details-small: 528px;
+//SIDEBAR
+$sidebar-max-height: 904px;
+$sidebar-height: 860px;
+$sidebar-width: 321px;
+$sidebar-spacing-top: 40px;
+$logo-width: 24px;
+$logo-height: 24px;
+
+// opacity
+$opacity-30: 0.3;
+$opacity-40: 0.4;
+$opacity-90: 0.9;
+$opaque: 1;
+
+// transform rotation
+$rotate-positive: 90deg;
+
+// input
+$input-large: 56px;
+$input-medium: 40px;
+$input-small: 24px;
+
+//TABELLE
+$table-default-header-row-height: 24px;
+$table-default-row: 32px;
+
+$table-small-cell-default-basis: 50px;
+$table-medium-cell-default-basis: 100px;
+$table-large-cell-default--basis: 200px;
+$table-form-field-width: 97px;
+
+// SECTION TITLE
+$section-title-height: 48px;
+$section-stepper-height: 48px;
+
+// GRID WIDTH
+$grid-full-width: 100%;
+
+//GRID GAP
+$grid-row-gap-xs: 4px;
+$grid-row-gap-s: 8px;
+$grid-row-gap-m: 16px;
+$grid-col-gap: 16px;
+$grid-row-gap-l: 24px;
+$grid-row-gap-xl: 32px;
+$grid-row-gap-xxl: 48px;
+$grid-row-gap-xxxl: 64px;
+
+
+$main-grid-side-padding: 24px;
+$main-grid-top-padding: 16px;
+$main-grid-bottom-padding: $padding-none;
+
+//SESSION BAR
+$session-bar-height: 40px;
+$session-bar-tab-width: 210px;
+$session-bar-tab-min-width: 153px;
+$session-bar-adaptive-width: 20%;
+
+//MAIN CONTENT HEIGHT
+$main-content-height: calc(100% - 40px);
+
+// WIDTH FOR ADAPTIVE MEDIA QUERY
+$app-overlay-container-adaptive-width: 100%;
+$app-container-scroll-width: 1024px;
+$adaptive-view-width: 1023px;
+$session-bar-dynamic-width: 1279px;
+
+// Righe di tabella visibili
+$one-visible-table-row: 33px;
+$two-visible-table-rows: 2 * $one-visible-table-row;
+$three-visible-table-rows: 3 * $one-visible-table-row;
+$four-visible-table-rows: 4 * $one-visible-table-row;
+$five-visible-table-rows: 5 * $one-visible-table-row;
+$six-visible-table-rows: 6 * $one-visible-table-row;
+$seven-visible-table-rows: 7 * $one-visible-table-row;
+$eight-visible-table-rows: 8 * $one-visible-table-row;
+$nine-visible-table-rows: 9 * $one-visible-table-row;
+$ten-visible-table-rows: 10 * $one-visible-table-row;
+
+// Percentuali
+$percent-full: 100%;
+$percent-half: 50%;
+$percent-quarter: 25%;
+
+// campagne
+$campagna-image-height: 136px;
+$campagna-detail-height: 120px;
+$iframe-doc-height: 760px;
+
+// riepilogo
+$margin-bottom-16: 16px;
+
+
+//SKELETON
+$skeleton-spalla-label-width: 82px;
+$skeleton-button-title-spalla: 82px;
+$skeleton-title-width: 205px;
+$skeleton-label-width: 141px;
+$skeleton-item-height-64: 64px;
+$skeleton-item-height-56: 56px;
+$skeleton-primary-button: 48px;
+$skeleton-item-height-l: 40px;
+$skeleton-item-height-m: 32px;
+$skeleton-item-height-s: 24px;
+$skeleton-item-height-xs: 16px;
+$skeleton-container: 232px;
+
+// Skeleton Animation
+$base-color: $neutral-colors-backgrounds-light-grey;
+$shine-color: $neutral-colors-backgrounds-light-grey-50-opacity;
+$animation-duration: 3.0s;
+@keyframes shine-lines {
+  0% {
+    background-position: -100px;
+  }
+  100% {
+    background-position: 1000px;
+  }
+}
+
+@mixin background-gradient-animation {
+  background-image: linear-gradient(90deg, $base-color 0px, $shine-color 200px, $base-color 400px);
+  background-size: 600px;
+  animation: shine-lines $animation-duration infinite linear;
+}
+
+//DECIMAL INPUT CONTAINER FOR app-DECIMAL INPUT
+$decimal-input-dynamic-container-width: 122px;
+$decimal-input-dynamic-container-height: 34px;
+
+// Commons (for @extend)
+%no-margin-no-padding {
+  margin: 0;
+  padding: $padding-none;
+}
+
+%flex-columns {
+  @for $i from 1 to 13 {
+    &-#{$i} {
+      flex: 0 0 percentage((1 / 12) * $i);
+    }
+  }
+}

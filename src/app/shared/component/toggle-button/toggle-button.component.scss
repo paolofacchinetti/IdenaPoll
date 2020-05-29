@@ -1,0 +1,91 @@
+@import "../../../../assets/sass/variables";
+
+$button-gap: 24px;
+$button-toggle-radius: 4px;
+mat-button-toggle-group,
+.mat-button-toggle-standalone {
+  border: $border-size-medium solid $neutral-colors-backgrounds-white;
+  border-radius: $button-toggle-radius;
+  margin: 0 2px;
+  box-shadow: none !important;
+  background-color: $neutral-colors-backgrounds-white;
+
+  &:active {
+    background-color: $neutral-colors-backgrounds-white;
+    opacity: $opacity-30;
+    background-size: 100%;
+    transition: background 0s;
+  }
+
+  &:not(:active):focus {
+    background-color: $primary-colors-second-10-lightblue;
+    border: $border-size-medium solid $neutral-colors-backgrounds-white;
+    box-shadow: 0 0 $box-shadow-offset $box-shadow-offset $primary-colors-second-50-lightblue !important;
+  }
+}
+
+// toggle button
+.mat-button-toggle {
+  background-color: $neutral-colors-backgrounds-white;
+  color: $primary-colors-second-100-lightblue;
+  border: solid $border-size-small $primary-colors-second-100-lightblue;
+  border-width: $border-size-medium $border-size-small;
+  font-size: $button-font-size;
+  font-weight: $font-weight-semibold;
+  font-style: normal;
+  font-stretch: normal;
+  line-height: 1.71;
+  letter-spacing: normal;
+  text-align: center;
+
+  &:hover {
+    background-color: $primary-colors-second-10-lightblue;
+  }
+
+  &:active {
+    border: $border-size-medium solid $primary-colors-second-100-lightblue;
+    background-color: $primary-colors-second-30-lightblue;
+    background-size: 100%;
+    transition: background 0s;
+  }
+
+  button {
+    padding: $padding-none $button-gap;
+    cursor: pointer;
+  }
+}
+
+// material aggiunge dinamicamente uno style inline nell'html che va a sovrascrivere qualsiasi modifica apportata in file .css
+.mat-button-toggle-label-content {
+  padding: $padding-none !important;
+}
+
+.mat-button-toggle:first-child {
+  border-left-width: $border-size-medium;
+  border-bottom-left-radius: $button-toggle-radius;
+  border-top-left-radius: $button-toggle-radius;
+}
+
+.mat-button-toggle:last-child {
+  border-right-width: $border-size-medium;
+  border-bottom-right-radius: $button-toggle-radius;
+  border-top-right-radius: $button-toggle-radius;
+}
+
+.mat-button-toggle-disabled {
+  border-color: $primary-colors-second-30-lightblue;
+  background-color: #ffffff;
+
+  &:hover {
+    background-color: #ffffff;
+  }
+
+  button {
+    cursor: context-menu;
+  }
+}
+
+.mat-button-toggle-checked {
+  background-color: $primary-colors-second-30-lightblue;
+  color: $primary-colors-second-100-lightblue;
+}

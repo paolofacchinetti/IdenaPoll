@@ -1,0 +1,60 @@
+@import "../../../../assets/sass/variables";
+
+.app-input {
+
+  .mat-form-field-infix {
+    width: $percent-full;
+  }
+
+  &.is-in-table {
+    width: $percent-full;
+  }
+
+  &.without-hint {
+    .mat-form-field-appearance-outline {
+      .mat-form-field-wrapper {
+        padding-bottom: 0;
+      }
+
+      .mat-form-field-subscript-wrapper {
+        display: none;
+      }
+    }
+  }
+
+  &:not(.without-hint) {
+    .mat-form-field-appearance-outline .mat-form-field-wrapper {
+      padding-bottom: $input-hint-height;
+    }
+  }
+
+  .mat-form-field-appearance-outline .mat-form-field-outline.mat-form-field-outline-thick {
+    color: $primary-colors-second-100-lightblue;
+  }
+
+  .mat-form-field-flex:hover {
+    .mat-form-field-suffix {
+      .app-icon {
+        color: $primary-colors-second-100-lightblue;
+      }
+    }
+  }
+
+  .icon-lightblue {
+    color: $primary-colors-second-100-lightblue;
+  }
+}
+
+
+@media screen and (-ms-high-contrast: active),
+(-ms-high-contrast: none) {
+  .app-input {
+    &.is-in-table {
+      width: $percent-full;
+
+      .mat-form-field {
+        margin-top: 4px;
+      }
+    }
+  }
+}

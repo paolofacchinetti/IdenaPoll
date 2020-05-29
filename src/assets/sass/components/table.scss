@@ -1,0 +1,351 @@
+@import "../../../assets/sass/variables";
+@import "../../../assets/sass/mixins";
+
+$table-fake-action-link: 32px;
+$table-row-height: 32px;
+
+@mixin mix-app-theme() {
+  .mat-table .mat-form-field-flex,
+  .mat-table .app-input .mat-form-field-flex {
+    height: $table-default-header-row-height;
+    width: $percent-full;
+  }
+
+  .mat-table {
+    .fill-space {
+      display: block;
+      width: $percent-full;
+
+      .mat-form-field-flex {
+        width: $percent-full;
+
+        .mat-select-arrow-wrapper {
+          transform: none;
+        }
+      }
+    }
+  }
+
+  .mat-table .mat-form-field-appearance-outline .mat-form-field-wrapper {
+    margin: 0;
+    width: $percent-full;
+    padding: $scrollbar-spacing $padding-none $padding-none;
+  }
+
+  .mat-fab .mat-button-wrapper {
+    padding: $padding-none !important;
+  }
+
+  .mat-table .mat-form-field-appearance-outline .mat-form-field-infix {
+    top: $size-negative-l;
+  }
+
+  .mat-table .mat-form-field-should-float .mat-form-field-infix {
+    top: $size-negative-l;
+  }
+
+  .mat-header-row .mat-form-field-should-float .mat-form-field-infix {
+    top: $size-negative-s;
+  }
+
+  .table-focusable {
+    margin: 0 2px;
+
+    &.table-container-focused {
+      box-shadow: 0 0 $box-shadow-offset $box-shadow-offset $primary-colors-second-50-lightblue;
+    }
+  }
+
+
+  mat-table,
+  .mat-table {
+    box-shadow: none;
+  }
+
+  mat-row:nth-child(even),
+  .mat-row:nth-child(even),
+  .mat-row:first-child {
+    background-color: $neutral-colors-backgrounds-white;
+    min-height: $table-row-height;
+
+    .table-link,
+    .action-item {
+      display: flex;
+      align-items: center;
+      justify-content: flex-start;
+      height: $table-fake-action-link;
+    }
+
+    .action-item.table-cell-right {
+      justify-content: flex-end;
+    }
+
+    .action-item:last-child {
+      padding: $padding-none $grid-row-gap-xs;
+      margin: 0;
+    }
+
+    &.row-focused {
+      background-color: $primary-colors-second-30-lightblue;
+
+      .action-item:last-child {
+        background-color: $primary-colors-second-30-lightblue;
+        cursor: pointer;
+      }
+    }
+
+    &.row-active {
+      background-color: $primary-colors-second-60-lightblue;
+
+      .action-item:last-child {
+        background-color: $primary-colors-second-100-lightblue;
+        cursor: pointer;
+
+        .app-icon.app-icon-disabled {
+          color: $neutral-colors-backgrounds-white;
+        }
+
+        .app-icon.app-icon-blue {
+          color: $neutral-colors-backgrounds-white;
+          opacity: 1;
+        }
+      }
+    }
+  }
+
+  mat-row:nth-child(odd),
+  mat-header-row,
+  .mat-row:nth-child(odd),
+  .mat-header-row {
+    background-color: $neutral-colors-backgrounds-light-grey;
+    min-height: $table-row-height;
+
+    .table-link,
+    .action-item {
+      display: flex;
+      align-items: center;
+      justify-content: flex-start;
+      height: $table-fake-action-link;
+    }
+
+    .action-item.disabled {
+      cursor: default;
+    }
+
+    .action-item.table-cell-right {
+      justify-content: flex-end;
+    }
+
+    .action-item:last-child {
+      padding: $padding-none $grid-row-gap-xs;
+      margin: 0;
+    }
+
+    &.row-focused {
+      background-color: $primary-colors-second-30-lightblue;
+
+      .action-item:last-child {
+        background-color: $primary-colors-second-30-lightblue;
+      }
+    }
+
+    &.row-active {
+      background-color: $primary-colors-second-60-lightblue;
+
+      .action-item:last-child {
+        background-color: $primary-colors-second-100-lightblue;
+        cursor: pointer;
+
+        .app-icon.app-icon-disabled {
+          color: $neutral-colors-backgrounds-white;
+        }
+
+        .app-icon.app-icon-blue {
+          color: $neutral-colors-backgrounds-white;
+        }
+      }
+    }
+  }
+
+  perfect-scrollbar {
+    .mat-row:nth-child(odd) {
+      background-color: $neutral-colors-backgrounds-white;
+      min-height: $table-row-height;
+
+      &.row-focused {
+        background-color: rgba(63, 186, 202, 0.3);
+      }
+
+      &.row-active {
+        background-color: $primary-colors-second-60-lightblue;
+
+        .action-item:last-child {
+          background-color: $primary-colors-second-100-lightblue;
+          cursor: pointer;
+
+          .app-icon.app-icon-disabled {
+            color: $neutral-colors-backgrounds-white;
+          }
+
+          .app-icon.app-icon-blue {
+            color: $neutral-colors-backgrounds-white;
+          }
+        }
+      }
+    }
+
+    .mat-row:nth-child(even) {
+      background-color: $neutral-colors-backgrounds-light-grey;
+      min-height: $table-row-height;
+
+      &.row-focused {
+        background-color: rgba(63, 186, 202, 0.3);
+      }
+
+      &.row-active {
+        background-color: $primary-colors-second-60-lightblue;
+
+        .action-item:last-child {
+          background-color: $primary-colors-second-100-lightblue;
+          cursor: pointer;
+
+          .app-icon.app-icon-disabled {
+            color: $neutral-colors-backgrounds-white;
+          }
+
+          .app-icon.app-icon-blue {
+            color: $neutral-colors-backgrounds-white;
+          }
+        }
+      }
+    }
+  }
+
+  mat-row,
+  .mat-row {
+    min-height: $table-default-row !important;
+    margin: 0;
+  }
+
+  mat-cell,
+  .mat-cell {
+    font-size: $headings-paragraph !important;
+    font-weight: $font-weight-light !important;
+    font-style: normal;
+    font-stretch: normal;
+    line-height: $table-row-height;
+    letter-spacing: normal;
+    color: $primary-colors-second-100-dark !important;
+    padding: $padding-none $grid-row-gap-s;
+    align-self: flex-start;
+
+    &:first-child {
+      padding-left: $grid-row-gap-s;
+    }
+
+    &:last-child {
+      padding-right: $grid-row-gap-s;
+    }
+  }
+
+  mat-header-cell,
+  .mat-header-cell {
+    font-size: $headings-small !important;
+    font-weight: $font-weight-semibold !important;
+    font-style: normal;
+    font-stretch: normal;
+    line-height: 1.33;
+    letter-spacing: normal;
+    color: $primary-colors-second-100-dark !important;
+    padding: $grid-row-gap-xs $grid-row-gap-s;
+    align-items: flex-start;
+
+    &:first-child {
+      padding-left: $grid-row-gap-s;
+    }
+
+    &:last-child {
+      padding-right: $grid-row-gap-s;
+
+      &.action-header, &.action-cell {
+        padding-right: $grid-row-gap-m;
+        padding-left: $padding-none;
+      }
+    }
+  }
+
+  mat-header-row,
+  .mat-header-row {
+    min-height: $table-default-header-row-height !important;
+    border: none;
+  }
+
+  .spanned-table {
+    width: $percent-full;
+
+    tr.mat-header-row,
+    tr.mat-row {
+      height: inherit !important;
+
+      td.mat-cell,
+      td.mat-footer-cell,
+      th.mat-header-cell {
+        border: none;
+      }
+    }
+  }
+
+  .table-cell-right {
+    justify-content: flex-end;
+    text-align: right;
+  }
+
+  .mat-cell {
+    .mat-icon {
+      cursor: pointer;
+      margin: 0 4px;
+    }
+
+    .mat-icon.disabled {
+      cursor: default;
+    }
+  }
+
+  .selection-label {
+    color: $primary-colors-second-100-lightblue;
+    font-weight: $font-weight-semibold;
+    font-size: $headings-paragraph;
+    margin-left: 4px;
+    cursor: pointer;
+  }
+
+  @include css-for-ie {
+    .mat-table .mat-form-field-appearance-outline .mat-form-field-wrapper {
+      padding: $padding-size-small $padding-none $padding-none;
+    }
+
+    .mat-header-row,
+    .mat-row {
+      -ms-flex-align: stretch;
+
+      .mat-form-field-flex {
+        align-items: baseline !important;
+      }
+    }
+  }
+}
+
+// cell default sizes (small: 50px, medium: 100px, large: 200px)
+.small-cell {
+  @include setup-table-cell-basis($table-small-cell-default-basis);
+}
+
+.medium-cell {
+  @include setup-table-cell-basis($table-medium-cell-default-basis);
+}
+
+.large-cell {
+  @include setup-table-cell-basis($table-medium-cell-default-basis);
+}
+
+@include mix-app-theme();

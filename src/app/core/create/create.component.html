@@ -3,7 +3,8 @@
   <form (ngSubmit)="onSubmit(pollForm.value)" [formGroup]="pollForm" class="input-form">
 
     <div class="form-title">
-      <input formControlName="title" id="title" placeholder="Title / Question" type="text">
+      <app-alphanumeric-input [id]="'a'" [inputLabel]="'Title/Question'" [parentControlName]="'title'"
+                              [parentFormGroup]="pollForm"></app-alphanumeric-input>
     </div>
 
     <div class="form-desc">
@@ -11,30 +12,47 @@
     </div>
     <div formArrayName="options">
       <h3>Options</h3>
-
-
       <div *ngFor="let option of options.controls; let i=index">
         <input [formControlName]="i" id="option-{{i+1}}" placeholder="Option {{i+1}}" type="text">
       </div>
       <input (click)="addOption()" placeholder="Add options">
     </div>
-
+    <app-checkbox [label]="'checkone'"></app-checkbox>
+    <app-dropdown [disabledCondition]="false"
+                  [formFieldClass]="'small-select'"
+                  [formFieldId]="'selectProvenienzaContanteDaSecurcassa'"
+                  [id]="'movimentazione-cassa-mittente-provenienza-contante'"
+                  [label]="'M_V_C.CASH_ORIGIN'"
+                  [optionList]="optionList"
+                  [parentControlName]="'description'"
+                  [parentFormGroup]="pollForm"
+                  [requiredCondition]="true">
+    </app-dropdown>
     <div class="setting-form" formGroupName="settings">
 
     </div>
-
-
+    <app-circle-status [label]="'status'" class="circle-status-active"></app-circle-status>
+    <app-toggle-button (toggleGroupChange)="selectMode()"
+                       [buttonToggleListItem]="toggleList"
+                       [id]="'modalita-prenotazione-toggle-button'"
+                       [parentControlName]="'description'" [parentFormGroup]="pollForm"
+                       [toggleGroupAriaLabel]="'A_V_B_E.MAT_TAB_TITLE.TYPE_VALUE'">
+    </app-toggle-button>
+    <app-button (click)="openDialogBar('info')" [label]="'Mostra DialogBar - Info'"
+                class="small-gap primary-button-blue app-button-small">
+    </app-button>
+    <app-button (click)="openDialogBar('error')" [label]="'Mostra DialogBar - Errore'"
+                class="small-gap primary-button-blue app-button-small">
+    </app-button>
+    <app-button (click)="openDialogBar('confirm')" [label]="'Mostra DialogBar - confirm'"
+                class="small-gap primary-button-blue app-button-small">
+    </app-button>
+    <app-button (click)="openDialogBar('warning')" [label]="'Mostra DialogBar - warning'"
+                class="small-gap primary-button-blue app-button-small">
+    </app-button>
   </form>
 
   <h3>Poll Expiration Date</h3>
-  <dl-date-time-picker
-    [(ngModel)]="expirationDate"
-    maxView="year"
-    minView="minute"
-    minuteStep="5"
-    startView="day"
-  >
-  </dl-date-time-picker>
-  <!--todo button submit-->
 
+  <app-button [id]="'d'" [label]="'Submit'" class="small-gap primary-button-blue app-button-small"></app-button>
 </div>
