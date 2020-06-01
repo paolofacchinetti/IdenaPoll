@@ -33,6 +33,11 @@ export class CreateComponent implements OnInit {
           newbieWeight: new FormControl({value: '', disabled: true}, [Validators.required]),
           verifiedWeight: new FormControl({value: '', disabled: true}, [Validators.required]),
           humanWeight: new FormControl({value: '', disabled: true}, [Validators.required])
+        }),
+        expiration: this.fb.group({
+          days: [''],
+          hours: [''],
+          minutes: ['']
         })
       }),
       options: this.fb.array([
@@ -57,6 +62,10 @@ export class CreateComponent implements OnInit {
     return this.pollForm.get('options') as FormArray;
   }
 
+  get expiration(){
+    return this.settings.get('expiration') as FormGroup;
+  }
+
   get settings() {
     return this.pollForm.get('settings') as FormGroup;
   }
@@ -66,6 +75,7 @@ export class CreateComponent implements OnInit {
   }
 
   onSubmit() {
+    console.log(this.checkboxBool);
     if (this.pollForm.valid) {
       console.log(this.pollForm);
     } else {
@@ -102,12 +112,14 @@ export class CreateComponent implements OnInit {
   }
 
   weightedVotes() {
-    if (this.checkboxBool) {
-      this.statusSelected()
-    } else {
-      this.voteWeight.get('newbieWeight').disable();
-      this.voteWeight.get('verifiedWeight').disable();
-      this.voteWeight.get('humanWeight').disable();
-    }
+    setTimeout(() => {
+      if (this.checkboxBool) {
+        this.statusSelected();
+      } else {
+        this.voteWeight.get('newbieWeight').disable();
+        this.voteWeight.get('verifiedWeight').disable();
+        this.voteWeight.get('humanWeight').disable();
+      }
+    }, 0);
   }
 }

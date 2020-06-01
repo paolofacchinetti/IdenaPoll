@@ -1,5 +1,5 @@
 import {Component, EventEmitter, Input, Output} from '@angular/core';
-import {MatCheckboxChange} from "@angular/material/checkbox";
+import {MatCheckboxChange} from '@angular/material/checkbox';
 
 @Component({
   selector: 'app-checkbox',
