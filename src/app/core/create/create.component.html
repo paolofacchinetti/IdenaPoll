@@ -2,7 +2,7 @@
 
   <h1>Create a new Poll</h1>
 
-  <form (ngSubmit)="onSubmit(pollForm.value)" [formGroup]="pollForm" class="input-form">
+  <form [formGroup]="pollForm" class="input-form">
 
 
     <div class="form-title">
@@ -35,7 +35,7 @@
                        [toggleGroupAriaLabel]="'Minimum Status Requirement to Vote'">
     </app-toggle-button>
 
-    <app-button [id]="'d'" [label]="'Submit'" class="small-gap primary-button-blue app-button-small"></app-button>
+    <app-button (click)="onSubmit()" [id]="'submitButton'" [label]="'Submit'" class="small-gap primary-button-blue app-button-small"></app-button>
 
   </form>
 

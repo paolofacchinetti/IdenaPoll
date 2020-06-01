@@ -56,9 +56,10 @@ export class CreateComponent implements OnInit {
     return this.pollForm.get('settings') as FormGroup;
   }
 
-  onSubmit(pollData) {
-    console.log(pollData);
-    if (isNullOrEmpty(pollData.title) || isNullOrEmpty(pollData.options[0]) || isNullOrEmpty(pollData.options[1])){
+  onSubmit() {
+    if (this.pollForm.valid) {
+      console.log('Valid');
+    }else{
       this.openDialogBar('error', 'Please fill in the required fields of the form.');
     }
   }
