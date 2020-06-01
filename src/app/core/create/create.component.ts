@@ -24,15 +24,15 @@ export class CreateComponent implements OnInit {
   constructor(private fb: FormBuilder, protected store: Store<State>) {
     this.expirationDate = moment().add(7, 'days').toDate();
     this.pollForm = this.fb.group({
-      title: ['', Validators.required],
+      title: ['', [Validators.required]],
       desc: [''],
       settings: this.fb.group({
         statusRequirement: [''],
         voteWeight: ['']
       }),
       options: this.fb.array([
-        this.fb.control('', Validators.required),
-        this.fb.control('', Validators.required)
+        this.fb.control('', [Validators.required]),
+        this.fb.control('', [Validators.required])
       ])
     });
   }
