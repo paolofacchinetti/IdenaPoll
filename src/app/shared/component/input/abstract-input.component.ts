@@ -8,7 +8,7 @@ export abstract class AbstractInputComponent implements OnInit, OnDestroy {
   @Input() parentControlName: string;
   @Input() required = false;
   @Input() disabled = false;
-  @Input() inputSize = "56px";
+  @Input() inputSize = '56px';
   @Input() inputLabel?: string;
   @Input() placeholder?: string;
   @Input() minLength?: string;
@@ -17,13 +17,11 @@ export abstract class AbstractInputComponent implements OnInit, OnDestroy {
   @Input() iconClass?: string;
   @Input() inputInTable = false;
 
-  // suggerimenti per input (left: messaggio di aiuto, right - contatore caratteri)
   @Input() leftHint?: string;
   @Input() rightHint?: string;
 
   @Output() blurEvent = new EventEmitter<boolean>();
   @Output() keydownEvent = new EventEmitter<KeyboardEvent>();
-  // substitute for the click on the icon
   @Output() iconClickEvent = new EventEmitter();
 
   @HostBinding('class.app-input') readonly definingClass = true;
@@ -71,9 +69,7 @@ export abstract class AbstractInputComponent implements OnInit, OnDestroy {
     this.dynamicIconClass = this.iconClass;
   }
 
-  // questa funzione gestisce il trasferimento del focus dal'componente custom all'elemento di input appropriato.
   onAutofocus() {
-    // see overrided functions
   }
 
 

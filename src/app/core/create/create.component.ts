@@ -1,11 +1,12 @@
 import {Component, OnInit} from '@angular/core';
-import {FormArray, FormBuilder, FormGroup, Validators} from '@angular/forms';
+import {FormArray, FormBuilder, FormControl, FormGroup, Validators} from '@angular/forms';
 import {Store} from '@ngrx/store';
 import {State} from '@app-redux/index';
 import * as moment from 'moment';
 import {MatSnackBarConfig} from '@angular/material/snack-bar';
 import {openStatusBar} from '@app-redux/core.actions';
 import {isNullOrEmpty} from '@app-shared/format.functions';
+import {StatusEnum} from '@app-shared/model/status.enum';
 
 @Component({
   selector: 'app-create',
@@ -30,9 +31,9 @@ export class CreateComponent implements OnInit {
       settings: this.fb.group({
         statusRequirement: [''],
         voteWeight: this.fb.group({
-          newbieWeight: [''],
-          verifiedWeight: [''],
-          humanWeight: ['']
+          newbieWeight: new FormControl({value: '', disabled: true}, [Validators.required]),
+          verifiedWeight: new FormControl({value: '', disabled: true}, [Validators.required]),
+          humanWeight: new FormControl({value: '', disabled: true}, [Validators.required])
         })
       }),
       options: this.fb.array([
@@ -61,19 +62,33 @@ export class CreateComponent implements OnInit {
     return this.pollForm.get('settings') as FormGroup;
   }
 
-  get voteWeight(){
-    return this.pollForm.get('settings').get('voteWeight') as FormGroup;
+  get voteWeight() {
+    return this.settings.get('voteWeight') as FormGroup;
   }
 
   onSubmit() {
     if (this.pollForm.valid) {
-      console.log('Valid');
+      console.log(this.pollForm);
     } else {
       this.openDialogBar('error', 'Please fill in the required fields of the form.');
     }
   }
 
   selectMode() {
+    const status = this.settings.get('statusRequirement').value;
+    if (status === StatusEnum.NEWBIE) {
+      this.voteWeight.get('newbieWeight').enable();
+      this.voteWeight.get('verifiedWeight').enable();
+      this.voteWeight.get('humanWeight').enable();
+    } else if (status === StatusEnum.VERIFIED) {
+      this.voteWeight.get('newbieWeight').disable();
+      this.voteWeight.get('verifiedWeight').enable();
+      this.voteWeight.get('humanWeight').enable();
+    } else if (status === StatusEnum.HUMAN) {
+      this.voteWeight.get('newbieWeight').disable();
+      this.voteWeight.get('verifiedWeight').disable();
+      this.voteWeight.get('humanWeight').enable();
+    }
   }
 
   addOption() {

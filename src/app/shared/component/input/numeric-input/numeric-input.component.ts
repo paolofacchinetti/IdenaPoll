@@ -1,5 +1,5 @@
 import {Component, ElementRef, HostBinding, Input, ViewChild, ViewContainerRef, ViewEncapsulation} from '@angular/core';
-import {AbstractInputComponent} from "@app-shared/component/input/abstract-input.component";
+import {AbstractInputComponent} from '@app-shared/component/input/abstract-input.component';
 
 @Component({
   selector: 'app-numeric-input',
@@ -24,7 +24,6 @@ export class NumericInputComponent extends AbstractInputComponent {
     return this.valueAlignedToRight;
   }
 
-  // questa funzione gestisce il trasferimento del focus dal'componente custom all'elemento di input appropriato.
   onAutofocus() {
     setTimeout(() => {
       this.inputNumberField.nativeElement.focus();
