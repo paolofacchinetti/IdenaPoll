@@ -33,6 +33,11 @@ export class CreateComponent implements OnInit {
           newbieWeight: new FormControl({value: '', disabled: true}, [Validators.required]),
           verifiedWeight: new FormControl({value: '', disabled: true}, [Validators.required]),
           humanWeight: new FormControl({value: '', disabled: true}, [Validators.required])
+        }),
+        expiration: this.fb.group({
+          days: [''],
+          hours: [''],
+          minutes: ['']
         })
       }),
       options: this.fb.array([
@@ -55,6 +60,10 @@ export class CreateComponent implements OnInit {
 
   get options() {
     return this.pollForm.get('options') as FormArray;
+  }
+
+  get expiration(){
+    return this.settings.get('expiration') as FormGroup;
   }
 
   get settings() {

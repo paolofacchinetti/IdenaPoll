@@ -5,9 +5,9 @@
   .create-container {
     width: 100%;
 
-    .setting-form {
-      display: flex;
-      width: 100%;
+    .time-picker{
+      display: inline-flex;
+      flex-direction: row;
     }
 
   }
