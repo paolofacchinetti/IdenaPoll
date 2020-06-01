@@ -21,7 +21,7 @@ export class TopbarComponent implements OnInit {
       /**
        Conditions for being able to create a new poll
        */
-      if (this.session.status == StatusEnum.HUMAN || this.session.status == StatusEnum.VERIFIED) {
+      if (this.session.status == StatusEnum.HUMAN || this.session.status == StatusEnum.VERIFIED || this.session.status == StatusEnum.SUSPENDED) {
         this.canCreate = true;
       } else {
         this.canCreate = false;
