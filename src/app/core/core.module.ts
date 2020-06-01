@@ -10,20 +10,22 @@ import {CreateComponent} from './create/create.component';
 import {FormsModule, ReactiveFormsModule} from '@angular/forms';
 import {PollComponent} from './poll/poll.component';
 import {MatTabsModule} from '@angular/material/tabs';
+import {PopularTabComponent} from './popular-tab/popular-tab.component';
+import {RecentTabComponent} from './recent-tab/recent-tab.component';
 
 
 @NgModule({
-  declarations: [TopbarComponent, SigninComponent, HomeComponent, CreateComponent, PollComponent],
+  declarations: [TopbarComponent, SigninComponent, HomeComponent, CreateComponent, PollComponent, PopularTabComponent, RecentTabComponent],
   exports: [
     TopbarComponent
   ],
-    imports: [
-        CommonModule,
-        FlexModule,
-        SharedModule,
-        RouterModule,
-        ReactiveFormsModule,
-        FormsModule,
+  imports: [
+    CommonModule,
+    FlexModule,
+    SharedModule,
+    RouterModule,
+    ReactiveFormsModule,
+    FormsModule,
         MatTabsModule
     ],
   providers: [FormsModule]

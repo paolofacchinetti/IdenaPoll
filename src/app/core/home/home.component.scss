@@ -9,76 +9,12 @@
 
   .home-container {
     overflow: hidden;
-    position: absolute;
+    position: relative;
     width: 95%;
     height: 95%;
     border-radius: 25px;
     background-color: #fff;
-    display: grid;
     padding: 10px;
-    grid-template-rows: 50% 50%;
-    grid-template-columns: auto;
-    grid-gap: 5px;
 
-    .popular-polls-wrapper, .recent-polls-wrapper {
-      .title {
-        letter-spacing: 0.8px;
-        color: #53565c;
-        padding: 15px;
-        grid-row: 1;
-        margin: 0;
-        display: block;
-      }
-
-      .grid-wrapper {
-        width: 100%;
-        height: calc(100% - 80px);
-        padding: 0px 10px;
-        position: relative;
-        display: inline-grid;
-        grid-template-rows: 48% 48%;
-        grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
-        grid-gap: 15px;
-        grid-auto-flow: column;
-
-        .popular-polls, .recent-polls {
-          display: inline-block;
-          grid-row: auto;
-          position: relative;
-          box-shadow: 1px 8px 28px 6px rgba(0, 0, 0, 0.125);
-          border-radius: 15px;
-
-          .poll-title {
-            font-weight: bold;
-            padding: 10px 10px 2.5px;
-            height: calc(100% / 3 - 17.5px);
-            overflow: hidden;
-          }
-
-          .poll-desc {
-            text-align: left;
-            padding: 2.5px 10px;
-            height: calc(100% / 2 - 17.5px);
-            overflow: hidden;
-            text-overflow: ellipsis;
-          }
-
-          .poll-votes {
-            font-weight: bold;
-            position: absolute;
-            bottom: 10px;
-            left: 10px;
-          }
-
-          .poll-time {
-            position: absolute;
-            bottom: 10px;
-            right: 10px;
-          }
-        }
-      }
-    }
   }
-
-
 }

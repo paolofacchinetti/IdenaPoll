@@ -152,7 +152,6 @@
   }
 
 
-  @include css-for-ie {
     .mat-form-field-appearance-outline .mat-form-field-wrapper {
       margin: 0px !important;
     }
@@ -161,7 +160,6 @@
       align-items: center !important;
     }
 
-  }
 }
 
 @include mix-app-theme();

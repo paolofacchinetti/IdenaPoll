@@ -3,47 +3,15 @@
   <mat-tab-group>
 
     <mat-tab label="Popular Polls">
-      <div class='popular-polls-wrapper'>
-        <h1 class="title">Popular Polls</h1>
-        <div class="grid-wrapper">
-          <div *ngFor="let poll of popularPolls" class="popular-polls">
-            <div class="poll-title">
-              {{poll.title}}
-            </div>
-            <div class="poll-desc">
-              {{poll.description}}
-            </div>
-            <div class="poll-votes">
-              Votes: {{poll.totalVotes}}
-            </div>
-            <div class="poll-time">
-              {{poll.createdAt.toDateString()}}
-            </div>
-          </div>
-        </div>
-      </div>
+      <ng-template matTabContent>
+        <app-popular-tab></app-popular-tab>
+      </ng-template>
     </mat-tab>
 
     <mat-tab label="Recent Polls">
-      <div class='recent-polls-wrapper'>
-        <h1 class="title">Recent Polls</h1>
-        <div class="grid-wrapper">
-          <div *ngFor="let poll of recentPolls" class="recent-polls">
-            <div class="poll-title">
-              {{poll.title}}
-            </div>
-            <div class="poll-desc">
-              {{poll.description}}
-            </div>
-            <div class="poll-votes">
-              Votes: {{poll.totalVotes}}
-            </div>
-            <div class="poll-time">
-              {{poll.createdAt.toDateString()}}
-            </div>
-          </div>
-        </div>
-      </div>
+      <ng-template matTabContent>
+        <app-recent-tab></app-recent-tab>
+      </ng-template>
     </mat-tab>
   </mat-tab-group>
 

@@ -2,7 +2,6 @@
 @import "../../../assets/sass/mixins";
 
 @mixin mix-app-theme() {
-  @include css-for-ie {
     .mat-tab-label {
       width: $tab-label-width;
       height: $tab-label-height !important;
@@ -10,11 +9,7 @@
       border-top-left-radius: $border-radius-medium;
       border-top-right-radius: $border-radius-medium;
     }
-  }
 
-  .mat-tab-body-wrapper {
-    height: 100%;
-  }
 
   .mat-tab-header {
     border-bottom: none;
@@ -71,7 +66,8 @@
   }
 
   .mat-tab-body-wrapper {
-    height: 100%;
+    height: calc(100vh - 200px) !important;
+    position: relative;
   }
 }
 
