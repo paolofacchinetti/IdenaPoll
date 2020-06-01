@@ -7,8 +7,7 @@
 "./utilities",
 "./components/tab-group",
 "./components/autocomplete",
-"./components/checkbox",
-"./components/table";
+"./components/checkbox";
 
 
 $button-toggle-padding: 40px;
@@ -21,7 +20,6 @@ html,
 body {
   @extend %no-margin-no-padding;
   overflow-x: visible;
-  width: $app-container-scroll-width;
 }
 
 body {

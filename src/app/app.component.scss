@@ -20,7 +20,8 @@ $grey: #f5f6f7;
     position: relative;
     top: 80px;
     display: flex;
-    height: calc(100% - 80px);
+    width: 100%;
+    height: calc(100vh - 80px);
     max-height: calc(100% - 80px);
   }
 }
