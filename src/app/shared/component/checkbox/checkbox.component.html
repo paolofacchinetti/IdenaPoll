@@ -6,6 +6,7 @@
     [disabled]="disabledCondition"
     [id]="id"
     [name]="checkboxName"
+    (change)="eventChange()"
     class="app-checkbox">
     {{label}}
   </mat-checkbox>

@@ -5,7 +5,6 @@ import {State} from '@app-redux/index';
 import * as moment from 'moment';
 import {MatSnackBarConfig} from '@angular/material/snack-bar';
 import {openStatusBar} from '@app-redux/core.actions';
-import {isNullOrEmpty} from '@app-shared/format.functions';
 import {StatusEnum} from '@app-shared/model/status.enum';
 
 @Component({
@@ -14,7 +13,7 @@ import {StatusEnum} from '@app-shared/model/status.enum';
   styleUrls: ['./create.component.scss']
 })
 export class CreateComponent implements OnInit {
-  checkboxBool: boolean;
+  checkboxBool: boolean = false;
   pollForm;
   expirationDate;
   toggleList = [
@@ -74,17 +73,17 @@ export class CreateComponent implements OnInit {
     }
   }
 
-  selectMode() {
+  statusSelected() {
     const status = this.settings.get('statusRequirement').value;
-    if (status === StatusEnum.NEWBIE) {
+    if (status === StatusEnum.NEWBIE && this.checkboxBool) {
       this.voteWeight.get('newbieWeight').enable();
       this.voteWeight.get('verifiedWeight').enable();
       this.voteWeight.get('humanWeight').enable();
-    } else if (status === StatusEnum.VERIFIED) {
+    } else if (status === StatusEnum.VERIFIED && this.checkboxBool) {
       this.voteWeight.get('newbieWeight').disable();
       this.voteWeight.get('verifiedWeight').enable();
       this.voteWeight.get('humanWeight').enable();
-    } else if (status === StatusEnum.HUMAN) {
+    } else if (status === StatusEnum.HUMAN && this.checkboxBool) {
       this.voteWeight.get('newbieWeight').disable();
       this.voteWeight.get('verifiedWeight').disable();
       this.voteWeight.get('humanWeight').enable();
@@ -102,4 +101,13 @@ export class CreateComponent implements OnInit {
 
   }
 
+  weightedVotes() {
+    if (this.checkboxBool) {
+      this.statusSelected()
+    } else {
+      this.voteWeight.get('newbieWeight').disable();
+      this.voteWeight.get('verifiedWeight').disable();
+      this.voteWeight.get('humanWeight').disable();
+    }
+  }
 }

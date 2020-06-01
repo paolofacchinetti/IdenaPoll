@@ -28,7 +28,7 @@
 
     <h3>Minimum Status Requirement to Vote</h3>
 
-    <app-toggle-button (toggleGroupChange)="selectMode()"
+    <app-toggle-button (toggleGroupChange)="statusSelected()"
                        [buttonToggleListItem]="toggleList"
                        [id]="'statusRequirement'"
                        [parentControlName]="'statusRequirement'" [parentFormGroup]="settings"
@@ -36,7 +36,7 @@
     </app-toggle-button>
 
     <app-checkbox [label]="'Allow Weighted Votes'"
-                  [(checkboxValue)]="checkboxBool">
+                  (checkboxValueChange)="weightedVotes()" [(checkboxValue)]="checkboxBool">
     </app-checkbox>
 
 
