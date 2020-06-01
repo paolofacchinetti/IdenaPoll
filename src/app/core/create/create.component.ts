@@ -66,6 +66,7 @@ export class CreateComponent implements OnInit {
   }
 
   onSubmit() {
+    console.log(this.checkboxBool);
     if (this.pollForm.valid) {
       console.log(this.pollForm);
     } else {
@@ -102,12 +103,14 @@ export class CreateComponent implements OnInit {
   }
 
   weightedVotes() {
-    if (this.checkboxBool) {
-      this.statusSelected()
-    } else {
-      this.voteWeight.get('newbieWeight').disable();
-      this.voteWeight.get('verifiedWeight').disable();
-      this.voteWeight.get('humanWeight').disable();
-    }
+    setTimeout(() => {
+      if (this.checkboxBool) {
+        this.statusSelected();
+      } else {
+        this.voteWeight.get('newbieWeight').disable();
+        this.voteWeight.get('verifiedWeight').disable();
+        this.voteWeight.get('humanWeight').disable();
+      }
+    }, 0);
   }
 }
