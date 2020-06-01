@@ -13,6 +13,7 @@ import {isNullOrEmpty} from '@app-shared/format.functions';
   styleUrls: ['./create.component.scss']
 })
 export class CreateComponent implements OnInit {
+  checkboxBool: boolean;
   pollForm;
   expirationDate;
   toggleList = [
@@ -28,7 +29,11 @@ export class CreateComponent implements OnInit {
       desc: [''],
       settings: this.fb.group({
         statusRequirement: [''],
-        voteWeight: ['']
+        voteWeight: this.fb.group({
+          newbieWeight: [''],
+          verifiedWeight: [''],
+          humanWeight: ['']
+        })
       }),
       options: this.fb.array([
         this.fb.control('', [Validators.required]),
@@ -56,10 +61,14 @@ export class CreateComponent implements OnInit {
     return this.pollForm.get('settings') as FormGroup;
   }
 
+  get voteWeight(){
+    return this.pollForm.get('settings').get('voteWeight') as FormGroup;
+  }
+
   onSubmit() {
     if (this.pollForm.valid) {
       console.log('Valid');
-    }else{
+    } else {
       this.openDialogBar('error', 'Please fill in the required fields of the form.');
     }
   }

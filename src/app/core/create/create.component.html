@@ -35,7 +35,22 @@
                        [toggleGroupAriaLabel]="'Minimum Status Requirement to Vote'">
     </app-toggle-button>
 
-    <app-button (click)="onSubmit()" [id]="'submitButton'" [label]="'Submit'" class="small-gap primary-button-blue app-button-small"></app-button>
+    <app-checkbox [label]="'Allow Weighted Votes'"
+                  [(checkboxValue)]="checkboxBool">
+    </app-checkbox>
+
+
+    <app-numeric-input [id]="'newbieWeight'" [inputLabel]="'Newbie Vote Weight'" [parentControlName]="'newbieWeight'"
+                       [parentFormGroup]="voteWeight"></app-numeric-input>
+    <app-numeric-input [id]="'verifiedWeight'" [inputLabel]="'Verified Vote Weight'"
+                       [parentControlName]="'verifiedWeight'"
+                       [parentFormGroup]="voteWeight"></app-numeric-input>
+    <app-numeric-input [id]="'humanWeight'" [inputLabel]="'Human Vote Weight'" [parentControlName]="'humanWeight'"
+                       [parentFormGroup]="voteWeight"></app-numeric-input>
+
+
+    <app-button (click)="onSubmit()" [id]="'submitButton'" [label]="'Submit'"
+                class="small-gap primary-button-blue app-button-small"></app-button>
 
   </form>
 
