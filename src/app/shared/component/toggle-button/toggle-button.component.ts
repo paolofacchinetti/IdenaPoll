@@ -1,6 +1,6 @@
 import {Component, EventEmitter, Input, Output} from '@angular/core';
 import {FormGroup} from '@angular/forms';
-import {ButtonToggleItem} from "@app-shared/model/button-toggle-item.interface";
+import {ButtonToggleItem} from '@app-shared/model/button-toggle-item.interface';
 
 
 @Component({
@@ -10,52 +10,19 @@ import {ButtonToggleItem} from "@app-shared/model/button-toggle-item.interface";
 })
 
 export class ToggleButtonComponent {
-  /**
-   * @property {string} id
-   * Proprietà di @Input().
-   * Identificatore del ButtonGroup
-   */
   @Input() id: string;
-  /**
-   * @property {FormGroup} parentFormGroup
-   * Proprietà di @Input().
-   * Referenza al Form in cui è inittato il componente
-   */
   @Input() parentFormGroup: FormGroup;
-  /**
-   * @property {string} parentControlName
-   * Proprietà di @Input().
-   * Referenza ad uno specifico FormControlName
-   */
   @Input() parentControlName: string;
-  /**
-   * @property {string} toggleGroupAriaLabel
-   * Proprietà di @Input().
-   */
   @Input() toggleGroupAriaLabel: string;
-  /**
-   * @property {string} toggleGroupModel
-   * Proprietà di @Input().
-   */
   @Input() toggleGroupModel?: string;
-  /**
-   * @property {ButtonToggleItem[]} buttonToggleListItem
-   * Proprietà di @Input().
-   */
   @Input() buttonToggleListItem: ButtonToggleItem[];
   @Output() toggleGroupChange = new EventEmitter<any>();
   @Output() toggleItemClick: EventEmitter<ButtonToggleItem> = new EventEmitter<ButtonToggleItem>();
 
-  /**
-   * @constructor
-   */
+
   constructor() {
   }
 
-  /**
-   * @param {any} [value] - parametro opzionale
-   * Funzione che permette di gestire l'onChange del ButtonGroup
-   */
   onChangeEvent(value?: any) {
     if (this.toggleGroupChange) {
       if (value) {
@@ -66,21 +33,12 @@ export class ToggleButtonComponent {
     }
   }
 
-  /**
-   * @param {ButtonToggleItem} item - parametro obbligatorio - singolo Button estratto dalla lista
-   * Funzione che viene richiamata al click del Button
-   */
   selectionEvent(item: ButtonToggleItem) {
     if (this.toggleItemClick) {
       this.toggleItemClick.emit(item);
     }
   }
 
-  /**
-   * @param {any} index
-   * @param {any} item
-   *  Funzione che identifica ogni singolo item della lista
-   */
   trackByLabel(index, item) {
     return item.label;
   }

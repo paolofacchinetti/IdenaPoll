@@ -1,10 +1,11 @@
 import {Component, OnInit} from '@angular/core';
-import {FormArray, FormBuilder, Validators} from '@angular/forms';
+import {FormArray, FormBuilder, FormGroup, Validators} from '@angular/forms';
 import {Store} from '@ngrx/store';
 import {State} from '@app-redux/index';
 import * as moment from 'moment';
-import {MatSnackBarConfig} from "@angular/material/snack-bar";
-import {openStatusBar} from "@app-redux/core.actions";
+import {MatSnackBarConfig} from '@angular/material/snack-bar';
+import {openStatusBar} from '@app-redux/core.actions';
+import {isNullOrEmpty} from '@app-shared/format.functions';
 
 @Component({
   selector: 'app-create',
@@ -14,36 +15,34 @@ import {openStatusBar} from "@app-redux/core.actions";
 export class CreateComponent implements OnInit {
   pollForm;
   expirationDate;
-  optionList = [
-    {value: 'HUMAN', label: 'Human'},
-    {value: 'VERIFIED', label: 'Verified'}
-  ];
   toggleList = [
-    {value: 'HUMAN', label: 'Human'},
-    {value: 'VERIFIED', label: 'Verified'}
+    {value: 'NEWBIE', label: 'Newbie'},
+    {value: 'VERIFIED', label: 'Verified'},
+    {value: 'HUMAN', label: 'Human'}
   ];
 
   constructor(private fb: FormBuilder, protected store: Store<State>) {
     this.expirationDate = moment().add(7, 'days').toDate();
     this.pollForm = this.fb.group({
       title: ['', Validators.required],
-      description: [''],
+      desc: [''],
       settings: this.fb.group({
-        // ADD SETTINGS
+        statusRequirement: [''],
+        voteWeight: ['']
       }),
       options: this.fb.array([
         this.fb.control('', Validators.required),
-        this.fb.control('')
+        this.fb.control('', Validators.required)
       ])
     });
   }
 
-  openDialogBar(tipoDialogBar: string) {
+  openDialogBar(typeDialogBar: string, titleValue: string) {
     const config: MatSnackBarConfig = {
       data: {
-        title: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit.',
+        title: titleValue,
         icon: '',
-        type: tipoDialogBar
+        type: typeDialogBar
       }
     };
     this.store.dispatch(openStatusBar({value: config}));
@@ -53,19 +52,28 @@ export class CreateComponent implements OnInit {
     return this.pollForm.get('options') as FormArray;
   }
 
+  get settings() {
+    return this.pollForm.get('settings') as FormGroup;
+  }
+
+  onSubmit(pollData) {
+    console.log(pollData);
+    if (isNullOrEmpty(pollData.title) || isNullOrEmpty(pollData.options[0]) || isNullOrEmpty(pollData.options[1])){
+      this.openDialogBar('error', 'Please fill in the required fields of the form.');
+    }
+  }
+
   selectMode() {
   }
 
   addOption() {
-    this.options.push(this.fb.control(''));
-    setTimeout(() => document.getElementById("option-" + this.options.controls.length).focus(), 0)
+    if (this.options.length < 6) {
+      this.options.push(this.fb.control(''));
+      setTimeout(() => document.getElementById('option-' + this.options.controls.length).focus(), 0);
+    }
   }
 
   ngOnInit(): void {
-
-  }
-
-  onSubmit(pollData) {
 
   }
 

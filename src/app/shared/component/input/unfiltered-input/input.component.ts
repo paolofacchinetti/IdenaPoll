@@ -1,5 +1,5 @@
 import {Component, ElementRef, ViewChild, ViewContainerRef, ViewEncapsulation} from '@angular/core';
-import {AbstractInputComponent} from "@app-shared/component/input/abstract-input.component";
+import {AbstractInputComponent} from '@app-shared/component/input/abstract-input.component';
 
 
 declare type InputType = 'text' | 'number' | 'alphanumeric';
@@ -19,7 +19,7 @@ export class InputComponent extends AbstractInputComponent {
     this.dynamicIconClass = this.iconClass;
   }
 
-  // questa funzione gestisce il trasferimento del focus dal'componente custom all'elemento di input appropriato.
+
   onAutofocus() {
     setTimeout(() => {
       this.inputTextField.nativeElement.focus();

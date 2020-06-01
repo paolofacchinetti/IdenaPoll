@@ -9,6 +9,7 @@ import {RouterModule} from '@angular/router';
 import {CreateComponent} from './create/create.component';
 import {FormsModule, ReactiveFormsModule} from '@angular/forms';
 import {PollComponent} from './poll/poll.component';
+import {MatTabsModule} from '@angular/material/tabs';
 
 
 @NgModule({
@@ -16,14 +17,15 @@ import {PollComponent} from './poll/poll.component';
   exports: [
     TopbarComponent
   ],
-  imports: [
-    CommonModule,
-    FlexModule,
-    SharedModule,
-    RouterModule,
-    ReactiveFormsModule,
-    FormsModule
-  ],
+    imports: [
+        CommonModule,
+        FlexModule,
+        SharedModule,
+        RouterModule,
+        ReactiveFormsModule,
+        FormsModule,
+        MatTabsModule
+    ],
   providers: [FormsModule]
 })
 export class CoreModule { }

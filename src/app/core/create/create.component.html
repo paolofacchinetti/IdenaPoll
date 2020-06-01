@@ -1,58 +1,42 @@
 <div class="create-container">
+
   <h1>Create a new Poll</h1>
+
   <form (ngSubmit)="onSubmit(pollForm.value)" [formGroup]="pollForm" class="input-form">
 
+
     <div class="form-title">
-      <app-alphanumeric-input [id]="'a'" [inputLabel]="'Title/Question'" [parentControlName]="'title'"
-                              [parentFormGroup]="pollForm"></app-alphanumeric-input>
+      <app-input [id]="'title'" [inputLabel]="'Title/Question'" [parentControlName]="'title'"
+                 [parentFormGroup]="pollForm"></app-input>
     </div>
 
     <div class="form-desc">
-      <textarea formControlName="description" id="description" placeholder="Description"></textarea>
+      <app-input [id]="'desc'" [inputLabel]="'Description'" [parentControlName]="'desc'"
+                 [parentFormGroup]="pollForm" [required]="false"></app-input>
     </div>
-    <div formArrayName="options">
-      <h3>Options</h3>
-      <div *ngFor="let option of options.controls; let i=index">
-        <input [formControlName]="i" id="option-{{i+1}}" placeholder="Option {{i+1}}" type="text">
-      </div>
-      <input (click)="addOption()" placeholder="Add options">
-    </div>
-    <app-checkbox [label]="'checkone'"></app-checkbox>
-    <app-dropdown [disabledCondition]="false"
-                  [formFieldClass]="'small-select'"
-                  [formFieldId]="'selectProvenienzaContanteDaSecurcassa'"
-                  [id]="'movimentazione-cassa-mittente-provenienza-contante'"
-                  [label]="'M_V_C.CASH_ORIGIN'"
-                  [optionList]="optionList"
-                  [parentControlName]="'description'"
-                  [parentFormGroup]="pollForm"
-                  [requiredCondition]="true">
-    </app-dropdown>
-    <div class="setting-form" formGroupName="settings">
 
+    <div formArrayName="options">
+      <h3>Choices</h3>
+      <div *ngFor="let option of options.controls; let i=index">
+        <app-input [id]="'option-'+(i+1)" [inputLabel]="'Choice '+(i+1)" [parentControlName]="i"
+                   [parentFormGroup]="options"></app-input>
+      </div>
+      <app-button (click)="addOption()" [disabledCondition]="options.length>5" [label]="'Add Choice'"
+                  class="small-gap primary-button-blue app-button-small"></app-button>
     </div>
-    <app-circle-status [label]="'status'" class="circle-status-active"></app-circle-status>
+
+
+    <h3>Minimum Status Requirement to Vote</h3>
+
     <app-toggle-button (toggleGroupChange)="selectMode()"
                        [buttonToggleListItem]="toggleList"
-                       [id]="'modalita-prenotazione-toggle-button'"
-                       [parentControlName]="'description'" [parentFormGroup]="pollForm"
-                       [toggleGroupAriaLabel]="'A_V_B_E.MAT_TAB_TITLE.TYPE_VALUE'">
+                       [id]="'statusRequirement'"
+                       [parentControlName]="'statusRequirement'" [parentFormGroup]="settings"
+                       [toggleGroupAriaLabel]="'Minimum Status Requirement to Vote'">
     </app-toggle-button>
-    <app-button (click)="openDialogBar('info')" [label]="'Mostra DialogBar - Info'"
-                class="small-gap primary-button-blue app-button-small">
-    </app-button>
-    <app-button (click)="openDialogBar('error')" [label]="'Mostra DialogBar - Errore'"
-                class="small-gap primary-button-blue app-button-small">
-    </app-button>
-    <app-button (click)="openDialogBar('confirm')" [label]="'Mostra DialogBar - confirm'"
-                class="small-gap primary-button-blue app-button-small">
-    </app-button>
-    <app-button (click)="openDialogBar('warning')" [label]="'Mostra DialogBar - warning'"
-                class="small-gap primary-button-blue app-button-small">
-    </app-button>
+
+    <app-button [id]="'d'" [label]="'Submit'" class="small-gap primary-button-blue app-button-small"></app-button>
+
   </form>
 
-  <h3>Poll Expiration Date</h3>
-
-  <app-button [id]="'d'" [label]="'Submit'" class="small-gap primary-button-blue app-button-small"></app-button>
 </div>
