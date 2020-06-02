@@ -1,5 +1,3 @@
-@import "./variables";
-
 @mixin display-grid($col-list: 0, $row-list: 0, $col-gap: 0, $row-gap: 0) {
   display: grid;
   display: -ms-grid;
