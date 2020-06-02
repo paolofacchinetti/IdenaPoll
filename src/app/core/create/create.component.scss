@@ -1,9 +1,21 @@
 :host {
-  width: 95%;
-  height: calc(95% - 80px);
+  height: 100%;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-content: center;
+  align-items: center;
+  flex-direction: row;
 
   .create-container {
-    width: 100%;
+    overflow: hidden;
+    position: relative;
+    width: 95%;
+    height: 95%;
+    border-radius: 25px;
+    background-color: #fff;
+    padding: 10px;
+    position: relative;
 
     h1{
       padding-bottom: 15px;
@@ -33,18 +45,23 @@
         padding: 15px;
 
         .min-requirements{
-          padding: 0 0 15px;
+          padding-bottom: 15px;
         }
-
+        .vote-weights{
+          *{
+            padding: 10px;
+          }
+        }
       }
 
       .time-picker{
         display: flex;
         flex-direction: row;
+        *{
+          padding-top: 10px;
+          padding-right: 10px;
+        }
       }
     }
-
-
-
   }
 }

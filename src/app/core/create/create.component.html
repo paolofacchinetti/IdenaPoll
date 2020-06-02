@@ -53,14 +53,16 @@
                     (checkboxValueChange)="weightedVotes()" [(checkboxValue)]="checkboxBool">
       </app-checkbox>
 
-      <!-- TODO LABEL EXPLAINING VALUE OF THE VOTE -->
-      <app-numeric-input [id]="'newbieWeight'" [inputLabel]="'Newbie Vote Weight'" [parentControlName]="'newbieWeight'"
-                         [parentFormGroup]="voteWeight"></app-numeric-input>
-      <app-numeric-input [id]="'verifiedWeight'" [inputLabel]="'Verified Vote Weight'"
-                         [parentControlName]="'verifiedWeight'"
-                         [parentFormGroup]="voteWeight"></app-numeric-input>
-      <app-numeric-input [id]="'humanWeight'" [inputLabel]="'Human Vote Weight'" [parentControlName]="'humanWeight'"
-                         [parentFormGroup]="voteWeight"></app-numeric-input>
+      <div class="vote-weights">
+        <app-numeric-input [id]="'newbieWeight'" [inputLabel]="'Newbie Vote Weight'"
+                           [parentControlName]="'newbieWeight'"
+                           [parentFormGroup]="voteWeight"></app-numeric-input>
+        <app-numeric-input [id]="'verifiedWeight'" [inputLabel]="'Verified Vote Weight'"
+                           [parentControlName]="'verifiedWeight'"
+                           [parentFormGroup]="voteWeight"></app-numeric-input>
+        <app-numeric-input [id]="'humanWeight'" [inputLabel]="'Human Vote Weight'" [parentControlName]="'humanWeight'"
+                           [parentFormGroup]="voteWeight"></app-numeric-input>
+      </div>
 
       <h3>This Poll will expire after:</h3>
 
@@ -73,13 +75,17 @@
                            [parentFormGroup]="expiration"></app-numeric-input>
       </div>
 
+      <div class="sub-but">
+        <app-button (click)="onSubmit()" [id]="'submitButton'" [label]="'Submit'"
+                    class="small-gap primary-button-blue app-button-small"></app-button>
+      </div>
+
     </div>
 
     <span class="spacer"></span>
 
   </form>
 
-  <app-button (click)="onSubmit()" [id]="'submitButton'" [label]="'Submit'"
-              class="small-gap primary-button-blue app-button-small"></app-button>
+
 
 </div>
