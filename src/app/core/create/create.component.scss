@@ -5,10 +5,46 @@
   .create-container {
     width: 100%;
 
-    .time-picker{
-      display: inline-flex;
-      flex-direction: row;
+    h1{
+      padding-bottom: 15px;
     }
+
+    .input-form{
+      display: flex;
+
+      .fields-box{
+        min-width: 600px;
+        display: flex;
+        flex-direction: column;
+        flex-grow: 1;
+        max-width: 1000px;
+        padding: 15px;
+        position: relative;
+
+        .field{
+         padding: 5px;
+        }
+
+      }
+
+      .option-box{
+        width: 25%;
+        min-width: 400px;
+        padding: 15px;
+
+        .min-requirements{
+          padding: 0 0 15px;
+        }
+
+      }
+
+      .time-picker{
+        display: flex;
+        flex-direction: row;
+      }
+    }
+
+
 
   }
 }

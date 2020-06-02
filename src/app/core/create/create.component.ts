@@ -35,9 +35,9 @@ export class CreateComponent implements OnInit {
           humanWeight: new FormControl({value: '', disabled: true}, [Validators.required])
         }),
         expiration: this.fb.group({
-          days: [''],
-          hours: [''],
-          minutes: ['']
+          days: ['7', [Validators.required]],
+          hours: ['0', [Validators.required]],
+          minutes: ['0', [Validators.required]]
         })
       }),
       options: this.fb.array([

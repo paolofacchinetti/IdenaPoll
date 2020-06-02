@@ -1,5 +1,6 @@
-@import "../../../assets/sass/variables";
-@import "../../../assets/sass/mixins";
+@import "../variables";
+@import "../mixins";
+@import "../palette";
 
 @mixin mix-app-theme() {
   .mat-checkbox-layout {
