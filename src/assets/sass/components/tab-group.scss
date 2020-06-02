@@ -1,13 +1,13 @@
-@import "../../../assets/sass/variables";
+@import "../../../assets/sass/palette";
 @import "../../../assets/sass/mixins";
 
 @mixin mix-app-theme() {
     .mat-tab-label {
-      width: $tab-label-width;
-      height: $tab-label-height !important;
+      width: 50%;
+      height: 40px !important;
       opacity: 1 !important;
-      border-top-left-radius: $border-radius-medium;
-      border-top-right-radius: $border-radius-medium;
+      border-top-left-radius: 4px;
+      border-top-right-radius: 4px;
     }
 
 
@@ -16,23 +16,23 @@
   }
 
   .mat-tab-label-container {
-    margin: 2*$border-size-medium;
-    border-radius: $border-radius-medium $border-radius-medium 0 0;
+    margin: 2*4px;
+    border-radius: 4px 4px 0 0;
   }
 
   .mat-tab-label-container.tab-header-focused {
-    box-shadow: 0 0 $box-shadow-offset $box-shadow-offset $primary-colors-first-50;
+    box-shadow: 0 0 2px 2px $primary-color-50;
   }
 
   .mat-tab-label.mat-ripple.mat-tab-disabled {
-    border-bottom: $border-size-medium solid rgba(0, 0, 0, 0.38);
+    border-bottom: 4px solid rgba(0, 0, 0, 0.38);
   }
 
   .mat-tab-label-content {
-    font: $font-weight-medium $subheading-min/$headings-subtitle Titillium Web, sans-serif;
+    font: 400 16px/20px Titillium Web, sans-serif;
     font-family: Titillium Web, sans-serif;
-    font-size: $headings-paragraph;
-    font-weight: $font-weight-semibold;
+    font-size: 14px;
+    font-weight: 600;
     font-style: normal;
     font-stretch: normal;
     line-height: 1.71;
@@ -41,17 +41,17 @@
   }
 
   .mat-tab-label:not(.mat-tab-disabled) {
-    color: $primary-colors-first-100 !important;
+    color: $primary-color !important;
     opacity: 1;
-    border-bottom: $border-size-medium solid $primary-colors-first-10-black;
+    border-bottom: 4px solid $primary-color-10;
   }
 
   .mat-tab-group.mat-primary .mat-ink-bar,
   .mat-tab-nav-bar.mat-primary .mat-ink-bar {
-    height: $tabgroup-height;
-    border-radius: $border-radius-medium;
+    height: 40px;
+    border-radius: 4px;
     z-index: -1111;
-    background-color: $primary-colors-first-30;
+    background-color: $primary-color-30;
   }
 
   .mat-tab-body-content {
@@ -59,7 +59,7 @@
   }
 
   .mat-tab-group .mat-tab-label {
-    height: $tab-label-height;
+    height: 40px;
   }
   .mat-tab-group.mat-primary .mat-tab-label.cdk-focused:not(.cdk-mouse-focused):not(.mat-tab-disabled) {
     background-color: transparent;

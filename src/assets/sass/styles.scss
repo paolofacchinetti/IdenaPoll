@@ -1,16 +1,16 @@
 @import "./reset",
 "./fonts",
 "./mixins",
-"./variables",
-"./icons",
+"./palette",
 "./typography",
-"./utilities",
 "./components/tab-group",
 "./components/autocomplete",
 "./components/checkbox";
 
-
-$button-toggle-padding: 40px;
+%no-margin-no-padding {
+  margin: 0;
+  padding: 0;
+}
 
 * {
   box-sizing: border-box;
@@ -31,30 +31,8 @@ body {
   @extend %no-margin-no-padding;
 }
 
-.complete {
-  width: $percent-full;
-}
-
 :focus {
   outline: none;
-}
-
-.page-loading {
-  background-color: rgb(0, 59, 92);
-}
-
-.page-loading-img {
-  position: absolute;
-  margin: auto;
-  top: 0;
-  left: 0;
-  right: 0;
-  bottom: 128px;
-}
-
-.page-loading-load-font {
-  font-family: 'Material Icons';
-  display: none;
 }
 
 button label {
@@ -65,76 +43,53 @@ button:disabled label {
   cursor: default;
 }
 
-.app-input-unwrapped {
-  &:not(.is-in-table) .mat-form-field-appearance-outline {
-    height: 40px;
-
-    .mat-form-field-label-wrapper {
-      top: -1em;
-    }
-
-    .mat-form-field-outline {
-      height: 40px;
-    }
-  }
-}
-
-
-.mat-option:focus:not(.mat-option-disabled),
-.mat-option:hover:not(.mat-option-disabled) {
-  background: rgba(0, 0, 0, .15);
-}
-
 @mixin mix-app-theme() {
 
   // Required input
   .mat-focused:not(.ng-dirty) .mat-placeholder-required.mat-form-field-required-marker {
-    color: $primary-colors-first-100;
+    color: $primary-color;
   }
 
   .mat-focused.ng-dirty:not(.ng-invalid) .mat-placeholder-required.mat-form-field-required-marker {
-    color: $primary-colors-first-100;
+    color: $primary-color;
   }
 
   .mat-focused.ng-invalid:not(.ng-untouched) .mat-placeholder-required.mat-form-field-required-marker {
-    color: $primary-colors-second-100-red;;
+    color: rgba(229, 76, 60, 1);;
   }
 
   .mat-placeholder-required.mat-form-field-required-marker {
-    padding-left: $asterisk-spacing;
+    padding-left: 3px;
   }
-
-  // material aggiunge dinamicamente uno style inline nell'html che va a sovrascrivere qualsiasi modifica apportata in file .css
   .mat-button-toggle-group,
   .mat-button-toggle-standalone {
-    border: $border-size-medium solid $neutral-colors-backgrounds-white;
+    border: 2px solid #fff;
     margin: 0 2px;
     box-shadow: none !important;
-    background-color: $neutral-colors-backgrounds-white;
+    background-color: #fff;
     border-radius: 4px;
 
     &:active {
-      background-color: $neutral-colors-backgrounds-white;
-      opacity: $opacity-30;
+      background-color: #fff;
+      opacity: 0.3;
       background-size: 100%;
       transition: background 0s;
     }
 
     &:not(:active):focus {
-      background-color: $primary-colors-second-10-lightblue;
-      border: $border-size-medium solid $neutral-colors-backgrounds-white;
-      box-shadow: 0 0 $box-shadow-offset $box-shadow-offset $primary-colors-second-50-lightblue !important;
+      background-color: $primary-color-10;
+      border: 2px solid #fff;
+      box-shadow: 0 0 2px 2px $primary-color-50 !important;
     }
   }
 
   // toggle button
   .mat-button-toggle {
-    background-color: $neutral-colors-backgrounds-white;
-    color: $primary-colors-second-100-lightblue;
-    border: solid $border-size-small $primary-colors-second-100-lightblue;
-    border-width: $border-size-small $border-size-small;
-    font-size: $button-font-size;
-    font-weight: $font-weight-semibold;
+    background-color: #fff;
+    color: $primary-color;
+    border: solid 1px $primary-color;
+    font-size: 14px;
+    font-weight: 600;
     font-style: normal;
     font-stretch: normal;
     line-height: 1.71;
@@ -142,38 +97,38 @@ button:disabled label {
     text-align: center;
 
     &:hover {
-      background-color: $primary-colors-second-10-lightblue;
+      background-color: $primary-color-10;
     }
 
     &:active {
-      border: $border-size-medium solid $primary-colors-second-100-lightblue;
-      background-color: $primary-colors-second-30-lightblue;
+      border: 2px solid $primary-color;
+      background-color: $primary-color-30;
       background-size: 100%;
       transition: background 0s;
     }
 
     button {
-      padding: $padding-none $button-toggle-padding;
+      padding: 0 40px;;
       cursor: pointer;
     }
   }
 
   // material aggiunge dinamicamente uno style inline nell'html che va a sovrascrivere qualsiasi modifica apportata in file .css
   .mat-button-toggle-label-content {
-    padding: $padding-none !important;
+    padding: 0 !important;
   }
 
   .mat-button-toggle:first-child {
-    border-left-width: $border-size-medium;
+    border-left-width: 2px;
   }
 
   .mat-button-toggle:last-child {
-    border-right-width: $border-size-medium;
+    border-right-width: 2px;
   }
 
   .mat-button-toggle-disabled {
-    background-color: #EEEEEE;
-    color: #9E9E9E;
+    background-color: $divider-color;
+    color: $divider-color;
 
     button {
       cursor: context-menu;
@@ -181,8 +136,8 @@ button:disabled label {
   }
 
   .mat-button-toggle-checked {
-    background-color: $primary-colors-second-30-lightblue;
-    color: $primary-colors-second-100-lightblue;
+    background-color: $primary-color-30;
+    color: $primary-color;
   }
 
   // mat-form-field
@@ -191,18 +146,18 @@ button:disabled label {
   }
 
   .mat-form-field-appearance-outline .mat-form-field-infix {
-    height: $input-height;
+    height: 40px;
     display: flex;
     align-items: center;
-    top: $size-negative-xs;
+    top: -4px;
   }
 
   .mat-form-field-appearance-outline .mat-select-trigger {
-    top: $grid-row-gap-s;
+    top: 8px;
   }
 
   .mat-form-field-appearance-outline .mat-form-field-outline {
-    color: $primary-colors-first-100;
+    color: $primary-color;
 
   }
 
@@ -213,14 +168,14 @@ button:disabled label {
   .mat-focused:not(.ng-untouched).mat-form-field-appearance-outline.mat-focused.ng-invalid .mat-form-field-outline-thick .mat-focused:not(.ng-pristine).ng-invalid.mat-form-field-label,
   .mat-focused:not(.ng-pristine).mat-form-field.mat-form-field-invalid .mat-form-field-label,
   .mat-form-field.ng-invalid.ng-touched .mat-form-field-infix .mat-form-field-label-wrapper .mat-form-field-label {
-    color: $primary-colors-second-100-red;
-    border-color: $primary-colors-second-100-red;
+    color: rgba(229, 76, 60, 1);
+    border-color: rgba(229, 76, 60, 1);
 
   }
 
   div.ng-pristine .mat-form-field-appearance-outline.mat-form-field-invalid .mat-form-field-outline-thick {
-    color: $primary-colors-second-100-lightblue;
-    border-color: $primary-colors-second-100-lightblue;
+    color: $primary-color;
+    border-color: $primary-color;
   }
 
 
@@ -228,18 +183,18 @@ button:disabled label {
   .mat-form-field.ng-invalid.ng-touched .mat-form-field-suffix .mat-autocomplete .mat-icon-button .mat-icon,
   .mat-form-field.ng-invalid.ng-touched .mat-form-field-outline.mat-form-field-outline-thick,
   .mat-form-field.mat-form-field-appearance-outline.ng-touched.ng-invalid .mat-form-field-outline.mat-form-field-outline-thick {
-    color: $primary-colors-second-100-red;
-    border-radius: $border-radius-material-input;
+    color: rgba(229, 76, 60, 1);
+    border-radius: 5px;
   }
 
 
   //MAT-FORM-FIELD-FOCUS (default)
   .mat-form-field-appearance-outline.mat-focused .mat-form-field-outline-thick,
   .mat-focused.ng-pristine.mat-form-field-appearance-outline.mat-focused.ng-invalid:not(.ng-touched) .mat-form-field-outline.mat-form-field-outline-thick {
-    box-shadow: 0 0 2px $box-shadow-offset $primary-colors-second-50-lightblue;
-    border-radius: $border-radius-material-input;
-    color: $primary-colors-second-100-lightblue;
-    border-color: $primary-colors-second-100-lightblue;
+    box-shadow: 0 0 2px 2px $primary-color-50;
+    border-radius: 5px;
+    color: $primary-color;
+    border-color: $primary-color;
   }
 
 
@@ -251,42 +206,31 @@ button:disabled label {
   .mat-focused:not(.ng-pristine).mat-form-field-appearance-outline.mat-focused.ng-invalid .mat-form-field-outline-thick,
   .mat-focused.mat-form-field.ng-touched.ng-invalid .mat-form-field-outline.mat-form-field-outline-thick,
   div.ng-invalid.ng-touched .mat-focused.mat-form-field.ng-touched.ng-invalid .mat-form-field-outline.mat-form-field-outline-thick {
-    box-shadow: 0 0 2px $box-shadow-offset $primary-colors-second-50-red;
-    color: $primary-colors-second-100-red;
-    border-radius: $border-radius-material-input;
+    box-shadow: 0 0 2px 2px rgba(229, 76, 60, 0.5);
+    color: rgba(229, 76, 60, 1);
+    border-radius: 5px;
 
-  }
-
-
-  .mat-form-field-appearance-outline.mat-form-field-can-float.matform-field-should-float .mat-form-field-can-float {
-    border-top: 2px solid $primary-colors-second-50-lightblue !important;
   }
 
   .mat-form-field-label {
     mat-label {
-      background-color: $neutral-colors-backgrounds-white;
-      padding: $padding-size-medium;
-      // margin-top: -5px !important;
+      background-color: #fff;
+      padding: 4px;
     }
   }
 
   .mat-form-field-outline.mat-form-field-outline-thick {
     .mat-form-field-outline-gap {
-      border-top: $border-size-medium solid currentColor !important;
+      border-top: 2px solid currentColor !important;
     }
   }
 
-  .mat-placeholder-required.mat-form-field-required-marker {
-    background: $neutral-colors-backgrounds-white;
-    padding: 2*$asterisk-spacing;
-    margin-left: $size-negative-xxs;
-  }
 
   /* Font color */
   input.mat-input-element,
   input.mat-input-element.ng-invalid.ng-untouched {
-    color: $primary-colors-first-100;
-    caret-color: $primary-colors-first-100;
+    color: $primary-color;
+    caret-color: $primary-color;
     line-height: 1.71em;
   }
 
@@ -296,8 +240,8 @@ button:disabled label {
   .mat-warn .mat-input-element,
   .mat-form-field-invalid:not(.mat-focused) .mat-input-element,
   .mat-form-field-invalid.ng-touched:not(.mat.focused) .mat-input-element {
-    color: $primary-colors-second-100-red;
-    caret-color: $primary-colors-second-100-red;
+    color: rgba(229, 76, 60, 1);
+    caret-color: rgba(229, 76, 60, 1);
   }
 
 
@@ -307,18 +251,7 @@ button:disabled label {
   }
 
   .mat-form-field {
-    width: $grid-full-width !important;
-  }
-
-  // Custom Material Dialog
-  .mat-dialog-container {
-    padding: $padding-none !important;
-    border-radius: $border-radius-medium !important;
-  }
-
-  .home-panel .mat-dialog-container {
-    box-shadow: none !important;
-    background: transparent;
+    width: 100% !important;
   }
 
   .mat-button.mat-primary .mat-button-focus-overlay,
@@ -330,233 +263,16 @@ button:disabled label {
 
   .mat-form-field-appearance-outline.mat-form-field-should-float .mat-form-field-label,
   .mat-form-field-appearance-outline.mat-focused .mat-form-field-outline {
-    color: $primary-colors-second-100-lightblue
+    color: $primary-color
   }
 
   .mat-form-field-appearance-outline .mat-form-field-outline {
-    color: $primary-colors-first-100;
-  }
-
-  // customize chip background
-  .mat-chip.mat-standard-chip {
-    background-color: $neutral-colors-backgrounds-whitesmoke;
-  }
-
-  .mat-progress-spinner circle,
-  .mat-spinner circle {
-    stroke: $primary-colors-first-100 !important;
+    color: $primary-color;
   }
 
 }
 
-.menu-backdrop {
-  background-color: rgba(255, 255, 255, 0.95);
-}
-
-// è necessario l'important perchè l'overlay viene iniettatto dinamicamente da material quando necessario
-.cdk-overlay-backdrop.cdk-overlay-dark-backdrop.cdk-overlay-backdrop-showing {
-  background-color: $primary-colors-first-50 !important;
-}
-
-// Include the mixin
 @include mix-app-theme();
-
-.toastr-info {
-  background-color: $primary-colors-second-100-lightblue;
-}
-
-// * Campi obbligatori label
-.legenda {
-  font-size: $headings-small;
-  font-weight: $font-weight-light;
-  font-style: normal;
-  font-stretch: normal;
-  line-height: 1.33;
-  letter-spacing: normal;
-  color: $primary-colors-first-10-black;
-}
-
-// icon transformation
-.rotation-icon-left {
-
-  i,
-  .mat-icon {
-    transform: rotate(-$rotate-positive);
-  }
-}
-
-.rotation-icon-right {
-
-  i,
-  .mat-icon {
-    transform: rotate(90deg);
-  }
-}
-
-// perfect scrollbar visibility
-perfect-scrollbar.app-scrollbar-theme.ps-show-active > .ps.ps--active-y > .ps-overlay:not(.ps-at-bottom) .ps-indicator-bottom {
-  opacity: 1 !important;
-  background: linear-gradient(to top, rgba(255, 255, 255, 1) 0%, rgba(255, 255, 255, 0) 100%) !important;
-}
-
-perfect-scrollbar.app-scrollbar-theme.ps-show-active > .ps.ps--active-y > .ps-overlay:not(.ps-at-top) .ps-indicator-top {
-  opacity: 1;
-  background: linear-gradient(to bottom, rgba(255, 255, 255, 1) 0%, rgba(255, 255, 255, 0) 100%);
-}
-
-
-perfect-scrollbar.app-scrollbar-theme.just-created > .ps.ps--active-y > .ps__rail-y {
-  opacity: $opaque;
-}
-
-perfect-scrollbar.app-scrollbar-theme > .ps.ps--active-y > .ps__rail-y {
-  background-color: $scrollbar-container-background;
-  width: $scrollbar-container;
-  cursor: pointer;
-}
-
-perfect-scrollbar.app-scrollbar-theme > .ps.ps--scrolling-y > .ps__rail-y,
-perfect-scrollbar.app-scrollbar-theme > .ps.ps--scrolling-x > .ps__rail-x {
-  background-color: $scrollbar-container-background;
-}
-
-perfect-scrollbar.app-scrollbar-theme .ps__thumb-y,
-perfect-scrollbar.app-scrollbar-theme .ps__rail-y:hover > .ps__thumb-y,
-perfect-scrollbar.app-scrollbar-theme .ps__rail-y:focus > .ps__thumb-y,
-perfect-scrollbar.app-scrollbar-theme .ps__rail-y.ps--clicking .ps__thumb-y {
-  opacity: $opaque;
-  width: $scrollbar-width;
-  background-color: $primary-colors-second-100-lightblue;
-  margin: 0 $scrollbar-spacing;
-  right: 0;
-}
-
-.mat-progress-bar-fill::after {
-  background-color: $neutral-colors-backgrounds-white;
-}
-
-.mat-progress-bar-buffer {
-  background-color: $blue-calypso;
-}
-
-// material aggiunge dinamicamente uno style inline nell'html che va a sovrascrivere qualsiasi modifica apportata in file .css
-.app-action-button .mat-fab .mat-button-wrapper {
-  padding: $padding-none !important;
-}
-
-.mat-select-panel .mat-optgroup-label,
-.mat-select-panel .mat-option {
-  background-color: $neutral-colors-backgrounds-white;
-}
-
-
-.mat-option,
-.mat-autocomplete-panel .mat-option.mat-selected:not(.mat-active):not(:hover) {
-  background: $neutral-colors-backgrounds-white;
-  color: $gray-searchbar;
-}
-
-.mat-option.mat-option-disabled {
-  color: $extra-colors-grey;
-}
-
-.mat-option:not(.mat-option-disabled),
-.mat-option:not(.mat-option-disabled) {
-  background-color: $neutral-colors-backgrounds-white;
-}
-
-.mat-option:focus:not(.mat-option-disabled),
-.mat-option:hover:not(.mat-option-disabled),
-.mat-option.mat-active {
-  background-color: $primary-colors-second-30-lightblue;
-}
-
-.mat-select-panel .mat-option.mat-selected:not(.mat-option-multiple) {
-  background: $primary-colors-second-30-lightblue;
-}
-
-.mat-primary .mat-option.mat-selected:not(.mat-option-disabled) {
-  color: $gray-searchbar;
-}
-
-
-@media only screen and (max-width: $adaptive-view-width) {
-
-  .app-grid-container,
-  .app-grid-spalla-container,
-  .app-centered-grid-container {
-    width: $app-container-scroll-width;
-  }
-}
-
-@media only screen and (max-height: $sidebar-max-height) {
-
-  .app-grid-container,
-  .app-grid-spalla-container,
-  .app-centered-grid-container {
-    min-height: calc(100vh - 56px);
-  }
-
-  .app-overlay-grid-container {
-    height: $percent-full;
-    overflow-y: auto;
-  }
-}
-
-.cdk-global-scrollblock {
-  overflow: hidden;
-}
-
-// toastr global style ( per classi definite in string template)
-
-.app-toast-message,
-.app-toast-message > * {
-  display: flex;
-  align-items: flex-start;
-  justify-content: flex-start;
-  font-size: $headings-small;
-
-  p {
-    color: $neutral-colors-text-middle-grey;
-    font-size: $headings-small;
-  }
-
-}
-
-.app-toast-message:hover {
-  color: $neutral-colors-text-middle-grey-opacity-50;
-  margin-right: $grid-row-gap-xs;
-
-  p {
-    color: $neutral-colors-text-middle-grey-opacity-50;
-  }
-}
-
-.toastr-icon {
-  position: absolute;
-  top: $grid-row-gap-s;
-  right: $grid-row-gap-s;
-}
-
-.overlay-spinner-container {
-  z-index: 2;
-  padding-top: 80px;
-  position: fixed;
-  margin: 0;
-  left: 0;
-  top: 80px;
-  overflow: hidden;
-  text-transform: none;
-  width: 100%;
-  min-height: calc(100% - 100px);
-  max-height: calc(100% - 100px);
-  background-color: white;
-}
-
-.app-autocomplete .app-icon .material-icons,
-.app-dropdown .app-icon .material-icons {
-  pointer-events: none;
-}
 
 .spacer{
   flex-grow: 1;

@@ -1,13 +1,14 @@
-@import "../../../../assets/sass/variables";
+@import "../../../../assets/sass/palette";
+
 
 .app-input {
 
   .mat-form-field-infix {
-    width: $percent-full;
+    width: 100%;
   }
 
   &.is-in-table {
-    width: $percent-full;
+    width: 100%;
   }
 
   &.without-hint {
@@ -24,24 +25,24 @@
 
   &:not(.without-hint) {
     .mat-form-field-appearance-outline .mat-form-field-wrapper {
-      padding-bottom: $input-hint-height;
+      padding-bottom: 1em;
     }
   }
 
   .mat-form-field-appearance-outline .mat-form-field-outline.mat-form-field-outline-thick {
-    color: $primary-colors-second-100-lightblue;
+    color: $primary-color;
   }
 
   .mat-form-field-flex:hover {
     .mat-form-field-suffix {
       .app-icon {
-        color: $primary-colors-second-100-lightblue;
+        color: $primary-color;
       }
     }
   }
 
   .icon-lightblue {
-    color: $primary-colors-second-100-lightblue;
+    color: $primary-color;
   }
 }
 
@@ -50,7 +51,7 @@
 (-ms-high-contrast: none) {
   .app-input {
     &.is-in-table {
-      width: $percent-full;
+      width: 100%;
 
       .mat-form-field {
         margin-top: 4px;

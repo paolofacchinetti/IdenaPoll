@@ -147,7 +147,7 @@
 
 @mixin typography-h1() {
 
-  font-size: $headings-title;
+  font-size: 24px;
   font-style: normal;
   font-stretch: normal;
   line-height: 1.67;
@@ -155,7 +155,7 @@
 }
 
 @mixin typography-h2() {
-  font-size: $headings-subtitle;
+  font-size: 20px;
   font-style: normal;
   font-stretch: normal;
   line-height: 1.6;
@@ -163,7 +163,7 @@
 }
 
 @mixin typography-h3() {
-  font-size: $headings-subtitle-small;
+  font-size: 20 px-small;
   font-style: normal;
   font-stretch: normal;
   line-height: 1.6;
@@ -171,7 +171,7 @@
 }
 
 @mixin typography-p() {
-  font-size: $headings-paragraph;
+  font-size: 14px;
   font-style: normal;
   font-stretch: normal;
   line-height: 1.71;
@@ -180,7 +180,7 @@
 }
 
 @mixin typography-small() {
-  font-size: $headings-small;
+  font-size: 12px;
   font-style: normal;
   font-stretch: normal;
   line-height: 1.33;
@@ -218,9 +218,9 @@
 }
 
 @mixin app-button-status($color,$hoverColor,$activeColor, $focusColor,$disabledColor,$shadowColor) {
-  //$primary-colors-second-100-lightblue
+  //$primary-color
   background-color: $color;
-  color: $neutral-colors-backgrounds-white;
+  color: #fff;
   &:hover {
     background: $hoverColor radial-gradient(circle, transparent 1%, $hoverColor 1%) center/15000%;
   }
@@ -230,11 +230,11 @@
   }
   &:not(:active):focus {
     background-color: $focusColor;
-    border: $border-size-medium solid $neutral-colors-backgrounds-white;
-    box-shadow: 0 0 $box-shadow-offset $box-shadow-offset $shadowColor;
+    border: 2px solid #fff;
+    box-shadow: 0 0 2px 2px $shadowColor;
   }
   &:disabled {
-    opacity: $opacity-30;
+    opacity: 0.3;
   }
 
 }

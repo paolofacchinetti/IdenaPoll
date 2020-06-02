@@ -1,9 +1,9 @@
-@import "../../../assets/sass/variables";
+@import "../../../assets/sass/palette";
 
 @mixin mix-app-theme() {
   .mat-option-text {
     color: #3f3f3f;
-    font-size: $headings-paragraph;
+    font-size: 14px;
   }
 
   .mat-option.mat-option-disabled .mat-option-text {
@@ -11,22 +11,22 @@
   }
 
   .mat-autocomplete-panel.mat-autocomplete-visible.ng-star-inserted {
-    border-width: 0 $border-size-small $border-size-small $border-size-small;
+    border-width: 0 1px 1px 1px;
     border-style: solid;
-    border-color: $primary-colors-first-100;
+    border-color: $primary-color;
     box-shadow: none;
 
     .mat-option {
-      padding: $padding-size-large;
+      padding: 8px;
 
       span.mat-option-text {
-        padding: $padding-none $padding-size-large $padding-none $padding-size-large;
+        padding: 0 8px 0 8px;
       }
     }
   }
 
   .mat-form-field.ng-invalid.ng-touched .mat-form-field-suffix .app-icon .mat-icon {
-    color: $primary-colors-second-100-red;
+    color: rgba(229, 76, 60, 1);
   }
 }
 

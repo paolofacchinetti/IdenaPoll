@@ -1,4 +1,4 @@
-@import "../variables";
+@import "../palette";
 @import "../mixins";
 @import "../palette";
 
@@ -8,33 +8,33 @@
   }
   .mat-checkbox-checked.mat-accent .mat-checkbox-background,
   .mat-checkbox-indeterminate.mat-accent .mat-checkbox-background {
-    background-color: $primary-colors-second-100-lightblue;
+    background-color: $primary-color;
   }
 
   mat-checkbox.app-checkbox.mat-checkbox {
     .mat-checkbox-input.cdk-visually-hidden.cdk-focused.cdk-program-focused ~ .mat-checkbox-frame,
     .mat-checkbox-input.cdk-visually-hidden.cdk-focused.cdk-keyboard-focused ~ .mat-checkbox-frame {
-      border: $border-size-medium solid $primary-colors-second-100-lightblue;
-      box-shadow: 0 0 $box-shadow-offset $box-shadow-offset $primary-colors-second-50-lightblue;
+      border: 2px solid $primary-color;
+      box-shadow: 0 0 2px 2px $primary-color-50;
 
     }
   }
   mat-checkbox.app-checkbox.mat-checkbox.mat-checkbox-checked {
     .mat-checkbox-input.cdk-visually-hidden ~ .mat-checkbox-frame,
     .mat-checkbox-input.cdk-visually-hidden ~ .mat-checkbox-frame {
-      border: $border-size-medium solid $primary-colors-second-100-lightblue;
+      border: 2px solid $primary-color;
       box-shadow: none;
     }
 
     .mat-checkbox-input.cdk-visually-hidden.cdk-focused.cdk-program-focused ~ .mat-checkbox-frame,
     .mat-checkbox-input.cdk-visually-hidden.cdk-focused.cdk-keyboard-focused ~ .mat-checkbox-frame {
-      border: $border-size-medium solid $neutral-colors-backgrounds-white;
-      box-shadow: 0 0 $box-shadow-offset $box-shadow-offset $primary-colors-second-50-lightblue;
+      border: 2px solid #fff;
+      box-shadow: 0 0 2px 2px $primary-color-50;
 
     }
 
     .mat-checkbox-background {
-      background-color: $primary-colors-second-100-lightblue;
+      background-color: $primary-color;
     }
   }
 
@@ -42,13 +42,13 @@
     .mat-checkbox-layout {
       .mat-checkbox-inner-container {
         .mat-checkbox-frame {
-          border-color: $primary-colors-second-100-lightblue;
+          border-color: $primary-color;
         }
       }
     }
   }
   .mat-checkbox-background {
-    background: $neutral-colors-backgrounds-white;
+    background: #fff;
     margin-top: 1px;
     margin-bottom: 2px;
     margin-left: 1px;
@@ -60,7 +60,7 @@
     .mat-checkbox-layout {
       .mat-checkbox-inner-container {
         .mat-checkbox-frame {
-          border-color: $paperclip-icon-color;
+          border-color: rgba(176, 176, 176, 1);
         }
       }
     }
@@ -69,11 +69,11 @@
     .mat-checkbox-layout {
       .mat-checkbox-inner-container {
         .mat-checkbox-background {
-          background: $primary-colors-second-100-lightblue;
+          background: $primary-color;
         }
 
         .mat-checkbox-frame {
-          color: $primary-colors-second-100-lightblue;
+          color: $primary-color;
         }
       }
     }
@@ -106,37 +106,37 @@
 
   .mat-form-field-appearance-outline .mat-form-field-wrapper {
     margin: 0px 2px !important;
-    padding-bottom: $input-hint-height;
+    padding-bottom: 1em;
   }
 
   mat-form-field.mat-form-field {
     &.mat-focused {
       .mat-form-field-label {
-        font-weight: $font-weight-semibold;
+        font-weight: 600;
       }
     }
 
     .mat-form-field-label, .mat-form-field-label.mat-focused,
     .mat-form-field.mat-focused.matform-field-should-float {
-      font-weight: $font-weight-semibold;
+      font-weight: 600;
     }
   }
 
   .mat-form-field-label {
-    font-weight: $font-weight-semibold;
+    font-weight: 600;
     margin-top: -5px !important;
   }
 
   .mat-form-field-appearance-outline.mat-form-field-can-float.mat-form-field-should-float .mat-form-field-label, .mat-form-field-appearance-outline.mat-form-field-can-float .mat-input-server:focus + .mat-form-field-label-wrapper .mat-form-field-label {
-    font-weight: $font-weight-semibold !important;
+    font-weight: 600 !important;
   }
 
   .mat-form-field-appearance-outline {
     &.mat-form-field-can-float {
       &.mat-form-field-should-float .mat-form-field-label,
       .mat-input-server:focus + .mat-form-field-label-wrapper .mat-form-field-label {
-        font-weight: $font-weight-semibold !important;
-        color: $primary-colors-first-100;
+        font-weight: 600 !important;
+        color: $primary-color;
       }
     }
   }
@@ -145,8 +145,8 @@
     &.mat-form-field-can-float {
       &.mat-form-field-should-float .mat-form-field-label,
       .mat-input-server:focus + .mat-form-field-label-wrapper .mat-form-field-label {
-        font-weight: $font-weight-semibold !important;
-        color: $primary-colors-second-100-red;
+        font-weight: 600 !important;
+        color: rgba(229, 76, 60, 1);
       }
     }
   }

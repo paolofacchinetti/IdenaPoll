@@ -2,7 +2,7 @@
   <mat-checkbox
     (click)="checkBoxClick($event)"
     [(ngModel)]="checkboxValue"
-    [color]="'$primary-colors-second-100-lightblue'" [disableRipple]="true"
+    [color]="'$primary-color'" [disableRipple]="true"
     [disabled]="disabledCondition"
     [id]="id"
     [name]="checkboxName"
@@ -16,7 +16,7 @@
     (change)="eventChangeWithoutModel($event)"
     (click)="checkBoxClick($event)"
     [checked]="checked"
-    [color]="'$primary-colors-second-100-lightblue'"
+    [color]="'$primary-color'"
     [disabled]="disabledCondition"
     [id]="id"
     class="app-checkbox"

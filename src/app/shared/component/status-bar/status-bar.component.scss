@@ -1,4 +1,4 @@
-@import "../../../../../src/assets/sass/variables";
+@import "../../../../../src/assets/sass/palette";
 @import "../../../../../src/assets/sass/mixins";
 
 $status-bar-height: 56px;
@@ -10,17 +10,17 @@ $status-bar-height: 56px;
   height: $status-bar-height;
   border-radius: 0;
   margin: 0;
-  padding: $padding-none;
+  padding: 0;
 }
 
 .popso-statusbar {
   .status-bar {
     @include display-grid($status-bar-height 1fr $status-bar-height);
     height: $status-bar-height;
-    width: $percent-full;
+    width: 100%;
 
     p {
-      color: $neutral-colors-backgrounds-white;
+      color: #fff;
       line-height: 0;
     }
 
@@ -29,7 +29,7 @@ $status-bar-height: 56px;
     }
 
     &.info {
-      background-color: $primary-colors-first-100;
+      background-color: $primary-color;
     }
 
     &.warning, &.warn {

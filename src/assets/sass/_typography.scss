@@ -1,4 +1,4 @@
-@import "variables";
+@import "palette";
 @import "mixins";
 @import '~@angular/material/theming';
 // Define a custom typography config that overrides the font-family as well as the
@@ -6,25 +6,21 @@
 @include mat-core();
 $custom-typography: mat-typography-config(// $font-family: 'Signika, sans-serif',
   $font-family: 'Titillium Web, sans-serif',
-  $headline: mat-typography-level($headings-title, $heading-title-large, $font-weight-semibold),
-  $title: mat-typography-level($headings-subtitle, $headings-title, $font-weight-semibold),
-  $subheading-2: mat-typography-level($subheading-min, $subheading-max, $font-weight-semibold),
-  $subheading-1: mat-typography-level($subheading-min, $subheading-max, $font-weight-medium),
-  $body-1: mat-typography-level($headings-paragraph, $headings-subtitle, $font-weight-light),
-  $body-2: mat-typography-level($subheading-min, $headings-subtitle, $font-weight-500),
-  $caption: mat-typography-level($headings-small, $subheading-min, $font-weight-light),
-  $button: mat-typography-level($subheading-min, $button-font-size-large, $font-weight-500));
+  $headline: mat-typography-level(24px, 32px, 600),
+  $title: mat-typography-level(20px, 24px, 600),
+  $subheading-2: mat-typography-level(16px, 22px, 600),
+  $subheading-1: mat-typography-level(16px, 22px, 400),
+  $body-1: mat-typography-level(14px, 20px, 300),
+  $body-2: mat-typography-level(16px, 20px, 500),
+  $caption: mat-typography-level(12px, 16px, 300),
+  $button: mat-typography-level(16px, 14 px-large, 500));
 @include angular-material-typography($custom-typography);
-
-//BASE CLASS WITHOUT COLOR, FONT WEIGHT AND TEXT ALIGNMENT VARIABLES
-
-// TODO DOPO CHE SARANNO SOSTITUITE TUTTE ME CLASSI MAT TYPOGRAPHY ELIMINARE LA CASISTICA
 
 h1,
 .mat-h1, .mat-headline, .mat-typography h1 {
   @include typography-h1();
-  font-weight: $font-weight-semibold;
-  color: $primary-colors-first-100;
+  font-weight: 600;
+  color: $primary-text-color;
   margin: 0;
 }
 
@@ -35,11 +31,11 @@ h2,
 .mat-h2, .mat-title, .mat-typography h2 {
 
   @include typography-h2();
-  @include set-typography-variants($primary-colors-first-100, $font-weight-semibold);
+  @include set-typography-variants($primary-text-color, 600);
   margin: 0;
 
   &-light {
-    font-weight: $font-weight-light;
+    font-weight: 300;
   }
 }
 
@@ -54,11 +50,11 @@ h3,
 .mat-h3, .mat-title, .mat-typography h3 {
 
   @include typography-h3();
-  @include set-typography-variants($primary-colors-first-100, $font-weight-semibold);
+  @include set-typography-variants($primary-text-color, 600);
   margin: 0;
 
   &-light {
-    font-weight: $font-weight-light;
+    font-weight: 300;
   }
 }
 
@@ -68,24 +64,24 @@ p,
 .mat-typography .app-paragraph {
 
   @include typography-p();
-  @include set-typography-variants($primary-colors-second-100-dark, $font-weight-light);
+  @include set-typography-variants($primary-text-color, 300);
   margin: 0;
 
   &-white {
-    color: $neutral-colors-backgrounds-white;
+    color: #fff;
   }
 
   &-semibold,
   p > b {
-    @include set-typography-variants($primary-colors-second-100-dark, $font-weight-semibold);
+    @include set-typography-variants($primary-text-color, 600);
   }
 
   &-light {
-    font-weight: $font-weight-light;
+    font-weight: 300;
   }
 
   &-bold {
-    font-weight: $font-weight-bold;
+    font-weight: bold;
   }
 
   &-inline,
@@ -94,28 +90,23 @@ p,
   }
 
   &-blue {
-    color: $primary-colors-first-100;
+    color: $primary-color;
   }
 
   &-error {
-    @include set-typography-variants($extra-colors-red, $font-weight-light);
+    @include set-typography-variants($extra-colors-red, 300);
 
     &.app-paragraph-semibold {
-      @include set-typography-variants($extra-colors-red, $font-weight-semibold);
+      @include set-typography-variants($extra-colors-red, 600);
     }
   }
-
-  &-grey {
-    color: $primary-colors-second-100-grey;
-  }
-
 
 }
 
 button label,
 button span {
   @include typography-p();
-  font-weight: $font-weight-semibold;
+  font-weight: 600;
 }
 
 small,
@@ -124,29 +115,26 @@ small,
 .mat-typography .app-small,
 .app-small {
   @include typography-small();
-  @include set-typography-variants($neutral-colors-text-grey, $font-weight-light);
+  @include set-typography-variants($secondary-text-color, 300);
   margin: 0;
 
   &-semibold,
   .mat-header-cell {
-    @include set-typography-variants($neutral-colors-text-grey, $font-weight-semibold);
+    @include set-typography-variants($secondary-text-color, 600);
   }
 
   &-white {
-    color: $neutral-colors-backgrounds-white;
+    color: #fff;
   }
 
-  &-blue {
-    color: $primary-colors-first-100;
-  }
 
   &-grey {
 
-    color: $neutral-colors-text-middle-grey;
+    color: $secondary-text-color;
   }
 
   &-light-grey {
-    color: $primary-colors-second-100-grey;
+    color: $secondary-text-color;
   }
 
 

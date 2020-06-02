@@ -1,4 +1,4 @@
-@import "../../../../assets/sass/variables";
+@import "../../../../assets/sass/palette";
 @import "../../../../assets/sass/mixins";
 
 $status-label-margin: 8px;
@@ -39,15 +39,15 @@ $status-label-margin: 8px;
   display: inline-flex;
   align-items: center;
   justify-content: flex-start;
-  margin: $grid-row-gap-xs 0;
+  margin: 4px 0;
 }
 
-@include circle($circle-size, $circle-radius);
+@include circle(24px, 50%);
 
 .status-label {
   margin-left: $status-label-margin;
   margin-top: 0;
-  color: $primary-colors-second-100-dark;
+  color: $primary-text-color;
 }
 
 
