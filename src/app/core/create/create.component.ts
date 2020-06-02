@@ -13,7 +13,8 @@ import {StatusEnum} from '@app-shared/model/status.enum';
   styleUrls: ['./create.component.scss']
 })
 export class CreateComponent implements OnInit {
-  checkboxBool: boolean = false;
+  checkboxWeight: boolean = false;
+  checkboxAge: boolean = false;
   pollForm;
   expirationDate;
   toggleList = [
@@ -38,13 +39,17 @@ export class CreateComponent implements OnInit {
           days: ['7', [Validators.required]],
           hours: ['0', [Validators.required]],
           minutes: ['0', [Validators.required]]
-        })
+        }),
+        ageReq: new FormControl({value: '', disabled: true}, [Validators.required])
       }),
       options: this.fb.array([
         this.fb.control('', [Validators.required]),
         this.fb.control('', [Validators.required])
       ])
     });
+  }
+
+  ngOnInit(): void {
   }
 
   openDialogBar(typeDialogBar: string, titleValue: string) {
@@ -75,29 +80,44 @@ export class CreateComponent implements OnInit {
   }
 
   onSubmit() {
-    console.log(this.checkboxBool);
-    if (this.pollForm.valid) {
-      console.log(this.pollForm);
-    } else {
+    if (!this.pollForm.valid) {
       this.openDialogBar('error', 'Please fill in the required fields of the form.');
     }
   }
 
   statusSelected() {
     const status = this.settings.get('statusRequirement').value;
-    if (status === StatusEnum.NEWBIE && this.checkboxBool) {
+    if (status === StatusEnum.NEWBIE && this.checkboxWeight) {
       this.voteWeight.get('newbieWeight').enable();
       this.voteWeight.get('verifiedWeight').enable();
       this.voteWeight.get('humanWeight').enable();
-    } else if (status === StatusEnum.VERIFIED && this.checkboxBool) {
+    } else if (status === StatusEnum.VERIFIED && this.checkboxWeight) {
       this.voteWeight.get('newbieWeight').disable();
+      this.voteWeight.get('newbieWeight').reset();
       this.voteWeight.get('verifiedWeight').enable();
       this.voteWeight.get('humanWeight').enable();
-    } else if (status === StatusEnum.HUMAN && this.checkboxBool) {
+    } else if (status === StatusEnum.HUMAN && this.checkboxWeight) {
       this.voteWeight.get('newbieWeight').disable();
+      this.voteWeight.get('newbieWeight').reset();
       this.voteWeight.get('verifiedWeight').disable();
+      this.voteWeight.get('verifiedWeight').reset();
       this.voteWeight.get('humanWeight').enable();
     }
+  }
+
+  weightedVotes() {
+    setTimeout(() => {
+      if (this.checkboxWeight) {
+        this.statusSelected();
+      } else {
+        this.voteWeight.get('newbieWeight').disable();
+        this.voteWeight.get('newbieWeight').reset();
+        this.voteWeight.get('verifiedWeight').disable();
+        this.voteWeight.get('verifiedWeight').reset();
+        this.voteWeight.get('humanWeight').disable();
+        this.voteWeight.get('humanWeight').reset();
+      }
+    }, 0);
   }
 
   addOption() {
@@ -107,18 +127,13 @@ export class CreateComponent implements OnInit {
     }
   }
 
-  ngOnInit(): void {
-
-  }
-
-  weightedVotes() {
+  minimumAge(){
     setTimeout(() => {
-      if (this.checkboxBool) {
-        this.statusSelected();
+      if (this.checkboxAge) {
+        this.settings.get('ageReq').enable();
       } else {
-        this.voteWeight.get('newbieWeight').disable();
-        this.voteWeight.get('verifiedWeight').disable();
-        this.voteWeight.get('humanWeight').disable();
+        this.settings.get('ageReq').disable();
+        this.settings.get('ageReq').reset();
       }
     }, 0);
   }

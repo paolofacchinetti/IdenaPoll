@@ -17,14 +17,14 @@
     padding: 10px;
     position: relative;
 
-    h1{
+    h1 {
       padding-bottom: 15px;
     }
 
-    .input-form{
+    .input-form {
       display: flex;
 
-      .fields-box{
+      .fields-box {
         min-width: 600px;
         display: flex;
         flex-direction: column;
@@ -33,35 +33,51 @@
         padding: 15px;
         position: relative;
 
-        .field{
-         padding: 5px;
+        .field {
+          padding: 5px;
         }
 
-      }
-
-      .option-box{
-        width: 25%;
-        min-width: 400px;
-        padding: 15px;
-
-        .min-requirements{
-          padding-bottom: 15px;
+        h3{
+          padding-top: 15px;
         }
-        .vote-weights{
-          *{
-            padding: 10px;
+
+        .time-picker {
+          width: 100%;
+          display: flex;
+          flex-direction: row;
+
+          .time-component {
+            width: 31%;
+            padding-top: 10px;
           }
         }
       }
 
-      .time-picker{
-        display: flex;
-        flex-direction: row;
-        *{
-          padding-top: 10px;
-          padding-right: 10px;
+      .option-box {
+        width: 25%;
+        min-width: 400px;
+        padding: 15px;
+
+        .min-requirements {
+          padding-bottom: 15px;
+        }
+
+        .vote-weights {
+          * {
+            padding: 10px;
+          }
+        }
+
+        .age-requirements {
+          padding: 15px 0;
         }
       }
+    }
+
+    .sub-but {
+      position: absolute;
+      bottom: 40px;
+      right: 40px;
     }
   }
 }

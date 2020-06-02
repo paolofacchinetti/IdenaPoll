@@ -30,6 +30,19 @@
                     class="small-gap primary-button app-button-small"></app-button>
       </div>
 
+      <h3>This Poll will expire after:</h3>
+
+      <div class="time-picker">
+        <app-numeric-input [id]="'days'" [inputLabel]="'Days'" [parentControlName]="'days'"
+                           [parentFormGroup]="expiration" class="time-component"></app-numeric-input>
+        <span class="spacer"></span>
+        <app-numeric-input [id]="'hours'" [inputLabel]="'Hours'" [parentControlName]="'hours'"
+                           [parentFormGroup]="expiration" class="time-component"></app-numeric-input>
+        <span class="spacer"></span>
+        <app-numeric-input [id]="'minutes'" [inputLabel]="'Minutes'" [parentControlName]="'minutes'"
+                           [parentFormGroup]="expiration" class="time-component"></app-numeric-input>
+      </div>
+
     </div>
 
     <span class="spacer"></span>
@@ -50,7 +63,7 @@
       </section>
 
       <app-checkbox [label]="'Enable Weighted Votes'"
-                    (checkboxValueChange)="weightedVotes()" [(checkboxValue)]="checkboxBool">
+                    (checkboxValueChange)="weightedVotes()" [(checkboxValue)]="checkboxWeight">
       </app-checkbox>
 
       <div class="vote-weights">
@@ -64,28 +77,26 @@
                            [parentFormGroup]="voteWeight"></app-numeric-input>
       </div>
 
-      <h3>This Poll will expire after:</h3>
+      <app-checkbox [label]="'Enable Minimum Account Age'"
+                    (checkboxValueChange)="minimumAge()" [(checkboxValue)]="checkboxAge">
+      </app-checkbox>
 
-      <div class="time-picker">
-        <app-numeric-input [id]="'days'" [inputLabel]="'Days'" [parentControlName]="'days'"
-                           [parentFormGroup]="expiration"></app-numeric-input>
-        <app-numeric-input [id]="'hours'" [inputLabel]="'Hours'" [parentControlName]="'hours'"
-                           [parentFormGroup]="expiration"></app-numeric-input>
-        <app-numeric-input [id]="'minutes'" [inputLabel]="'Minutes'" [parentControlName]="'minutes'"
-                           [parentFormGroup]="expiration"></app-numeric-input>
+      <div class="age-requirements">
+        <app-numeric-input [id]="'ageReq'" [inputLabel]="'Age (Epochs)'" [parentControlName]="'ageReq'"
+                           [parentFormGroup]="settings"></app-numeric-input>
       </div>
 
-      <div class="sub-but">
-        <app-button (click)="onSubmit()" [id]="'submitButton'" [label]="'Submit'"
-                    class="small-gap primary-button app-button-small"></app-button>
-      </div>
 
+    </div>
+
+    <div class="sub-but">
+      <app-button (click)="onSubmit()" [id]="'submitButton'" [label]="'Submit'"
+                  class="small-gap primary-button app-button-small"></app-button>
     </div>
 
     <span class="spacer"></span>
 
   </form>
-
 
 
 </div>
