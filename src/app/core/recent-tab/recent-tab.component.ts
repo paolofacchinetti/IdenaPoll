@@ -1,9 +1,9 @@
 import {Component, OnInit} from '@angular/core';
-import {select, Store} from "@ngrx/store";
-import {getRecentPolls, State} from "@app-redux/index";
-import {filter} from "rxjs/operators";
-import {DataService} from "@app-shared/data.service";
-import {PollBean} from "@app-shared/model/poll.bean";
+import {select, Store} from '@ngrx/store';
+import {getRecentPolls, State} from '@app-redux/index';
+import {filter} from 'rxjs/operators';
+import {DataService} from '@app-shared/data.service';
+import {PollBean} from '@app-shared/model/poll.bean';
 
 @Component({
   selector: 'app-recent-tab',
@@ -11,7 +11,7 @@ import {PollBean} from "@app-shared/model/poll.bean";
   styleUrls: ['./recent-tab.component.scss']
 })
 export class RecentTabComponent implements OnInit {
-  private recentPolls: PollBean[];
+  public recentPolls: PollBean[];
 
   constructor(protected store: Store<State>, protected ds: DataService) {
     this.ds.getRecentPolls();

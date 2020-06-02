@@ -1,9 +1,9 @@
 import {Component, OnInit} from '@angular/core';
-import {select, Store} from "@ngrx/store";
-import {getPopularPolls, State} from "@app-redux/index";
-import {filter} from "rxjs/operators";
-import {DataService} from "@app-shared/data.service";
-import {PollBean} from "@app-shared/model/poll.bean";
+import {select, Store} from '@ngrx/store';
+import {getPopularPolls, State} from '@app-redux/index';
+import {filter} from 'rxjs/operators';
+import {DataService} from '@app-shared/data.service';
+import {PollBean} from '@app-shared/model/poll.bean';
 
 @Component({
   selector: 'app-popular-tab',
@@ -11,7 +11,7 @@ import {PollBean} from "@app-shared/model/poll.bean";
   styleUrls: ['./popular-tab.component.scss']
 })
 export class PopularTabComponent implements OnInit {
-  private popularPolls: PollBean[];
+  public popularPolls: PollBean[];
 
   constructor(protected store: Store<State>, protected ds: DataService) {
     this.ds.getActivePolls();
