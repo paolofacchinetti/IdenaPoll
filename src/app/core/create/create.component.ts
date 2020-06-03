@@ -1,11 +1,13 @@
 import {Component, OnInit} from '@angular/core';
 import {FormArray, FormBuilder, FormControl, FormGroup, Validators} from '@angular/forms';
 import {Store} from '@ngrx/store';
-import {State} from '@app-redux/index';
+import {getSession, State} from '@app-redux/index';
 import * as moment from 'moment';
 import {MatSnackBarConfig} from '@angular/material/snack-bar';
 import {openStatusBar} from '@app-redux/core.actions';
 import {StatusEnum} from '@app-shared/model/status.enum';
+import {PollBean} from '@app-shared/model/poll.bean';
+import {SessionBean} from '@app-shared/model/session.bean';
 
 @Component({
   selector: 'app-create',
@@ -17,6 +19,7 @@ export class CreateComponent implements OnInit {
   checkboxAge: boolean = false;
   pollForm;
   expirationDate;
+  pollCreator: string;
   toggleList = [
     {value: 'NEWBIE', label: 'Newbie'},
     {value: 'VERIFIED', label: 'Verified'},
@@ -24,6 +27,9 @@ export class CreateComponent implements OnInit {
   ];
 
   constructor(private fb: FormBuilder, protected store: Store<State>) {
+    this.store.select(getSession).subscribe((s) => {
+      this.pollCreator = s.address;
+    });
     this.expirationDate = moment().add(7, 'days').toDate();
     this.pollForm = this.fb.group({
       title: ['', [Validators.required]],
@@ -67,7 +73,7 @@ export class CreateComponent implements OnInit {
     return this.pollForm.get('options') as FormArray;
   }
 
-  get expiration(){
+  get expiration() {
     return this.settings.get('expiration') as FormGroup;
   }
 
@@ -82,6 +88,17 @@ export class CreateComponent implements OnInit {
   onSubmit() {
     if (!this.pollForm.valid) {
       this.openDialogBar('error', 'Please fill in the required fields of the form.');
+    } else {
+      this.openDialogBar('info', 'Processing poll creation, please wait...');
+      const poll = new PollBean();
+      poll.title = this.pollForm.title;
+      poll.description = this.pollForm.desc;
+      poll.creator = this.pollCreator;
+      poll.status = 'active';
+      const days = this.pollForm.settings.expiration.days * 24 * 60 * 60 * 1000;
+      const hours = this.pollForm.settings.expiration.days * 60 * 60 * 1000;
+      const minutes = this.pollForm.settings.expiration.days * 60 * 1000;
+      poll.endsAt = moment().add(days).add(hours).add(minutes).toDate();
     }
   }
 
@@ -127,7 +144,7 @@ export class CreateComponent implements OnInit {
     }
   }
 
-  minimumAge(){
+  minimumAge() {
     setTimeout(() => {
       if (this.checkboxAge) {
         this.settings.get('ageReq').enable();
