@@ -124,8 +124,11 @@ export class DataService {
 
   createPoll(poll: PollBean) {
     const CALL_URL = this.EXPRESS_URL + '/create';
-    this.httpClient.post<any>(CALL_URL, JSON.stringify(poll)).subscribe((p) => {
-
+    this.httpClient.post<any>(CALL_URL, JSON.stringify(poll), {
+      responseType: 'json',
+      withCredentials: true
+    }).subscribe((p) => {
+      console.log(p)
     });
   }
 

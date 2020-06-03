@@ -117,23 +117,23 @@ app.route('/auth/v1/session').get(async (req, res) => {
           expiresAt: new Date().getTime() + AUTH_COOKIE_TIME
         };
         let headers = {
-          'Authorization': '0000000000000000',
+          'Authorization': '0000000000000000000000000',
           'Content-Type': 'application/json'
         };
-        let fe = await fetch(`http://localhost/sessions?address=${address}`, {
+        let fe = await fetch(`http://idenapoll.com:3000/sessions?address=${address}`, {
           method: 'GET',
           headers: headers
         });
         const sessions = await fe.json();
         if (sessions)
           for (let session of sessions) {
-            fe = await fetch(`http://localhost:80/sessions/${session.id}`, {
+            fe = await fetch(`http://idenapoll.com:3000/sessions/${session.id}`, {
               method: 'DELETE',
               headers: headers
             });
             const json = await fe.json();
           }
-        fe = await fetch("http://localhost:80/sessions", {
+        fe = await fetch("http://idenapoll.com:3000/sessions", {
           method: 'POST',
           body: JSON.stringify(session),
           headers: headers
@@ -154,19 +154,19 @@ app.route("/vote").post(async (req, res) => {
   const body = JSON.parse(req.body);
   const {poll, option} = body;
   let headers = {
-    'Authorization': '0000000000000000',
+    'Authorization': '0000000000000000000000000',
     'Content-Type': 'application/json'
   };
   if (req.cookies[IDENA_AUTH_COOKIE]) {
     const voter = req.cookies[IDENA_AUTH_COOKIE].address;
-    let fe = await fetch(`http://localhost/sessions?address=${voter}`, {
+    let fe = await fetch(`http://idenapoll.com:3000/sessions?address=${voter}`, {
       method: 'GET',
       headers: headers
     });
     const sessions = await fe.json();
     if (sessions[0].expiresAt > new Date().getTime()) {
       let status = {status: "ok"};
-      fe = await fetch(`http://localhost/polls/${poll}`, {method: 'GET'});
+      fe = await fetch(`http://idenapoll.com:3000/polls/${poll}`, {method: 'GET'});
       const polljs = await fe.json();
       let found;
       for (o of polljs.options) {
@@ -179,7 +179,7 @@ app.route("/vote").post(async (req, res) => {
         polljs.options[option].votes.push({
           voter: voter
         });
-        const fe = await fetch(`http://localhost/polls/${poll}`, {
+        const fe = await fetch(`http://idenapoll.com:3000/polls/${poll}`, {
           method: 'PATCH',
           body: JSON.stringify(polljs),
           headers: headers
@@ -200,20 +200,28 @@ app.route("/create").post(async (req, res, next) => {
   res.append('Access-Control-Allow-Methods', 'POST');
   res.append('Access-Control-Allow-Headers', 'Content-Type');
   res.set('Access-Control-Allow-Credentials', 'true');
-  const poll = req.body;
+  const poll = JSON.parse(req.body);
   if (req.cookies[IDENA_AUTH_COOKIE]) {
     const voter = req.cookies[IDENA_AUTH_COOKIE].address;
-    let fe = await fetch(`http://localhost/sessions?address=${voter}`, {
+    let headers = {
+      'Authorization': '0000000000000000000000000',
+      'Content-Type': 'application/json',
+      'Accept': 'application/json',
+      'Connection': 'keep-alive'
+    };
+    let fe = await fetch(`http://idenapoll.com:3000/sessions?address=${voter}`, {
       method: 'GET',
-      headers: headers
+      headers: headers,
+      body: null
     });
+    poll.endsAt = new Date(poll.endsAt).getTime();
     const sessions = await fe.json();
     if (sessions[0].expiresAt > new Date().getTime()) {
-      let headers = {
-        'Authorization': '0000000000000000',
+      headers = {
+        'Authorization': '0000000000000000000000000',
         'Content-Type': 'application/json'
       };
-      const fe = await fetch("http://localhost:80/polls", {
+      const fe = await fetch("http://idenapoll.com:3000/polls", {
         method: 'POST',
         body: JSON.stringify(poll),
         headers: headers
@@ -226,30 +234,30 @@ app.route("/create").post(async (req, res, next) => {
     return res.sendStatus(403)
 });
 setInterval(async () => {
-  let fe = await fetch(`http://localhost/polls?endsAt_lte=${new Date().getTime()}&status=active`, {method: 'GET'});
+  let fe = await fetch(`http://idenapoll.com:3000/polls?endsAt_lte=${new Date().getTime()}&status=active`, {method: 'GET'});
   const polljs = await fe.json();
   let headers = {
-    'Authorization': '0000000000000000',
+    'Authorization': '0000000000000000000000000',
     'Content-Type': 'application/json'
   };
   if (polljs)
     for (let poll of polljs) {
       poll.status = "ended";
-      fe = await fetch(`http://localhost:80/polls/${poll.id}`, {
+      fe = await fetch(`http://idenapoll.com:3000/polls/${poll.id}`, {
         method: 'PATCH',
         body: JSON.stringify(poll),
         headers: headers
       });
       const json = await fe.json();
     }
-  fe = await fetch(`http://localhost/sessions?expiresAt_lte=${new Date().getTime()}`, {
+  fe = await fetch(`http://idenapoll.com:3000/sessions?expiresAt_lte=${new Date().getTime()}`, {
     method: 'GET',
     headers: headers
   });
   const sessions = await fe.json();
   if (sessions)
     for (let session of sessions) {
-      fe = await fetch(`http://localhost:80/sessions/${session.id}`, {
+      fe = await fetch(`http://idenapoll.com:3000/sessions/${session.id}`, {
         method: 'DELETE',
         headers: headers
       });

@@ -65,7 +65,7 @@ export class SigninComponent implements OnInit, AfterViewInit {
    Builds the DNA URL used for the in-app sign-in
    */
   buildDnaUrl(token: string, baseUrl: string, callbackUrl: string): string {
-    const callback = new URL(callbackUrl, 'http://localhost:4200');
+    const callback = new URL(callbackUrl, 'http://idenapoll.com');
     const startSession = new URL('/auth/v1/start-session', baseUrl);
     const authenticate = new URL('/auth/v1/authenticate', baseUrl);
 
