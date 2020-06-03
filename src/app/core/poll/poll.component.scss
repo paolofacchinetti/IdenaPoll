@@ -1,0 +1,25 @@
+:host{
+  height: 100%;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-content: center;
+  align-items: center;
+  flex-direction: row;
+
+  .poll-container{
+    overflow: hidden;
+    width: 95%;
+    height: 95%;
+    border-radius: 25px;
+    background-color: #fff;
+    padding: 10px;
+    position: relative;
+
+    .wait{
+
+    }
+
+  }
+
+}

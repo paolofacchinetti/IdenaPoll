@@ -1,6 +1,6 @@
 import {Component, OnInit} from '@angular/core';
 import {AbstractControl, FormArray, FormBuilder, FormControl, FormGroup, Validators} from '@angular/forms';
-import {Store} from '@ngrx/store';
+import {select, Store} from '@ngrx/store';
 import {getSession, State} from '@app-redux/index';
 import * as moment from 'moment';
 import {StatusEnum} from '@app-shared/model/status.enum';
@@ -8,6 +8,7 @@ import {OptionBean, PollBean, SettingsBean} from '@app-shared/model/poll.bean';
 import {openDialogBar} from '@app-shared/open-status-bar.functions';
 import {isNullOrEmpty} from '@app-shared/format.functions';
 import {DataService} from '@app-shared/data.service';
+import {filter} from 'rxjs/operators';
 
 @Component({
   selector: 'app-create',
@@ -27,10 +28,10 @@ export class CreateComponent implements OnInit {
   ];
 
   constructor(private fb: FormBuilder, protected store: Store<State>, protected ds: DataService) {
-    this.store.select(getSession).subscribe((s) => {
+    this.store.pipe(select(getSession), filter((f) => f != null)).subscribe((s) => {
       this.pollCreator = s.address;
     });
-    this.expirationDate = moment().add(7, 'days').toDate();
+    this.expirationDate = moment().add(7, 'days').toDate().getTime();
     this.pollForm = this.fb.group({
       title: ['', [Validators.required]],
       desc: [''],
@@ -107,6 +108,7 @@ export class CreateComponent implements OnInit {
         settings.verifiedWeight = this.voteWeight.get('verifiedWeight').value;
         settings.humanWeight = this.voteWeight.get('humanWeight').value;
       }
+      poll.settings = settings;
       console.log(poll);
       this.ds.createPoll(poll);
     }

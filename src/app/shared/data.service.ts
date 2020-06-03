@@ -27,13 +27,11 @@ export class DataService {
   }
 
   getIdentityData(id: string) {
-    console.log(id);
     let age;
     let address;
     let status;
     let CALL_URL = this.IDENA_URL + '/Identity/' + id;
     this.httpClient.get<any>(CALL_URL).subscribe((p) => {
-      console.log(p);
       const json = p['result'];
       address = json['address'];
       status = json['state'].toUpperCase();

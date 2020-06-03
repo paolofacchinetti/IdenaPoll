@@ -1,1 +1,26 @@
-<p>{{selectedPoll.title}}</p>
+<div class="poll-container">
+
+  <div *ngIf="selectedPoll === undefined; else pollTemplate">
+    <p class="wait">Waiting for database answer...</p>
+  </div>
+
+  <ng-template #pollTemplate>
+
+    <div class="poll-header">
+      <p>{{selectedPoll.title}}</p>
+      <p>{{selectedPoll.description}}</p>
+    </div>
+
+    <div class="poll-options">
+      <div *ngFor="let option of selectedPoll.options">
+        <p>{{option.description}}</p>
+      </div>
+    </div>
+
+  </ng-template>
+
+
+
+
+</div>
+
