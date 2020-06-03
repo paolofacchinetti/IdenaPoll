@@ -14,7 +14,24 @@
     border-radius: 25px;
     background-color: #fff;
     padding: 10px;
-    position: relative;
+    display:flex;
+    justify-content: center;
+    align-content: center;
+    align-items: center;
+
+    .voting-container{
+      display:flex;
+
+      .poll-header{
+        display: flex;
+        flex-direction: column;
+        flex-grow: 1;
+        max-width: 1000px;
+        padding: 15px;
+        position: relative;
+      }
+    }
+
 
     .wait{
 

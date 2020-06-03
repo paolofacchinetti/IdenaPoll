@@ -1,26 +1,38 @@
 <div class="poll-container">
 
   <div *ngIf="selectedPoll === undefined; else pollTemplate">
-    <p class="wait">Waiting for database answer...</p>
+    <h3 class="wait">Waiting for database answer...</h3>
   </div>
 
   <ng-template #pollTemplate>
 
-    <div class="poll-header">
-      <p>{{selectedPoll.title}}</p>
-      <p>{{selectedPoll.description}}</p>
-    </div>
+    <mat-tab-group>
 
-    <div class="poll-options">
-      <div *ngFor="let option of selectedPoll.options">
-        <p>{{option.description}}</p>
-      </div>
-    </div>
+      <mat-tab label="Poll">
+
+        <div class="voting-container">
+          <div class="poll-header">
+            <h3 class="title">{{selectedPoll.title}}</h3>
+            <p class="description">{{selectedPoll.description}}</p>
+          </div>
+
+          <div class="poll-options">
+            <div *ngFor="let option of selectedPoll.options">
+              <p>{{option.description}}</p>
+            </div>
+          </div>
+        </div>
+
+      </mat-tab>
+
+      <mat-tab label="Results">
+
+
+      </mat-tab>
+
+    </mat-tab-group>
 
   </ng-template>
-
-
-
 
 </div>
 
