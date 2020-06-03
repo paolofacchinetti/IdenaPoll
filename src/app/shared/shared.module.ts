@@ -15,7 +15,6 @@ import {ButtonComponent} from "@app-shared/component/button/button.component";
 import {MatButtonModule} from "@angular/material/button";
 import {CheckboxComponent} from "@app-shared/component/checkbox/checkbox.component";
 import {MatCheckboxModule} from "@angular/material/checkbox";
-import {DropdownComponent} from "@app-shared/component/dropdown/dropdown.component";
 import {UpdateOutlineGapDirective} from "@app-shared/directives/updateoutlinegap/update-outline-gap.directive";
 import {MatAutocompleteModule} from "@angular/material/autocomplete";
 import {CircleStatusComponent} from "@app-shared/component/circle-status/circle-status.component";
@@ -34,7 +33,6 @@ import {StatusBarComponent} from "@app-shared/component/status-bar/status-bar.co
     InputAlphanumericDirective,
     ButtonComponent,
     UpdateOutlineGapDirective,
-    DropdownComponent,
     CheckboxComponent,
     CircleStatusComponent,
     ToggleButtonComponent,
@@ -48,7 +46,6 @@ import {StatusBarComponent} from "@app-shared/component/status-bar/status-bar.co
     InputNoNumberDirective,
     InputAlphanumericDirective,
     ButtonComponent,
-    DropdownComponent,
     UpdateOutlineGapDirective,
     CheckboxComponent,
     CircleStatusComponent,

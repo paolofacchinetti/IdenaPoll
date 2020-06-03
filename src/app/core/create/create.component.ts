@@ -3,11 +3,9 @@ import {FormArray, FormBuilder, FormControl, FormGroup, Validators} from '@angul
 import {Store} from '@ngrx/store';
 import {getSession, State} from '@app-redux/index';
 import * as moment from 'moment';
-import {MatSnackBarConfig} from '@angular/material/snack-bar';
-import {openStatusBar} from '@app-redux/core.actions';
 import {StatusEnum} from '@app-shared/model/status.enum';
 import {PollBean} from '@app-shared/model/poll.bean';
-import {SessionBean} from '@app-shared/model/session.bean';
+import {openDialogBar} from "@app-shared/open-status-bar.functions";
 
 @Component({
   selector: 'app-create',
@@ -58,17 +56,6 @@ export class CreateComponent implements OnInit {
   ngOnInit(): void {
   }
 
-  openDialogBar(typeDialogBar: string, titleValue: string) {
-    const config: MatSnackBarConfig = {
-      data: {
-        title: titleValue,
-        icon: '',
-        type: typeDialogBar
-      }
-    };
-    this.store.dispatch(openStatusBar({value: config}));
-  }
-
   get options() {
     return this.pollForm.get('options') as FormArray;
   }
@@ -87,9 +74,9 @@ export class CreateComponent implements OnInit {
 
   onSubmit() {
     if (!this.pollForm.valid) {
-      this.openDialogBar('error', 'Please fill in the required fields of the form.');
+      openDialogBar(this.store, 'error', 'Please fill in the required fields of the form.');
     } else {
-      this.openDialogBar('info', 'Processing poll creation, please wait...');
+      openDialogBar(this.store, 'info', 'Processing poll creation, please wait...');
       const poll = new PollBean();
       poll.title = this.pollForm.title;
       poll.description = this.pollForm.desc;
