@@ -1,11 +1,13 @@
 import {Component, OnInit} from '@angular/core';
-import {FormArray, FormBuilder, FormControl, FormGroup, Validators} from '@angular/forms';
+import {AbstractControl, FormArray, FormBuilder, FormControl, FormGroup, Validators} from '@angular/forms';
 import {Store} from '@ngrx/store';
 import {getSession, State} from '@app-redux/index';
 import * as moment from 'moment';
 import {StatusEnum} from '@app-shared/model/status.enum';
-import {PollBean} from '@app-shared/model/poll.bean';
-import {openDialogBar} from "@app-shared/open-status-bar.functions";
+import {OptionBean, PollBean, SettingsBean} from '@app-shared/model/poll.bean';
+import {openDialogBar} from '@app-shared/open-status-bar.functions';
+import {isNullOrEmpty} from '@app-shared/format.functions';
+import {DataService} from '@app-shared/data.service';
 
 @Component({
   selector: 'app-create',
@@ -24,7 +26,7 @@ export class CreateComponent implements OnInit {
     {value: 'HUMAN', label: 'Human'}
   ];
 
-  constructor(private fb: FormBuilder, protected store: Store<State>) {
+  constructor(private fb: FormBuilder, protected store: Store<State>, protected ds: DataService) {
     this.store.select(getSession).subscribe((s) => {
       this.pollCreator = s.address;
     });
@@ -78,14 +80,35 @@ export class CreateComponent implements OnInit {
     } else {
       openDialogBar(this.store, 'info', 'Processing poll creation, please wait...');
       const poll = new PollBean();
-      poll.title = this.pollForm.title;
-      poll.description = this.pollForm.desc;
+      poll.title = this.pollForm.get('title').value;
+      poll.description = this.pollForm.get('desc').value;
       poll.creator = this.pollCreator;
       poll.status = 'active';
-      const days = this.pollForm.settings.expiration.days * 24 * 60 * 60 * 1000;
-      const hours = this.pollForm.settings.expiration.days * 60 * 60 * 1000;
-      const minutes = this.pollForm.settings.expiration.days * 60 * 1000;
-      poll.endsAt = moment().add(days).add(hours).add(minutes).toDate();
+      const days = parseInt(this.expiration.get('days').value);
+      const hours = parseInt(this.expiration.get('hours').value);
+      const minutes = parseInt(this.expiration.get('minutes').value);
+      poll.endsAt = moment().add(days, 'days').add(hours, 'hours').add(minutes, 'minutes').toDate();
+      let count = 0;
+      for (let op of this.options.controls) {
+        if (!isNullOrEmpty(op.value)) {
+          const option = new OptionBean();
+          option.description = op.value;
+          option.value = count.toString();
+          poll.options.push(option);
+          count++;
+        }
+      }
+      const settings = new SettingsBean();
+      settings.ageRequirement = this.settings.get('ageReq').value;
+      settings.statusRequirement = this.settings.get('statusRequirement').value;
+      settings.isStatusWeighted = this.checkboxWeight;
+      if (this.checkboxWeight) {
+        settings.newbieWeight = this.voteWeight.get('newbieWeight').value;
+        settings.verifiedWeight = this.voteWeight.get('verifiedWeight').value;
+        settings.humanWeight = this.voteWeight.get('humanWeight').value;
+      }
+      console.log(poll);
+      this.ds.createPoll(poll);
     }
   }
 

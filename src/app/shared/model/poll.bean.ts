@@ -62,6 +62,7 @@ export class VoterBean {
 export class SettingsBean {
   statusRequirement: string;
   ageRequirement: string;
+  isStatusWeighted: boolean;
   newbieWeight: string;
   verifiedWeight: string;
   humanWeight: string;
@@ -70,7 +71,8 @@ export class SettingsBean {
     if (json) {
       this.statusRequirement = json['statusRequirement'];
       this.ageRequirement = json['ageRequirement'];
-      if (json['voteWeight']) {
+      this.isStatusWeighted = json['isStatusWeighted'];
+      if (json['isStatusWeighted']) {
         this.newbieWeight = json['newbieWeight'];
         this.verifiedWeight = json['verifiedWeight'];
         this.humanWeight = json['verifiedWeight'];
