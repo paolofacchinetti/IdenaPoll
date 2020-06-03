@@ -29,7 +29,7 @@ export const getPopularPolls = createSelector(
     popularPolls = activePolls;
     if(popularPolls.length>1) {
       popularPolls = popularPolls.slice().sort((a, b) =>
-        a.totalVotes - b.totalVotes
+        b.totalVotes - a.totalVotes
       );
       popularPolls.splice(10,popularPolls.length);
     }
