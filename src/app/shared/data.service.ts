@@ -5,7 +5,8 @@ import {Store} from '@ngrx/store';
 import {Router} from '@angular/router';
 import {getSession, State} from '@app-redux/index';
 import {HttpClient} from '@angular/common/http';
-import {setActivePolls, setAuth, setRecentPolls, setSelectedPoll, setSession, setToken} from '@app-redux/core.actions';
+import {openStatusBar, setActivePolls, setAuth, setRecentPolls, setSelectedPoll, setSession, setToken} from '@app-redux/core.actions';
+import {openDialogBar} from '@app-shared/open-status-bar.functions';
 
 @Injectable({
   providedIn: 'root'
@@ -85,7 +86,7 @@ export class DataService {
     const CALL_URL = this.SERVER_URL + '/polls/' + id;
     this.httpClient.get<any>(CALL_URL).subscribe((p) => {
       poll = new PollBean(p);
-      this.store.dispatch(setSelectedPoll({value: poll}))
+      this.store.dispatch(setSelectedPoll({value: poll}));
     });
   }
 
@@ -114,9 +115,14 @@ export class DataService {
   votePoll(pollId: string, optionValue: number) {
     const CALL_URL = this.EXPRESS_URL + '/vote';
     let body = JSON.stringify({'poll': pollId, 'option': optionValue});
-    this.httpClient.post<any>(CALL_URL, body, {responseType: 'json', withCredentials:true}).subscribe((p) => {
-      //TODO ADD CONFIRMATION
-      console.log(p);
+    this.httpClient.post<any>(CALL_URL, body, {responseType: 'json', withCredentials: true}).subscribe((p) => {
+      if (p['status'] === 'ok') {
+        openDialogBar(this.store, 'info', 'Vote Submitted correctly');
+      } else if (p['status'] === 'dup') {
+        openDialogBar(this.store, 'error', 'You already voted on this poll!');
+      } else {
+        openDialogBar(this.store, 'error', 'Generic Error');
+      }
     });
   }
 
@@ -126,7 +132,7 @@ export class DataService {
       responseType: 'json',
       withCredentials: true
     }).subscribe((p) => {
-      console.log(p)
+      console.log(p);
     });
   }
 
