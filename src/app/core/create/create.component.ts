@@ -1,5 +1,5 @@
 import {Component, OnInit} from '@angular/core';
-import {AbstractControl, FormArray, FormBuilder, FormControl, FormGroup, Validators} from '@angular/forms';
+import {FormArray, FormBuilder, FormControl, FormGroup, Validators} from '@angular/forms';
 import {select, Store} from '@ngrx/store';
 import {getSession, State} from '@app-redux/index';
 import * as moment from 'moment';
@@ -19,6 +19,7 @@ export class CreateComponent implements OnInit {
   checkboxWeight: boolean = false;
   checkboxAge: boolean = false;
   pollForm;
+  prevStatus: string = '';
   expirationDate;
   pollCreator: string;
   toggleList = [
@@ -111,6 +112,16 @@ export class CreateComponent implements OnInit {
       poll.settings = settings;
       console.log(poll);
       this.ds.createPoll(poll);
+    }
+  }
+
+  valuereseter() {
+    const status = this.settings.get('statusRequirement').value;
+    if (status === this.prevStatus) {
+      this.settings.get('statusRequirement').reset();
+      this.prevStatus = '';
+    } else {
+      this.prevStatus = status;
     }
   }
 

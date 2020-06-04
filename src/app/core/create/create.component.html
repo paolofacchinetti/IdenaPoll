@@ -57,6 +57,7 @@
         <app-toggle-button (toggleGroupChange)="statusSelected()"
                            [buttonToggleListItem]="toggleList"
                            [id]="'statusRequirement'"
+                           (toggleItemClick)="valuereseter()"
                            [parentControlName]="'statusRequirement'" [parentFormGroup]="settings"
                            [toggleGroupAriaLabel]="'Minimum Status Requirement to Vote'">
         </app-toggle-button>
