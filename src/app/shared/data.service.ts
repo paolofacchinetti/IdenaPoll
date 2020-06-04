@@ -134,6 +134,7 @@ export class DataService {
         }
         default: {
           openDialogBar(this.store, 'error', 'Generic Error');
+          break;
         }
       }
     });
