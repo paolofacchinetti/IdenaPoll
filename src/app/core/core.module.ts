@@ -12,23 +12,24 @@ import {PollComponent} from './poll/poll.component';
 import {MatTabsModule} from '@angular/material/tabs';
 import {PopularTabComponent} from './popular-tab/popular-tab.component';
 import {RecentTabComponent} from './recent-tab/recent-tab.component';
-import { VotingTabComponent } from './voting-tab/voting-tab.component';
-import { ResultsTabComponent } from './results-tab/results-tab.component';
+import {VotingTabComponent} from './voting-tab/voting-tab.component';
+import {ResultsTabComponent} from './results-tab/results-tab.component';
 import {MatRadioModule} from '@angular/material/radio';
+import {CountdownComponent} from './countdown/countdown.component';
 
 
 @NgModule({
-  declarations: [TopbarComponent, SigninComponent, HomeComponent, CreateComponent, PollComponent, PopularTabComponent, RecentTabComponent, VotingTabComponent, ResultsTabComponent],
+  declarations: [TopbarComponent, SigninComponent, HomeComponent, CreateComponent, PollComponent, PopularTabComponent, RecentTabComponent, VotingTabComponent, ResultsTabComponent, CountdownComponent],
   exports: [
     TopbarComponent
   ],
-    imports: [
-        CommonModule,
-        FlexModule,
-        SharedModule,
-        RouterModule,
-        ReactiveFormsModule,
-        FormsModule,
+  imports: [
+    CommonModule,
+    FlexModule,
+    SharedModule,
+    RouterModule,
+    ReactiveFormsModule,
+    FormsModule,
         MatTabsModule,
         MatRadioModule
     ],
