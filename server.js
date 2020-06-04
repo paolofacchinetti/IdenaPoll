@@ -175,9 +175,15 @@ app.route("/vote").post(async (req, res) => {
         });
         found = search !== undefined ? search : found;
       }
+      fe = await fetch(`https://api.idena.io/api/Identity/${voter}`, {method: 'GET'});
+      const addreessinfo = await fe.json();
+      fe = await fetch(`https://api.idena.io/api/Identity/${voter}/age`, {method: 'GET'});
+      const age = await fe.json();
       if (found == null) {
         polljs.options[option].votes.push({
-          address: voter
+          address: voter,
+          status: addreessinfo.status,
+          age: age.age
         });
         const fe = await fetch(`http://idenapoll.com:3000/polls/${poll}`, {
           method: 'PATCH',
