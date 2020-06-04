@@ -50,11 +50,15 @@ export class OptionBean {
 }
 
 export class VoterBean {
-  voter: string;
+  address: string;
+  status: string;
+  age: string;
 
   constructor(json?: string) {
     if (json) {
-      this.voter = json['voter'];
+      this.address = json['voter'];
+      this.status = json['status'];
+      this.age = json['age'];
     }
   }
 }

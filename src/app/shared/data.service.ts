@@ -16,7 +16,7 @@ import {openDialogBar} from '@app-shared/open-status-bar.functions';
  */
 export class DataService {
   private SERVER_URL = 'https://json.idenapoll.com';
-  private IDENA_URL = 'https://api.idena.io/api/';
+  private IDENA_URL = 'https://api.idena.io/api';
   private EXPRESS_URL = 'https://express.idenapoll.com';
   private session: SessionBean = null;
   private auth: string = '';

@@ -171,13 +171,13 @@ app.route("/vote").post(async (req, res) => {
       let found;
       for (o of polljs.options) {
         let search = o.votes.find((v) => {
-          return v.voter === voter
+          return v.address === voter
         });
         found = search !== undefined ? search : found;
       }
       if (found == null) {
         polljs.options[option].votes.push({
-          voter: voter
+          address: voter
         });
         const fe = await fetch(`http://idenapoll.com:3000/polls/${poll}`, {
           method: 'PATCH',
