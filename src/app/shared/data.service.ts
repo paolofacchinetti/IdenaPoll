@@ -29,19 +29,21 @@ export class DataService {
 
   getIdentityData(id: string) {
     let age;
-    let address;
     let status;
     let CALL_URL = this.IDENA_URL + '/Identity/' + id;
     this.httpClient.get<any>(CALL_URL).subscribe((p) => {
       const json = p['result'];
-      address = json['address'];
       status = json['state'].toUpperCase();
+      console.log('LOG DATASERVICE P -> JSON');
+      console.log(p);
+      console.log(json);
+      CALL_URL += '/age';
+      this.httpClient.get<any>(CALL_URL).subscribe((p) => {
+        age = p['result'];
+        this.store.dispatch(setSession({value: new SessionBean(parseInt(age), id, status)}));
+      });
     });
-    CALL_URL += '/age';
-    this.httpClient.get<any>(CALL_URL).subscribe((p) => {
-      age = p['result'];
-      this.store.dispatch(setSession({value: new SessionBean(parseInt(age), address, status)}));
-    });
+
   }
 
   getSessionOnlyCheck() {
@@ -114,7 +116,7 @@ export class DataService {
 
   votePoll(pollId: string, optionValue: number) {
     const CALL_URL = this.EXPRESS_URL + '/vote';
-    let body = JSON.stringify({'poll': pollId, 'option': optionValue});
+    let body = JSON.stringify({'poll': pollId, 'option': optionValue, 'voter': this.session.address, 'status': this.session.status, 'age': this.session.age});
     this.httpClient.post<any>(CALL_URL, body, {responseType: 'json', withCredentials: true}).subscribe((p) => {
       if (p['status'] === 'ok') {
         openDialogBar(this.store, 'info', 'Vote Submitted correctly');

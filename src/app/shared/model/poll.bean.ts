@@ -56,7 +56,7 @@ export class VoterBean {
 
   constructor(json?: string) {
     if (json) {
-      this.address = json['voter'];
+      this.address = json['address'];
       this.status = json['status'];
       this.age = json['age'];
     }
