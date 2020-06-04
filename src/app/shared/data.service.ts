@@ -40,7 +40,6 @@ export class DataService {
         this.store.dispatch(setSession({value: new SessionBean(parseInt(age), id, status)}));
       });
     });
-
   }
 
   getSessionOnlyCheck() {
@@ -50,8 +49,6 @@ export class DataService {
       address = p['address'];
       this.getIdentityData(address);
     });
-
-
   }
 
   getSession(): any {
@@ -77,7 +74,7 @@ export class DataService {
     }).subscribe((p) => {
       token = p['token'];
       this.store.dispatch(setToken({value: token}));
-    });
+    }, error => openDialogBar(this.store, 'error', 'Generic Error'));
   }
 
   getPollById(id: string) {
@@ -86,7 +83,7 @@ export class DataService {
     this.httpClient.get<any>(CALL_URL).subscribe((p) => {
       poll = new PollBean(p);
       this.store.dispatch(setSelectedPoll({value: poll}));
-    });
+    }, (error) => openDialogBar(this.store, 'warning', 'This poll does not exists!', true));
   }
 
   getRecentPolls() {
@@ -97,7 +94,7 @@ export class DataService {
         polls.push(new PollBean(j));
       }
       this.store.dispatch(setRecentPolls({value: polls}));
-    });
+    }, error => openDialogBar(this.store, 'error', 'Generic Error'));
   }
 
   getActivePolls() {
@@ -108,7 +105,7 @@ export class DataService {
         polls.push(new PollBean(j));
       }
       this.store.dispatch(setActivePolls({value: polls}));
-    });
+    }, error => openDialogBar(this.store, 'error', 'Generic Error'));
   }
 
   votePoll(pollId: string, optionValue: number) {
@@ -137,7 +134,7 @@ export class DataService {
           break;
         }
       }
-    });
+    }, error => openDialogBar(this.store, 'error', 'Generic Error'));
   }
 
   createPoll(poll: PollBean) {
@@ -148,7 +145,7 @@ export class DataService {
     }).subscribe((p) => {
       openDialogBar(this.store, 'info', 'Poll created correctly');
       this.router.navigateByUrl(`/poll/${p['id']}`);
-    });
+    }, error => openDialogBar(this.store, 'error', 'Generic Error'));
   }
 
 
