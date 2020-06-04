@@ -34,9 +34,6 @@ export class DataService {
     this.httpClient.get<any>(CALL_URL).subscribe((p) => {
       const json = p['result'];
       status = json['state'].toUpperCase();
-      console.log('LOG DATASERVICE P -> JSON');
-      console.log(p);
-      console.log(json);
       CALL_URL += '/age';
       this.httpClient.get<any>(CALL_URL).subscribe((p) => {
         age = p['result'];
@@ -118,12 +115,25 @@ export class DataService {
     const CALL_URL = this.EXPRESS_URL + '/vote';
     let body = JSON.stringify({'poll': pollId, 'option': optionValue, 'voter': this.session.address, 'status': this.session.status, 'age': this.session.age});
     this.httpClient.post<any>(CALL_URL, body, {responseType: 'json', withCredentials: true}).subscribe((p) => {
-      if (p['status'] === 'ok') {
-        openDialogBar(this.store, 'info', 'Vote Submitted correctly');
-      } else if (p['status'] === 'dup') {
-        openDialogBar(this.store, 'error', 'You already voted on this poll!');
-      } else {
-        openDialogBar(this.store, 'error', 'Generic Error');
+      switch(p['status']) {
+        case 'ok': {
+          openDialogBar(this.store, 'info', 'Vote Submitted correctly!');
+          break;
+        }
+        case 'dup': {
+          openDialogBar(this.store, 'error', 'You already voted on this poll!');
+          break;
+        }
+        case 'noAge': {
+          openDialogBar(this.store, 'error', 'Your Identity is not old enough to vote this poll.');
+          break;
+        }
+        case 'noStatus': {
+          openDialogBar(this.store, 'error', 'Your Identity status does not qualify for voting on this poll.');
+        }
+        default: {
+          openDialogBar(this.store, 'error', 'Generic Error');
+        }
       }
     });
   }
