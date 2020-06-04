@@ -49,7 +49,6 @@ export class OptionBean {
   }
 }
 
-// getter totale dei 3 ^-
 export class ResultsPollBean {
   poll: PollBean;
   results: ResultsOptionBean[] = [];
@@ -90,6 +89,14 @@ export class ResultsPollBean {
     return tot;
   }
 
+  get totalOtherVotes() {
+    let tot = 0;
+    this.results.forEach((r) => {
+      tot += r.otherVotes;
+    });
+    return tot;
+  }
+
   get weightedNewbieVotes() {
     return this.newbieMultiplier * this.totalNewbieVotes;
   }
@@ -106,6 +113,11 @@ export class ResultsPollBean {
     return this.weightedNewbieVotes + this.weightedVerifiedVotes + this.weightedHumanVotes;
   }
 
+  get totalNonWeightedVotes() {
+    return this.totalNewbieVotes + this.totalVerifiedVotes + this.totalHumanVotes + this.totalOtherVotes;
+  }
+
+
   constructor(poll?: PollBean) {
     this.poll = poll;
     for (let op of this.poll.options) {
@@ -119,6 +131,7 @@ export class ResultsOptionBean {
   newbieVotes: number = 0;
   verifiedVotes: number = 0;
   humanVotes: number = 0;
+  otherVotes: number = 0;
   value: string;
   description: string;
   totalVotes: number;
@@ -136,6 +149,8 @@ export class ResultsOptionBean {
         this.verifiedVotes++;
       } else if (v.status === 'HUMAN') {
         this.humanVotes++;
+      } else {
+        this.otherVotes++;
       }
     }
   }
