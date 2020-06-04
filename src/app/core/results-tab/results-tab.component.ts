@@ -1,5 +1,5 @@
 import {Component, Input, OnInit} from '@angular/core';
-import {PollBean} from '@app-shared/model/poll.bean';
+import {PollBean, ResultsPollBean} from '@app-shared/model/poll.bean';
 
 @Component({
   selector: 'app-results-tab',
@@ -7,12 +7,19 @@ import {PollBean} from '@app-shared/model/poll.bean';
   styleUrls: ['./results-tab.component.scss']
 })
 export class ResultsTabComponent implements OnInit {
+  resultsPoll: ResultsPollBean;
+
 
   @Input() poll: PollBean;
 
-  constructor() { }
+  constructor() {
+
+  }
 
   ngOnInit(): void {
+    this.resultsPoll = new ResultsPollBean(this.poll);
+    console.log('WEIGHTED POLL:');
+    console.log(this.resultsPoll);
   }
 
 }

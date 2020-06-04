@@ -49,6 +49,113 @@ export class OptionBean {
   }
 }
 
+export class ResultsPollBean {
+  poll: PollBean;
+  results: ResultsOptionBean[] = [];
+
+  get newbieMultiplier() {
+    return parseInt(this.poll.settings.newbieWeight);
+  }
+
+  get verifiedMultiplier() {
+    return parseInt(this.poll.settings.verifiedWeight);
+  }
+
+  get humanMultiplier() {
+    return parseInt(this.poll.settings.humanWeight);
+  }
+
+  get totalNewbieVotes() {
+    let tot = 0;
+    this.results.forEach((r) => {
+      tot += r.newbieVotes;
+    });
+    return tot;
+  }
+
+  get totalVerifiedVotes() {
+    let tot = 0;
+    this.results.forEach((r) => {
+      tot += r.verifiedVotes;
+    });
+    return tot;
+  }
+
+  get totalHumanVotes() {
+    let tot = 0;
+    this.results.forEach((r) => {
+      tot += r.humanVotes;
+    });
+    return tot;
+  }
+
+  get totalOtherVotes() {
+    let tot = 0;
+    this.results.forEach((r) => {
+      tot += r.otherVotes;
+    });
+    return tot;
+  }
+
+  get weightedNewbieVotes() {
+    return this.newbieMultiplier * this.totalNewbieVotes;
+  }
+
+  get weightedVerifiedVotes() {
+    return this.verifiedMultiplier * this.totalVerifiedVotes;
+  }
+
+  get weightedHumanVotes() {
+    return this.humanMultiplier * this.totalHumanVotes;
+  }
+
+  get totalWeightedVotes() {
+    return this.weightedNewbieVotes + this.weightedVerifiedVotes + this.weightedHumanVotes;
+  }
+
+  get totalNonWeightedVotes() {
+    return this.totalNewbieVotes + this.totalVerifiedVotes + this.totalHumanVotes + this.totalOtherVotes;
+  }
+
+
+  constructor(poll?: PollBean) {
+    this.poll = poll;
+    for (let op of this.poll.options) {
+      let resOpBean = new ResultsOptionBean(op);
+      this.results.push(resOpBean);
+    }
+  }
+}
+
+export class ResultsOptionBean {
+  newbieVotes: number = 0;
+  verifiedVotes: number = 0;
+  humanVotes: number = 0;
+  otherVotes: number = 0;
+  value: string;
+  description: string;
+  totalVotes: number;
+  votes: VoterBean[] = [];
+
+  constructor(opBean: OptionBean) {
+    this.value = opBean.value;
+    this.description = opBean.description;
+    this.votes = opBean.votes;
+    this.totalVotes = opBean.totalVotes;
+    for (let v of opBean.votes) {
+      if (v.status === 'NEWBIE') {
+        this.newbieVotes++;
+      } else if (v.status === 'VERIFIED') {
+        this.verifiedVotes++;
+      } else if (v.status === 'HUMAN') {
+        this.humanVotes++;
+      } else {
+        this.otherVotes++;
+      }
+    }
+  }
+}
+
 export class VoterBean {
   address: string;
   status: string;
