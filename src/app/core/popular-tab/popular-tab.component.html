@@ -12,7 +12,7 @@
         Votes: {{poll.totalVotes}}
       </div>
       <div class="poll-time">
-        {{poll.createdAt.toDateString()}}
+        <app-countdown [date]="poll.endsAt"></app-countdown>
       </div>
     </a>
   </div>
