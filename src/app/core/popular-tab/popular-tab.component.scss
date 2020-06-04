@@ -25,6 +25,8 @@
 
     .popular-polls {
       display: inline;
+      text-decoration: none;
+      color: inherit;
       width: calc(20% - 10px);
       margin: auto;
       height: calc(50% - 20px);

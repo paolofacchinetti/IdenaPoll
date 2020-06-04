@@ -1,7 +1,7 @@
 <div class='popular-polls-wrapper'>
   <h1 class="title">Popular Polls</h1>
   <div class="polls-wrapper">
-    <div *ngFor="let poll of popularPolls" class="popular-polls">
+    <a *ngFor="let poll of popularPolls" class="popular-polls" routerLink="/poll/{{poll.id}}">
       <div class="poll-title">
         {{poll.title}}
       </div>
@@ -14,6 +14,6 @@
       <div class="poll-time">
         {{poll.createdAt.toDateString()}}
       </div>
-    </div>
+    </a>
   </div>
 </div>

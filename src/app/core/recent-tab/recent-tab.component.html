@@ -1,7 +1,7 @@
 <div class='recent-polls-wrapper'>
   <h1 class="title">Recent Polls</h1>
   <div class="polls-wrapper">
-    <div *ngFor="let poll of recentPolls" class="recent-polls">
+    <a *ngFor="let poll of recentPolls" class="recent-polls" routerLink="/poll/{{poll.id}}">
       <div class="poll-title">
         {{poll.title}}
       </div>
@@ -14,6 +14,6 @@
       <div class="poll-time">
         {{poll.createdAt.toDateString()}}
       </div>
-    </div>
+    </a>
   </div>
 </div>
