@@ -125,11 +125,12 @@ export class DataService {
           break;
         }
         case 'noAge': {
-          openDialogBar(this.store, 'error', 'Your Identity is not old enough to vote this poll.');
+          openDialogBar(this.store, 'error', 'Your Identity is not old enough to vote on this poll.');
           break;
         }
         case 'noStatus': {
           openDialogBar(this.store, 'error', 'Your Identity status does not qualify for voting on this poll.');
+          break;
         }
         default: {
           openDialogBar(this.store, 'error', 'Generic Error');
