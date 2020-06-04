@@ -34,5 +34,5 @@ export const dismissStatusBar = createAction(
 
 export const openStatusBar = createAction(
   '[Core] openStatusBar',
-  props<{ value: MatSnackBarConfig }>()
+  props<{ value: MatSnackBarConfig, stayopen: boolean }>()
 );

@@ -13,7 +13,7 @@ $status-bar-height: 56px;
   padding: 0;
 }
 
-.popso-statusbar {
+.app-statusbar {
   .status-bar {
     @include display-grid($status-bar-height 1fr $status-bar-height);
     height: $status-bar-height;

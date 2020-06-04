@@ -5,7 +5,7 @@ import {Store} from '@ngrx/store';
 import {Router} from '@angular/router';
 import {getSession, State} from '@app-redux/index';
 import {HttpClient} from '@angular/common/http';
-import {openStatusBar, setActivePolls, setAuth, setRecentPolls, setSelectedPoll, setSession, setToken} from '@app-redux/core.actions';
+import {setActivePolls, setAuth, setRecentPolls, setSelectedPoll, setSession, setToken} from '@app-redux/core.actions';
 import {openDialogBar} from '@app-shared/open-status-bar.functions';
 
 @Injectable({
@@ -132,7 +132,8 @@ export class DataService {
       responseType: 'json',
       withCredentials: true
     }).subscribe((p) => {
-      console.log(p);
+      openDialogBar(this.store, 'info', 'Poll created correctly');
+      this.router.navigateByUrl(`/poll/${p['id']}`);
     });
   }
 

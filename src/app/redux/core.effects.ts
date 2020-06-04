@@ -15,8 +15,11 @@ export class CoreEffects {
   );
   openDialogBar = createEffect(() => this.actions$.pipe(
     ofType('[Core] openStatusBar'),
-    tap((action: { type: '[Core] openStatusBar', value: MatSnackBarConfig }) => {
+    tap((action: { type: '[Core] openStatusBar', value: MatSnackBarConfig, stayopen: boolean }) => {
       this.dialogBarService.openDialogBar(action ? action.value : null);
+      if (!action.stayopen) {
+        setTimeout(() => this.dialogBarService.statusBarReference.dismiss(), 5000)
+      }
     })
   ), {dispatch: false});
 
