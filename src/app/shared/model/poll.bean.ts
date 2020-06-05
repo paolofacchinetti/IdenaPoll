@@ -119,16 +119,96 @@ export class ResultsPollBean {
 
   get optionDescriptions() {
     let arr = [];
-    this.results.forEach((r) =>(arr.push(r.description)));
+    this.results.forEach((r) => (arr.push(r.description)));
     return arr;
   }
 
   get optionTotalVotes() {
     let arr = [];
-    this.results.forEach((r) =>(arr.push(r.totalVotes)));
+    this.results.forEach((r) => (arr.push(r.totalVotes)));
     return arr;
   }
 
+  get optionTotalWeightedVotes() {
+    let arr = [];
+    this.results.forEach((r) => {
+      arr.push((!isNaN(this.newbieMultiplier) ? this.newbieMultiplier * r.newbieVotes : 0) + (!isNaN(this.verifiedMultiplier) ? this.verifiedMultiplier * r.verifiedVotes : 0) + (!isNaN(this.humanMultiplier) ? this.humanMultiplier * r.humanVotes : 0));
+    });
+    console.log(arr);
+    return arr;
+  }
+
+  get optionOtherVotes() {
+    let arr = [];
+    this.results.forEach((r) => arr.push(r.otherVotes));
+    return arr;
+  }
+
+  get optionNewbieVotes() {
+    let arr = [];
+    this.results.forEach((r) => arr.push(r.newbieVotes));
+    return arr;
+  }
+
+  get optionVerifiedVotes() {
+    let arr = [];
+    this.results.forEach((r) => arr.push(r.verifiedVotes));
+    return arr;
+  }
+
+  get optionHumanVotes() {
+    let arr = [];
+    this.results.forEach((r) => arr.push(r.humanVotes));
+    return arr;
+  }
+
+  get optionNewbieWeightedVotes() {
+    let arr = [];
+    this.results.forEach((r) => arr.push(r.newbieVotes * this.newbieMultiplier));
+    return arr;
+  }
+
+  get optionVerifiedWeightedVotes() {
+    let arr = [];
+    this.results.forEach((r) => arr.push(r.verifiedVotes * this.verifiedMultiplier));
+    return arr;
+  }
+
+  get optionHumanWeightedVotes() {
+    let arr = [];
+    this.results.forEach((r) => arr.push(r.humanVotes * this.humanMultiplier));
+    return arr;
+  }
+
+  get optionAges() {
+    let arr: [{ value?: string, voter?: number }] = [{value: 'exclude', voter: 0}];
+    this.results.forEach((r) => {
+      r.voteAges.forEach((a) => {
+        for (let k of arr) {
+          if (k.value === a.value) {
+            k.voter += a.voter;
+          } else {
+            arr.push({value: a.value, voter: 0});
+          }
+        }
+      });
+    });
+    return arr;
+  }
+
+  get ageLabels() {
+    let arr = this.optionAges;
+    let labeledArr = [];
+    arr.forEach((a) => labeledArr.push(a.value));
+    return labeledArr;
+  }
+
+  get ageData() {
+    let arr = this.optionAges;
+    let dataArr = [];
+    arr.forEach((a) => dataArr.push(a.voter));
+    return dataArr;
+  }
 
   constructor(poll?: PollBean) {
     this.poll = poll;
@@ -148,6 +228,7 @@ export class ResultsOptionBean {
   description: string;
   totalVotes: number;
   votes: VoterBean[] = [];
+  voteAges: [{ value?: string, voter?: number }] = [{value: 'exclude', voter: 0}];
 
   constructor(opBean: OptionBean) {
     this.value = opBean.value;
@@ -163,6 +244,13 @@ export class ResultsOptionBean {
         this.humanVotes++;
       } else {
         this.otherVotes++;
+      }
+      for (let a of this.voteAges) {
+        if (a.value === v.age) {
+          a.voter++;
+        } else {
+          this.voteAges.push({value: v.age, voter: 0});
+        }
       }
     }
   }
