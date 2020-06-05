@@ -123,12 +123,12 @@ export class ResultsTabComponent implements OnInit, AfterViewInit{
               'rgba(255, 99, 132, 0.2)'
             ],
             borderColor: [
-              'rgba(54, 162, 235, 1)',
-              'rgba(54, 162, 235, 1)',
-              'rgba(54, 162, 235, 1)',
-              'rgba(54, 162, 235, 1)',
-              'rgba(54, 162, 235, 1)',
-              'rgba(54, 162, 235, 1)'
+              'rgba(255, 99, 132, 1)',
+              'rgba(255, 99, 132, 1)',
+              'rgba(255, 99, 132, 1)',
+              'rgba(255, 99, 132, 1)',
+              'rgba(255, 99, 132, 1)',
+              'rgba(255, 99, 132, 1)'
             ],
             borderWidth: 1
           },
@@ -144,12 +144,12 @@ export class ResultsTabComponent implements OnInit, AfterViewInit{
                 'rgba(54, 162, 235, 0.2)'
               ],
               borderColor: [
-                'rgba(255, 99, 132, 1)',
-                'rgba(255, 99, 132, 1)',
-                'rgba(255, 99, 132, 1)',
-                'rgba(255, 99, 132, 1)',
-                'rgba(255, 99, 132, 1)',
-                'rgba(255, 99, 132, 1)'
+                'rgba(54, 162, 235, 1)',
+                'rgba(54, 162, 235, 1)',
+                'rgba(54, 162, 235, 1)',
+                'rgba(54, 162, 235, 1)',
+                'rgba(54, 162, 235, 1)',
+                'rgba(54, 162, 235, 1)'
               ],
               borderWidth: 1
             },
@@ -311,5 +311,54 @@ export class ResultsTabComponent implements OnInit, AfterViewInit{
         }
       }
     });
+    if(this.resultsPoll.poll.settings.isStatusWeighted){
+      this.totStatusOverview = new Chart(this.totStatusCanvas.nativeElement.getContext('2d'), {
+        type: 'doughnut',
+        data: {
+          labels: ['NEWBIE', 'VERIFIED', 'HUMAN'],
+          datasets: [{
+            label: 'Voters',
+            data: [this.resultsPoll.weightedNewbieVotes, this.resultsPoll.weightedVerifiedVotes, this.resultsPoll.weightedHumanVotes],
+            backgroundColor: [],
+            borderColor: [],
+            borderWidth: 1
+          }]
+        },
+        options: {
+          scales: {
+            yAxes: [{
+              ticks: {
+                beginAtZero: true,
+                stepSize: 1
+              }
+            }]
+          }
+        }
+      });
+    }else {
+      this.totStatusOverview = new Chart(this.totStatusCanvas.nativeElement.getContext('2d'), {
+        type: 'doughnut',
+        data: {
+          labels: ['OTHER', 'NEWBIE', 'VERIFIED', 'HUMAN'],
+          datasets: [{
+            label: 'Voters',
+            data: [this.resultsPoll.totalOtherVotes, this.resultsPoll.totalNewbieVotes, this.resultsPoll.totalVerifiedVotes, this.resultsPoll.totalHumanVotes],
+            backgroundColor: [
+              'rgba(255, 99, 132, 0.2)',
+              'rgba(54, 162, 235, 0.2)',
+              'rgba(255, 206, 86, 0.2)',
+              'rgba(75, 192, 192, 0.2)'],
+            borderColor: [
+              'rgba(255, 99, 132, 1)',
+              'rgba(54, 162, 235, 1)',
+              'rgba(255, 206, 86, 1)',
+              'rgba(75, 192, 192, 1)',
+            ],
+            borderWidth: 1
+          }]
+        },
+        options: {}
+      });
+    }
   }
 }
