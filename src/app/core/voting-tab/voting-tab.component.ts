@@ -12,25 +12,24 @@ import {getSession, State} from '@app-redux/index';
 })
 export class VotingTabComponent implements OnInit {
   selectedOption: number;
-
+  session;
   @Input() poll: PollBean;
 
   constructor(protected ds: DataService, protected store: Store<State>) {
-
+    this.store.select(getSession).subscribe((s) => {
+      this.session = s;
+    });
   }
 
   ngOnInit(): void {
   }
 
   onSubmit() {
-    this.ds.getSession();
-    this.store.select(getSession).subscribe((s) =>{
-      if(s == null){
-        openDialogBar(this.store, 'warning', 'You need to Sign-in with an Idena identity before voting.');
-      }else{
-        this.ds.votePoll(this.poll.id, this.selectedOption);
-      }
-    });
+    if (this.session == null) {
+      openDialogBar(this.store, 'warning', 'You need to Sign-in with an Idena identity before voting.');
+    } else {
+      this.ds.votePoll(this.poll.id, this.selectedOption);
+    }
   }
 
 }

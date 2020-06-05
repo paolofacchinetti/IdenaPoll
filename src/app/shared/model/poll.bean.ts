@@ -117,6 +117,18 @@ export class ResultsPollBean {
     return this.totalNewbieVotes + this.totalVerifiedVotes + this.totalHumanVotes + this.totalOtherVotes;
   }
 
+  get optionDescriptions() {
+    let arr = [];
+    this.results.forEach((r) =>(arr.push(r.description)));
+    return arr;
+  }
+
+  get optionTotalVotes() {
+    let arr = [];
+    this.results.forEach((r) =>(arr.push(r.totalVotes)));
+    return arr;
+  }
+
 
   constructor(poll?: PollBean) {
     this.poll = poll;

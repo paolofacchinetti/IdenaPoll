@@ -28,6 +28,7 @@
     "@ngrx/store": "^9.1.2",
     "body-parser": "^1.19.0",
     "bootstrap": "^4.5.0",
+    "chart.js": "^2.9.3",
     "cookie-parser": "^1.4.5",
     "cors": "^2.8.5",
     "ethereumjs-util": "^7.0.0",
