@@ -181,7 +181,7 @@ export class ResultsPollBean {
   }
 
   get optionAges() {
-    let arr: [{ value?: string, voter?: number }] = [{value: 'exclude', voter: 0}];
+    let arr = [];
     this.results.forEach((r) => {
       r.voteAges.forEach((a) => {
         for (let k of arr) {
@@ -190,6 +190,9 @@ export class ResultsPollBean {
           } else {
             arr.push({value: a.value, voter: 0});
           }
+        }
+        if (arr.length == 0) {
+          arr.push({value: a.value, voter: a.voter});
         }
       });
     });
@@ -228,7 +231,7 @@ export class ResultsOptionBean {
   description: string;
   totalVotes: number;
   votes: VoterBean[] = [];
-  voteAges: [{ value?: string, voter?: number }] = [{value: 'exclude', voter: 0}];
+  voteAges = [];
 
   constructor(opBean: OptionBean) {
     this.value = opBean.value;
@@ -249,8 +252,11 @@ export class ResultsOptionBean {
         if (a.value === v.age) {
           a.voter++;
         } else {
-          this.voteAges.push({value: v.age, voter: 0});
+          this.voteAges.push({value: v.age, voter: 1});
         }
+      }
+      if (this.voteAges.length == 0) {
+        this.voteAges.push({value: v.age, voter: 1});
       }
     }
   }
