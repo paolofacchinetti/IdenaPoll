@@ -27,6 +27,13 @@ export class DataService {
     });
   }
 
+  logoutSession(){
+    let CALL_URL = `${this.EXPRESS_URL}/auth/v1/logout`;
+    this.httpClient.post<any>(CALL_URL, null, {withCredentials: true}).subscribe((p) => {
+      console.log(p);
+    });
+  }
+
   getIdentityData(id: string) {
     let age;
     let status;

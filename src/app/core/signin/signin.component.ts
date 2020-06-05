@@ -16,7 +16,7 @@ export class SigninComponent implements OnInit, AfterViewInit {
   SUCCESS = 'success';
   signinState: string;
   dnaUrl: string;
-  EXPRESS_URL = 'https://express.idena.com';
+  EXPRESS_URL = 'https://express.idenapoll.com';
   WEBSITE_URL = 'https://idenapoll.com';
   token: string;
   count = 0;

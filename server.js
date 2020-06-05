@@ -22,6 +22,7 @@ app.use(bodyParser.text());
 app.use(cookieParser());
 const IDENA_SESSION_TOKEN_COOKIE = 'IDENA_SESSION_TOKEN';
 const IDENA_AUTH_COOKIE = 'IDENA_AUTH';
+
 app.route('/auth/v1/logout').post((req, res) => {
   const session = req.cookies[IDENA_AUTH_COOKIE];
   if (session) {

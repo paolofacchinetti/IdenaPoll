@@ -5,6 +5,7 @@ import {getSession, State} from '@app-redux/index';
 import {SessionBean} from '@app-shared/model/session.bean';
 import {filter} from 'rxjs/operators';
 import {StatusEnum} from '@app-shared/model/status.enum';
+import {setSession} from '@app-redux/core.actions';
 
 @Component({
   selector: 'app-topbar',
@@ -16,7 +17,7 @@ export class TopbarComponent implements OnInit {
   canCreate: boolean;
 
   constructor(protected dataService: DataService, protected store: Store<State>) {
-    this.store.pipe(select(getSession), filter((p) => p != null)).subscribe((s) => {
+    this.store.pipe(select(getSession), filter((p) => p !== null)).subscribe((s) => {
       this.session = s;
       console.log(s);
       /**
@@ -35,6 +36,11 @@ export class TopbarComponent implements OnInit {
 
   ngOnInit(): void {
 
+  }
+
+  logout(){
+    this.dataService.logoutSession();
+    this.store.dispatch(setSession({value: undefined}));
   }
 
 }
