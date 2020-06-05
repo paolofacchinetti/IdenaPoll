@@ -16,7 +16,8 @@ export class SigninComponent implements OnInit, AfterViewInit {
   SUCCESS = 'success';
   signinState: string;
   dnaUrl: string;
-  EXPRESS_URL = 'http://idenapoll.com:8000';
+  EXPRESS_URL = 'https://express.idena.com';
+  WEBSITE_URL = 'https://idenapoll.com';
   token: string;
   count = 0;
 
@@ -65,15 +66,16 @@ export class SigninComponent implements OnInit, AfterViewInit {
    Builds the DNA URL used for the in-app sign-in
    */
   buildDnaUrl(token: string, baseUrl: string, callbackUrl: string): string {
-    const callback = new URL(callbackUrl, 'http://idenapoll.com');
+    const callback = new URL(callbackUrl, this.WEBSITE_URL);
     const startSession = new URL('/auth/v1/start-session', baseUrl);
     const authenticate = new URL('/auth/v1/authenticate', baseUrl);
+    const favicon = new URL('/favicon.ico', this.WEBSITE_URL);
 
     return `dna://signin/v1?callback_url=${encodeURIComponent(
       callback.href
     )}&token=${token}&nonce_endpoint=${encodeURIComponent(
       startSession.href
-    )}&authentication_endpoint=${encodeURIComponent(authenticate.href)}`;
+    )}&favicon_url=${encodeURIComponent(favicon.href)}&authentication_endpoint=${encodeURIComponent(authenticate.href)}`;
   }
 
 }
