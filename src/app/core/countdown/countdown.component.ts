@@ -44,6 +44,12 @@ export class CountdownComponent implements OnInit, OnDestroy {
       this.minutes = Math.floor(this.diff / 60) % 60;
       this.diff -= this.minutes * 60;
       this.seconds = this.diff % 60;
+    } else {
+      this.days = 0;
+      this.hours = 0;
+      this.minutes = 0;
+      this.seconds = 0;
+      clearInterval(this.timer)
     }
   }
 }
