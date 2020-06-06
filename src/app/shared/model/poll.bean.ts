@@ -202,18 +202,19 @@ export class ResultsPollBean {
   get ageLabels() {
     let arr = this.optionAges;
     let labeledArr = [];
+    let correctLabeledArr = [];
     arr.forEach((a) => {
       labeledArr.push(a.value);
     });
-    labeledArr.sort((n1,n2) => n1 - n2);
-    labeledArr.forEach((a) => {
-      if(a == 1){
-        a += 'Epoch';
+    labeledArr.sort((n1, n2) => n1 - n2);
+    labeledArr.forEach((b) => {
+      if(b == 1){
+        correctLabeledArr.push(b + ' Epoch');
       }else{
-        a += 'Epochs';
+        correctLabeledArr.push(b + ' Epochs');
       }
     });
-    return labeledArr;
+    return correctLabeledArr;
   }
 
   get ageData() {
