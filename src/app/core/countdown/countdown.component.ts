@@ -36,12 +36,14 @@ export class CountdownComponent implements OnInit, OnDestroy {
   }
 
   getTimers() {
-    this.days = Math.floor(this.diff / 86400);
-    this.diff -= this.days * 86400;
-    this.hours = Math.floor(this.diff / 3600) % 24;
-    this.diff -= this.hours * 3600;
-    this.minutes = Math.floor(this.diff / 60) % 60;
-    this.diff -= this.minutes * 60;
-    this.seconds = this.diff % 60;
+    if (this.diff > 0) {
+      this.days = Math.floor(this.diff / 86400);
+      this.diff -= this.days * 86400;
+      this.hours = Math.floor(this.diff / 3600) % 24;
+      this.diff -= this.hours * 3600;
+      this.minutes = Math.floor(this.diff / 60) % 60;
+      this.diff -= this.minutes * 60;
+      this.seconds = this.diff % 60;
+    }
   }
 }

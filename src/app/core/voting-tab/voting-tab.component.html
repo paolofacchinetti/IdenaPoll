@@ -1,6 +1,8 @@
 <div class="voting-container">
 
   <div class="poll-header">
+    <app-circle-status
+      [ngClass]="{'circle-status-active': poll.status== 'active','circle-status-error': poll.status== 'ended'}"></app-circle-status>
     <h3 class="title">{{poll.title}}</h3>
     <p class="description">{{poll.description}}</p>
   </div>
@@ -21,7 +23,7 @@
                   class="small-gap primary-button app-button-small"></app-button>
     </div>
 
-
+    <app-countdown [date]="poll.endsAt"></app-countdown>
   </div>
 
 </div>

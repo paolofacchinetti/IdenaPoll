@@ -205,7 +205,7 @@ export class ResultsPollBean {
     arr.forEach((a) => labeledArr.push(a.value));
     return labeledArr;
   }
-
+c
   get ageData() {
     let arr = this.optionAges;
     let dataArr = [];
