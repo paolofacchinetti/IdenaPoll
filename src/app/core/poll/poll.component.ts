@@ -1,5 +1,5 @@
 import {Component, OnInit} from '@angular/core';
-import {ActivatedRoute} from "@angular/router";
+import {ActivatedRoute} from '@angular/router';
 import {DataService} from "@app-shared/data.service";
 import {select, Store} from "@ngrx/store";
 import {getSelectedPoll, State} from "@app-redux/index";

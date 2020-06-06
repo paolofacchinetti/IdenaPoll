@@ -4,7 +4,7 @@
   height: 100%;
   position: relative;
 
-  .poll-header{
+  .poll-header {
     display: flex;
     flex-direction: column;
     flex-grow: 1;
@@ -13,17 +13,30 @@
     position: relative;
 
   }
-  .poll-options{
 
-      .radio-options-group{
-        display: flex;
-        flex-direction: column;
-        margin: 15px 0;
+  .poll-options {
 
-        .radio-button{
-          margin: 5px;
-        }
+    .radio-options-group {
+      display: flex;
+      flex-direction: column;
+      margin: 15px 0;
+
+      .radio-button {
+        margin: 5px;
       }
+    }
   }
+
+  .share{
+    display: flex;
+    flex-direction: row;
+    margin-top: 20px;
+    align-items: center;
+    *{
+      margin-right: 10px;
+      min-width: 250px;
+    }
+  }
+
 }
 
