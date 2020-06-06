@@ -43,9 +43,9 @@ export class VotingTabComponent implements OnInit {
   }
 
 
-  copyToClipboard(item) {
+  copyToClipboard() {
     document.addEventListener('copy', (e: ClipboardEvent) => {
-      e.clipboardData.setData('text/plain', (item));
+      e.clipboardData.setData('text/plain', (this.href));
       e.preventDefault();
       document.removeEventListener('copy', null);
     });

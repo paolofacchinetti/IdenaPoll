@@ -14,6 +14,12 @@ export class ResultsTabComponent implements OnInit, AfterViewInit{
   ageOverview;
   totStatusOverview;
 
+  //COLORS:
+  newbieRGB = 'rgba(255, 206, 86, 1)';
+  verifiedRGB = 'rgba(255, 99, 132, 1)';
+  humanRGB = 'rgba(54, 162, 235, 1)';
+  otherRGB = 'rgba(153, 102, 255, 1)';
+
   @Input() poll: PollBean;
   @ViewChild('resultsOverview', {static: false}) resultsCanvas: ElementRef;
   @ViewChild('optionStatusOverview', {static: false}) optionStatusCanvas: ElementRef;
@@ -58,6 +64,10 @@ export class ResultsTabComponent implements OnInit, AfterViewInit{
           }]
         },
         options: {
+          title: {
+            display: true,
+            text: 'Poll Results (Weighted)'
+          },
           scales: {
             yAxes: [{
               ticks: {
@@ -95,6 +105,10 @@ export class ResultsTabComponent implements OnInit, AfterViewInit{
           }]
         },
         options: {
+          title: {
+            display: true,
+            text: 'Poll Results'
+          },
           scales: {
             xAxes: [{
               ticks: {
@@ -176,6 +190,10 @@ export class ResultsTabComponent implements OnInit, AfterViewInit{
             }]
         },
         options: {
+          title: {
+            display: true,
+            text: 'Votes by Status for each option (weighted)'
+          },
           scales: {
             xAxes: [{
               ticks: {
@@ -277,6 +295,10 @@ export class ResultsTabComponent implements OnInit, AfterViewInit{
             }]
         },
         options: {
+          title: {
+            display: true,
+            text: 'Votes by Status for each option'
+          },
           scales: {
             xAxes: [{
               ticks: {
@@ -301,6 +323,10 @@ export class ResultsTabComponent implements OnInit, AfterViewInit{
         }]
       },
       options: {
+        title: {
+          display: true,
+          text: 'Total voters by Age'
+        },
         scales: {
           yAxes: [{
             ticks: {
@@ -319,12 +345,20 @@ export class ResultsTabComponent implements OnInit, AfterViewInit{
           datasets: [{
             label: 'Voters',
             data: [this.resultsPoll.weightedNewbieVotes, this.resultsPoll.weightedVerifiedVotes, this.resultsPoll.weightedHumanVotes],
-            backgroundColor: [],
+            backgroundColor: [
+              this.newbieRGB,
+              this.verifiedRGB,
+              this.humanRGB
+            ],
             borderColor: [],
             borderWidth: 1
           }]
         },
         options: {
+          title: {
+            display: true,
+            text: 'Total votes by Status (weighted)'
+          },
           scales: {
             yAxes: [{
               ticks: {
@@ -339,25 +373,24 @@ export class ResultsTabComponent implements OnInit, AfterViewInit{
       this.totStatusOverview = new Chart(this.totStatusCanvas.nativeElement.getContext('2d'), {
         type: 'doughnut',
         data: {
-          labels: ['OTHER', 'NEWBIE', 'VERIFIED', 'HUMAN'],
+          labels: ['NEWBIE', 'VERIFIED', 'HUMAN', 'OTHER'],
           datasets: [{
             label: 'Voters',
-            data: [this.resultsPoll.totalOtherVotes, this.resultsPoll.totalNewbieVotes, this.resultsPoll.totalVerifiedVotes, this.resultsPoll.totalHumanVotes],
+            data: [this.resultsPoll.totalNewbieVotes, this.resultsPoll.totalVerifiedVotes, this.resultsPoll.totalHumanVotes, this.resultsPoll.totalOtherVotes],
             backgroundColor: [
-              'rgba(255, 99, 132, 0.2)',
-              'rgba(54, 162, 235, 0.2)',
-              'rgba(255, 206, 86, 0.2)',
-              'rgba(75, 192, 192, 0.2)'],
-            borderColor: [
-              'rgba(255, 99, 132, 1)',
-              'rgba(54, 162, 235, 1)',
-              'rgba(255, 206, 86, 1)',
-              'rgba(75, 192, 192, 1)',
-            ],
+              this.newbieRGB,
+              this.verifiedRGB,
+              this.humanRGB,
+              this.otherRGB],
             borderWidth: 1
           }]
         },
-        options: {}
+        options: {
+          title: {
+            display: true,
+            text: 'Total votes by Status'
+          },
+        }
       });
     }
   }

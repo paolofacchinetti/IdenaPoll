@@ -27,9 +27,7 @@
 
     <div class="share">
       <app-input id="url" [parentControlName]="'url'" [parentFormGroup]="copyURLForm"
-                 [inputLabel]="'Share this poll through this link'"></app-input>
-      <app-button (click)="copyToClipboard(href)" [id]="'copyButton'" [label]="'Copy to clipboard'"
-                  class="small-gap primary-button app-button-small"></app-button>
+                 [inputLabel]="'Click to copy poll URL'" (click)="copyToClipboard()"></app-input>
     </div>
   </div>
 </div>
