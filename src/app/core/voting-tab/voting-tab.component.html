@@ -1,11 +1,17 @@
 <div class="voting-container">
 
-  <div class="poll-header">
-    <app-circle-status
-      [ngClass]="{'circle-status-active': poll.status== 'active','circle-status-error': poll.status== 'ended'}"></app-circle-status>
-    <h3 class="title">{{poll.title}}</h3>
-    <p class="description">{{poll.description}}</p>
+  <div class="top-poll">
+    <div class="poll-status">
+      <app-circle-status
+        [ngClass]="{'circle-status-active': poll.status== 'active','circle-status-error': poll.status== 'ended'}"></app-circle-status>
+    </div>
+
+    <div class="poll-header">
+      <h3 class="title">{{poll.title}}</h3>
+      <p class="description">{{poll.description}}</p>
+    </div>
   </div>
+
 
   <div class="poll-options">
 
@@ -18,16 +24,18 @@
       </mat-radio-button>
     </mat-radio-group>
 
-    <div class="sub-but">
-      <app-button (click)="onSubmit()" [id]="'submitButton'" [label]="'Submit Vote'"
-                  class="small-gap primary-button app-button-small"></app-button>
-    </div>
+  </div>
+
+  <div class="poll-footer">
+    <app-button (click)="onSubmit()" [id]="'submitButton'" [label]="'Submit Vote'"
+                class="small-gap primary-button app-button-small"></app-button>
 
     <app-countdown [date]="poll.endsAt"></app-countdown>
+  </div>
 
-    <div class="share">
-      <app-input id="url" [parentControlName]="'url'" [parentFormGroup]="copyURLForm"
-                 [inputLabel]="'Click to copy poll URL'" (click)="copyToClipboard()"></app-input>
-    </div>
+
+  <div class="share">
+    <app-input id="url" [parentControlName]="'url'" [parentFormGroup]="copyURLForm"
+               [inputLabel]="'Click to copy poll URL'" (click)="copyToClipboard()"></app-input>
   </div>
 </div>

@@ -1,6 +1,7 @@
 import {AfterViewInit, Component, ElementRef, Input, OnInit, ViewChild} from '@angular/core';
 import {PollBean, ResultsPollBean} from '@app-shared/model/poll.bean';
 import * as Chart from 'chart.js';
+import {DataService} from '@app-shared/data.service';
 
 @Component({
   selector: 'app-results-tab',
@@ -30,13 +31,12 @@ export class ResultsTabComponent implements OnInit, AfterViewInit{
   @ViewChild('ageOverview', {static: false}) ageCanvas: ElementRef;
   @ViewChild('totStatusOverview', {static: false}) totStatusCanvas: ElementRef;
 
-  constructor() {
-
+  constructor(protected ds: DataService) {
   }
 
   ngOnInit(): void {
+    this.ds.getPollById(this.poll.id);
     this.resultsPoll = new ResultsPollBean(this.poll);
-    console.log(this.resultsPoll);
   }
 
   ngAfterViewInit(): void {

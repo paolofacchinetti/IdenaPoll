@@ -4,14 +4,22 @@
   height: 100%;
   position: relative;
 
-  .poll-header {
-    display: flex;
-    flex-direction: column;
-    flex-grow: 1;
-    max-width: 1000px;
-    padding: 15px;
-    position: relative;
+  .top-poll{
+    display:flex;
+    flex-direction: row;
 
+    .poll-status{
+      align-self: center;
+    }
+
+    .poll-header {
+      display: flex;
+      flex-direction: column;
+      flex-grow: 1;
+      max-width: 1000px;
+      padding: 15px;
+      position: relative;
+    }
   }
 
   .poll-options {
@@ -25,6 +33,13 @@
         margin: 5px;
       }
     }
+  }
+
+  .poll-footer{
+    *{
+      padding: 5px;
+    }
+
   }
 
   .share{
