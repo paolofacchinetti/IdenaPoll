@@ -206,6 +206,10 @@ export class ResultsPollBean {
     return dataArr;
   }
 
+  get totalVotes() {
+    return this.totalOtherVotes + this.totalNewbieVotes + this.totalVerifiedVotes + this.totalHumanVotes;
+  }
+
   constructor(poll?: PollBean) {
     this.poll = poll;
     for (let op of this.poll.options) {

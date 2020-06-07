@@ -65,7 +65,7 @@ export class ResultsTabComponent implements OnInit, AfterViewInit{
         options: {
           title: {
             display: true,
-            text: 'Poll Results (Weighted)',
+            text: `Weighted Poll Results (${this.resultsPoll.totalVotes} unique voters)`,
             fontSize: 16
           },
           scales: {
@@ -107,7 +107,7 @@ export class ResultsTabComponent implements OnInit, AfterViewInit{
         options: {
           title: {
             display: true,
-            text: 'Poll Results',
+            text: `Poll Results (${this.resultsPoll.totalVotes} unique voters)`,
             fontSize: 16
           },
           scales: {
