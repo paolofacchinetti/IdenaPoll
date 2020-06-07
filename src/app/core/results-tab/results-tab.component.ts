@@ -17,14 +17,9 @@ export class ResultsTabComponent implements OnInit, AfterViewInit{
 
   //COLORS:
   newbieRGB = 'rgba(255, 206, 86, 1)';
-  newbieRGBOpaque = 'rgba(255, 206, 86, 0.2)';
   verifiedRGB = 'rgba(255, 99, 132, 1)';
-  verifiedRGBOpaque = 'rgba(255, 99, 132, 0.2)';
   humanRGB = 'rgba(54, 162, 235, 1)';
-  humanRGBOpaque = 'rgba(54, 162, 235, 0.2)';
   otherRGB = 'rgba(153, 102, 255, 1)';
-  otherRGBOpaque = 'rgba(153, 102, 255, 0.2)';
-
   @Input() poll: PollBean;
   @ViewChild('resultsOverview', {static: false}) resultsCanvas: ElementRef;
   @ViewChild('optionStatusOverview', {static: false}) optionStatusCanvas: ElementRef;
@@ -49,12 +44,12 @@ export class ResultsTabComponent implements OnInit, AfterViewInit{
             label: 'Votes',
             data: this.resultsPoll.optionTotalWeightedVotes,
             backgroundColor: [
-              'rgba(255, 99, 132, 0.2)',
-              'rgba(54, 162, 235, 0.2)',
-              'rgba(255, 206, 86, 0.2)',
-              'rgba(75, 192, 192, 0.2)',
-              'rgba(153, 102, 255, 0.2)',
-              'rgba(255, 159, 64, 0.2)'
+              'rgba(255, 99, 132, 1)',
+              'rgba(54, 162, 235, 1)',
+              'rgba(255, 206, 86, 1)',
+              'rgba(75, 192, 192, 1)',
+              'rgba(153, 102, 255, 1)',
+              'rgba(255, 159, 64, 1)'
             ],
             borderColor: [
               'rgba(255, 99, 132, 1)',
@@ -91,12 +86,12 @@ export class ResultsTabComponent implements OnInit, AfterViewInit{
             label: 'Votes',
             data: this.resultsPoll.optionTotalVotes,
             backgroundColor: [
-              'rgba(255, 99, 132, 0.2)',
-              'rgba(54, 162, 235, 0.2)',
-              'rgba(255, 206, 86, 0.2)',
-              'rgba(75, 192, 192, 0.2)',
-              'rgba(153, 102, 255, 0.2)',
-              'rgba(255, 159, 64, 0.2)'
+              'rgba(255, 99, 132, 1)',
+              'rgba(54, 162, 235, 1)',
+              'rgba(255, 206, 86, 1)',
+              'rgba(75, 192, 192, 1)',
+              'rgba(153, 102, 255, 1)',
+              'rgba(255, 159, 64, 1)'
             ],
             borderColor: [
               'rgba(255, 99, 132, 1)',
@@ -135,12 +130,12 @@ export class ResultsTabComponent implements OnInit, AfterViewInit{
             label: 'Newbie Votes',
             data: this.resultsPoll.optionNewbieWeightedVotes,
             backgroundColor: [
-              this.newbieRGBOpaque,
-              this.newbieRGBOpaque,
-              this.newbieRGBOpaque,
-              this.newbieRGBOpaque,
-              this.newbieRGBOpaque,
-              this.newbieRGBOpaque
+              this.newbieRGB,
+              this.newbieRGB,
+              this.newbieRGB,
+              this.newbieRGB,
+              this.newbieRGB,
+              this.newbieRGB
             ],
             borderColor: [
               this.newbieRGB,
@@ -156,12 +151,12 @@ export class ResultsTabComponent implements OnInit, AfterViewInit{
               label: 'Verified Votes',
               data: this.resultsPoll.optionVerifiedWeightedVotes,
               backgroundColor: [
-                this.verifiedRGBOpaque,
-                this.verifiedRGBOpaque,
-                this.verifiedRGBOpaque,
-                this.verifiedRGBOpaque,
-                this.verifiedRGBOpaque,
-                this.verifiedRGBOpaque
+                this.verifiedRGB,
+                this.verifiedRGB,
+                this.verifiedRGB,
+                this.verifiedRGB,
+                this.verifiedRGB,
+                this.verifiedRGB
               ],
               borderColor: [
                 this.verifiedRGB,
@@ -177,12 +172,12 @@ export class ResultsTabComponent implements OnInit, AfterViewInit{
               label: 'Human Votes',
               data: this.resultsPoll.optionHumanWeightedVotes,
               backgroundColor: [
-                this.humanRGBOpaque,
-                this.humanRGBOpaque,
-                this.humanRGBOpaque,
-                this.humanRGBOpaque,
-                this.humanRGBOpaque,
-                this.humanRGBOpaque
+                this.humanRGB,
+                this.humanRGB,
+                this.humanRGB,
+                this.humanRGB,
+                this.humanRGB,
+                this.humanRGB
               ],
               borderColor: [
                 this.humanRGB,
@@ -220,12 +215,12 @@ export class ResultsTabComponent implements OnInit, AfterViewInit{
             label: 'Newbie Votes',
             data: this.resultsPoll.optionNewbieVotes,
             backgroundColor: [
-              this.newbieRGBOpaque,
-              this.newbieRGBOpaque,
-              this.newbieRGBOpaque,
-              this.newbieRGBOpaque,
-              this.newbieRGBOpaque,
-              this.newbieRGBOpaque
+              this.newbieRGB,
+              this.newbieRGB,
+              this.newbieRGB,
+              this.newbieRGB,
+              this.newbieRGB,
+              this.newbieRGB
             ],
             borderColor: [
               this.newbieRGB,
@@ -241,12 +236,12 @@ export class ResultsTabComponent implements OnInit, AfterViewInit{
               label: 'Verified Votes',
               data: this.resultsPoll.optionVerifiedVotes,
               backgroundColor: [
-                this.verifiedRGBOpaque,
-                this.verifiedRGBOpaque,
-                this.verifiedRGBOpaque,
-                this.verifiedRGBOpaque,
-                this.verifiedRGBOpaque,
-                this.verifiedRGBOpaque
+                this.verifiedRGB,
+                this.verifiedRGB,
+                this.verifiedRGB,
+                this.verifiedRGB,
+                this.verifiedRGB,
+                this.verifiedRGB
               ],
               borderColor: [
                 this.verifiedRGB,
@@ -262,12 +257,12 @@ export class ResultsTabComponent implements OnInit, AfterViewInit{
               label: 'Human Votes',
               data: this.resultsPoll.optionHumanVotes,
               backgroundColor: [
-                this.humanRGBOpaque,
-                this.humanRGBOpaque,
-                this.humanRGBOpaque,
-                this.humanRGBOpaque,
-                this.humanRGBOpaque,
-                this.humanRGBOpaque
+                this.humanRGB,
+                this.humanRGB,
+                this.humanRGB,
+                this.humanRGB,
+                this.humanRGB,
+                this.humanRGB
               ],
               borderColor: [
                 this.humanRGB,
@@ -283,12 +278,12 @@ export class ResultsTabComponent implements OnInit, AfterViewInit{
               label: 'Other Votes',
               data: this.resultsPoll.optionOtherVotes,
               backgroundColor: [
-                this.otherRGBOpaque,
-                this.otherRGBOpaque,
-                this.otherRGBOpaque,
-                this.otherRGBOpaque,
-                this.otherRGBOpaque,
-                this.otherRGBOpaque
+                this.otherRGB,
+                this.otherRGB,
+                this.otherRGB,
+                this.otherRGB,
+                this.otherRGB,
+                this.otherRGB
               ],
               borderColor: [
                 this.otherRGB,
@@ -325,7 +320,7 @@ export class ResultsTabComponent implements OnInit, AfterViewInit{
         datasets: [{
           label: 'Voters',
           data: this.resultsPoll.ageData,
-          backgroundColor: [],
+          backgroundColor: this.ageColors,
           borderColor: [],
           borderWidth: 1
         }]
@@ -405,4 +400,14 @@ export class ResultsTabComponent implements OnInit, AfterViewInit{
       });
     }
   }
+
+  get ageColors() {
+    let colors = [];
+    for(let i = 0; i<this.resultsPoll.ageLabels.length; i++){
+      colors.push('rgba(56, 182, 50, 1)');
+    }
+    return colors;
+  }
 }
+
+
