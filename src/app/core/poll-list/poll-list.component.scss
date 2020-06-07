@@ -1,0 +1,70 @@
+@import "src/assets/sass/palette";
+
+:host {
+  height: 100%;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-content: center;
+  align-items: center;
+  flex-direction: row;
+
+  .list-container {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    min-width: 95%;
+    height: 95%;
+    border-radius: 25px;
+    background-color: #fff;
+    padding: 10px;
+    overflow-y: auto;
+
+
+    .list-container::-webkit-scrollbar-track {
+      -webkit-box-shadow: inset 0 0 6px rgba(0, 0, 0, 0.3);
+      border-radius: 10px;
+      background-color: #F5F5F5;
+    }
+
+    .list-container::-webkit-scrollbar {
+      width: 12px;
+      background-color: #F5F5F5;
+    }
+
+    .list-container::-webkit-scrollbar-thumb {
+      border-radius: 10px;
+      -webkit-box-shadow: inset 0 0 6px rgba(0, 0, 0, .3);
+      background-color: #D62929;
+    }
+
+    .row {
+      width: 95%;
+      margin: 10px auto;
+      border-radius: 15px;
+      padding: 20px;
+      background: #F5F2F2;
+      display: flex;
+      flex-direction: row;
+      text-decoration: none;
+    }
+
+    .title {
+      width: 25%;
+      white-space: nowrap;
+      overflow: hidden;
+      text-overflow: ellipsis;
+    }
+
+    .description {
+      width: 65%;
+      white-space: nowrap;
+      overflow: hidden;
+      text-overflow: ellipsis;
+    }
+
+    .ends {
+      width: 10%;
+    }
+  }
+}

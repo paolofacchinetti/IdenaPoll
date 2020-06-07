@@ -6,6 +6,7 @@ import {SessionBean} from '@app-shared/model/session.bean';
 import {filter} from 'rxjs/operators';
 import {StatusEnum} from '@app-shared/model/status.enum';
 import {setSession} from '@app-redux/core.actions';
+import {FormBuilder, FormGroup} from "@angular/forms";
 
 @Component({
   selector: 'app-topbar',
@@ -15,8 +16,9 @@ import {setSession} from '@app-redux/core.actions';
 export class TopbarComponent implements OnInit {
   session: SessionBean;
   canCreate: boolean;
+  search: FormGroup;
 
-  constructor(protected dataService: DataService, protected store: Store<State>) {
+  constructor(protected dataService: DataService, protected store: Store<State>, protected fb: FormBuilder) {
     this.store.pipe(select(getSession), filter((p) => p !== null)).subscribe((s) => {
       this.session = s;
       console.log(s);
@@ -29,6 +31,9 @@ export class TopbarComponent implements OnInit {
         this.canCreate = false;
       }
     });
+    this.search = this.fb.group({
+      searchbar: ['']
+    });
     this.dataService.getSessionOnlyCheck();
     setTimeout(() => this.dataService.getSessionOnlyCheck(), 5000);
 
@@ -38,9 +43,16 @@ export class TopbarComponent implements OnInit {
 
   }
 
-  logout(){
+  logout() {
     this.dataService.logoutSession();
     this.store.dispatch(setSession({value: undefined}));
   }
 
+  searchByWords() {
+    this.dataService.getPollByWords(this.search.get('searchbar').value);
+  }
+
+  createdBy() {
+    this.dataService.getPollsCreatedBy();
+  }
 }

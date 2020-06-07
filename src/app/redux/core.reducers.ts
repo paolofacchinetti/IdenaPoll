@@ -6,6 +6,7 @@ import {PollBean} from '@app-shared/model/poll.bean';
 export interface State {
   activePolls: PollBean[];
   recentPolls: PollBean[];
+  filteredPolls: PollBean[];
   selectedPoll: PollBean;
   session: SessionBean;
   token: string;
@@ -14,6 +15,7 @@ export interface State {
 
 const INITIAL_STATE: State = {
   activePolls: [],
+  filteredPolls: [],
   recentPolls: [],
   session: null,
   selectedPoll: null,
@@ -33,6 +35,10 @@ const coreReducer = createReducer(
   on(coreActions.setActivePolls, (state, payload) => ({
     ...state,
     activePolls: payload.value,
+  })),
+  on(coreActions.setFilteredPolls, (state, payload) => ({
+    ...state,
+    filteredPolls: payload.value,
   })),
   on(coreActions.setRecentPolls, (state, payload) => ({
     ...state,

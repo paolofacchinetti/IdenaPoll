@@ -41,6 +41,10 @@ export const getRecentPolls = createSelector(
   getCore,
   (state: fromCore.State) => state ? state.recentPolls : null
 );
+export const getFilteredPolls = createSelector(
+  getCore,
+  (state: fromCore.State) => state ? state.filteredPolls : null
+);
 
 export const getToken = createSelector(
   getCore,

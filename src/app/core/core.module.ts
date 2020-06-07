@@ -16,10 +16,13 @@ import {VotingTabComponent} from './voting-tab/voting-tab.component';
 import {ResultsTabComponent} from './results-tab/results-tab.component';
 import {MatRadioModule} from '@angular/material/radio';
 import {CountdownComponent} from './countdown/countdown.component';
+import {PollListComponent} from './poll-list/poll-list.component';
+import {SearchComponent} from './search/search.component';
+import {MypollsComponent} from './mypolls/mypolls.component';
 
 
 @NgModule({
-  declarations: [TopbarComponent, SigninComponent, HomeComponent, CreateComponent, PollComponent, PopularTabComponent, RecentTabComponent, VotingTabComponent, ResultsTabComponent, CountdownComponent],
+  declarations: [TopbarComponent, SigninComponent, HomeComponent, CreateComponent, PollComponent, PopularTabComponent, RecentTabComponent, VotingTabComponent, ResultsTabComponent, CountdownComponent, PollListComponent, SearchComponent, MypollsComponent],
   exports: [
     TopbarComponent
   ],

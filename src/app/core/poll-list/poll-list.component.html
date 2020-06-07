@@ -1,0 +1,13 @@
+<div class="list-container">
+  <ng-container *ngFor="let poll of list">
+    <a class="row" routerLink="/poll/{{poll.id}}">
+      <span class="spacer"></span>
+      <p class="title">{{poll.title}}</p>
+      <span class="spacer"></span>
+      <p class="description">{{poll.description}}</p>
+      <span class="spacer"></span>
+      <p class="ends">Ends at:  {{poll.endsAt.toDateString()}}</p>
+      <span class="spacer"></span>
+    </a>
+  </ng-container>
+</div>

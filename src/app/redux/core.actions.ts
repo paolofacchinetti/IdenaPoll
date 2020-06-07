@@ -11,6 +11,10 @@ export const setActivePolls = createAction(
   '[Core] Set Active Polls',
   props<{ value: PollBean[] }>()
 );
+export const setFilteredPolls = createAction(
+  '[Core] Set Active Polls',
+  props<{ value: PollBean[] }>()
+);
 export const setRecentPolls = createAction(
   '[Core] Set Recent Polls',
   props<{ value: PollBean[] }>()

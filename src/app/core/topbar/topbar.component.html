@@ -3,7 +3,12 @@
   <a routerLink="/home" class="logo">
     <img src="assets/img/idena-poll-logo.png">
   </a>
-  <span fxFlex></span>
+  <span class="spacer"></span>
+  <form (ngSubmit)="searchByWords()" style="min-width: 50%;background: #fff">
+    <app-input [parentControlName]="'searchbar'" [parentFormGroup]="search"
+               inputLabel="Search by words used"></app-input>
+  </form>
+  <span class="spacer"></span>
   <div class="create" *ngIf="session && canCreate">
     <a class="create-btn" fxLayout="row" routerLink="/create">
       <span class="circle" fxLayout="row" aria-hidden="true">
@@ -19,6 +24,7 @@
         <span class="material-icons">keyboard_arrow_down</span>
       </div>
       <div class="dropdown">
+        <a (click)="createdBy()" class="btn btn-small btn-icon"> <span>My Polls</span> </a>
         <a class="btn btn-small btn-icon" (click)="logout()"> <span>Log out</span> </a>
       </div>
     </ng-container>

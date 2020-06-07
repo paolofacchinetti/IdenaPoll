@@ -5,7 +5,15 @@ import {Store} from '@ngrx/store';
 import {Router} from '@angular/router';
 import {getSession, State} from '@app-redux/index';
 import {HttpClient} from '@angular/common/http';
-import {setActivePolls, setAuth, setRecentPolls, setSelectedPoll, setSession, setToken} from '@app-redux/core.actions';
+import {
+  setActivePolls,
+  setAuth,
+  setFilteredPolls,
+  setRecentPolls,
+  setSelectedPoll,
+  setSession,
+  setToken
+} from '@app-redux/core.actions';
 import {openDialogBar} from '@app-shared/open-status-bar.functions';
 
 @Injectable({
@@ -156,4 +164,27 @@ export class DataService {
   }
 
 
+  getPollByWords(value: string) {
+    let polls: PollBean[] = [];
+    const CALL_URL = this.SERVER_URL + '/polls?q=' + value;
+    this.httpClient.get<any>(CALL_URL).subscribe((p) => {
+      for (let j of p) {
+        polls.push(new PollBean(j));
+      }
+      this.store.dispatch(setFilteredPolls({value: polls}));
+      this.router.navigateByUrl('/search')
+    }, error => openDialogBar(this.store, 'error', 'Generic Error'));
+  }
+
+  getPollsCreatedBy() {
+    let polls: PollBean[] = [];
+    const CALL_URL = this.SERVER_URL + '/polls?creator=' + this.session.address;
+    this.httpClient.get<any>(CALL_URL).subscribe((p) => {
+      for (let j of p) {
+        polls.push(new PollBean(j));
+      }
+      this.store.dispatch(setFilteredPolls({value: polls}));
+      this.router.navigateByUrl('/mypolls')
+    }, error => openDialogBar(this.store, 'error', 'Generic Error'));
+  }
 }
