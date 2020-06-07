@@ -21,6 +21,7 @@ import {CircleStatusComponent} from "@app-shared/component/circle-status/circle-
 import {ToggleButtonComponent} from "@app-shared/component/toggle-button/toggle-button.component";
 import {MatButtonToggleModule} from "@angular/material/button-toggle";
 import {StatusBarComponent} from "@app-shared/component/status-bar/status-bar.component";
+import {EmptyPlaceholderPipe} from "@app-shared/pipe/empty-placeholder.pipe";
 
 
 @NgModule({
@@ -36,7 +37,8 @@ import {StatusBarComponent} from "@app-shared/component/status-bar/status-bar.co
     CheckboxComponent,
     CircleStatusComponent,
     ToggleButtonComponent,
-    StatusBarComponent
+    StatusBarComponent,
+    EmptyPlaceholderPipe
   ],
   exports: [
     InputComponent,
@@ -50,7 +52,8 @@ import {StatusBarComponent} from "@app-shared/component/status-bar/status-bar.co
     CheckboxComponent,
     CircleStatusComponent,
     ToggleButtonComponent,
-    StatusBarComponent
+    StatusBarComponent,
+    EmptyPlaceholderPipe
   ],
   imports: [
     CommonModule,

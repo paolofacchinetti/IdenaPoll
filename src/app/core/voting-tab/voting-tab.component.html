@@ -20,7 +20,7 @@
       class="radio-options-group"
       [(ngModel)]="selectedOption">
       <mat-radio-button class="radio-button" *ngFor="let option of poll.options" [value]="option.value">
-        {{option.description}}
+        {{option.description | emptyPlaceholder}}
       </mat-radio-button>
     </mat-radio-group>
 

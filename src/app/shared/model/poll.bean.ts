@@ -180,27 +180,9 @@ export class ResultsPollBean {
     return arr;
   }
 
-  get optionAges() {
-    let arr = [];
-    this.results.forEach((r) => {
-      r.voteAges.forEach((a) => {
-        for (let k of arr) {
-          if (k.value === a.value) {
-            k.voter += a.voter;
-          } else {
-            arr.push({value: a.value, voter: 0});
-          }
-        }
-        if (arr.length == 0) {
-          arr.push({value: a.value, voter: a.voter});
-        }
-      });
-    });
-    return arr;
-  }
 
   get ageLabels() {
-    let arr = this.optionAges;
+    let arr = voteAges;
     let labeledArr = [];
     let correctLabeledArr = [];
     arr.forEach((a) => {
@@ -218,7 +200,7 @@ export class ResultsPollBean {
   }
 
   get ageData() {
-    let arr = this.optionAges;
+    let arr = voteAges;
     let dataArr = [];
     arr.forEach((a) => dataArr.push(a.voter));
     return dataArr;
@@ -233,6 +215,7 @@ export class ResultsPollBean {
   }
 }
 
+var voteAges = [];
 export class ResultsOptionBean {
   newbieVotes: number = 0;
   verifiedVotes: number = 0;
@@ -242,7 +225,7 @@ export class ResultsOptionBean {
   description: string;
   totalVotes: number;
   votes: VoterBean[] = [];
-  voteAges = [];
+
 
   constructor(opBean: OptionBean) {
     this.value = opBean.value;
@@ -259,15 +242,18 @@ export class ResultsOptionBean {
       } else {
         this.otherVotes++;
       }
-      for (let a of this.voteAges) {
+      for (let a of voteAges) {
         if (a.value === v.age) {
           a.voter++;
-        } else {
-          this.voteAges.push({value: v.age, voter: 1});
+        } else if (!voteAges.find((r) => {
+            return r.value == v.age
+          }
+        )) {
+          voteAges.push({value: v.age, voter: 0});
         }
       }
-      if (this.voteAges.length == 0) {
-        this.voteAges.push({value: v.age, voter: 1});
+      if (voteAges.length == 0) {
+        voteAges.push({value: v.age, voter: 1});
       }
     }
   }
