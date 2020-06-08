@@ -3,56 +3,66 @@
   width: 100%;
   height: 100%;
   position: relative;
-  padding-left: 25px;
+  padding: 25px;
+  display: flex;
 
-  .top-poll{
-    display:flex;
-    flex-direction: row;
+  .poll-info {
+    width: 72.5%;
 
-    .poll-status{
-      align-self: center;
+    .top-poll {
+      display: flex;
+      flex-direction: row;
+
+      .poll-status {
+        align-self: center;
+      }
+
+      .poll-header {
+        display: flex;
+        flex-direction: column;
+        flex-grow: 1;
+        max-width: 1000px;
+        padding: 15px;
+        position: relative;
+      }
     }
 
-    .poll-header {
-      display: flex;
-      flex-direction: column;
-      flex-grow: 1;
-      max-width: 1000px;
-      padding: 15px;
-      position: relative;
+    .poll-options {
+
+      .radio-options-group {
+        display: flex;
+        flex-direction: column;
+        margin: 15px 0;
+
+        .radio-button {
+          margin: 5px;
+        }
+      }
     }
-  }
 
-  .poll-options {
-
-    .radio-options-group {
-      display: flex;
-      flex-direction: column;
-      margin: 15px 0;
-
-      .radio-button {
-        margin: 5px;
+    .poll-footer {
+      * {
+        padding: 5px;
       }
     }
   }
 
-  .poll-footer{
-    *{
-      padding: 5px;
+  .settings-report {
+    width: 25%;
+
+    .countdown {
+      padding: 50px 0;
+      margin: 50px 0;
+      line-height: 50px;
+      font-size: 48px;
     }
 
-  }
-
-  .share{
-    display: flex;
-    flex-direction: row;
-    margin-top: 20px;
-    align-items: center;
-    *{
-      margin-right: 10px;
-      min-width: 250px;
+    .share {
+      display: block;
+      flex-direction: row;
+      margin-top: 20px;
+      align-items: center;
     }
   }
-
 }
 
