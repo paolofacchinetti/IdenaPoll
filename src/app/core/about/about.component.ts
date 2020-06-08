@@ -9,8 +9,8 @@ import {FormBuilder} from '@angular/forms';
 export class AboutComponent implements OnInit {
   btcAddressForm;
   dnaAddressForm;
-  dnaAddress = 'placeholder';
-  btcAddress = 'placeholder';
+  dnaAddress = '0x2ec35e9b586acbccaba7feba0dfca9e476fda163';
+  btcAddress = '1Hw5ijigoX7ozn7G5hb2ughK8VHDj7NAng';
 
   constructor(private fb: FormBuilder) {
     this.dnaAddressForm = this.fb.group({
