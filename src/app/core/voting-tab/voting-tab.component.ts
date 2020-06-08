@@ -1,5 +1,5 @@
 import {Component, EventEmitter, Input, OnInit, Output} from '@angular/core';
-import {PollBean} from '@app-shared/model/poll.bean';
+import {PollBean, SettingsBean} from '@app-shared/model/poll.bean';
 import {DataService} from '@app-shared/data.service';
 import {openDialogBar} from '@app-shared/open-status-bar.functions';
 import {Store} from '@ngrx/store';
@@ -31,8 +31,7 @@ export class VotingTabComponent implements OnInit {
     });
   }
 
-  ngOnInit(): void {
-  }
+  ngOnInit(): void {}
 
   onSubmit() {
     if (this.session == null) {

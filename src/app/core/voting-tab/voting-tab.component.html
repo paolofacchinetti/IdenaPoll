@@ -37,6 +37,33 @@
     <app-countdown (ended)="pollEnded()" [date]="poll.endsAt" class="countdown"></app-countdown>
     <div class="settings-list">
 
+      <ng-container *ngIf="this.poll.settings.isStatusWeighted">
+        <ng-container *ngIf="this.poll.settings.newbieWeight !== null">
+          <h3>Each Newbie vote counts as {{this.poll.settings.newbieWeight}} {{this.poll.settings.newbieWeight=='1' ? 'vote' : 'votes'}}</h3>
+        </ng-container>
+        <ng-container *ngIf="this.poll.settings.newbieWeight == null">
+          <h3>Newbie accounts can't vote in this poll</h3>
+        </ng-container>
+
+        <ng-container *ngIf="this.poll.settings.verifiedWeight !== null">
+          <h3>Each Verified vote counts as {{this.poll.settings.verifiedWeight}} {{this.poll.settings.verifiedWeight=='1' ? 'vote' : 'votes'}}</h3>
+        </ng-container>
+        <ng-container *ngIf="this.poll.settings.verifiedWeight == null">
+          <h3>Verified accounts can't vote in this poll</h3>
+        </ng-container>
+
+        <ng-container *ngIf="this.poll.settings.humanWeight !== null">
+          <h3>Each Human vote counts as {{this.poll.settings.humanWeight}} {{this.poll.settings.humanWeight=='1' ? 'vote' : 'votes'}}</h3>
+        </ng-container>
+
+      </ng-container>
+      <ng-container *ngIf="this.poll.settings.statusRequirement!==''">
+        <h3>Minimum Status to Vote: {{this.poll.settings.statusRequirement}}</h3>
+      </ng-container>
+      <ng-container *ngIf="this.poll.settings.ageRequirement!==''">
+        <h3>Minimum Age to Vote: {{this.poll.settings.ageRequirement}}</h3>
+      </ng-container>
+
     </div>
     <div class="share">
       <h2>Share this!</h2>

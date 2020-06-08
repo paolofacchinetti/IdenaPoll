@@ -50,6 +50,12 @@
   .settings-report {
     width: 25%;
 
+    .settings-list{
+      *{
+        padding: 8px 0;
+      }
+    }
+
     .countdown {
       padding: 50px 0;
       margin: 50px 0;
