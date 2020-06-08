@@ -23,4 +23,11 @@ export class PopularTabComponent implements OnInit {
   ngOnInit(): void {
   }
 
+  pollEnded(id: string) {
+    this.popularPolls.forEach(r => {
+      if (r.id === id) {
+        r.status = "ended"
+      }
+    })
+  }
 }

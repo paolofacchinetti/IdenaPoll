@@ -15,10 +15,10 @@
 
   <div class="poll-options">
 
-    <mat-radio-group
-      aria-labelledby="example-radio-group-label"
-      class="radio-options-group"
-      [(ngModel)]="selectedOption">
+    <mat-radio-group [disabled]="poll.status== 'ended'"
+                     aria-labelledby="example-radio-group-label"
+                     class="radio-options-group"
+                     [(ngModel)]="selectedOption">
       <mat-radio-button class="radio-button" *ngFor="let option of poll.options" [value]="option.value">
         {{option.description | emptyPlaceholder}}
       </mat-radio-button>
@@ -27,10 +27,11 @@
   </div>
 
   <div class="poll-footer">
-    <app-button (click)="onSubmit()" [id]="'submitButton'" [label]="'Submit Vote'"
+    <app-button (click)="onSubmit()" [disabledCondition]="poll.status== 'ended'" [id]="'submitButton'"
+                [label]="'Submit Vote'"
                 class="small-gap primary-button app-button-small"></app-button>
 
-    <app-countdown [date]="poll.endsAt"></app-countdown>
+    <app-countdown (ended)="pollEnded()" [date]="poll.endsAt"></app-countdown>
   </div>
 
 

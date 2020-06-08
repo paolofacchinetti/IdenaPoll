@@ -16,6 +16,15 @@
     padding: 10px;
     position: relative;
 
+    .no-login {
+      width: 100%;
+      height: 100%;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      align-content: center;
+    }
+
     h1 {
       padding-bottom: 15px;
     }

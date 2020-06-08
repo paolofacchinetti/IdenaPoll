@@ -1,6 +1,6 @@
 export class PollBean {
   id: string;
-  status: string; // active || closed
+  status: string; // active || ended
   title: string;
   description: string;
   creator: string;
@@ -182,13 +182,13 @@ export class ResultsPollBean {
 
 
   get ageLabels() {
+    voteAges.sort((n1, n2) => n1.value - n2.value);
     let arr = voteAges;
     let labeledArr = [];
     let correctLabeledArr = [];
     arr.forEach((a) => {
       labeledArr.push(a.value);
     });
-    labeledArr.sort((n1, n2) => n1 - n2);
     labeledArr.forEach((b) => {
       if(b == 1){
         correctLabeledArr.push(b + ' Epoch');

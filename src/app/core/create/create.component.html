@@ -1,5 +1,5 @@
 <div class="create-container">
-
+<ng-container *ngIf="session else noLogin">
   <form [formGroup]="pollForm" class="input-form">
 
     <span class="spacer"></span>
@@ -98,6 +98,10 @@
     <span class="spacer"></span>
 
   </form>
-
-
+</ng-container>
+  <ng-template #noLogin>
+    <div class="no-login">
+      <h1>Please login to use this feature</h1>
+    </div>
+  </ng-template>
 </div>

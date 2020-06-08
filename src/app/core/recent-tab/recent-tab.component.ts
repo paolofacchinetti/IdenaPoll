@@ -23,4 +23,12 @@ export class RecentTabComponent implements OnInit {
   ngOnInit(): void {
   }
 
+  pollEnded(id: string) {
+    this.recentPolls.forEach(r => {
+      if (r.id === id) {
+        r.status = "ended"
+      }
+    })
+  }
+
 }

@@ -27,10 +27,12 @@ export class CreateComponent implements OnInit {
     {value: 'VERIFIED', label: 'Verified'},
     {value: 'HUMAN', label: 'Human'}
   ];
+  session: any;
 
   constructor(private fb: FormBuilder, protected store: Store<State>, protected ds: DataService) {
     this.store.pipe(select(getSession), filter((f) => f != null)).subscribe((s) => {
       this.pollCreator = s.address;
+      this.session = s;
     });
     this.expirationDate = moment().add(7, 'days').toDate().getTime();
     this.pollForm = this.fb.group({

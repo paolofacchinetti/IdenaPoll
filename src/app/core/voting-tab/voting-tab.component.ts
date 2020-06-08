@@ -1,4 +1,4 @@
-import {Component, Input, OnInit} from '@angular/core';
+import {Component, EventEmitter, Input, OnInit, Output} from '@angular/core';
 import {PollBean} from '@app-shared/model/poll.bean';
 import {DataService} from '@app-shared/data.service';
 import {openDialogBar} from '@app-shared/open-status-bar.functions';
@@ -18,7 +18,7 @@ export class VotingTabComponent implements OnInit {
   href: string = "";
   baseURL = 'https://idenapoll.com';
   copyURLForm;
-
+  @Output() ended = new EventEmitter<any>();
   @Input() poll: PollBean;
 
   constructor(private router: Router, protected ds: DataService, protected store: Store<State>, private fb: FormBuilder) {
@@ -50,6 +50,10 @@ export class VotingTabComponent implements OnInit {
       document.removeEventListener('copy', null);
     });
     document.execCommand('copy');
+  }
+
+  pollEnded() {
+    this.ended.emit(true)
   }
 
 }

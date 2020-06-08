@@ -27,4 +27,7 @@ export class PollComponent implements OnInit {
     });
   }
 
+  pollEnded() {
+    this.selectedPoll.status = "ended";
+  }
 }
