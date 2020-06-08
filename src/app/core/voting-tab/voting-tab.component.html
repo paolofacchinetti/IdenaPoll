@@ -1,4 +1,3 @@
-<script>twttr.widgets.load(); </script>
 <div class="voting-container">
   <div class="poll-info">
     <div class="top-poll">
@@ -41,12 +40,14 @@
     </div>
     <div class="share">
       <h2>Share this!</h2>
-      <a class="twitter-hashtag-button" data-dnt="true" data-show-count="false" data-size="large"
-         data-text="Check out this poll"
-         href="https://twitter.com/intent/tweet?button_hashtag=IdenaPoll&ref_src=twsrc%5Etfw">Tweet #LoveTwitter</a>
-      <script async charset="utf-8" src="https://platform.twitter.com/widgets.js"></script>
-      <app-input (click)="copyToClipboard()" [inputLabel]="'Click to copy poll URL'" [parentControlName]="'url'"
-                 [parentFormGroup]="copyURLForm" id="url"></app-input>
+      <div fxFlexFill>
+        <app-input (click)="copyToClipboard()" [inputLabel]="'Click to copy poll URL'" [parentControlName]="'url'"
+                   [parentFormGroup]="copyURLForm" id="url"></app-input>
+        <a #tweet
+           (click)="tweetPopup(tweet)" class="twitter-share-button" data-show-count="false" data-size="large"
+           href="https://twitter.com/intent/tweet?text=Check this poll out: {{href}}" rel="canonical" target="_newwin">
+          Tweet</a>
+      </div>
     </div>
   </div>
 </div>

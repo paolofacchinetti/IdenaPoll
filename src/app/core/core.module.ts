@@ -20,11 +20,10 @@ import {PollListComponent} from './poll-list/poll-list.component';
 import {SearchComponent} from './search/search.component';
 import {MypollsComponent} from './mypolls/mypolls.component';
 import {AboutComponent} from './about/about.component';
-import {TwitterLoaderComponent} from './twitter-loader/twitter-loader.component';
 
 
 @NgModule({
-  declarations: [TopbarComponent, SigninComponent, HomeComponent, CreateComponent, PollComponent, PopularTabComponent, RecentTabComponent, VotingTabComponent, ResultsTabComponent, CountdownComponent, PollListComponent, SearchComponent, MypollsComponent, AboutComponent, TwitterLoaderComponent],
+  declarations: [TopbarComponent, SigninComponent, HomeComponent, CreateComponent, PollComponent, PopularTabComponent, RecentTabComponent, VotingTabComponent, ResultsTabComponent, CountdownComponent, PollListComponent, SearchComponent, MypollsComponent, AboutComponent],
   exports: [
     TopbarComponent
   ],
@@ -35,9 +34,9 @@ import {TwitterLoaderComponent} from './twitter-loader/twitter-loader.component'
     RouterModule,
     ReactiveFormsModule,
     FormsModule,
-        MatTabsModule,
-        MatRadioModule
-    ],
+    MatTabsModule,
+    MatRadioModule,
+  ],
   providers: [FormsModule]
 })
 export class CoreModule { }

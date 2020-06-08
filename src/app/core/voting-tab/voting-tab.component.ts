@@ -56,4 +56,11 @@ export class VotingTabComponent implements OnInit {
     this.ended.emit(true)
   }
 
+  tweetPopup(e) {
+    window.open(
+      e.getAttribute("href"),
+      "twitterwindow",
+      "height=450, width=550, toolbar=0, location=0, menubar=0, directories=0,scrollbars=0"
+    );
+  }
 }
