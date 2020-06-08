@@ -1,8 +1,8 @@
 <div class='popular-polls-wrapper'>
   <h1 class="title">Popular Polls</h1>
   <div class="polls-wrapper">
-    <a *ngFor="let poll of popularPolls" class="popular-polls" routerLink="/poll/{{poll.id}}">
-      <ng-container *ngIf="poll.status=='active'">
+    <ng-container *ngFor="let poll of popularPolls">
+      <a *ngIf="poll.status=='active'" class="popular-polls" routerLink="/poll/{{poll.id}}">
         <div class="poll-title">
           {{poll.title}}
         </div>
@@ -15,7 +15,7 @@
         <div class="poll-time">
           <app-countdown (ended)="pollEnded(poll.id)" [date]="poll.endsAt"></app-countdown>
         </div>
-      </ng-container>
-    </a>
+      </a>
+    </ng-container>
   </div>
 </div>

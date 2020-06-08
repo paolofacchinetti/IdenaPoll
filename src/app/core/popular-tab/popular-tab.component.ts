@@ -4,6 +4,7 @@ import {getPopularPolls, State} from '@app-redux/index';
 import {filter} from 'rxjs/operators';
 import {DataService} from '@app-shared/data.service';
 import {PollBean} from '@app-shared/model/poll.bean';
+import {endActivePoll} from "@app-redux/core.actions";
 
 @Component({
   selector: 'app-popular-tab',
@@ -24,10 +25,6 @@ export class PopularTabComponent implements OnInit {
   }
 
   pollEnded(id: string) {
-    this.popularPolls.forEach(r => {
-      if (r.id === id) {
-        r.status = "ended"
-      }
-    })
+    this.store.dispatch(endActivePoll({value: id}))
   }
 }

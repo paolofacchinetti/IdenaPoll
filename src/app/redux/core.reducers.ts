@@ -52,6 +52,21 @@ const coreReducer = createReducer(
     ...state,
     selectedPoll: payload.value,
   })),
+  on(coreActions.endSelectedPoll, (state, payload) => ({
+    ...state,
+    selectedPoll: {...state.selectedPoll, status: 'ended'},
+  })),
+  on(coreActions.endActivePoll, (state, payload) => {
+    let new_array = state.activePolls.map(element => element.id === payload.value ? {
+      ...element,
+      status: 'ended'
+    } : element);
+    return {
+      ...state,
+      activePolls: new_array,
+    };
+
+  }),
 );
 
 export function reducer(state: State | undefined, action: Action) {
