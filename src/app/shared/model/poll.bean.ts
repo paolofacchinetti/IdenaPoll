@@ -291,7 +291,7 @@ export class SettingsBean {
       if (json['isStatusWeighted']) {
         this.newbieWeight = json['newbieWeight'];
         this.verifiedWeight = json['verifiedWeight'];
-        this.humanWeight = json['verifiedWeight'];
+        this.humanWeight = json['humanWeight'];
       }
     }
   }
