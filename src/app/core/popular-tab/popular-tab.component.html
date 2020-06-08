@@ -2,18 +2,20 @@
   <h1 class="title">Popular Polls</h1>
   <div class="polls-wrapper">
     <a *ngFor="let poll of popularPolls" class="popular-polls" routerLink="/poll/{{poll.id}}">
-      <div class="poll-title">
-        {{poll.title}}
-      </div>
-      <div class="poll-desc">
-        {{poll.description}}
-      </div>
-      <div class="poll-votes">
-        Votes: {{poll.totalVotes}}
-      </div>
-      <div class="poll-time">
-        <app-countdown [date]="poll.endsAt"></app-countdown>
-      </div>
+      <ng-container *ngIf="poll.status=='active'">
+        <div class="poll-title">
+          {{poll.title}}
+        </div>
+        <div class="poll-desc">
+          {{poll.description}}
+        </div>
+        <div class="poll-votes">
+          Votes: {{poll.totalVotes}}
+        </div>
+        <div class="poll-time">
+          <app-countdown [date]="poll.endsAt"></app-countdown>
+        </div>
+      </ng-container>
     </a>
   </div>
 </div>
