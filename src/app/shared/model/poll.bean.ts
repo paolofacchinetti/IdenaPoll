@@ -212,6 +212,7 @@ export class ResultsPollBean {
 
   constructor(poll?: PollBean) {
     this.poll = poll;
+    voteAges = [];
     for (let op of this.poll.options) {
       let resOpBean = new ResultsOptionBean(op);
       this.results.push(resOpBean);
@@ -246,17 +247,14 @@ export class ResultsOptionBean {
       } else {
         this.otherVotes++;
       }
+      let pushed = false;
       for (let a of voteAges) {
         if (a.value === v.age) {
           a.voter++;
-        } else if (!voteAges.find((r) => {
-            return r.value == v.age
-          }
-        )) {
-          voteAges.push({value: v.age, voter: 0});
+          pushed = true;
         }
       }
-      if (voteAges.length == 0) {
+      if (!pushed) {
         voteAges.push({value: v.age, voter: 1});
       }
     }

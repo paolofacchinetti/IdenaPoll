@@ -114,6 +114,10 @@ $green: #41B602;
         vertical-align: middle;
         margin: 0;
         box-shadow: 0 3px 8px 0 rgba(83, 86, 92, 0.1), 0 1px 2px 0 rgba(83, 86, 92, 0.2) !important;
+
+        img {
+          margin: 0 2.5px !important;
+        }
       }
       .btn .icon {
         margin: -0.3125rem -0.25rem -0.1875rem;
