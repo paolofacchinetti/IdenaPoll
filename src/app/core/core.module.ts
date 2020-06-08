@@ -19,10 +19,11 @@ import {CountdownComponent} from './countdown/countdown.component';
 import {PollListComponent} from './poll-list/poll-list.component';
 import {SearchComponent} from './search/search.component';
 import {MypollsComponent} from './mypolls/mypolls.component';
+import { AboutComponent } from './about/about.component';
 
 
 @NgModule({
-  declarations: [TopbarComponent, SigninComponent, HomeComponent, CreateComponent, PollComponent, PopularTabComponent, RecentTabComponent, VotingTabComponent, ResultsTabComponent, CountdownComponent, PollListComponent, SearchComponent, MypollsComponent],
+  declarations: [TopbarComponent, SigninComponent, HomeComponent, CreateComponent, PollComponent, PopularTabComponent, RecentTabComponent, VotingTabComponent, ResultsTabComponent, CountdownComponent, PollListComponent, SearchComponent, MypollsComponent, AboutComponent],
   exports: [
     TopbarComponent
   ],

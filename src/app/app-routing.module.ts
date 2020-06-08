@@ -6,6 +6,7 @@ import {CreateComponent} from '@app-core/create/create.component';
 import {PollComponent} from "@app-core/poll/poll.component";
 import {SearchComponent} from "@app-core/search/search.component";
 import {MypollsComponent} from "@app-core/mypolls/mypolls.component";
+import {AboutComponent} from '@app-core/about/about.component';
 
 
 const routes: Routes = [
@@ -15,6 +16,7 @@ const routes: Routes = [
   {path: 'search', component: SearchComponent},
   {path: 'create', component: CreateComponent},
   {path: 'mypolls', component: MypollsComponent},
+  {path: 'about', component: AboutComponent},
   {
     path: '**',
     redirectTo: '/home',
