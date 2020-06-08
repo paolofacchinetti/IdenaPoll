@@ -1,31 +1,40 @@
 <div class="about-container">
 
-  <div class="idena">
-    <h3>Idena</h3>
-    <p>
-
-    </p>
+  <div class="idena box-cont">
+    <h1>Idena</h1>
+    <p>Idena is a novel way to formalize people on the blockchain. It does not collect or store personally identifiable
+      information.</p>
+    <p>Idena proves the humanness and uniqueness of its participants by running an AI-hard Turing test at the same time
+      for everyone around the globe.</p>
+    <p>The Idena blockchain is driven by proof-of-person consensus: Every node is linked to a cryptoidentity, one single
+      person with equal voting power.</p>
+    <p>To learn more about Idena, check out their <a href="https://www.idena.io" target="_blank" title="Idena">Official
+      Website</a></p>
   </div>
 
-  <div class="idenapoll">
-    <h3>IdenaPoll</h3>
-    <p>
+  <div class="idenapoll box-cont">
+    <h1>IdenaPoll</h1>
+    <p>IdenaPoll was created to leverage Idena's unique identities, using their uniqueness to ensure sybil-protected
+      polls.</p>
+    <p>We plan to continue working on IdenaPoll to add requested features by users.</p>
 
-    </p>
   </div>
 
-  <div class="info">
-    <h3>Info</h3>
-    <p>
-
-    </p>
+  <div class="info box-cont">
+    <h1>Info</h1>
+    <p>IdenaPoll was made by <a href="https://www.twitter.com/ShakiXBT" target="_blank" title="Twitter">Shaki</a> and <a
+      href="https://www.twitter.com/hobbica98" target="_blank" title="Twitter">Hobbica</a>, feel free to contact us on
+      Twitter or on the <a href="https://discord.gg/8da8p5n" target="_blank" title="Discord">Idena Discord</a> to give
+      us feedback or tell us how much you love IdenaPoll!</p>
   </div>
 
-  <div class="donate">
-    <h3>Donate</h3>
-    <p>
-
-    </p>
+  <div class="donate box-cont">
+    <h1>Donate</h1>
+    <p>IdenaPoll is free to use for everyone, but if you want to donate to the developers, here's how:</p>
+    <app-input id="dna-address" [parentControlName]="'dnaAdd'" [parentFormGroup]="dnaAddressForm"
+               [inputLabel]="'Click to copy DNA Address'" (click)="copyToClipboard(dnaAddress)"></app-input>
+    <app-input id="btc-address" [parentControlName]="'btcAdd'" [parentFormGroup]="btcAddressForm"
+               [inputLabel]="'Click to copy BTC Address'" (click)="copyToClipboard(btcAddress)"></app-input>
   </div>
 
 </div>

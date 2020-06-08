@@ -19,7 +19,7 @@ export class ResultsTabComponent implements OnInit, AfterViewInit{
   newbieRGB = 'rgba(255, 206, 86, 1)';
   verifiedRGB = 'rgba(255, 99, 132, 1)';
   humanRGB = 'rgba(54, 162, 235, 1)';
-  otherRGB = 'rgba(153, 102, 255, 1)';
+  otherRGB = 'rgba(158, 158, 158, 1)';
   @Input() poll: PollBean;
   @ViewChild('resultsOverview', {static: false}) resultsCanvas: ElementRef;
   @ViewChild('optionStatusOverview', {static: false}) optionStatusCanvas: ElementRef;
@@ -44,20 +44,12 @@ export class ResultsTabComponent implements OnInit, AfterViewInit{
             label: 'Votes',
             data: this.resultsPoll.optionTotalWeightedVotes,
             backgroundColor: [
-              'rgba(255, 99, 132, 1)',
-              'rgba(54, 162, 235, 1)',
-              'rgba(255, 206, 86, 1)',
-              'rgba(75, 192, 192, 1)',
-              'rgba(153, 102, 255, 1)',
-              'rgba(255, 159, 64, 1)'
-            ],
-            borderColor: [
-              'rgba(255, 99, 132, 1)',
-              'rgba(54, 162, 235, 1)',
-              'rgba(255, 206, 86, 1)',
-              'rgba(75, 192, 192, 1)',
-              'rgba(153, 102, 255, 1)',
-              'rgba(255, 159, 64, 1)'
+              'rgba(243, 158, 18, 1)',
+              'rgba(243, 158, 18, 1)',
+              'rgba(243, 158, 18, 1)',
+              'rgba(243, 158, 18, 1)',
+              'rgba(243, 158, 18, 1)',
+              'rgba(243, 158, 18, 1)'
             ],
             borderWidth: 1
           }]
@@ -86,20 +78,12 @@ export class ResultsTabComponent implements OnInit, AfterViewInit{
             label: 'Votes',
             data: this.resultsPoll.optionTotalVotes,
             backgroundColor: [
-              'rgba(255, 99, 132, 1)',
-              'rgba(54, 162, 235, 1)',
-              'rgba(255, 206, 86, 1)',
-              'rgba(75, 192, 192, 1)',
-              'rgba(153, 102, 255, 1)',
-              'rgba(255, 159, 64, 1)'
-            ],
-            borderColor: [
-              'rgba(255, 99, 132, 1)',
-              'rgba(54, 162, 235, 1)',
-              'rgba(255, 206, 86, 1)',
-              'rgba(75, 192, 192, 1)',
-              'rgba(153, 102, 255, 1)',
-              'rgba(255, 159, 64, 1)'
+              'rgba(243, 158, 18, 1)',
+              'rgba(243, 158, 18, 1)',
+              'rgba(243, 158, 18, 1)',
+              'rgba(243, 158, 18, 1)',
+              'rgba(243, 158, 18, 1)',
+              'rgba(243, 158, 18, 1)'
             ],
             borderWidth: 1
           }]
