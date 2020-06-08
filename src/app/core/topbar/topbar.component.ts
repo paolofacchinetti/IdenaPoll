@@ -21,7 +21,6 @@ export class TopbarComponent implements OnInit {
   constructor(protected dataService: DataService, protected store: Store<State>, protected fb: FormBuilder) {
     this.store.pipe(select(getSession), filter((p) => p !== null)).subscribe((s) => {
       this.session = s;
-      console.log(s);
       /**
        Conditions for being able to create a new poll
        */

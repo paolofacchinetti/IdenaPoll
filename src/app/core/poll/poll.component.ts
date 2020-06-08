@@ -17,7 +17,6 @@ export class PollComponent implements OnInit {
   constructor(protected store: Store<State>, protected route: ActivatedRoute, protected ds: DataService) {
     this.store.pipe(select(getSelectedPoll), filter((f) => f != null)).subscribe((p) => {
       this.selectedPoll = p;
-      console.log(this.selectedPoll);
     });
   }
 

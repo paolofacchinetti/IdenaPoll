@@ -112,7 +112,6 @@ export class CreateComponent implements OnInit {
         settings.humanWeight = this.voteWeight.get('humanWeight').value;
       }
       poll.settings = settings;
-      console.log(poll);
       this.ds.createPoll(poll);
     }
   }
