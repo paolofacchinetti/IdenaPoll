@@ -35,7 +35,7 @@ export class PopularTabComponent implements OnInit, AfterViewInit{
           this.resultsOverview.push(new Chart(canvasArray[i].nativeElement.getContext('2d'), {
             type: 'doughnut',
             data: {
-              labels: resultsPoll.optionDescriptions,
+              labels: resultsPoll.optionLabels,
               datasets: [{
                 label: 'Voters',
                 data: resultsPoll.optionTotalVotes,
@@ -51,6 +51,12 @@ export class PopularTabComponent implements OnInit, AfterViewInit{
               }]
             },
             options: {
+              legend: {
+                display: true,
+                labels: {
+                  fontSize: 12
+                }
+              }
             }
           }));
         }
