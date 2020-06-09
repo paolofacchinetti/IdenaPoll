@@ -15,6 +15,7 @@ import {
   setToken
 } from '@app-redux/core.actions';
 import {openDialogBar} from '@app-shared/open-status-bar.functions';
+import {StatusEnum} from "@app-shared/model/status.enum";
 
 @Injectable({
   providedIn: 'root'
@@ -49,7 +50,20 @@ export class DataService {
     this.httpClient.get<any>(CALL_URL).subscribe((p) => {
       const json = p['result'];
       status = json['state'].toUpperCase();
-      CALL_URL += '/age';
+      if (status === StatusEnum.SUSPENDED) {
+        CALL_URL += '/Epochs?skip=0&limit=1';
+        this.httpClient.get<any>(CALL_URL).subscribe((p) => {
+          const json = p['result'][0];
+          status = json['prevState'].toUpperCase();
+        })
+      } else if (status === StatusEnum.ZOMBIE) {
+        CALL_URL += '/Epochs?skip=0&limit=2';
+        this.httpClient.get<any>(CALL_URL).subscribe((p) => {
+          const json = p['result'][1];
+          status = json['prevState'].toUpperCase();
+        })
+      }
+      CALL_URL = this.IDENA_URL + '/Identity/' + id + '/age';
       this.httpClient.get<any>(CALL_URL).subscribe((p) => {
         age = p['result'];
         this.store.dispatch(setSession({value: new SessionBean(parseInt(age), id, status)}));

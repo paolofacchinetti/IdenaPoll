@@ -23,6 +23,7 @@ export class CreateComponent implements OnInit {
   expirationDate;
   pollCreator: string;
   toggleList = [
+    {value: '', label: 'Everyone'},
     {value: 'NEWBIE', label: 'Newbie'},
     {value: 'VERIFIED', label: 'Verified'},
     {value: 'HUMAN', label: 'Human'}

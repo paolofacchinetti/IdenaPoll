@@ -1,11 +1,12 @@
-import {Component, EventEmitter, Input, OnInit, Output} from '@angular/core';
-import {PollBean, SettingsBean} from '@app-shared/model/poll.bean';
+import {Component, Input, OnInit} from '@angular/core';
+import {PollBean} from '@app-shared/model/poll.bean';
 import {DataService} from '@app-shared/data.service';
 import {openDialogBar} from '@app-shared/open-status-bar.functions';
 import {Store} from '@ngrx/store';
 import {getSession, State} from '@app-redux/index';
 import {Router} from '@angular/router';
 import {FormBuilder} from '@angular/forms';
+import {endSelectedPoll} from "@app-redux/core.actions";
 
 @Component({
   selector: 'app-voting-tab',
@@ -18,7 +19,6 @@ export class VotingTabComponent implements OnInit {
   href: string = "";
   baseURL = 'https://idenapoll.com';
   copyURLForm;
-  @Output() ended = new EventEmitter<any>();
   @Input() poll: PollBean;
 
   constructor(private router: Router, protected ds: DataService, protected store: Store<State>, private fb: FormBuilder) {
@@ -52,7 +52,7 @@ export class VotingTabComponent implements OnInit {
   }
 
   pollEnded() {
-    this.ended.emit(true)
+    this.store.dispatch(endSelectedPoll({}))
   }
 
   tweetPopup(e) {
