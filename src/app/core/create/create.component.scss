@@ -1,0 +1,90 @@
+:host {
+  height: 100%;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-content: center;
+  align-items: center;
+  flex-direction: row;
+
+  .create-container {
+    overflow: hidden;
+    width: 95%;
+    height: 95%;
+    border-radius: 25px;
+    background-color: #fff;
+    padding: 10px;
+    position: relative;
+
+    .no-login {
+      width: 100%;
+      height: 100%;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      align-content: center;
+    }
+
+    h1 {
+      padding-bottom: 15px;
+    }
+
+    .input-form {
+      display: flex;
+
+      .fields-box {
+        display: flex;
+        flex-direction: column;
+        flex-grow: 1;
+        max-width: 1000px;
+        padding: 15px;
+        position: relative;
+
+        .field {
+          padding: 5px;
+        }
+
+        h3{
+          padding-top: 15px;
+        }
+
+        .time-picker {
+          width: 100%;
+          display: flex;
+          flex-direction: row;
+
+          .time-component {
+            width: 31%;
+            padding-top: 10px;
+          }
+        }
+      }
+
+      .option-box {
+        width: 25%;
+        min-width: 400px;
+        padding: 15px;
+
+        .min-requirements {
+          padding-bottom: 15px;
+        }
+
+        .vote-weights {
+          * {
+            padding: 10px;
+          }
+        }
+
+        .age-requirements {
+          padding: 15px 0;
+        }
+      }
+    }
+
+    .sub-but {
+      position: absolute;
+      bottom: 40px;
+      right: 40px;
+    }
+  }
+}

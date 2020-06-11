@@ -1,0 +1,80 @@
+<div class="voting-container">
+  <div class="poll-info">
+    <div class="top-poll">
+      <div class="poll-status">
+        <app-circle-status
+          [ngClass]="{'circle-status-active': poll.status== 'active','circle-status-error': poll.status== 'ended'}"></app-circle-status>
+      </div>
+
+      <div class="poll-header">
+        <h3 class="title">{{poll.title}}</h3>
+        <p class="description">{{poll.description}}</p>
+      </div>
+    </div>
+
+
+    <div class="poll-options">
+
+      <mat-radio-group [(ngModel)]="selectedOption"
+                       [disabled]="poll.status== 'ended'"
+                       aria-labelledby="example-radio-group-label"
+                       class="radio-options-group">
+        <mat-radio-button *ngFor="let option of poll.options" [value]="option.value" class="radio-button">
+          {{option.description | emptyPlaceholder}}
+        </mat-radio-button>
+      </mat-radio-group>
+
+    </div>
+
+    <div class="poll-footer">
+      <app-button (click)="onSubmit()" [disabledCondition]="poll.status== 'ended'" [id]="'submitButton'"
+                  [label]="'Submit Vote'"
+                  class="small-gap primary-button app-button-small"></app-button>
+    </div>
+
+  </div>
+  <div class="settings-report">
+    <app-countdown (ended)="pollEnded()" [date]="poll.endsAt" class="countdown"></app-countdown>
+    <div class="settings-list">
+
+      <ng-container *ngIf="this.poll.settings.isStatusWeighted">
+        <ng-container *ngIf="this.poll.settings.newbieWeight !== null">
+          <h3>Each Newbie vote counts as {{this.poll.settings.newbieWeight}} {{this.poll.settings.newbieWeight=='1' ? 'vote' : 'votes'}}</h3>
+        </ng-container>
+        <ng-container *ngIf="this.poll.settings.newbieWeight == null">
+          <h3>Newbie accounts can't vote in this poll</h3>
+        </ng-container>
+
+        <ng-container *ngIf="this.poll.settings.verifiedWeight !== null">
+          <h3>Each Verified vote counts as {{this.poll.settings.verifiedWeight}} {{this.poll.settings.verifiedWeight=='1' ? 'vote' : 'votes'}}</h3>
+        </ng-container>
+        <ng-container *ngIf="this.poll.settings.verifiedWeight == null">
+          <h3>Verified accounts can't vote in this poll</h3>
+        </ng-container>
+
+        <ng-container *ngIf="this.poll.settings.humanWeight !== null">
+          <h3>Each Human vote counts as {{this.poll.settings.humanWeight}} {{this.poll.settings.humanWeight=='1' ? 'vote' : 'votes'}}</h3>
+        </ng-container>
+
+      </ng-container>
+      <ng-container *ngIf="this.poll.settings.statusRequirement!==''">
+        <h3>Minimum Status to Vote: {{this.poll.settings.statusRequirement}}</h3>
+      </ng-container>
+      <ng-container *ngIf="this.poll.settings.ageRequirement!==''">
+        <h3>Minimum Age to Vote: {{this.poll.settings.ageRequirement}}</h3>
+      </ng-container>
+
+    </div>
+    <div class="share">
+      <h2>Share this!</h2>
+      <div fxFlexFill>
+        <app-input (click)="copyToClipboard()" [inputLabel]="'Click to copy poll URL'" [parentControlName]="'url'"
+                   [parentFormGroup]="copyURLForm" id="url"></app-input>
+        <a #tweet
+           (click)="tweetPopup(tweet)" class="twitter-share-button" data-show-count="false" data-size="large"
+           href="https://twitter.com/intent/tweet?text=Check this poll out: {{href}}" rel="canonical" target="_newwin">
+          Tweet</a>
+      </div>
+    </div>
+  </div>
+</div>

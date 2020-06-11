@@ -1,0 +1,61 @@
+@import "../../../../assets/sass/palette";
+
+
+.app-input {
+
+  .mat-form-field-infix {
+    width: 100%;
+  }
+
+  &.is-in-table {
+    width: 100%;
+  }
+
+  &.without-hint {
+    .mat-form-field-appearance-outline {
+      .mat-form-field-wrapper {
+        padding-bottom: 0;
+      }
+
+      .mat-form-field-subscript-wrapper {
+        display: none;
+      }
+    }
+  }
+
+  &:not(.without-hint) {
+    .mat-form-field-appearance-outline .mat-form-field-wrapper {
+      padding-bottom: 1em;
+    }
+  }
+
+  .mat-form-field-appearance-outline .mat-form-field-outline.mat-form-field-outline-thick {
+    color: $primary-color;
+  }
+
+  .mat-form-field-flex:hover {
+    .mat-form-field-suffix {
+      .app-icon {
+        color: $primary-color;
+      }
+    }
+  }
+
+  .icon-lightblue {
+    color: $primary-color;
+  }
+}
+
+
+@media screen and (-ms-high-contrast: active),
+(-ms-high-contrast: none) {
+  .app-input {
+    &.is-in-table {
+      width: 100%;
+
+      .mat-form-field {
+        margin-top: 4px;
+      }
+    }
+  }
+}

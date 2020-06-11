@@ -1,0 +1,91 @@
+@import "../../../../assets/sass/palette";
+
+$button-gap: 24px;
+$button-toggle-radius: 4px;
+mat-button-toggle-group,
+.mat-button-toggle-standalone {
+  border: 2px solid #fff;
+  border-radius: $button-toggle-radius;
+  margin: 0;
+  box-shadow: none !important;
+  background-color: #fff;
+
+  &:active {
+    background-color: #fff;
+    opacity: 0.3;
+    background-size: 100%;
+    transition: background 0s;
+  }
+
+  &:not(:active):focus {
+    background-color: $primary-color-10;
+    border: 2px solid #fff;
+    box-shadow: 0 0 2px 2px $primary-color-50 !important;
+  }
+}
+
+// toggle button
+.mat-button-toggle {
+  background-color: #fff;
+  color: $primary-color;
+  border: solid 1px $primary-color;
+  border-width: 2px 1px;
+  font-size: 14px;
+  font-weight: 600;
+  font-style: normal;
+  font-stretch: normal;
+  line-height: 1.71;
+  letter-spacing: normal;
+  text-align: center;
+
+  &:hover {
+    background-color: $primary-color-10;
+  }
+
+  &:active {
+    border: 2px solid $primary-color;
+    background-color: $primary-color-30;
+    background-size: 100%;
+    transition: background 0s;
+  }
+
+  button {
+    padding: 0 $button-gap;
+    cursor: pointer;
+  }
+}
+
+// material aggiunge dinamicamente uno style inline nell'html che va a sovrascrivere qualsiasi modifica apportata in file .css
+.mat-button-toggle-label-content {
+  padding: 0 !important;
+}
+
+.mat-button-toggle:first-child {
+  border-left-width: 2px;
+  border-bottom-left-radius: $button-toggle-radius;
+  border-top-left-radius: $button-toggle-radius;
+}
+
+.mat-button-toggle:last-child {
+  border-right-width: 2px;
+  border-bottom-right-radius: $button-toggle-radius;
+  border-top-right-radius: $button-toggle-radius;
+}
+
+.mat-button-toggle-disabled {
+  border-color: $primary-color-30;
+  background-color: #ffffff;
+
+  &:hover {
+    background-color: #ffffff;
+  }
+
+  button {
+    cursor: context-menu;
+  }
+}
+
+.mat-button-toggle-checked {
+  background-color: $primary-color-30;
+  color: $primary-color;
+}

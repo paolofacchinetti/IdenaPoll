@@ -1,0 +1,33 @@
+@import "../../../assets/sass/palette";
+
+@mixin mix-app-theme() {
+  .mat-option-text {
+    color: #3f3f3f;
+    font-size: 14px;
+  }
+
+  .mat-option.mat-option-disabled .mat-option-text {
+    opacity: 0.5;
+  }
+
+  .mat-autocomplete-panel.mat-autocomplete-visible.ng-star-inserted {
+    border-width: 0 1px 1px 1px;
+    border-style: solid;
+    border-color: $primary-color;
+    box-shadow: none;
+
+    .mat-option {
+      padding: 8px;
+
+      span.mat-option-text {
+        padding: 0 8px 0 8px;
+      }
+    }
+  }
+
+  .mat-form-field.ng-invalid.ng-touched .mat-form-field-suffix .app-icon .mat-icon {
+    color: rgba(229, 76, 60, 1);
+  }
+}
+
+@include mix-app-theme();

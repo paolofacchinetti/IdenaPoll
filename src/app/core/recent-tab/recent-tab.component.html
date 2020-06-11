@@ -1,0 +1,21 @@
+<div class='recent-polls-wrapper'>
+  <h1 class="title">Recent Polls</h1>
+  <div class="polls-wrapper">
+    <ng-container *ngFor="let poll of recentPolls">
+      <a *ngIf="poll.status=='active'" class="recent-polls" routerLink="/poll/{{poll.id}}">
+        <div class="poll-title">
+          {{poll.title}}
+        </div>
+        <div class="poll-graph">
+          <canvas #resultsOverview></canvas>
+        </div>
+        <div class="poll-votes">
+          Votes: {{poll.totalVotes}}
+        </div>
+        <div class="poll-time">
+          <app-countdown [date]="poll.createdAt" [reverse]="true"></app-countdown>
+        </div>
+      </a>
+    </ng-container>
+  </div>
+</div>

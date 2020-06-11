@@ -1,0 +1,107 @@
+<div class="create-container">
+<ng-container *ngIf="session else noLogin">
+  <form [formGroup]="pollForm" class="input-form">
+
+    <span class="spacer"></span>
+
+    <div class="fields-box">
+
+      <h1>Create a new Poll</h1>
+
+      <div class="field">
+        <app-input [id]="'title'" [inputLabel]="'Title/Question'" [parentControlName]="'title'"
+                   [parentFormGroup]="pollForm"></app-input>
+      </div>
+
+      <div class="field">
+        <app-input [id]="'desc'" [inputLabel]="'Description'" [parentControlName]="'desc'"
+                   [parentFormGroup]="pollForm" [required]="false"></app-input>
+      </div>
+
+      <span class="spacer"></span>
+
+      <div formArrayName="options">
+        <h3>Choices</h3>
+        <div *ngFor="let option of options.controls; let i=index" class="field">
+          <app-input [id]="'option-'+(i+1)" [inputLabel]="'Choice '+(i+1)" [parentControlName]="i"
+                     [parentFormGroup]="options"></app-input>
+        </div>
+        <app-button (click)="addOption()" [disabledCondition]="options.length>5" [label]="'Add Choice'"
+                    class="small-gap primary-button app-button-small"></app-button>
+      </div>
+
+      <h3>This Poll will expire after:</h3>
+
+      <div class="time-picker">
+        <app-numeric-input [id]="'days'" [inputLabel]="'Days'" [parentControlName]="'days'"
+                           [parentFormGroup]="expiration" class="time-component"></app-numeric-input>
+        <span class="spacer"></span>
+        <app-numeric-input [id]="'hours'" [inputLabel]="'Hours'" [parentControlName]="'hours'"
+                           [parentFormGroup]="expiration" class="time-component"></app-numeric-input>
+        <span class="spacer"></span>
+        <app-numeric-input [id]="'minutes'" [inputLabel]="'Minutes'" [parentControlName]="'minutes'"
+                           [parentFormGroup]="expiration" class="time-component"></app-numeric-input>
+      </div>
+
+    </div>
+
+    <span class="spacer"></span>
+
+    <div class="option-box">
+
+      <h1>Poll Options</h1>
+
+      <section class="min-requirements">
+        <h3>Minimum Status Required to Vote:</h3>
+
+        <app-toggle-button (toggleGroupChange)="statusSelected()"
+                           [buttonToggleListItem]="toggleList"
+                           [id]="'statusRequirement'"
+                           (toggleItemClick)="valuereseter()"
+                           [parentControlName]="'statusRequirement'" [parentFormGroup]="settings"
+                           [toggleGroupAriaLabel]="'Minimum Status Requirement to Vote'">
+        </app-toggle-button>
+      </section>
+
+      <app-checkbox [label]="'Enable Weighted Votes'"
+                    (checkboxValueChange)="weightedVotes()" [(checkboxValue)]="checkboxWeight">
+      </app-checkbox>
+
+      <div class="vote-weights">
+        <app-numeric-input [id]="'newbieWeight'" [inputLabel]="'Newbie Vote Weight'"
+                           [parentControlName]="'newbieWeight'"
+                           [parentFormGroup]="voteWeight"></app-numeric-input>
+        <app-numeric-input [id]="'verifiedWeight'" [inputLabel]="'Verified Vote Weight'"
+                           [parentControlName]="'verifiedWeight'"
+                           [parentFormGroup]="voteWeight"></app-numeric-input>
+        <app-numeric-input [id]="'humanWeight'" [inputLabel]="'Human Vote Weight'" [parentControlName]="'humanWeight'"
+                           [parentFormGroup]="voteWeight"></app-numeric-input>
+      </div>
+
+      <app-checkbox [label]="'Enable Minimum Account Age'"
+                    (checkboxValueChange)="minimumAge()" [(checkboxValue)]="checkboxAge">
+      </app-checkbox>
+
+      <div class="age-requirements">
+        <app-numeric-input [id]="'ageReq'" [inputLabel]="'Age (Epochs)'" [parentControlName]="'ageReq'"
+                           [parentFormGroup]="settings"></app-numeric-input>
+      </div>
+
+
+    </div>
+
+    <div class="sub-but">
+      <app-button (click)="onSubmit()" [id]="'submitButton'" [label]="'Submit'"
+                  class="small-gap primary-button app-button-small"></app-button>
+    </div>
+
+    <span class="spacer"></span>
+
+  </form>
+</ng-container>
+  <ng-template #noLogin>
+    <div class="no-login">
+      <h1>Please login to use this feature</h1>
+    </div>
+  </ng-template>
+</div>

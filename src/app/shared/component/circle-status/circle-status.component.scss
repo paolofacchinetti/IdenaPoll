@@ -1,0 +1,55 @@
+@import "../../../../assets/sass/palette";
+@import "../../../../assets/sass/mixins";
+
+$status-label-margin: 8px;
+.circle-status-active {
+  .circle-status-container {
+    .circle {
+      background-color: $extra-colors-green;
+    }
+  }
+}
+
+.circle-status-error {
+  .circle-status-container {
+    .circle {
+      background-color: $extra-colors-red;
+    }
+  }
+}
+
+.circle-status-warning {
+  .circle-status-container {
+    .circle {
+      background-color: $extra-colors-yellow;
+    }
+  }
+}
+
+.circle-status-null {
+  .circle-status-container {
+
+    .circle {
+      background-color: $extra-colors-grey;
+    }
+  }
+}
+
+.circle-status-container {
+  display: inline-flex;
+  align-items: center;
+  justify-content: flex-start;
+  margin: 4px 0;
+}
+
+@include circle(24px, 50%);
+
+.status-label {
+  margin-left: $status-label-margin;
+  margin-top: 0;
+  color: $primary-text-color;
+}
+
+
+
+

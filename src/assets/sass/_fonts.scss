@@ -1,0 +1,61 @@
+@font-face {
+  font-family: 'Titillium Web';
+  font-style: normal;
+  font-weight: 300;
+  src: local('Titillium Web Light'), local('TitilliumWeb-Light'), local('titilliumweb_light'), url(/assets/fonts/titilliumweb_light.woff) format('woff');
+}
+
+@font-face {
+  font-family: 'Titillium Web';
+  font-style: normal;
+  font-weight: 400;
+  src: local('Titillium Web Regular'), local('TitilliumWeb-Regular'), local('titilliumweb_regular'), url(/assets/fonts/titilliumweb_regular.woff) format('woff');
+}
+
+@font-face {
+  font-family: 'Titillium Web';
+  font-style: normal;
+  font-weight: 600;
+  src: local('Titillium Web SemiBold'), local('TitilliumWeb-SemiBold'), local('titilliumweb_semibold'), url(/assets/fonts/titilliumweb_semibold.woff) format('woff');
+}
+
+@font-face {
+  font-family: 'Titillium Web';
+  font-style: normal;
+  font-weight: 700;
+  src: local('Titillium Web Bold'), local('TitilliumWeb-Bold'), local('titilliumweb_bold'), url(/assets/fonts/titilliumweb_bold.woff) format('woff');
+}
+
+@font-face {
+  font-family: 'Material Icons';
+  font-style: normal;
+  font-weight: 400;
+  src: local('Material Icons'), local('MaterialIcons'), url(/assets/fonts/MaterialIcons.woff) format('woff');
+}
+
+.material-icons {
+  font-family: 'Material Icons';
+  font-weight: normal;
+  font-style: normal;
+  font-size: 24px;
+  line-height: 1;
+  letter-spacing: normal;
+  text-transform: none;
+  display: inline-block;
+  white-space: nowrap;
+  word-wrap: normal;
+  direction: ltr;
+  font-feature-settings: 'liga';
+}
+
+.app-paragraph-light {
+  font-weight: 300;
+}
+
+.app-paragraph-semibold {
+  font-weight: 600;
+}
+
+.app-paragraph-bold {
+  font-weight: 700;
+}

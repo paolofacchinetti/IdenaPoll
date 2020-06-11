@@ -1,0 +1,44 @@
+:host {
+  height: 100%;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-content: center;
+  align-items: center;
+  flex-direction: row;
+
+  .about-container {
+    overflow: hidden;
+    position: relative;
+    width: 95%;
+    height: 95%;
+    border-radius: 25px;
+    background-color: #fff;
+    padding: 10px;
+    display: flex;
+    flex-wrap: wrap;
+    overflow: paged-y-controls;
+
+    .donate{
+      display:flex;
+      flex-direction: column;
+      app-input{
+        padding-top: 15px;
+        width: 50%;
+      }
+    }
+
+    .box-cont {
+      width: 48%;
+      height: 45%;
+      margin: auto;
+      border-radius: 25px;
+      background-color: #f6f8fa;
+      padding: 30px;
+      p{
+        font-size: 18px;
+      }
+    }
+  }
+
+}

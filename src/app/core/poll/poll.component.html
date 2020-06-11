@@ -1,0 +1,28 @@
+<div class="poll-container">
+
+  <div *ngIf="selectedPoll === undefined; else pollTemplate">
+    <h3 class="wait">Waiting for database answer...</h3>
+  </div>
+
+  <ng-template #pollTemplate>
+
+    <mat-tab-group>
+
+      <mat-tab  label="Poll">
+        <ng-template matTabContent>
+          <app-voting-tab [poll]="selectedPoll"></app-voting-tab>
+        </ng-template>
+      </mat-tab>
+
+      <mat-tab label="Results">
+        <ng-template matTabContent>
+          <app-results-tab [poll]="selectedPoll"></app-results-tab>
+        </ng-template>
+      </mat-tab>
+
+    </mat-tab-group>
+
+  </ng-template>
+
+</div>
+

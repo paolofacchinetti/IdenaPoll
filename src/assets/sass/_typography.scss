@@ -1,0 +1,147 @@
+@import "palette";
+@import "mixins";
+@import '~@angular/material/theming';
+// Define a custom typography config that overrides the font-family as well as the
+// typography levels
+@include mat-core();
+$custom-typography: mat-typography-config(// $font-family: 'Signika, sans-serif',
+  $font-family: 'Titillium Web, sans-serif',
+  $headline: mat-typography-level(24px, 32px, 600),
+  $title: mat-typography-level(20px, 24px, 600),
+  $subheading-2: mat-typography-level(16px, 22px, 600),
+  $subheading-1: mat-typography-level(16px, 22px, 400),
+  $body-1: mat-typography-level(14px, 20px, 300),
+  $body-2: mat-typography-level(16px, 20px, 500),
+  $caption: mat-typography-level(12px, 16px, 300),
+  $button: mat-typography-level(16px, 14 px-large, 500));
+@include angular-material-typography($custom-typography);
+
+h1,
+.mat-h1, .mat-headline, .mat-typography h1 {
+  @include typography-h1();
+  font-weight: 600;
+  color: $primary-text-color;
+  margin: 0;
+}
+
+h2,
+.app-subtitle h2,
+.mat-typography .app-subtitle,
+.app-subtitle,
+.mat-h2, .mat-title, .mat-typography h2 {
+
+  @include typography-h2();
+  @include set-typography-variants($primary-text-color, 600);
+  margin: 0;
+
+  &-light {
+    font-weight: 300;
+  }
+}
+
+.app-subtitle-light {
+  font-weight: 300 !important;
+}
+
+h3,
+.app-subtitle h3,
+.mat-typography .app-subtitle,
+.app-subtitle,
+.mat-h3, .mat-title, .mat-typography h3 {
+
+  @include typography-h3();
+  @include set-typography-variants($primary-text-color, 600);
+  margin: 0;
+
+  &-light {
+    font-weight: 300;
+  }
+}
+
+p,
+.mat-typography p,
+.heading-paragraph,
+.mat-typography .app-paragraph {
+
+  @include typography-p();
+  @include set-typography-variants($primary-text-color, 300);
+  margin: 0;
+
+  &-white {
+    color: #fff;
+  }
+
+  &-semibold,
+  p > b {
+    @include set-typography-variants($primary-text-color, 600);
+  }
+
+  &-light {
+    font-weight: 300;
+  }
+
+  &-bold {
+    font-weight: bold;
+  }
+
+  &-inline,
+  &.inline {
+    display: inline;
+  }
+
+  &-blue {
+    color: $primary-color;
+  }
+
+  &-error {
+    @include set-typography-variants($extra-colors-red, 300);
+
+    &.app-paragraph-semibold {
+      @include set-typography-variants($extra-colors-red, 600);
+    }
+  }
+
+}
+
+button label,
+button span {
+  @include typography-p();
+  font-weight: 600;
+}
+
+small,
+.heading-small,
+.mat-typography .heading-small,
+.mat-typography .app-small,
+.app-small {
+  @include typography-small();
+  @include set-typography-variants($secondary-text-color, 300);
+  margin: 0;
+
+  &-semibold,
+  .mat-header-cell {
+    @include set-typography-variants($secondary-text-color, 600);
+  }
+
+  &-white {
+    color: #fff;
+  }
+
+
+  &-grey {
+
+    color: $secondary-text-color;
+  }
+
+  &-light-grey {
+    color: $secondary-text-color;
+  }
+
+
+}
+
+
+//Typography utilities classes
+.app-break-word {
+  word-wrap: break-word;
+}
