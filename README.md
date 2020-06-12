@@ -1,9 +1,29 @@
 # IdenaPoll
 
-Polling website built for [Idena](https://idena.io/) identities, thus guaranteeing the uniqueness of each vote.
-Poll creators will be able to change vote settings (such as Human status requirement for voters) and vote weight, based on the different statuses of the Idena identities.
+Polling website built for [Idena](https://idena.io/) identities, thus guaranteeing the uniqueness of each vote and creating sybil-resistant polls.
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 9.1.6.
+After logging in with an Idena Identity, any user will be able to create a public poll and customize its settings however they see fit.
+The current supported poll settings include:
+- Vote weight based on Idena Identity Status (_NEWBIE, VERIFIED, HUMAN_)
+- Minimum Status required to vote
+- Minimum account age required to vote (_in epochs_)
+- Poll duration
+
+Polls are shareable through a link and can be queried through a simple searchbar.
+The most popular polls (_by number of votes_) and the most recent polls will be shown on IdenaPoll's homepage.
+
+## Endpoint
+
+IdenaPoll's API Endpoint can be found at https://json.idenapoll.com
+IdenaPoll uses Json Server, to know more about it go to the public [Json Server Github](https://github.com/typicode/json-server).
+
+Example API CALL to retrieve poll data: https://json.idenapoll.com/polls
+
+## Feedback
+
+If you want to give us feedback about IdenaPoll, or if you are a developer and want to know more about it, feel free to contact us in the Idena-Poll channel on [Idena's official Discord](https://discord.com/invite/8BusRj7)
+
+# ANGULAR CLI INFO
 
 ## Development server
 
