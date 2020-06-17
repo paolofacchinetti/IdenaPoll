@@ -113,11 +113,12 @@ export class CreateComponent implements OnInit {
         settings.humanWeight = this.voteWeight.get('humanWeight').value;
       }
       poll.settings = settings;
+      console.log(settings);
       this.ds.createPoll(poll);
     }
   }
 
-  valuereseter() {
+  valueResetter() {
     const status = this.settings.get('statusRequirement').value;
     if (status === this.prevStatus) {
       this.settings.get('statusRequirement').reset();
@@ -129,7 +130,7 @@ export class CreateComponent implements OnInit {
 
   statusSelected() {
     const status = this.settings.get('statusRequirement').value;
-    if (status === StatusEnum.NEWBIE && this.checkboxWeight) {
+    if ((status === StatusEnum.NEWBIE || status === '') && this.checkboxWeight) {
       this.voteWeight.get('newbieWeight').enable();
       this.voteWeight.get('verifiedWeight').enable();
       this.voteWeight.get('humanWeight').enable();
