@@ -61,7 +61,7 @@ export class ResultsTabComponent implements OnInit, AfterViewInit{
             fontSize: 16
           },
           scales: {
-            yAxes: [{
+            xAxes: [{
               ticks: {
                 beginAtZero: true
               }
