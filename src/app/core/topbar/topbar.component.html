@@ -31,7 +31,7 @@
       </div>
     </ng-container>
     <ng-template #signin>
-      <a class="btn btn-signin" routerLink="/signin">
+      <a (click)="reSign()" class="btn btn-signin">
         <img alt="signin" src="assets/img/idena_white_small.svg" class="icon icon-logo-white-small " width="24px">
         <span>  Sign-in with Idena</span></a>
     </ng-template>

@@ -1,8 +1,9 @@
 import {AfterViewInit, Component, OnInit} from '@angular/core';
 import {DataService} from '@app-shared/data.service';
-import {getAuth, getSession, getToken, State} from '@app-redux/index';
+import {getAuth, getSession, State} from '@app-redux/index';
 import {select, Store} from '@ngrx/store';
 import {filter} from 'rxjs/operators';
+import {signinUrl} from "@app-shared/signin-url.function";
 
 
 @Component({
@@ -16,20 +17,12 @@ export class SigninComponent implements OnInit, AfterViewInit {
   SUCCESS = 'success';
   signinState: string;
   dnaUrl: string;
-  EXPRESS_URL = 'https://express.idenapoll.com';
-  WEBSITE_URL = 'https://idenapoll.com';
   token: string;
   count = 0;
 
 
   constructor(protected store: Store<State>, protected ds: DataService) {
-    this.ds.getAuthToken();
-    this.store.pipe(select(getToken), filter((p) => p != null)).subscribe((s) => {
-      this.token = s;
-      let callbackUrl = '/home';
-      this.dnaUrl = this.buildDnaUrl(this.token, this.EXPRESS_URL, callbackUrl);
-      window.location.href = this.dnaUrl;
-    });
+    signinUrl(this.store, this.ds);
     this.store.pipe(select(getSession), filter((p) => p != null)).subscribe(s => {
       this.signinState = 'success';
     });
@@ -59,20 +52,6 @@ export class SigninComponent implements OnInit, AfterViewInit {
 
   }
 
-  /**
-   Builds the DNA URL used for the in-app sign-in
-   */
-  buildDnaUrl(token: string, baseUrl: string, callbackUrl: string): string {
-    const callback = new URL(callbackUrl, this.WEBSITE_URL);
-    const startSession = new URL('/auth/v1/start-session', baseUrl);
-    const authenticate = new URL('/auth/v1/authenticate', baseUrl);
-    const favicon = new URL('/favicon.ico', this.WEBSITE_URL);
 
-    return `dna://signin/v1?callback_url=${encodeURIComponent(
-      callback.href
-    )}&token=${token}&nonce_endpoint=${encodeURIComponent(
-      startSession.href
-    )}&favicon_url=${encodeURIComponent(favicon.href)}&authentication_endpoint=${encodeURIComponent(authenticate.href)}`;
-  }
 
 }
