@@ -42,6 +42,11 @@ export class TopbarComponent implements OnInit {
 
   }
 
+  voteContest(){
+    const addressContest = "dna://send/v1?address=0xb9d51A8b8E956d331EB7dA4ddE67b77496F4A89B&amount=0&comment=idenapoll.com";
+    window.location.href = addressContest;
+  }
+
   logout() {
     this.dataService.logoutSession();
     this.store.dispatch(setSession({value: undefined}));
