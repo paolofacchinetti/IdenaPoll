@@ -49,7 +49,6 @@ export class SigninComponent implements OnInit, AfterViewInit {
   }
 
   ngAfterViewInit(): void {
-
   }
 
 
