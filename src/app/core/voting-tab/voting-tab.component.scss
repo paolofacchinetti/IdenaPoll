@@ -50,6 +50,13 @@
   .settings-report {
     width: 25%;
 
+    mat-divider {
+      background-color: grey;
+      width: 100%;
+      margin: 10px auto;
+      height: 2px;
+    }
+
     .settings-list{
       *{
         padding: 8px 0;

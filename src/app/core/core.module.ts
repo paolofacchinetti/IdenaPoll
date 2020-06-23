@@ -20,6 +20,7 @@ import {PollListComponent} from './poll-list/poll-list.component';
 import {SearchComponent} from './search/search.component';
 import {MypollsComponent} from './mypolls/mypolls.component';
 import {AboutComponent} from './about/about.component';
+import {MatDividerModule} from '@angular/material/divider';
 
 
 @NgModule({
@@ -27,16 +28,17 @@ import {AboutComponent} from './about/about.component';
   exports: [
     TopbarComponent
   ],
-  imports: [
-    CommonModule,
-    FlexModule,
-    SharedModule,
-    RouterModule,
-    ReactiveFormsModule,
-    FormsModule,
-    MatTabsModule,
-    MatRadioModule,
-  ],
+    imports: [
+        CommonModule,
+        FlexModule,
+        SharedModule,
+        RouterModule,
+        ReactiveFormsModule,
+        FormsModule,
+        MatTabsModule,
+        MatRadioModule,
+        MatDividerModule,
+    ],
   providers: [FormsModule]
 })
 export class CoreModule { }
