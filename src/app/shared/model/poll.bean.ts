@@ -123,12 +123,6 @@ export class ResultsPollBean {
     return arr;
   }
 
-  get optionLabels() {
-    let arr = [];
-    this.results.forEach((r) => (arr.push(r.description.slice(0, 10) + (r.description.length<11 ? '' : '...'))));
-    return arr;
-  }
-
   get optionTotalVotes() {
     let arr = [];
     this.results.forEach((r) => (arr.push(r.totalVotes)));

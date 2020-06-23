@@ -37,7 +37,7 @@ export class RecentTabComponent implements OnInit, AfterViewInit {
           this.resultsOverview.push(new Chart(canvasArray[i].nativeElement.getContext('2d'), {
             type: 'doughnut',
             data: {
-              labels: resultsPoll.optionLabels,
+              labels: resultsPoll.optionDescriptions,
               datasets: [{
                 label: 'Voters',
                 data: resultsPoll.optionTotalVotes,
@@ -53,6 +53,9 @@ export class RecentTabComponent implements OnInit, AfterViewInit {
               }]
             },
             options: {
+              legend: {
+                display: false
+              }
             }
           }));
         }
