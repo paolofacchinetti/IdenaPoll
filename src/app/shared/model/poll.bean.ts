@@ -119,7 +119,7 @@ export class ResultsPollBean {
 
   get optionDescriptions() {
     let arr = [];
-    this.results.forEach((r) => (arr.push(r.description)));
+    this.results.forEach((r) => (arr.push((r.description.length > 30) ? (r.description.slice(0,27)+'...') : r.description)));
     return arr;
   }
 
