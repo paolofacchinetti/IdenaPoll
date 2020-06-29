@@ -1,4 +1,4 @@
-# IdenaPoll
+# [IdenaPoll](https://idenapoll.com)
 
 Polling website built for [Idena](https://idena.io/) identities, thus guaranteeing the uniqueness of each vote and creating sybil-resistant polls.
 
