@@ -1,1038 +1,4530 @@
 {
   "polls": [
     {
-      "status": "active",
-      "title": "What do you think of Pizza?",
-      "description": "Your opinion on the famous italian dish, specifically about pizza Margherita, made with tomatoes, mozzarella and some basil.",
-      "creator": "",
       "options": [
         {
-          "value": 0,
-          "description": "I like it",
-          "votes": [
-            {
-              "voter": "0x3852c4498b329627dd47a587d0de63860313524e"
-            }
-          ]
+          "votes": [],
+          "description": "a",
+          "value": "0"
         },
         {
-          "value": 1,
-          "description": "I don't like it",
-          "votes": []
+          "votes": [],
+          "description": "a",
+          "value": "1"
         }
       ],
-      "createdAt": 1590420661706,
-      "id": "H9Is9Nq"
-    },
-    {
-      "status": "active",
-      "title": "Navy Seals",
-      "description": "What the fuck did you just fucking say about me, you little bitch? I'll have you know I graduated top of my class in the Navy Seals, and I've been involved in numerous secret raids on Al-Quaeda, and I have over 300 confirmed kills. I am trained in gorilla warfare and I'm the top sniper in the entire US armed forces. You are nothing to me but just another target. I will wipe you the fuck out with precision the likes of which has never been seen before on this Earth, mark my fucking words. You think you can get away with saying that shit to me over the Internet? Think again, fucker. As we speak I am contacting my secret network of spies across the USA and your IP is being traced right now so you better prepare for the storm, maggot. The storm that wipes out the pathetic little thing you call your life. You're fucking dead, kid. I can be anywhere, anytime, and I can kill you in over seven hundred ways, and that's just with my bare hands. Not only am I extensively trained in unarmed combat, but I have access to the entire arsenal of the United States Marine Corps and I will use it to its full extent to wipe your miserable ass off the face of the continent, you little shit. If only you could have known what unholy retribution your little \"clever\" comment was about to bring down upon you, maybe you would have held your fucking tongue. But you couldn't, you didn't, and now you're paying the price, you goddamn idiot. I will shit fury all over you and you will drown in it. You're fucking dead, kiddo.",
-      "creator": "",
-      "options": [
-        {
-          "value": 0,
-          "description": "Yes",
-          "votes": [
-            {
-              "voter": "0x3852c4498b329627dd47a587d0de63860313524e"
-            }
-          ]
-        },
-        {
-          "value": 1,
-          "description": "No",
-          "votes": []
-        }
-      ],
-      "createdAt": 1590420698224,
-      "id": "eCIcWdr"
-    },
-    {
-      "status": "active",
-      "title": "",
+      "title": "a",
       "description": "",
-      "creator": "",
-      "options": [
-        {
-          "value": 0,
-          "description": "Yes",
-          "votes": [
-            {
-              "voter": "0x3852c4498b329627dd47a587d0de63860313524e"
-            }
-          ]
-        },
-        {
-          "value": 1,
-          "description": "No",
-          "votes": []
-        }
-      ],
-      "createdAt": 1590421420648,
-      "id": "SbjlhEt"
-    },
-    {
-      "status": "active",
-      "title": "",
-      "description": "",
-      "creator": "",
-      "options": [
-        {
-          "value": 0,
-          "description": "Yes",
-          "votes": [
-            {
-              "voter": "0x3852c4498b329627dd47a587d0de63860313524e"
-            }
-          ]
-        },
-        {
-          "value": 1,
-          "description": "No",
-          "votes": []
-        }
-      ],
-      "createdAt": 1590421436075,
-      "id": "6XqXS3Q"
-    },
-    {
-      "status": "active",
-      "title": "",
-      "description": "",
-      "creator": "",
-      "options": [
-        {
-          "value": 0,
-          "description": "Yes",
-          "votes": [
-            {
-              "voter": "0x3852c4498b329627dd47a587d0de63860313524e"
-            }
-          ]
-        },
-        {
-          "value": 1,
-          "description": "No",
-          "votes": []
-        }
-      ],
-      "createdAt": 1590421437162,
-      "id": "lYsaNuf"
-    },
-    {
-      "status": "active",
-      "title": "",
-      "description": "",
-      "creator": "",
-      "options": [
-        {
-          "value": 0,
-          "description": "Yes",
-          "votes": [
-            {
-              "voter": "0x3852c4498b329627dd47a587d0de63860313524e"
-            }
-          ]
-        },
-        {
-          "value": 1,
-          "description": "No",
-          "votes": []
-        }
-      ],
-      "createdAt": 1590421507158,
-      "id": "R9gK-M_"
-    },
-    {
-      "status": "active",
-      "title": "",
-      "description": "",
-      "creator": "",
-      "options": [
-        {
-          "value": 0,
-          "description": "Yes",
-          "votes": [
-            {
-              "voter": "0x3852c4498b329627dd47a587d0de63860313524e"
-            }
-          ]
-        },
-        {
-          "value": 1,
-          "description": "No",
-          "votes": []
-        }
-      ],
-      "createdAt": 1590421803292,
-      "id": "Aqg6eBq"
-    },
-    {
-      "status": "active",
-      "title": "",
-      "description": "",
-      "creator": "",
-      "options": [
-        {
-          "value": 0,
-          "description": "Yes",
-          "votes": [
-            {
-              "voter": "0x3852c4498b329627dd47a587d0de63860313524e"
-            }
-          ]
-        },
-        {
-          "value": 1,
-          "description": "No",
-          "votes": []
-        }
-      ],
-      "createdAt": 1590421877818,
-      "id": "k0Tny4a"
-    },
-    {
-      "status": "active",
-      "title": "",
-      "description": "",
-      "creator": "",
-      "options": [
-        {
-          "value": 0,
-          "description": "Yes",
-          "votes": [
-            {
-              "voter": "0x3852c4498b329627dd47a587d0de63860313524e"
-            }
-          ]
-        },
-        {
-          "value": 1,
-          "description": "No",
-          "votes": []
-        }
-      ],
-      "createdAt": 1590421889212,
-      "id": "bfxkDYS"
-    },
-    {
-      "status": "active",
-      "title": "",
-      "description": "",
-      "creator": "",
-      "options": [
-        {
-          "value": 0,
-          "description": "Yes",
-          "votes": [
-            {
-              "voter": "0x3852c4498b329627dd47a587d0de63860313524e"
-            }
-          ]
-        },
-        {
-          "value": 1,
-          "description": "No",
-          "votes": []
-        }
-      ],
-      "createdAt": 1590421987936,
-      "id": "IcOA1E4"
-    },
-    {
-      "status": "active",
-      "title": "",
-      "description": "",
-      "creator": "",
-      "options": [
-        {
-          "value": 0,
-          "description": "Yes",
-          "votes": [
-            {
-              "voter": "0x3852c4498b329627dd47a587d0de63860313524e"
-            }
-          ]
-        },
-        {
-          "value": 1,
-          "description": "No",
-          "votes": []
-        }
-      ],
-      "createdAt": 1590422022102,
-      "id": "f5teLAD"
-    },
-    {
-      "status": "active",
-      "title": "",
-      "description": "",
-      "creator": "",
-      "options": [
-        {
-          "value": 0,
-          "description": "Yes",
-          "votes": [
-            {
-              "voter": "0x3852c4498b329627dd47a587d0de63860313524e"
-            }
-          ]
-        },
-        {
-          "value": 1,
-          "description": "No",
-          "votes": []
-        }
-      ],
-      "createdAt": 1590422092882,
-      "id": "OdMQEKz"
-    },
-    {
-      "status": "active",
-      "title": "",
-      "description": "",
-      "creator": "",
-      "options": [
-        {
-          "value": 0,
-          "description": "Yes",
-          "votes": [
-            {
-              "voter": "0x3852c4498b329627dd47a587d0de63860313524e"
-            }
-          ]
-        },
-        {
-          "value": 1,
-          "description": "No",
-          "votes": []
-        }
-      ],
-      "createdAt": 1590422136233,
-      "id": "P0ll-pC"
-    },
-    {
-      "status": "active",
-      "title": "",
-      "description": "",
-      "creator": "",
-      "options": [
-        {
-          "value": 0,
-          "description": "Yes",
-          "votes": [
-            {
-              "voter": "0x3852c4498b329627dd47a587d0de63860313524e"
-            }
-          ]
-        },
-        {
-          "value": 1,
-          "description": "No",
-          "votes": []
-        }
-      ],
-      "createdAt": 1590422149820,
-      "id": "W-1MPnY"
-    },
-    {
-      "status": "active",
-      "title": "",
-      "description": "",
-      "creator": "",
-      "options": [
-        {
-          "value": 0,
-          "description": "Yes",
-          "votes": [
-            {
-              "voter": "0x3852c4498b329627dd47a587d0de63860313524e"
-            }
-          ]
-        },
-        {
-          "value": 1,
-          "description": "No",
-          "votes": []
-        }
-      ],
-      "createdAt": 1590422435264,
-      "id": "xlHTSsG"
-    },
-    {
-      "status": "active",
-      "title": "",
-      "description": "",
-      "creator": "",
-      "options": [
-        {
-          "value": 0,
-          "description": "Yes",
-          "votes": [
-            {
-              "voter": "0x3852c4498b329627dd47a587d0de63860313524e"
-            }
-          ]
-        },
-        {
-          "value": 1,
-          "description": "No",
-          "votes": []
-        }
-      ],
-      "createdAt": 1590422858792,
-      "id": "B8yyaSl"
-    },
-    {
-      "status": "active",
-      "title": "",
-      "description": "",
-      "creator": "",
-      "options": [
-        {
-          "value": 0,
-          "description": "Yes",
-          "votes": [
-            {
-              "voter": "0x3852c4498b329627dd47a587d0de63860313524e"
-            }
-          ]
-        },
-        {
-          "value": 1,
-          "description": "No",
-          "votes": []
-        }
-      ],
-      "createdAt": 1590422884471,
-      "id": "Zjo6mCr"
-    },
-    {
-      "status": "active",
-      "title": "",
-      "description": "",
-      "creator": "",
-      "options": [
-        {
-          "value": 0,
-          "description": "Yes",
-          "votes": [
-            {
-              "voter": "0x3852c4498b329627dd47a587d0de63860313524e"
-            }
-          ]
-        },
-        {
-          "value": 1,
-          "description": "No",
-          "votes": []
-        }
-      ],
-      "createdAt": 1590422913970,
-      "id": "GGBA9Zj"
-    },
-    {
-      "status": "active",
-      "title": "",
-      "description": "",
-      "creator": "",
-      "options": [
-        {
-          "value": 0,
-          "description": "Yes",
-          "votes": [
-            {
-              "voter": "0x3852c4498b329627dd47a587d0de63860313524e"
-            }
-          ]
-        },
-        {
-          "value": 1,
-          "description": "No",
-          "votes": []
-        }
-      ],
-      "createdAt": 1590422931604,
-      "id": "1LhQ8Xn"
-    },
-    {
-      "status": "active",
-      "title": "",
-      "description": "",
-      "creator": "",
-      "options": [
-        {
-          "value": 0,
-          "description": "Yes",
-          "votes": [
-            {
-              "voter": "0x3852c4498b329627dd47a587d0de63860313524e"
-            }
-          ]
-        },
-        {
-          "value": 1,
-          "description": "No",
-          "votes": []
-        }
-      ],
-      "createdAt": 1590422960490,
-      "id": "D5sS1PG"
-    },
-    {
-      "status": "active",
-      "title": "",
-      "description": "",
-      "creator": "",
-      "options": [
-        {
-          "value": 0,
-          "description": "Yes",
-          "votes": [
-            {
-              "voter": "0x3852c4498b329627dd47a587d0de63860313524e"
-            }
-          ]
-        },
-        {
-          "value": 1,
-          "description": "No",
-          "votes": []
-        }
-      ],
-      "createdAt": 1590422991665,
-      "id": "QxDaKSB"
-    },
-    {
-      "status": "active",
-      "title": "",
-      "description": "",
-      "creator": "",
-      "options": [
-        {
-          "value": 0,
-          "description": "Yes",
-          "votes": [
-            {
-              "voter": "0x3852c4498b329627dd47a587d0de63860313524e"
-            }
-          ]
-        },
-        {
-          "value": 1,
-          "description": "No",
-          "votes": []
-        }
-      ],
-      "createdAt": 1590424202716,
-      "id": "HlNhjt1"
-    },
-    {
-      "status": "active",
-      "title": "",
-      "description": "",
-      "creator": "",
-      "options": [
-        {
-          "value": 0,
-          "description": "Yes",
-          "votes": [
-            {
-              "voter": "0x3852c4498b329627dd47a587d0de63860313524e"
-            }
-          ]
-        },
-        {
-          "value": 1,
-          "description": "No",
-          "votes": []
-        }
-      ],
-      "createdAt": 1590424883896,
-      "id": "cZlpQ6c"
-    },
-    {
-      "status": "active",
-      "title": "",
-      "description": "",
-      "creator": "",
-      "options": [
-        {
-          "value": 0,
-          "description": "Yes",
-          "votes": [
-            {
-              "voter": "0x3852c4498b329627dd47a587d0de63860313524e"
-            }
-          ]
-        },
-        {
-          "value": 1,
-          "description": "No",
-          "votes": []
-        }
-      ],
-      "createdAt": 1590424928477,
-      "id": "5pl8nm1"
-    },
-    {
-      "status": "active",
-      "title": "",
-      "description": "",
-      "creator": "",
-      "options": [
-        {
-          "value": 0,
-          "description": "Yes",
-          "votes": [
-            {
-              "voter": "0x3852c4498b329627dd47a587d0de63860313524e"
-            }
-          ]
-        },
-        {
-          "value": 1,
-          "description": "No",
-          "votes": []
-        }
-      ],
-      "createdAt": 1590424948822,
-      "id": "Hypvdyk"
-    },
-    {
-      "status": "active",
-      "title": "",
-      "description": "",
-      "creator": "",
-      "options": [
-        {
-          "value": 0,
-          "description": "Yes",
-          "votes": [
-            {
-              "voter": "0x3852c4498b329627dd47a587d0de63860313524e"
-            }
-          ]
-        },
-        {
-          "value": 1,
-          "description": "No",
-          "votes": []
-        }
-      ],
-      "createdAt": 1590424962753,
-      "id": "vTh6hIL"
-    },
-    {
-      "status": "active",
-      "title": "",
-      "description": "",
-      "creator": "",
-      "options": [
-        {
-          "value": 0,
-          "description": "Yes",
-          "votes": [
-            {
-              "voter": "0x3852c4498b329627dd47a587d0de63860313524e"
-            }
-          ]
-        },
-        {
-          "value": 1,
-          "description": "No",
-          "votes": []
-        }
-      ],
-      "createdAt": 1590425010892,
-      "id": "9dY4085"
-    },
-    {
-      "status": "active",
-      "title": "",
-      "description": "",
-      "creator": "",
-      "options": [
-        {
-          "value": 0,
-          "description": "Yes",
-          "votes": [
-            {
-              "voter": "0x3852c4498b329627dd47a587d0de63860313524e"
-            }
-          ]
-        },
-        {
-          "value": 1,
-          "description": "No",
-          "votes": []
-        }
-      ],
-      "createdAt": 1590425033780,
-      "id": "VBLu4Uq"
-    },
-    {
-      "status": "active",
-      "title": "",
-      "description": "",
-      "creator": "",
-      "options": [
-        {
-          "value": 0,
-          "description": "Yes",
-          "votes": [
-            {
-              "voter": "0x3852c4498b329627dd47a587d0de63860313524e"
-            }
-          ]
-        },
-        {
-          "value": 1,
-          "description": "No",
-          "votes": []
-        }
-      ],
-      "createdAt": 1590425173030,
-      "id": "EteSm7X"
-    },
-    {
-      "status": "active",
-      "title": "",
-      "description": "",
-      "creator": "",
-      "options": [
-        {
-          "value": 0,
-          "description": "Yes",
-          "votes": [
-            {
-              "voter": "0x3852c4498b329627dd47a587d0de63860313524e"
-            }
-          ]
-        },
-        {
-          "value": 1,
-          "description": "No",
-          "votes": []
-        }
-      ],
-      "createdAt": 1590425316156,
-      "id": "o7ZD01N"
-    },
-    {
-      "status": "active",
-      "title": "",
-      "description": "",
-      "creator": "",
-      "options": [
-        {
-          "value": 0,
-          "description": "Yes",
-          "votes": [
-            {
-              "voter": "0x3852c4498b329627dd47a587d0de63860313524e"
-            }
-          ]
-        },
-        {
-          "value": 1,
-          "description": "No",
-          "votes": []
-        }
-      ],
-      "createdAt": 1590425431604,
-      "id": "Jr1iU3S"
-    },
-    {
-      "status": "active",
-      "title": "",
-      "description": "",
-      "creator": "",
-      "options": [
-        {
-          "value": 0,
-          "description": "Yes",
-          "votes": [
-            {
-              "voter": "0x3852c4498b329627dd47a587d0de63860313524e"
-            }
-          ]
-        },
-        {
-          "value": 1,
-          "description": "No",
-          "votes": []
-        }
-      ],
-      "createdAt": 1590425440797,
-      "id": "xb8qjEA"
-    },
-    {
-      "status": "active",
-      "title": "",
-      "description": "",
-      "creator": "",
-      "options": [
-        {
-          "value": 0,
-          "description": "Yes",
-          "votes": [
-            {
-              "voter": "0x3852c4498b329627dd47a587d0de63860313524e"
-            }
-          ]
-        },
-        {
-          "value": 1,
-          "description": "No",
-          "votes": []
-        }
-      ],
-      "createdAt": 1590425444759,
-      "id": "R6jCNYO"
-    },
-    {
-      "status": "active",
-      "title": "",
-      "description": "",
-      "creator": "",
-      "options": [
-        {
-          "value": 0,
-          "description": "Yes",
-          "votes": [
-            {
-              "voter": "0x3852c4498b329627dd47a587d0de63860313524e"
-            }
-          ]
-        },
-        {
-          "value": 1,
-          "description": "No",
-          "votes": []
-        }
-      ],
-      "createdAt": 1590425477069,
-      "id": "N4NlqAr"
-    },
-    {
-      "status": "active",
-      "title": "",
-      "description": "",
-      "creator": "",
-      "options": [
-        {
-          "value": 0,
-          "description": "Yes",
-          "votes": [
-            {
-              "voter": "0x3852c4498b329627dd47a587d0de63860313524e"
-            }
-          ]
-        },
-        {
-          "value": 1,
-          "description": "No",
-          "votes": []
-        }
-      ],
-      "createdAt": 1590425961781,
-      "id": "4flzay1"
-    },
-    {
-      "status": "active",
-      "title": "",
-      "description": "",
-      "creator": "",
-      "options": [
-        {
-          "value": 0,
-          "description": "Yes",
-          "votes": [
-            {
-              "voter": "0x3852c4498b329627dd47a587d0de63860313524e"
-            }
-          ]
-        },
-        {
-          "value": 1,
-          "description": "No",
-          "votes": []
-        }
-      ],
-      "createdAt": 1590425963418,
-      "id": "nb29kft"
-    },
-    {
-      "status": "active",
-      "title": "",
-      "description": "",
-      "creator": "",
-      "options": [
-        {
-          "value": 0,
-          "description": "Yes",
-          "votes": [
-            {
-              "voter": "0x3852c4498b329627dd47a587d0de63860313524e"
-            }
-          ]
-        },
-        {
-          "value": 1,
-          "description": "No",
-          "votes": []
-        }
-      ],
-      "createdAt": 1590505436982,
-      "id": "wVt3mTH"
-    },
-    {
-      "status": "active",
-      "title": "",
-      "description": "",
-      "creator": "",
-      "options": [
-        {
-          "value": 0,
-          "description": "Yes",
-          "votes": [
-            {
-              "voter": "0x3852c4498b329627dd47a587d0de63860313524e"
-            }
-          ]
-        },
-        {
-          "value": 1,
-          "description": "No",
-          "votes": []
-        }
-      ],
-      "createdAt": 1590505458760,
-      "id": "sH34x-f"
-    },
-    {
+      "creator": "0x3852c4498b329627dd47a587d0de63860313524e",
       "status": "ended",
-      "title": "",
-      "description": "",
-      "creator": "",
-      "options": [
-        {
-          "value": 0,
-          "description": "Yes",
-          "votes": [
-            {
-              "voter": "0x3852c4498b329627dd47a587d0de63860313524e"
-            }
-          ]
-        },
-        {
-          "value": 1,
-          "description": "No",
-          "votes": []
-        }
-      ],
-      "endsAt": 1590505624000,
-      "createdAt": 1590505555980,
-      "id": "2L94tTB"
+      "endsAt": 1591651213945,
+      "settings": {
+        "ageRequirement": "",
+        "statusRequirement": "",
+        "isStatusWeighted": false
+      },
+      "createdAt": 1591651155160,
+      "id": "tm3bZWK"
     },
     {
+      "options": [
+        {
+          "votes": [
+            {
+              "address": "0x3852c4498b329627dd47a587d0de63860313524e",
+              "status": "HUMAN",
+              "age": 9
+            },
+            {
+              "address": "0x3b264ce7beaac6408c77e9f080508a55f7451d75",
+              "status": "HUMAN",
+              "age": 12
+            },
+            {
+              "address": "0x199e9e12885ab3aaa1dddf9f76c48014ba7860f0",
+              "status": "HUMAN",
+              "age": 9
+            },
+            {
+              "address": "0x03378fc1ebddfce2cc75cbf602e3285320b91cbd",
+              "status": "HUMAN",
+              "age": 44
+            },
+            {
+              "address": "0x3ef05f183e7fe1356159a0b929c5d33e4d89d7f9",
+              "status": "HUMAN",
+              "age": 30
+            },
+            {
+              "address": "0x49a6bce5255ffd7977dfe2e9f944d41bdf250384",
+              "status": "NEWBIE",
+              "age": 2
+            },
+            {
+              "address": "0xbe680bfe5c14a7e63060e875541ca0bed110f382",
+              "status": "NEWBIE",
+              "age": 2
+            },
+            {
+              "address": "0x422e2aa5bca28454e8a0bc161e84f306bf764631",
+              "status": "HUMAN",
+              "age": 10
+            },
+            {
+              "address": "0xa1bdc2f3de4908ee464f8695448c3f4390111d26",
+              "status": "HUMAN",
+              "age": 7
+            },
+            {
+              "address": "0x81baa5bae43d0bf590bbe881e2dc4942a00b657a",
+              "status": "VERIFIED",
+              "age": 20
+            },
+            {
+              "address": "0x8fcdecbc11f06c4a4a20c96f26570327952c521c",
+              "status": "HUMAN",
+              "age": 46
+            },
+            {
+              "address": "0xa80f02f0f21fe8b0631a5f8c7c906b8ffe797af5",
+              "status": "HUMAN",
+              "age": 5
+            },
+            {
+              "address": "0x8f620001097e84469edf964485e7381df6c6fc9f",
+              "status": "UNDEFINED",
+              "age": 0
+            },
+            {
+              "address": "0x1c701fe566888d5c1cb8a7317b00a96ba95a3eb8",
+              "status": "VERIFIED",
+              "age": 5
+            },
+            {
+              "address": "0x7438f9508fa39a144a0e81f233eaadaf90ba9212",
+              "status": "HUMAN",
+              "age": 10
+            },
+            {
+              "address": "0x9a00f25b769bc6dd53adae94c26092948f6e436d",
+              "status": "VERIFIED",
+              "age": 16
+            },
+            {
+              "address": "0x4ae59825651d492134fc67ed1dd459e4f006cf93",
+              "status": "NEWBIE",
+              "age": 2
+            },
+            {
+              "address": "0x3a6295e3574cb63c9e4ebba5558377da9d957b9d",
+              "status": "HUMAN",
+              "age": 9
+            },
+            {
+              "address": "0xfb67157a70307908a9766526939d901f6f151a60",
+              "status": "VERIFIED",
+              "age": 9
+            },
+            {
+              "address": "0xd270ff0e68a47faf8b13ff1a419819c39ee9f829",
+              "status": "HUMAN",
+              "age": 6
+            },
+            {
+              "address": "0x75e460f68a5d423cd6eaf768f8f687ec1985ad76",
+              "status": "NEWBIE",
+              "age": 2
+            },
+            {
+              "address": "0x4b04555bd57c3fdc35724d50415501b5c7b838b8",
+              "status": "HUMAN",
+              "age": 9
+            },
+            {
+              "address": "0xf2aa6822ab360d8c272e379c55e3dd9c8df243e4",
+              "status": "NEWBIE",
+              "age": 2
+            },
+            {
+              "address": "0xdcee6cbd08810c5f3ca984ce2e135ec3678cbaaa",
+              "status": "NEWBIE",
+              "age": 1
+            },
+            {
+              "address": "0x480b82dfc93a4460b10213f142e1e8144d647a2b",
+              "status": "HUMAN",
+              "age": 4
+            },
+            {
+              "address": "0x8616d84e10dc3298699ecedfef208867337c9b44",
+              "status": "HUMAN",
+              "age": 23
+            },
+            {
+              "address": "0xb0f90a830f49ff5ca504fe7cb7d7a33f546dd89f",
+              "status": "HUMAN",
+              "age": 12
+            }
+          ],
+          "description": "It's cool!",
+          "value": "0"
+        },
+        {
+          "votes": [
+            {
+              "address": "0x52dfb4babbf413a48e3daff85c2e1a3506cbc858",
+              "status": "NEWBIE",
+              "age": 2
+            },
+            {
+              "address": "0xc393c1a6a5291f115a962745ce5d87a68cc62065",
+              "status": "HUMAN",
+              "age": 23
+            },
+            {
+              "address": "0xd66d9f1b26f6dcc10e776159d0ff220f2b09ec45",
+              "status": "NEWBIE",
+              "age": 2
+            },
+            {
+              "address": "0x55ef8152de3d91c36943409f06dceb6191e741eb",
+              "status": "HUMAN",
+              "age": 7
+            },
+            {
+              "address": "0xac2160b08940cd30ebf7c2e7938cb4a78687cd0a",
+              "status": "VERIFIED",
+              "age": 6
+            },
+            {
+              "address": "0xb30348813590e02907da79e1c46fba4edca5a2d8",
+              "status": "HUMAN",
+              "age": 8
+            },
+            {
+              "address": "0xd719595a848b7709ff60c3f4f4642456de589789",
+              "status": "NEWBIE",
+              "age": 2
+            }
+          ],
+          "description": "Eh, could be better",
+          "value": "1"
+        },
+        {
+          "votes": [],
+          "description": "Boooring",
+          "value": "2"
+        }
+      ],
+      "title": "What do you think of IdenaPoll?",
+      "description": "Your opinion on this website!",
+      "creator": "0x3b264ce7beaac6408c77e9f080508a55f7451d75",
       "status": "ended",
-      "title": "",
-      "description": "",
-      "creator": "",
-      "options": [
-        {
-          "value": 0,
-          "description": "Yes",
-          "votes": [
-            {
-              "voter": "0x3852c4498b329627dd47a587d0de63860313524e"
-            }
-          ]
-        },
-        {
-          "value": 1,
-          "description": "No",
-          "votes": []
-        }
-      ],
-      "endsAt": 1590505624000,
-      "createdAt": 1590510928085,
-      "id": "SxT_ALH"
+      "endsAt": 1592256677543,
+      "settings": {
+        "ageRequirement": "",
+        "statusRequirement": "",
+        "isStatusWeighted": false
+      },
+      "createdAt": 1591651878333,
+      "id": "I57kYfC"
     },
     {
+      "options": [
+        {
+          "votes": [
+            {
+              "address": "0x3ef05f183e7fe1356159a0b929c5d33e4d89d7f9",
+              "status": "HUMAN",
+              "age": 30
+            },
+            {
+              "address": "0x03378fc1ebddfce2cc75cbf602e3285320b91cbd",
+              "status": "HUMAN",
+              "age": 45
+            },
+            {
+              "address": "0x81baa5bae43d0bf590bbe881e2dc4942a00b657a",
+              "status": "VERIFIED",
+              "age": 20
+            },
+            {
+              "address": "0x8fcdecbc11f06c4a4a20c96f26570327952c521c",
+              "status": "HUMAN",
+              "age": 46
+            }
+          ],
+          "description": "Margherita (tomatoes + mozzarella)",
+          "value": "0"
+        },
+        {
+          "votes": [
+            {
+              "address": "0x3852c4498b329627dd47a587d0de63860313524e",
+              "status": "HUMAN",
+              "age": 10
+            }
+          ],
+          "description": "Diavola (margherita + pepperoni)",
+          "value": "1"
+        },
+        {
+          "votes": [],
+          "description": "Marinara (only tomatoes + oregano)",
+          "value": "2"
+        },
+        {
+          "votes": [],
+          "description": "Hawaii (margherita + ananas + ham)",
+          "value": "3"
+        }
+      ],
+      "title": "What's your favourite Pizza?",
+      "description": "Pizza is a savory dish of Italian origin consisting of a usually round, flattened base of leavened wheat-based dough topped with tomatoes, cheese, and often various other ingredients (such as anchovies, mushrooms, onions, olives, pineapple, meat, etc.) which is then baked at a high temperature, traditionally in a wood-fired oven.",
+      "creator": "0x3b264ce7beaac6408c77e9f080508a55f7451d75",
       "status": "ended",
-      "title": "",
-      "description": "",
-      "creator": "",
-      "options": [
-        {
-          "value": 0,
-          "description": "Yes",
-          "votes": [
-            {
-              "voter": "0x3852c4498b329627dd47a587d0de63860313524e"
-            }
-          ]
-        },
-        {
-          "value": 1,
-          "description": "No",
-          "votes": []
-        }
-      ],
-      "endsAt": 1590505624000,
-      "createdAt": 1590512349790,
-      "id": "-Ae819j"
+      "endsAt": 1592256949431,
+      "settings": {
+        "ageRequirement": "10",
+        "statusRequirement": "VERIFIED",
+        "isStatusWeighted": true,
+        "newbieWeight": null,
+        "verifiedWeight": "1",
+        "humanWeight": "2"
+      },
+      "createdAt": 1591652150269,
+      "id": "nr4ggi9"
     },
     {
+      "options": [
+        {
+          "votes": [],
+          "description": "yes",
+          "value": "0"
+        },
+        {
+          "votes": [
+            {
+              "address": "0x3852c4498b329627dd47a587d0de63860313524e",
+              "status": "HUMAN",
+              "age": 9
+            }
+          ],
+          "description": "no",
+          "value": "1"
+        }
+      ],
+      "title": "Will Idena reach Pickles prediction of $.01?",
+      "description": "",
+      "creator": "0x03378fc1ebddfce2cc75cbf602e3285320b91cbd",
       "status": "ended",
-      "title": "",
-      "description": "",
-      "creator": "",
+      "endsAt": 1591663854328,
+      "settings": {
+        "ageRequirement": "3",
+        "statusRequirement": "NEWBIE",
+        "isStatusWeighted": false
+      },
+      "createdAt": 1591656654889,
+      "id": "LVjbI7h"
+    },
+    {
       "options": [
         {
-          "value": 0,
-          "description": "Yes",
           "votes": [
             {
-              "voter": "0x3852c4498b329627dd47a587d0de63860313524e"
+              "address": "0x422e2aa5bca28454e8a0bc161e84f306bf764631",
+              "status": "HUMAN",
+              "age": 10
+            },
+            {
+              "address": "0x8fcdecbc11f06c4a4a20c96f26570327952c521c",
+              "status": "HUMAN",
+              "age": 46
             }
-          ]
+          ],
+          "description": "They're plebs!",
+          "value": "0"
         },
         {
-          "value": 1,
-          "description": "No",
-          "votes": []
+          "votes": [
+            {
+              "address": "0x3852c4498b329627dd47a587d0de63860313524e",
+              "status": "HUMAN",
+              "age": 10
+            },
+            {
+              "address": "0xa1bdc2f3de4908ee464f8695448c3f4390111d26",
+              "status": "HUMAN",
+              "age": 7
+            },
+            {
+              "address": "0x668fdcf5b34d048f1c55f7f21b2a34ea267e170b",
+              "status": "HUMAN",
+              "age": 8
+            },
+            {
+              "address": "0xc393c1a6a5291f115a962745ce5d87a68cc62065",
+              "status": "HUMAN",
+              "age": 23
+            }
+          ],
+          "description": "They're alright... i guess",
+          "value": "1"
+        },
+        {
+          "votes": [
+            {
+              "address": "0x3b264ce7beaac6408c77e9f080508a55f7451d75",
+              "status": "HUMAN",
+              "age": 13
+            },
+            {
+              "address": "0x03378fc1ebddfce2cc75cbf602e3285320b91cbd",
+              "status": "HUMAN",
+              "age": 45
+            },
+            {
+              "address": "0x3ef05f183e7fe1356159a0b929c5d33e4d89d7f9",
+              "status": "HUMAN",
+              "age": 31
+            },
+            {
+              "address": "0x3a6295e3574cb63c9e4ebba5558377da9d957b9d",
+              "status": "HUMAN",
+              "age": 9
+            },
+            {
+              "address": "0xd270ff0e68a47faf8b13ff1a419819c39ee9f829",
+              "status": "HUMAN",
+              "age": 6
+            }
+          ],
+          "description": "They're the same as us <3",
+          "value": "2"
         }
       ],
-      "endsAt": 1590505624000,
-      "createdAt": 1590593931574,
-      "id": "F4hx-mJ"
+      "title": "Humans, what do you think of Verified and Newbies?",
+      "description": "Your opinion on our lower ranked friends",
+      "creator": "0x3b264ce7beaac6408c77e9f080508a55f7451d75",
+      "status": "ended",
+      "endsAt": 1591990867043,
+      "settings": {
+        "ageRequirement": "",
+        "statusRequirement": "HUMAN",
+        "isStatusWeighted": false
+      },
+      "createdAt": 1591731667936,
+      "id": "wa7WqSv"
     },
     {
-      "createdAt": 1590594208317,
-      "id": "vxZbuJV"
+      "options": [
+        {
+          "votes": [
+            {
+              "address": "0x8fcdecbc11f06c4a4a20c96f26570327952c521c",
+              "status": "HUMAN",
+              "age": 46
+            },
+            {
+              "address": "0x03378fc1ebddfce2cc75cbf602e3285320b91cbd",
+              "status": "HUMAN",
+              "age": 45
+            },
+            {
+              "address": "0x422e2aa5bca28454e8a0bc161e84f306bf764631",
+              "status": "HUMAN",
+              "age": 10
+            }
+          ],
+          "description": "Yes",
+          "value": "0"
+        },
+        {
+          "votes": [
+            {
+              "address": "0xa1bdc2f3de4908ee464f8695448c3f4390111d26",
+              "status": "HUMAN",
+              "age": 7
+            },
+            {
+              "address": "0x3ef05f183e7fe1356159a0b929c5d33e4d89d7f9",
+              "status": "HUMAN",
+              "age": 31
+            }
+          ],
+          "description": "Yes",
+          "value": "1"
+        }
+      ],
+      "title": "Kick Schweins?",
+      "description": "",
+      "creator": "0x422e2aa5bca28454e8a0bc161e84f306bf764631",
+      "status": "ended",
+      "endsAt": 1592405879086,
+      "settings": {
+        "ageRequirement": "",
+        "statusRequirement": "HUMAN",
+        "isStatusWeighted": false
+      },
+      "createdAt": 1591801079694,
+      "id": "3KdGOkv"
     },
     {
-      "createdAt": 1590594260760,
-      "id": "pwSPPsG"
+      "options": [
+        {
+          "votes": [
+            {
+              "address": "0xc393c1a6a5291f115a962745ce5d87a68cc62065",
+              "status": "HUMAN",
+              "age": 23
+            },
+            {
+              "address": "0x49a6bce5255ffd7977dfe2e9f944d41bdf250384",
+              "status": "VERIFIED",
+              "age": 3
+            },
+            {
+              "address": "0xd270ff0e68a47faf8b13ff1a419819c39ee9f829",
+              "status": "HUMAN",
+              "age": 6
+            },
+            {
+              "address": "0x6441a8bd80415329695ee60012053ebabb06e77a",
+              "status": "HUMAN",
+              "age": 24
+            },
+            {
+              "address": "0x71aeccf81bd641cbc3d1b77638f1213de704a70c",
+              "status": "NEWBIE",
+              "age": 1
+            }
+          ],
+          "description": "$1",
+          "value": "0"
+        },
+        {
+          "votes": [
+            {
+              "address": "0xa1bdc2f3de4908ee464f8695448c3f4390111d26",
+              "status": "HUMAN",
+              "age": 7
+            },
+            {
+              "address": "0x9a00f25b769bc6dd53adae94c26092948f6e436d",
+              "status": "VERIFIED",
+              "age": 16
+            },
+            {
+              "address": "0x7189bfc8fd12fd42ce122a5819bfa249a1b30780",
+              "status": "HUMAN",
+              "age": 6
+            },
+            {
+              "address": "0x3852c4498b329627dd47a587d0de63860313524e",
+              "status": "HUMAN",
+              "age": 10
+            },
+            {
+              "address": "0x55ef8152de3d91c36943409f06dceb6191e741eb",
+              "status": "HUMAN",
+              "age": 7
+            },
+            {
+              "address": "0xac2160b08940cd30ebf7c2e7938cb4a78687cd0a",
+              "status": "VERIFIED",
+              "age": 6
+            },
+            {
+              "address": "0x4b04555bd57c3fdc35724d50415501b5c7b838b8",
+              "status": "HUMAN",
+              "age": 9
+            },
+            {
+              "address": "0xdcee6cbd08810c5f3ca984ce2e135ec3678cbaaa",
+              "status": "NEWBIE",
+              "age": 1
+            },
+            {
+              "address": "0xd719595a848b7709ff60c3f4f4642456de589789",
+              "status": "NEWBIE",
+              "age": 2
+            },
+            {
+              "address": "0x8616d84e10dc3298699ecedfef208867337c9b44",
+              "status": "HUMAN",
+              "age": 23
+            },
+            {
+              "address": "0xb0f90a830f49ff5ca504fe7cb7d7a33f546dd89f",
+              "status": "HUMAN",
+              "age": 12
+            }
+          ],
+          "description": "$0.5",
+          "value": "1"
+        },
+        {
+          "votes": [
+            {
+              "address": "0xdb99408da8abf681e57f67348c9c470ce6295a2d",
+              "status": "VERIFIED",
+              "age": 4
+            },
+            {
+              "address": "0xd66d9f1b26f6dcc10e776159d0ff220f2b09ec45",
+              "status": "NEWBIE",
+              "age": 2
+            },
+            {
+              "address": "0x9c217c519f5f1f12439d83d5e832e18969284d74",
+              "status": "NEWBIE",
+              "age": 1
+            },
+            {
+              "address": "0x75e460f68a5d423cd6eaf768f8f687ec1985ad76",
+              "status": "NEWBIE",
+              "age": 2
+            },
+            {
+              "address": "0x7fed46920352c1e7276d3562a4d0f699a17cf357",
+              "status": "NEWBIE",
+              "age": 2
+            },
+            {
+              "address": "0x5b5e6607418dda1293ca8691b7fb5d821180ca8c",
+              "status": "NEWBIE",
+              "age": 2
+            }
+          ],
+          "description": "$0.1",
+          "value": "2"
+        },
+        {
+          "votes": [
+            {
+              "address": "0xd5fb90199e6a0f3044e6a86b244ff6c23b29cfbe",
+              "status": "HUMAN",
+              "age": 7
+            },
+            {
+              "address": "0x422e2aa5bca28454e8a0bc161e84f306bf764631",
+              "status": "HUMAN",
+              "age": 10
+            },
+            {
+              "address": "0x8fcdecbc11f06c4a4a20c96f26570327952c521c",
+              "status": "HUMAN",
+              "age": 46
+            },
+            {
+              "address": "0xfb57c047a583c4fc77cce4b98e20b70da554dbd2",
+              "status": "NEWBIE",
+              "age": 2
+            },
+            {
+              "address": "0xfb67157a70307908a9766526939d901f6f151a60",
+              "status": "VERIFIED",
+              "age": 9
+            }
+          ],
+          "description": "$0.0000001",
+          "value": "3"
+        },
+        {
+          "votes": [
+            {
+              "address": "0x03378fc1ebddfce2cc75cbf602e3285320b91cbd",
+              "status": "HUMAN",
+              "age": 45
+            },
+            {
+              "address": "0x3ef05f183e7fe1356159a0b929c5d33e4d89d7f9",
+              "status": "HUMAN",
+              "age": 31
+            },
+            {
+              "address": "0x668fdcf5b34d048f1c55f7f21b2a34ea267e170b",
+              "status": "HUMAN",
+              "age": 8
+            },
+            {
+              "address": "0x3a6295e3574cb63c9e4ebba5558377da9d957b9d",
+              "status": "HUMAN",
+              "age": 9
+            },
+            {
+              "address": "0x3b264ce7beaac6408c77e9f080508a55f7451d75",
+              "status": "HUMAN",
+              "age": 13
+            }
+          ],
+          "description": "MUN, LAMBO, MAKING IT",
+          "value": "4"
+        }
+      ],
+      "title": "DNA price at the End of Year 2020",
+      "description": "",
+      "creator": "0xa1bdc2f3de4908ee464f8695448c3f4390111d26",
+      "status": "ended",
+      "endsAt": 1592405968121,
+      "settings": {
+        "ageRequirement": "",
+        "statusRequirement": "NEWBIE",
+        "isStatusWeighted": true,
+        "newbieWeight": "1",
+        "verifiedWeight": "2",
+        "humanWeight": "3"
+      },
+      "createdAt": 1591801167560,
+      "id": "YQeWYZZ"
+    },
+    {
+      "options": [
+        {
+          "votes": [
+            {
+              "address": "0xd2deeb7fcfefcb070eaad945bad92c525872cf32",
+              "status": "HUMAN",
+              "age": 12
+            },
+            {
+              "address": "0x81baa5bae43d0bf590bbe881e2dc4942a00b657a",
+              "status": "VERIFIED",
+              "age": 20
+            },
+            {
+              "address": "0x1c701fe566888d5c1cb8a7317b00a96ba95a3eb8",
+              "status": "VERIFIED",
+              "age": 5
+            },
+            {
+              "address": "0xdcbb0b8592f36de284abcd93dbff7da9d9568418",
+              "status": "VERIFIED",
+              "age": 6
+            },
+            {
+              "address": "0x49a6bce5255ffd7977dfe2e9f944d41bdf250384",
+              "status": "VERIFIED",
+              "age": 3
+            },
+            {
+              "address": "0xc221d3baf2752279fc22dfea873336f4cd434f8a",
+              "status": "NEWBIE",
+              "age": 1
+            },
+            {
+              "address": "0xb0f90a830f49ff5ca504fe7cb7d7a33f546dd89f",
+              "status": "HUMAN",
+              "age": 12
+            },
+            {
+              "address": "0x71aeccf81bd641cbc3d1b77638f1213de704a70c",
+              "status": "NEWBIE",
+              "age": 1
+            },
+            {
+              "address": "0xb2e28beae564b111b6ccbaa067136ee55e762d11",
+              "status": "HUMAN",
+              "age": 7
+            },
+            {
+              "address": "0xf2aa6822ab360d8c272e379c55e3dd9c8df243e4",
+              "status": "NEWBIE",
+              "age": 2
+            },
+            {
+              "address": "0xe1888c1196ac323a1efdceeaa365bbfe397cf430",
+              "status": "VERIFIED",
+              "age": 4
+            },
+            {
+              "address": "0xf040f7547988582845ec491a9bf6c3034d8a132a",
+              "status": "NEWBIE",
+              "age": 1
+            },
+            {
+              "address": "0xd719595a848b7709ff60c3f4f4642456de589789",
+              "status": "NEWBIE",
+              "age": 2
+            },
+            {
+              "address": "0xbc5119a19f2182edca4ce2f3510e63726c22b938",
+              "status": "VERIFIED",
+              "age": 6
+            },
+            {
+              "address": "0x4219036f3da9786d694ffb14452fbee9a84c66ee",
+              "status": "VERIFIED",
+              "age": 5
+            },
+            {
+              "address": "0x8b9b911c325b800509afff7208ec944a9861659a",
+              "status": "VERIFIED",
+              "age": 3
+            },
+            {
+              "address": "0x9134c321d983ce257691c380c3294750c9cddd9f",
+              "status": "VERIFIED",
+              "age": 3
+            },
+            {
+              "address": "0x628fe4244641e6a718311156ff7e9ab34e8d285d",
+              "status": "HUMAN",
+              "age": 7
+            },
+            {
+              "address": "0xa65456c85bfe4e08f24265df3b3f6bf357fa3e26",
+              "status": "VERIFIED",
+              "age": 3
+            },
+            {
+              "address": "0xfa6985f682697f3cc04d29a657a93196b6e6b411",
+              "status": "VERIFIED",
+              "age": 10
+            },
+            {
+              "address": "0x1effe69fa5d4bcb0b2ef8bf6bb08a889617742e7",
+              "status": "NEWBIE",
+              "age": 2
+            },
+            {
+              "address": "0x73afa2880496bd87587c246b3894aa1f24ebe8ed",
+              "status": "NEWBIE",
+              "age": 2
+            },
+            {
+              "address": "0x920eea18ba8d31074004856c4cfe94c8c05a87ce",
+              "status": "HUMAN",
+              "age": 13
+            },
+            {
+              "address": "0x150ac333bfb2c31f05fd5e1e84ca0ac967000e41",
+              "status": "HUMAN",
+              "age": 9
+            },
+            {
+              "address": "0xd7a2969b358dc29b52850b96fbd463bcd5df467f",
+              "status": "VERIFIED",
+              "age": 4
+            },
+            {
+              "address": "0xf6fef4dea318e1120fed9b00ad60928aa4898077",
+              "status": "HUMAN",
+              "age": 31
+            },
+            {
+              "address": "0x45e8a3ce92d1549a14612f91b666db65e13306ad",
+              "status": "NEWBIE",
+              "age": 2
+            },
+            {
+              "address": "0xd0d84a3d71b7813711770fd0d8d03ead392f3388",
+              "status": "HUMAN",
+              "age": 5
+            },
+            {
+              "address": "0xa135a667e9c86ef84ae5aa53c1601309dbf68c11",
+              "status": "NEWBIE",
+              "age": 1
+            }
+          ],
+          "description": "Rioda de Janeiro",
+          "value": "0"
+        },
+        {
+          "votes": [
+            {
+              "address": "0xa1bdc2f3de4908ee464f8695448c3f4390111d26",
+              "status": "HUMAN",
+              "age": 7
+            },
+            {
+              "address": "0x0da3c0937abc722e28096857372b601a4d2dd900",
+              "status": "NEWBIE",
+              "age": 1
+            }
+          ],
+          "description": "Angry Reborn",
+          "value": "1"
+        },
+        {
+          "votes": [
+            {
+              "address": "0x03378fc1ebddfce2cc75cbf602e3285320b91cbd",
+              "status": "HUMAN",
+              "age": 45
+            },
+            {
+              "address": "0x3ef05f183e7fe1356159a0b929c5d33e4d89d7f9",
+              "status": "HUMAN",
+              "age": 31
+            },
+            {
+              "address": "0x3a6295e3574cb63c9e4ebba5558377da9d957b9d",
+              "status": "HUMAN",
+              "age": 9
+            },
+            {
+              "address": "0xac2160b08940cd30ebf7c2e7938cb4a78687cd0a",
+              "status": "VERIFIED",
+              "age": 6
+            },
+            {
+              "address": "0xd270ff0e68a47faf8b13ff1a419819c39ee9f829",
+              "status": "HUMAN",
+              "age": 6
+            },
+            {
+              "address": "0x8616d84e10dc3298699ecedfef208867337c9b44",
+              "status": "HUMAN",
+              "age": 23
+            },
+            {
+              "address": "0x4790da821172b4848d931c09e34696a4a7006b2b",
+              "status": "HUMAN",
+              "age": 8
+            },
+            {
+              "address": "0xbb81edb317d833ef5c4ce236e6e1d0802449525e",
+              "status": "NEWBIE",
+              "age": 2
+            },
+            {
+              "address": "0xc02aae5d3c26a18a28b8fb62979d340b35e056f2",
+              "status": "HUMAN",
+              "age": 11
+            },
+            {
+              "address": "0xeb127673feead704d72645c487556c8a2d354f20",
+              "status": "NEWBIE",
+              "age": 2
+            },
+            {
+              "address": "0x52dfb4babbf413a48e3daff85c2e1a3506cbc858",
+              "status": "VERIFIED",
+              "age": 3
+            },
+            {
+              "address": "0x732844d48d18b513ba259d78e1fb48ebddd9c367",
+              "status": "NEWBIE",
+              "age": 2
+            },
+            {
+              "address": "0xb2a3cce6146c88d7b2149a052bafa9e72af862c2",
+              "status": "HUMAN",
+              "age": 8
+            },
+            {
+              "address": "0x50d6ceb18b82e34a39c946c9db695d6847a6054a",
+              "status": "HUMAN",
+              "age": 8
+            },
+            {
+              "address": "0x6441a8bd80415329695ee60012053ebabb06e77a",
+              "status": "HUMAN",
+              "age": 25
+            },
+            {
+              "address": "0xf40cd2a2672e89ccdb8964319e698e42ff5d0e69",
+              "status": "HUMAN",
+              "age": 10
+            }
+          ],
+          "description": "Sexi Animals",
+          "value": "2"
+        },
+        {
+          "votes": [
+            {
+              "address": "0x668fdcf5b34d048f1c55f7f21b2a34ea267e170b",
+              "status": "HUMAN",
+              "age": 8
+            },
+            {
+              "address": "0x92ab3627cfe74def8d9381373226ab28cba69328",
+              "status": "VERIFIED",
+              "age": 16
+            },
+            {
+              "address": "0xe5b0688210588ea7bef5274b17b495bf30a1e3d7",
+              "status": "NEWBIE",
+              "age": 1
+            },
+            {
+              "address": "0xbb36ae1aadea9d51e262b8be39361f12526696db",
+              "status": "VERIFIED",
+              "age": 3
+            }
+          ],
+          "description": "Leo Cornelius the Almighty",
+          "value": "3"
+        },
+        {
+          "votes": [
+            {
+              "address": "0x422e2aa5bca28454e8a0bc161e84f306bf764631",
+              "status": "HUMAN",
+              "age": 10
+            },
+            {
+              "address": "0x8fcdecbc11f06c4a4a20c96f26570327952c521c",
+              "status": "HUMAN",
+              "age": 46
+            },
+            {
+              "address": "0x118cccc609795cc3dbcfa3511e763f33180e8e77",
+              "status": "VERIFIED",
+              "age": 5
+            },
+            {
+              "address": "0xa80f02f0f21fe8b0631a5f8c7c906b8ffe797af5",
+              "status": "HUMAN",
+              "age": 5
+            },
+            {
+              "address": "0xc8d363254a33296b9a5534ff082a845ad5730450",
+              "status": "HUMAN",
+              "age": 11
+            },
+            {
+              "address": "0x407f3b02ece16e232bfe15eac80e7f6e68177609",
+              "status": "HUMAN",
+              "age": 15
+            },
+            {
+              "address": "0xbdd480fe2446257b2e782b660f6207b50a7d26fa",
+              "status": "VERIFIED",
+              "age": 6
+            },
+            {
+              "address": "0xd8814bc3949912f2b6adde1b593f80485455068c",
+              "status": "HUMAN",
+              "age": 9
+            },
+            {
+              "address": "0xdb8b4d6e6608d82de4c10ab60dc50886ff432a73",
+              "status": "VERIFIED",
+              "age": 3
+            },
+            {
+              "address": "0x361343c214705bb10d312ac3327d6abbb7712d3f",
+              "status": "NEWBIE",
+              "age": 1
+            }
+          ],
+          "description": "All suck",
+          "value": "4"
+        }
+      ],
+      "title": "Favorite Admin ?",
+      "description": "",
+      "creator": "0x3ef05f183e7fe1356159a0b929c5d33e4d89d7f9",
+      "status": "ended",
+      "endsAt": 1593529202737,
+      "settings": {
+        "ageRequirement": "",
+        "statusRequirement": "NEWBIE",
+        "isStatusWeighted": false
+      },
+      "createdAt": 1591801203481,
+      "id": "a7Lmmnc"
+    },
+    {
+      "options": [
+        {
+          "votes": [
+            {
+              "address": "0x668fdcf5b34d048f1c55f7f21b2a34ea267e170b",
+              "status": "HUMAN",
+              "age": 8
+            },
+            {
+              "address": "0x422e2aa5bca28454e8a0bc161e84f306bf764631",
+              "status": "HUMAN",
+              "age": 10
+            },
+            {
+              "address": "0x1c701fe566888d5c1cb8a7317b00a96ba95a3eb8",
+              "status": "VERIFIED",
+              "age": 5
+            },
+            {
+              "address": "0xdcbb0b8592f36de284abcd93dbff7da9d9568418",
+              "status": "VERIFIED",
+              "age": 6
+            }
+          ],
+          "description": "Yes",
+          "value": "0"
+        },
+        {
+          "votes": [],
+          "description": "Yes",
+          "value": "1"
+        }
+      ],
+      "title": "does Krucifer like men?",
+      "description": "devil =  🏳️‍🌈???",
+      "creator": "0x668fdcf5b34d048f1c55f7f21b2a34ea267e170b",
+      "status": "ended",
+      "endsAt": 1591887890002,
+      "settings": {
+        "ageRequirement": "",
+        "statusRequirement": "VERIFIED",
+        "isStatusWeighted": false
+      },
+      "createdAt": 1591801490511,
+      "id": "k5GutwT"
+    },
+    {
+      "options": [
+        {
+          "votes": [],
+          "description": "PooP",
+          "value": "0"
+        },
+        {
+          "votes": [
+            {
+              "address": "0x1c701fe566888d5c1cb8a7317b00a96ba95a3eb8",
+              "status": "VERIFIED",
+              "age": 5
+            },
+            {
+              "address": "0xdcbb0b8592f36de284abcd93dbff7da9d9568418",
+              "status": "VERIFIED",
+              "age": 6
+            },
+            {
+              "address": "0x668fdcf5b34d048f1c55f7f21b2a34ea267e170b",
+              "status": "HUMAN",
+              "age": 8
+            },
+            {
+              "address": "0x422e2aa5bca28454e8a0bc161e84f306bf764631",
+              "status": "HUMAN",
+              "age": 10
+            }
+          ],
+          "description": "Krucifer",
+          "value": "1"
+        },
+        {
+          "votes": [],
+          "description": "Dusko",
+          "value": "2"
+        }
+      ],
+      "title": "Who is the gayest Idena Prime?",
+      "description": "",
+      "creator": "0x1c701fe566888d5c1cb8a7317b00a96ba95a3eb8",
+      "status": "ended",
+      "endsAt": 1592061167767,
+      "settings": {
+        "ageRequirement": "",
+        "statusRequirement": "",
+        "isStatusWeighted": false
+      },
+      "createdAt": 1591801968887,
+      "id": "WAHRzwp"
+    },
+    {
+      "options": [
+        {
+          "votes": [
+            {
+              "address": "0x422e2aa5bca28454e8a0bc161e84f306bf764631",
+              "status": "HUMAN",
+              "age": 10
+            }
+          ],
+          "description": "Fiat money my fellow boomer",
+          "value": "0"
+        },
+        {
+          "votes": [
+            {
+              "address": "0xa1bdc2f3de4908ee464f8695448c3f4390111d26",
+              "status": "HUMAN",
+              "age": 7
+            },
+            {
+              "address": "0xa80f02f0f21fe8b0631a5f8c7c906b8ffe797af5",
+              "status": "HUMAN",
+              "age": 5
+            },
+            {
+              "address": "0xc393c1a6a5291f115a962745ce5d87a68cc62065",
+              "status": "HUMAN",
+              "age": 23
+            },
+            {
+              "address": "0xbe680bfe5c14a7e63060e875541ca0bed110f382",
+              "status": "NEWBIE",
+              "age": 2
+            },
+            {
+              "address": "0xd66d9f1b26f6dcc10e776159d0ff220f2b09ec45",
+              "status": "NEWBIE",
+              "age": 2
+            },
+            {
+              "address": "0x3a6295e3574cb63c9e4ebba5558377da9d957b9d",
+              "status": "HUMAN",
+              "age": 9
+            },
+            {
+              "address": "0x55ef8152de3d91c36943409f06dceb6191e741eb",
+              "status": "HUMAN",
+              "age": 7
+            },
+            {
+              "address": "0x49a6bce5255ffd7977dfe2e9f944d41bdf250384",
+              "status": "VERIFIED",
+              "age": 3
+            },
+            {
+              "address": "0xac2160b08940cd30ebf7c2e7938cb4a78687cd0a",
+              "status": "VERIFIED",
+              "age": 6
+            },
+            {
+              "address": "0xd270ff0e68a47faf8b13ff1a419819c39ee9f829",
+              "status": "HUMAN",
+              "age": 6
+            },
+            {
+              "address": "0xd719595a848b7709ff60c3f4f4642456de589789",
+              "status": "NEWBIE",
+              "age": 2
+            },
+            {
+              "address": "0x92ab3627cfe74def8d9381373226ab28cba69328",
+              "status": "VERIFIED",
+              "age": 16
+            }
+          ],
+          "description": "Cryptocurrencies my fellow zoomer",
+          "value": "1"
+        },
+        {
+          "votes": [
+            {
+              "address": "0x668fdcf5b34d048f1c55f7f21b2a34ea267e170b",
+              "status": "HUMAN",
+              "age": 8
+            },
+            {
+              "address": "0x1c701fe566888d5c1cb8a7317b00a96ba95a3eb8",
+              "status": "VERIFIED",
+              "age": 5
+            },
+            {
+              "address": "0x3b264ce7beaac6408c77e9f080508a55f7451d75",
+              "status": "HUMAN",
+              "age": 13
+            },
+            {
+              "address": "0xa519d50a8dddbaad0f7613e9711e01f684f9c713",
+              "status": "NEWBIE",
+              "age": 2
+            }
+          ],
+          "description": "Stop talking about money you goyim",
+          "value": "2"
+        },
+        {
+          "votes": [
+            {
+              "address": "0x5b5e6607418dda1293ca8691b7fb5d821180ca8c",
+              "status": "NEWBIE",
+              "age": 2
+            }
+          ],
+          "description": "I think money should be abolished",
+          "value": "3"
+        }
+      ],
+      "title": "Do you have more faith in fiat money or cryptocurrencies?",
+      "description": "",
+      "creator": "0xa80f02f0f21fe8b0631a5f8c7c906b8ffe797af5",
+      "status": "ended",
+      "endsAt": 1592407674297,
+      "settings": {
+        "ageRequirement": "",
+        "statusRequirement": "",
+        "isStatusWeighted": false
+      },
+      "createdAt": 1591802875460,
+      "id": "Eg8ie2O"
+    },
+    {
+      "options": [
+        {
+          "votes": [
+            {
+              "address": "0x668fdcf5b34d048f1c55f7f21b2a34ea267e170b",
+              "status": "HUMAN",
+              "age": 8
+            },
+            {
+              "address": "0xc393c1a6a5291f115a962745ce5d87a68cc62065",
+              "status": "HUMAN",
+              "age": 23
+            },
+            {
+              "address": "0xbe680bfe5c14a7e63060e875541ca0bed110f382",
+              "status": "NEWBIE",
+              "age": 2
+            },
+            {
+              "address": "0x3ef05f183e7fe1356159a0b929c5d33e4d89d7f9",
+              "status": "HUMAN",
+              "age": 31
+            },
+            {
+              "address": "0x49a6bce5255ffd7977dfe2e9f944d41bdf250384",
+              "status": "VERIFIED",
+              "age": 3
+            },
+            {
+              "address": "0xd270ff0e68a47faf8b13ff1a419819c39ee9f829",
+              "status": "HUMAN",
+              "age": 6
+            },
+            {
+              "address": "0x75e460f68a5d423cd6eaf768f8f687ec1985ad76",
+              "status": "NEWBIE",
+              "age": 2
+            },
+            {
+              "address": "0xd719595a848b7709ff60c3f4f4642456de589789",
+              "status": "NEWBIE",
+              "age": 2
+            },
+            {
+              "address": "0x8616d84e10dc3298699ecedfef208867337c9b44",
+              "status": "HUMAN",
+              "age": 23
+            },
+            {
+              "address": "0x3b264ce7beaac6408c77e9f080508a55f7451d75",
+              "status": "HUMAN",
+              "age": 13
+            }
+          ],
+          "description": "Yes",
+          "value": "0"
+        },
+        {
+          "votes": [
+            {
+              "address": "0x1c701fe566888d5c1cb8a7317b00a96ba95a3eb8",
+              "status": "VERIFIED",
+              "age": 5
+            },
+            {
+              "address": "0xa80f02f0f21fe8b0631a5f8c7c906b8ffe797af5",
+              "status": "HUMAN",
+              "age": 5
+            },
+            {
+              "address": "0x03378fc1ebddfce2cc75cbf602e3285320b91cbd",
+              "status": "HUMAN",
+              "age": 45
+            },
+            {
+              "address": "0x422e2aa5bca28454e8a0bc161e84f306bf764631",
+              "status": "HUMAN",
+              "age": 10
+            },
+            {
+              "address": "0xac2160b08940cd30ebf7c2e7938cb4a78687cd0a",
+              "status": "VERIFIED",
+              "age": 6
+            }
+          ],
+          "description": "N0",
+          "value": "1"
+        }
+      ],
+      "title": "Should reported Flips be removed for short session?",
+      "description": "By being removed people can end with only 2 flips counting, or even 0. They may die by only missing 1 flip or by not having 1 flip count in the session. ",
+      "creator": "0x1c701fe566888d5c1cb8a7317b00a96ba95a3eb8",
+      "status": "ended",
+      "endsAt": 1592235027862,
+      "settings": {
+        "ageRequirement": "",
+        "statusRequirement": "NEWBIE",
+        "isStatusWeighted": false
+      },
+      "createdAt": 1591803028946,
+      "id": "Hu_zqyR"
+    },
+    {
+      "options": [
+        {
+          "votes": [
+            {
+              "address": "0xa1bdc2f3de4908ee464f8695448c3f4390111d26",
+              "status": "HUMAN",
+              "age": 7
+            },
+            {
+              "address": "0xd270ff0e68a47faf8b13ff1a419819c39ee9f829",
+              "status": "HUMAN",
+              "age": 6
+            }
+          ],
+          "description": "Yes",
+          "value": "0"
+        },
+        {
+          "votes": [
+            {
+              "address": "0x422e2aa5bca28454e8a0bc161e84f306bf764631",
+              "status": "HUMAN",
+              "age": 10
+            },
+            {
+              "address": "0x668fdcf5b34d048f1c55f7f21b2a34ea267e170b",
+              "status": "HUMAN",
+              "age": 8
+            },
+            {
+              "address": "0xa80f02f0f21fe8b0631a5f8c7c906b8ffe797af5",
+              "status": "HUMAN",
+              "age": 5
+            }
+          ],
+          "description": "No",
+          "value": "1"
+        }
+      ],
+      "title": "Should Newbies and Verified be allowed to make polls?",
+      "description": "",
+      "creator": "0x422e2aa5bca28454e8a0bc161e84f306bf764631",
+      "status": "ended",
+      "endsAt": 1592407834176,
+      "settings": {
+        "ageRequirement": "",
+        "statusRequirement": "HUMAN",
+        "isStatusWeighted": false
+      },
+      "createdAt": 1591803034730,
+      "id": "XquMbt5"
+    },
+    {
+      "options": [
+        {
+          "votes": [
+            {
+              "address": "0x1c701fe566888d5c1cb8a7317b00a96ba95a3eb8",
+              "status": "VERIFIED",
+              "age": 5
+            },
+            {
+              "address": "0x422e2aa5bca28454e8a0bc161e84f306bf764631",
+              "status": "HUMAN",
+              "age": 10
+            },
+            {
+              "address": "0x668fdcf5b34d048f1c55f7f21b2a34ea267e170b",
+              "status": "HUMAN",
+              "age": 8
+            }
+          ],
+          "description": "YES",
+          "value": "0"
+        },
+        {
+          "votes": [
+            {
+              "address": "0xd270ff0e68a47faf8b13ff1a419819c39ee9f829",
+              "status": "HUMAN",
+              "age": 6
+            }
+          ],
+          "description": "YES",
+          "value": "1"
+        }
+      ],
+      "title": "BAN LEMOE",
+      "description": "HE RACISM AND PIGS",
+      "creator": "0x1c701fe566888d5c1cb8a7317b00a96ba95a3eb8",
+      "status": "ended",
+      "endsAt": 1592407932221,
+      "settings": {
+        "ageRequirement": "",
+        "statusRequirement": "",
+        "isStatusWeighted": false
+      },
+      "createdAt": 1591803133253,
+      "id": "9I-aH9D"
+    },
+    {
+      "options": [
+        {
+          "votes": [
+            {
+              "address": "0xa1bdc2f3de4908ee464f8695448c3f4390111d26",
+              "status": "HUMAN",
+              "age": 7
+            },
+            {
+              "address": "0xd270ff0e68a47faf8b13ff1a419819c39ee9f829",
+              "status": "HUMAN",
+              "age": 6
+            },
+            {
+              "address": "0xf2aa6822ab360d8c272e379c55e3dd9c8df243e4",
+              "status": "NEWBIE",
+              "age": 2
+            }
+          ],
+          "description": "Star Wars",
+          "value": "0"
+        },
+        {
+          "votes": [],
+          "description": "Star Trek",
+          "value": "1"
+        },
+        {
+          "votes": [
+            {
+              "address": "0x668fdcf5b34d048f1c55f7f21b2a34ea267e170b",
+              "status": "HUMAN",
+              "age": 8
+            }
+          ],
+          "description": "Both",
+          "value": "2"
+        },
+        {
+          "votes": [],
+          "description": "Neither",
+          "value": "3"
+        }
+      ],
+      "title": "Star Wars or Star Trek?",
+      "description": "👱 or 🖖? ",
+      "creator": "0x668fdcf5b34d048f1c55f7f21b2a34ea267e170b",
+      "status": "ended",
+      "endsAt": 1592410694894,
+      "settings": {
+        "ageRequirement": "",
+        "statusRequirement": "NEWBIE",
+        "isStatusWeighted": true,
+        "newbieWeight": "1",
+        "verifiedWeight": "2",
+        "humanWeight": "3"
+      },
+      "createdAt": 1591805895752,
+      "id": "PnrL9Tn"
+    },
+    {
+      "options": [
+        {
+          "votes": [
+            {
+              "address": "0x3ef05f183e7fe1356159a0b929c5d33e4d89d7f9",
+              "status": "HUMAN",
+              "age": 31
+            },
+            {
+              "address": "0x8fcdecbc11f06c4a4a20c96f26570327952c521c",
+              "status": "HUMAN",
+              "age": 46
+            },
+            {
+              "address": "0xd270ff0e68a47faf8b13ff1a419819c39ee9f829",
+              "status": "HUMAN",
+              "age": 6
+            },
+            {
+              "address": "0xe5b0688210588ea7bef5274b17b495bf30a1e3d7",
+              "status": "NEWBIE",
+              "age": 1
+            },
+            {
+              "address": "0x732844d48d18b513ba259d78e1fb48ebddd9c367",
+              "status": "NEWBIE",
+              "age": 2
+            },
+            {
+              "address": "0xe94c36c56359d456bface416e50db7202fbbfb06",
+              "status": "HUMAN",
+              "age": 7
+            },
+            {
+              "address": "0x452ea25440bd4a551b101abca0802778c45eb8b7",
+              "status": "HUMAN",
+              "age": 9
+            },
+            {
+              "address": "0xfa3a2a23bd0406ff5502bab8abd76cb0a6c2f210",
+              "status": "HUMAN",
+              "age": 7
+            }
+          ],
+          "description": "I Agree, 1 bad, 1 good flip in the long session",
+          "value": "0"
+        },
+        {
+          "votes": [
+            {
+              "address": "0xa1bdc2f3de4908ee464f8695448c3f4390111d26",
+              "status": "HUMAN",
+              "age": 7
+            },
+            {
+              "address": "0x49a6bce5255ffd7977dfe2e9f944d41bdf250384",
+              "status": "VERIFIED",
+              "age": 3
+            },
+            {
+              "address": "0x4790da821172b4848d931c09e34696a4a7006b2b",
+              "status": "HUMAN",
+              "age": 8
+            },
+            {
+              "address": "0x9ae02f7f7643f686a003df4ae4998d1af45b11f9",
+              "status": "HUMAN",
+              "age": 5
+            },
+            {
+              "address": "0x8ecddd1aaa86fcfc0c51120777c1c820ca4eb9be",
+              "status": "HUMAN",
+              "age": 8
+            },
+            {
+              "address": "0x92ac512f156c713022bf87fad544f46c5d5acf77",
+              "status": "NEWBIE",
+              "age": 1
+            },
+            {
+              "address": "0xbc5119a19f2182edca4ce2f3510e63726c22b938",
+              "status": "VERIFIED",
+              "age": 6
+            },
+            {
+              "address": "0x0da3c0937abc722e28096857372b601a4d2dd900",
+              "status": "NEWBIE",
+              "age": 1
+            },
+            {
+              "address": "0x4219036f3da9786d694ffb14452fbee9a84c66ee",
+              "status": "VERIFIED",
+              "age": 5
+            },
+            {
+              "address": "0xb874396fe68b31a177df81c20e9bc50d448142a9",
+              "status": "VERIFIED",
+              "age": 3
+            },
+            {
+              "address": "0x1ac912b0f0bce4157d8e349ec988cc4e7fb8944e",
+              "status": "NEWBIE",
+              "age": 2
+            },
+            {
+              "address": "0x9f3f50ef563a15b5f602fd0b5bea66a7ce9acc00",
+              "status": "HUMAN",
+              "age": 7
+            },
+            {
+              "address": "0xc8d363254a33296b9a5534ff082a845ad5730450",
+              "status": "HUMAN",
+              "age": 11
+            },
+            {
+              "address": "0x407f3b02ece16e232bfe15eac80e7f6e68177609",
+              "status": "HUMAN",
+              "age": 15
+            },
+            {
+              "address": "0x8c6364058c306e2ee3390614af66bf3851a8a122",
+              "status": "NEWBIE",
+              "age": 2
+            },
+            {
+              "address": "0xbdd480fe2446257b2e782b660f6207b50a7d26fa",
+              "status": "VERIFIED",
+              "age": 6
+            },
+            {
+              "address": "0x1effe69fa5d4bcb0b2ef8bf6bb08a889617742e7",
+              "status": "NEWBIE",
+              "age": 2
+            },
+            {
+              "address": "0x8950fe09ed22aa36f1c6820df612370268e77463",
+              "status": "HUMAN",
+              "age": 31
+            },
+            {
+              "address": "0xdd63f8c081986ee007b40e7ebd66877aea90ee4e",
+              "status": "HUMAN",
+              "age": 29
+            },
+            {
+              "address": "0x150ac333bfb2c31f05fd5e1e84ca0ac967000e41",
+              "status": "HUMAN",
+              "age": 9
+            },
+            {
+              "address": "0xd7a2969b358dc29b52850b96fbd463bcd5df467f",
+              "status": "VERIFIED",
+              "age": 4
+            },
+            {
+              "address": "0x7334f46899d125067736acd57e584e279b60115e",
+              "status": "NEWBIE",
+              "age": 1
+            },
+            {
+              "address": "0xa78fc87b6c78aa54ebfd857fed9ee11e08e38788",
+              "status": "HUMAN",
+              "age": 10
+            },
+            {
+              "address": "0x6d32736b49d9364df8269928f456bda4466124d4",
+              "status": "NEWBIE",
+              "age": 1
+            },
+            {
+              "address": "0xd8814bc3949912f2b6adde1b593f80485455068c",
+              "status": "HUMAN",
+              "age": 9
+            }
+          ],
+          "description": "I Agree, 2 bad, 2 good flips in the long session",
+          "value": "1"
+        },
+        {
+          "votes": [
+            {
+              "address": "0x668fdcf5b34d048f1c55f7f21b2a34ea267e170b",
+              "status": "HUMAN",
+              "age": 8
+            },
+            {
+              "address": "0x422e2aa5bca28454e8a0bc161e84f306bf764631",
+              "status": "HUMAN",
+              "age": 10
+            },
+            {
+              "address": "0xa80f02f0f21fe8b0631a5f8c7c906b8ffe797af5",
+              "status": "HUMAN",
+              "age": 5
+            },
+            {
+              "address": "0x9a00f25b769bc6dd53adae94c26092948f6e436d",
+              "status": "VERIFIED",
+              "age": 16
+            },
+            {
+              "address": "0xd719595a848b7709ff60c3f4f4642456de589789",
+              "status": "NEWBIE",
+              "age": 2
+            },
+            {
+              "address": "0x20bc0dffe8ed066f057237f92a18d43bd36915cb",
+              "status": "HUMAN",
+              "age": 11
+            },
+            {
+              "address": "0x9db4518f2d34076ec590b71ba26a73ef45718874",
+              "status": "HUMAN",
+              "age": 31
+            },
+            {
+              "address": "0x39bba148d05c4e8fd6d11358cde72c8e43943fb4",
+              "status": "HUMAN",
+              "age": 35
+            },
+            {
+              "address": "0x9134c321d983ce257691c380c3294750c9cddd9f",
+              "status": "VERIFIED",
+              "age": 3
+            },
+            {
+              "address": "0xfa6985f682697f3cc04d29a657a93196b6e6b411",
+              "status": "VERIFIED",
+              "age": 10
+            },
+            {
+              "address": "0x9c217c519f5f1f12439d83d5e832e18969284d74",
+              "status": "NEWBIE",
+              "age": 2
+            },
+            {
+              "address": "0xf040f7547988582845ec491a9bf6c3034d8a132a",
+              "status": "NEWBIE",
+              "age": 2
+            }
+          ],
+          "description": "I Diagree",
+          "value": "2"
+        }
+      ],
+      "title": "Proposal to fix Report system abusal (Reporting all flips/Not reporting all flips)",
+      "description": "Get the least reported(=best) flips from the previous validation/s and add them to a long session. One or Two for each person. If a person reports this flip, he's considered an abuser of the system and his reports are not counted. Do the same with the worst flips (reuse, show 1 or 2 in long, if person does NOT report them - he is abuser). Pros: it fixes report abuse, doesn't require to create additional flips. Cons: reuses previously seen flips, reducing security (might be ok, since it's going to be only 2-4 flips in the long session)",
+      "creator": "0xa1bdc2f3de4908ee464f8695448c3f4390111d26",
+      "status": "ended",
+      "endsAt": 1593016407782,
+      "settings": {
+        "ageRequirement": "",
+        "statusRequirement": "NEWBIE",
+        "isStatusWeighted": true,
+        "newbieWeight": "1",
+        "verifiedWeight": "2",
+        "humanWeight": "3"
+      },
+      "createdAt": 1591806807197,
+      "id": "CBssCOl"
+    },
+    {
+      "options": [
+        {
+          "votes": [
+            {
+              "address": "0x422e2aa5bca28454e8a0bc161e84f306bf764631",
+              "status": "HUMAN",
+              "age": 10
+            }
+          ],
+          "description": "Yes, reported flips should count as correct for short session scoring. ",
+          "value": "0"
+        },
+        {
+          "votes": [
+            {
+              "address": "0x9a00f25b769bc6dd53adae94c26092948f6e436d",
+              "status": "VERIFIED",
+              "age": 16
+            },
+            {
+              "address": "0xa1bdc2f3de4908ee464f8695448c3f4390111d26",
+              "status": "HUMAN",
+              "age": 7
+            }
+          ],
+          "description": "No, reported flips should be removed from short session scoring.",
+          "value": "1"
+        }
+      ],
+      "title": "Should reported flips count as correct during the short session?",
+      "description": "If a flip is reported, it is removed from the short session scoring for anyone who received it. If a user gets a lot of bad flips in the short session and they are reported, their short session can be reduced to only a few flips. For example, if you received 4 reported flips in the short session, your short session score would be against the 2 remaining flips. To achieve the 60% score requirement in short session, you would be left in a situation where you needed to get both flips right or you would fail. This proposal would make any flips you receive in the short session that were reported count as a correct answer in the short session.",
+      "creator": "0x422e2aa5bca28454e8a0bc161e84f306bf764631",
+      "status": "ended",
+      "endsAt": 1592414656604,
+      "settings": {
+        "ageRequirement": "",
+        "statusRequirement": "",
+        "isStatusWeighted": false
+      },
+      "createdAt": 1591809857253,
+      "id": "uv02Og4"
+    },
+    {
+      "options": [
+        {
+          "votes": [
+            {
+              "address": "0x422e2aa5bca28454e8a0bc161e84f306bf764631",
+              "status": "HUMAN",
+              "age": 10
+            },
+            {
+              "address": "0xbe680bfe5c14a7e63060e875541ca0bed110f382",
+              "status": "NEWBIE",
+              "age": 2
+            },
+            {
+              "address": "0xfb57c047a583c4fc77cce4b98e20b70da554dbd2",
+              "status": "NEWBIE",
+              "age": 2
+            },
+            {
+              "address": "0x3a6295e3574cb63c9e4ebba5558377da9d957b9d",
+              "status": "HUMAN",
+              "age": 9
+            },
+            {
+              "address": "0x49a6bce5255ffd7977dfe2e9f944d41bdf250384",
+              "status": "VERIFIED",
+              "age": 3
+            },
+            {
+              "address": "0xd270ff0e68a47faf8b13ff1a419819c39ee9f829",
+              "status": "HUMAN",
+              "age": 6
+            },
+            {
+              "address": "0x3b264ce7beaac6408c77e9f080508a55f7451d75",
+              "status": "HUMAN",
+              "age": 13
+            }
+          ],
+          "description": "Yes",
+          "value": "0"
+        },
+        {
+          "votes": [
+            {
+              "address": "0x668fdcf5b34d048f1c55f7f21b2a34ea267e170b",
+              "status": "HUMAN",
+              "age": 8
+            }
+          ],
+          "description": "No",
+          "value": "1"
+        },
+        {
+          "votes": [
+            {
+              "address": "0x9a00f25b769bc6dd53adae94c26092948f6e436d",
+              "status": "VERIFIED",
+              "age": 16
+            },
+            {
+              "address": "0xa1bdc2f3de4908ee464f8695448c3f4390111d26",
+              "status": "HUMAN",
+              "age": 7
+            },
+            {
+              "address": "0x3456c46ada29e0ca62dc25873c333c47d39ef46f",
+              "status": "VERIFIED",
+              "age": 8
+            },
+            {
+              "address": "0x3ef05f183e7fe1356159a0b929c5d33e4d89d7f9",
+              "status": "HUMAN",
+              "age": 31
+            },
+            {
+              "address": "0x3852c4498b329627dd47a587d0de63860313524e",
+              "status": "HUMAN",
+              "age": 10
+            },
+            {
+              "address": "0xac2160b08940cd30ebf7c2e7938cb4a78687cd0a",
+              "status": "VERIFIED",
+              "age": 6
+            },
+            {
+              "address": "0xcab70c6b3197549080ff1e94fedb18c750b9ec90",
+              "status": "HUMAN",
+              "age": 42
+            },
+            {
+              "address": "0xdcee6cbd08810c5f3ca984ce2e135ec3678cbaaa",
+              "status": "NEWBIE",
+              "age": 1
+            }
+          ],
+          "description": "Yes, but needs changes or tweaks",
+          "value": "2"
+        }
+      ],
+      "title": "Alternate proposal to fix report system",
+      "description": "Add a DNA reward to the validation session for succesfully reporting a flip. By rewarding people for reporting poor flips, this will encourage reporting. To prevent abuse, limit the number of reports users are given per session (i.e. 3 reports per session). This will force people to use their reports wisely and target the \"low-hanging\" flips (sequential 1234 flips, flips which do not use either word, pornography). If a user does not receive any bad flips, they will either not use the reports, or they will report randomly which should not result in valid flips being reported succesfully. If a user gets many bad flips, they will target the worst flips. Ideally this will improve flip quality over time, making the bad flips rare, and an easy target for the report reward when they do show up.",
+      "creator": "0x422e2aa5bca28454e8a0bc161e84f306bf764631",
+      "status": "ended",
+      "endsAt": 1592415260147,
+      "settings": {
+        "ageRequirement": "",
+        "statusRequirement": "",
+        "isStatusWeighted": false
+      },
+      "createdAt": 1591810460801,
+      "id": "fuLeGTh"
+    },
+    {
+      "options": [
+        {
+          "votes": [
+            {
+              "address": "0x9a00f25b769bc6dd53adae94c26092948f6e436d",
+              "status": "VERIFIED",
+              "age": 16
+            },
+            {
+              "address": "0xbe680bfe5c14a7e63060e875541ca0bed110f382",
+              "status": "NEWBIE",
+              "age": 2
+            },
+            {
+              "address": "0xfb67157a70307908a9766526939d901f6f151a60",
+              "status": "VERIFIED",
+              "age": 9
+            },
+            {
+              "address": "0xa1bdc2f3de4908ee464f8695448c3f4390111d26",
+              "status": "HUMAN",
+              "age": 7
+            },
+            {
+              "address": "0x3ef05f183e7fe1356159a0b929c5d33e4d89d7f9",
+              "status": "HUMAN",
+              "age": 31
+            },
+            {
+              "address": "0x422e2aa5bca28454e8a0bc161e84f306bf764631",
+              "status": "HUMAN",
+              "age": 10
+            },
+            {
+              "address": "0xcab70c6b3197549080ff1e94fedb18c750b9ec90",
+              "status": "HUMAN",
+              "age": 42
+            },
+            {
+              "address": "0x199e9e12885ab3aaa1dddf9f76c48014ba7860f0",
+              "status": "HUMAN",
+              "age": 10
+            },
+            {
+              "address": "0x75e460f68a5d423cd6eaf768f8f687ec1985ad76",
+              "status": "NEWBIE",
+              "age": 2
+            },
+            {
+              "address": "0xdba3de99a3fa39755434cd7133291985b2149685",
+              "status": "HUMAN",
+              "age": 12
+            },
+            {
+              "address": "0xc221d3baf2752279fc22dfea873336f4cd434f8a",
+              "status": "NEWBIE",
+              "age": 1
+            },
+            {
+              "address": "0x3ae9580afd6577c64bfd6a830a2b62ceb4a6af38",
+              "status": "VERIFIED",
+              "age": 4
+            },
+            {
+              "address": "0x7fed46920352c1e7276d3562a4d0f699a17cf357",
+              "status": "NEWBIE",
+              "age": 2
+            },
+            {
+              "address": "0x4790da821172b4848d931c09e34696a4a7006b2b",
+              "status": "HUMAN",
+              "age": 8
+            }
+          ],
+          "description": "Yes",
+          "value": "0"
+        },
+        {
+          "votes": [
+            {
+              "address": "0xd719595a848b7709ff60c3f4f4642456de589789",
+              "status": "NEWBIE",
+              "age": 2
+            }
+          ],
+          "description": "No",
+          "value": "1"
+        },
+        {
+          "votes": [
+            {
+              "address": "0xd270ff0e68a47faf8b13ff1a419819c39ee9f829",
+              "status": "HUMAN",
+              "age": 6
+            },
+            {
+              "address": "0x4b04555bd57c3fdc35724d50415501b5c7b838b8",
+              "status": "HUMAN",
+              "age": 9
+            }
+          ],
+          "description": "Not sure",
+          "value": "2"
+        }
+      ],
+      "title": "Suggestion: low report barrier for a bad flip from 50.01% to 49.99%",
+      "description": "This thing will slightly improve quality of flips in the network",
+      "creator": "0x9a00f25b769bc6dd53adae94c26092948f6e436d",
+      "status": "ended",
+      "endsAt": 1592510705065,
+      "settings": {
+        "ageRequirement": "",
+        "statusRequirement": "NEWBIE",
+        "isStatusWeighted": false
+      },
+      "createdAt": 1591905905926,
+      "id": "4zh6jDo"
+    },
+    {
+      "options": [
+        {
+          "votes": [
+            {
+              "address": "0x9a00f25b769bc6dd53adae94c26092948f6e436d",
+              "status": "VERIFIED",
+              "age": 16
+            },
+            {
+              "address": "0xbe680bfe5c14a7e63060e875541ca0bed110f382",
+              "status": "NEWBIE",
+              "age": 2
+            },
+            {
+              "address": "0xdb99408da8abf681e57f67348c9c470ce6295a2d",
+              "status": "VERIFIED",
+              "age": 4
+            },
+            {
+              "address": "0x3ef05f183e7fe1356159a0b929c5d33e4d89d7f9",
+              "status": "HUMAN",
+              "age": 31
+            },
+            {
+              "address": "0xd270ff0e68a47faf8b13ff1a419819c39ee9f829",
+              "status": "HUMAN",
+              "age": 6
+            },
+            {
+              "address": "0x75e460f68a5d423cd6eaf768f8f687ec1985ad76",
+              "status": "NEWBIE",
+              "age": 2
+            },
+            {
+              "address": "0x4b04555bd57c3fdc35724d50415501b5c7b838b8",
+              "status": "HUMAN",
+              "age": 9
+            },
+            {
+              "address": "0xc221d3baf2752279fc22dfea873336f4cd434f8a",
+              "status": "NEWBIE",
+              "age": 1
+            },
+            {
+              "address": "0xd719595a848b7709ff60c3f4f4642456de589789",
+              "status": "NEWBIE",
+              "age": 2
+            },
+            {
+              "address": "0x3b264ce7beaac6408c77e9f080508a55f7451d75",
+              "status": "HUMAN",
+              "age": 13
+            },
+            {
+              "address": "0x3ae9580afd6577c64bfd6a830a2b62ceb4a6af38",
+              "status": "VERIFIED",
+              "age": 4
+            },
+            {
+              "address": "0xf2aa6822ab360d8c272e379c55e3dd9c8df243e4",
+              "status": "NEWBIE",
+              "age": 2
+            }
+          ],
+          "description": "Yes",
+          "value": "0"
+        },
+        {
+          "votes": [
+            {
+              "address": "0xa1bdc2f3de4908ee464f8695448c3f4390111d26",
+              "status": "HUMAN",
+              "age": 7
+            },
+            {
+              "address": "0x422e2aa5bca28454e8a0bc161e84f306bf764631",
+              "status": "HUMAN",
+              "age": 10
+            },
+            {
+              "address": "0xcab70c6b3197549080ff1e94fedb18c750b9ec90",
+              "status": "HUMAN",
+              "age": 42
+            },
+            {
+              "address": "0xdba3de99a3fa39755434cd7133291985b2149685",
+              "status": "HUMAN",
+              "age": 12
+            }
+          ],
+          "description": "No",
+          "value": "1"
+        },
+        {
+          "votes": [
+            {
+              "address": "0xac2160b08940cd30ebf7c2e7938cb4a78687cd0a",
+              "status": "VERIFIED",
+              "age": 6
+            },
+            {
+              "address": "0x4790da821172b4848d931c09e34696a4a7006b2b",
+              "status": "HUMAN",
+              "age": 8
+            }
+          ],
+          "description": "Not sure",
+          "value": "2"
+        }
+      ],
+      "title": "Financial stimulus for flips curation (i.e. reporting bad and only bad flips)",
+      "description": "For motivating people to take flips curation seriously we can enforce these rules:  If a flip is considered by a committee as a bad one and a member of this committee reported it then he gets a reward, otherwise the person doesn't get any reward. If a flip is considered by a committee as a good one and a member of this committee didn't report it then he gets a reward, otherwise the person doesn't get any reward.",
+      "creator": "0x9a00f25b769bc6dd53adae94c26092948f6e436d",
+      "status": "ended",
+      "endsAt": 1592511369946,
+      "settings": {
+        "ageRequirement": "",
+        "statusRequirement": "NEWBIE",
+        "isStatusWeighted": false
+      },
+      "createdAt": 1591906575916,
+      "id": "wtVXdM8"
+    },
+    {
+      "options": [
+        {
+          "votes": [
+            {
+              "address": "0xd270ff0e68a47faf8b13ff1a419819c39ee9f829",
+              "status": "HUMAN",
+              "age": 6
+            },
+            {
+              "address": "0x4790da821172b4848d931c09e34696a4a7006b2b",
+              "status": "HUMAN",
+              "age": 8
+            }
+          ],
+          "description": "Yes",
+          "value": "0"
+        },
+        {
+          "votes": [
+            {
+              "address": "0x9a00f25b769bc6dd53adae94c26092948f6e436d",
+              "status": "VERIFIED",
+              "age": 16
+            },
+            {
+              "address": "0xcab70c6b3197549080ff1e94fedb18c750b9ec90",
+              "status": "HUMAN",
+              "age": 42
+            },
+            {
+              "address": "0x4b04555bd57c3fdc35724d50415501b5c7b838b8",
+              "status": "HUMAN",
+              "age": 9
+            },
+            {
+              "address": "0xa1bdc2f3de4908ee464f8695448c3f4390111d26",
+              "status": "HUMAN",
+              "age": 7
+            },
+            {
+              "address": "0x3b264ce7beaac6408c77e9f080508a55f7451d75",
+              "status": "HUMAN",
+              "age": 13
+            },
+            {
+              "address": "0xb2e28beae564b111b6ccbaa067136ee55e762d11",
+              "status": "HUMAN",
+              "age": 7
+            }
+          ],
+          "description": "Nah",
+          "value": "1"
+        }
+      ],
+      "title": "Will DNA pass BTC in Total Market Cap?",
+      "description": "",
+      "creator": "0xd270ff0e68a47faf8b13ff1a419819c39ee9f829",
+      "status": "ended",
+      "endsAt": 1592546106870,
+      "settings": {
+        "ageRequirement": "",
+        "statusRequirement": "",
+        "isStatusWeighted": false
+      },
+      "createdAt": 1591941393019,
+      "id": "lqaekPy"
+    },
+    {
+      "options": [
+        {
+          "votes": [
+            {
+              "address": "0x03378fc1ebddfce2cc75cbf602e3285320b91cbd",
+              "status": "HUMAN",
+              "age": 45
+            },
+            {
+              "address": "0x3ef05f183e7fe1356159a0b929c5d33e4d89d7f9",
+              "status": "HUMAN",
+              "age": 31
+            },
+            {
+              "address": "0xd270ff0e68a47faf8b13ff1a419819c39ee9f829",
+              "status": "HUMAN",
+              "age": 6
+            },
+            {
+              "address": "0xd719595a848b7709ff60c3f4f4642456de589789",
+              "status": "NEWBIE",
+              "age": 2
+            }
+          ],
+          "description": "Yes, I want confirmation",
+          "value": "0"
+        },
+        {
+          "votes": [
+            {
+              "address": "0x3b264ce7beaac6408c77e9f080508a55f7451d75",
+              "status": "HUMAN",
+              "age": 13
+            }
+          ],
+          "description": "I don't mind / I don't care",
+          "value": "1"
+        },
+        {
+          "votes": [
+            {
+              "address": "0x3852c4498b329627dd47a587d0de63860313524e",
+              "status": "HUMAN",
+              "age": 10
+            },
+            {
+              "address": "0xa1bdc2f3de4908ee464f8695448c3f4390111d26",
+              "status": "HUMAN",
+              "age": 7
+            }
+          ],
+          "description": "No, it's faster as it is",
+          "value": "2"
+        }
+      ],
+      "title": "Would you like a \"confirm vote\" popup after submitting your vote on a Poll?",
+      "description": "We (IdenaPoll devs) got the suggestion of adding a \"confirm vote\" popup when voting, since votes are permanent and can't be changed. What do you think of this change?",
+      "creator": "0x3b264ce7beaac6408c77e9f080508a55f7451d75",
+      "status": "ended",
+      "endsAt": 1592060477956,
+      "settings": {
+        "ageRequirement": "",
+        "statusRequirement": "NEWBIE",
+        "isStatusWeighted": false
+      },
+      "createdAt": 1591974079662,
+      "id": "dYaaRvB"
+    },
+    {
+      "options": [
+        {
+          "votes": [
+            {
+              "address": "0xe1888c1196ac323a1efdceeaa365bbfe397cf430",
+              "status": "VERIFIED",
+              "age": 4
+            },
+            {
+              "address": "0xb2e28beae564b111b6ccbaa067136ee55e762d11",
+              "status": "HUMAN",
+              "age": 7
+            },
+            {
+              "address": "0xc8b00616cc0225c38a107b4003e2dd79683d7291",
+              "status": "NEWBIE",
+              "age": 1
+            }
+          ],
+          "description": "... worse",
+          "value": "0"
+        },
+        {
+          "votes": [
+            {
+              "address": "0x8616d84e10dc3298699ecedfef208867337c9b44",
+              "status": "HUMAN",
+              "age": 23
+            },
+            {
+              "address": "0x9a00f25b769bc6dd53adae94c26092948f6e436d",
+              "status": "VERIFIED",
+              "age": 16
+            }
+          ],
+          "description": "...better",
+          "value": "1"
+        },
+        {
+          "votes": [
+            {
+              "address": "0x4790da821172b4848d931c09e34696a4a7006b2b",
+              "status": "HUMAN",
+              "age": 8
+            },
+            {
+              "address": "0xe76db16f1cb739a25ad3d52e8b65bb21e925ff70",
+              "status": "HUMAN",
+              "age": 14
+            }
+          ],
+          "description": "...no change",
+          "value": "2"
+        }
+      ],
+      "title": "Corona made  my life...",
+      "description": "Is it all bad?",
+      "creator": "0x8616d84e10dc3298699ecedfef208867337c9b44",
+      "status": "ended",
+      "endsAt": 1592758771998,
+      "settings": {
+        "ageRequirement": "",
+        "statusRequirement": "NEWBIE",
+        "isStatusWeighted": false
+      },
+      "createdAt": 1592153972622,
+      "id": "mj5LwgE"
+    },
+    {
+      "options": [
+        {
+          "votes": [
+            {
+              "address": "0x8616d84e10dc3298699ecedfef208867337c9b44",
+              "status": "HUMAN",
+              "age": 23
+            },
+            {
+              "address": "0xf2aa6822ab360d8c272e379c55e3dd9c8df243e4",
+              "status": "NEWBIE",
+              "age": 2
+            },
+            {
+              "address": "0xe1888c1196ac323a1efdceeaa365bbfe397cf430",
+              "status": "VERIFIED",
+              "age": 4
+            },
+            {
+              "address": "0x92ab3627cfe74def8d9381373226ab28cba69328",
+              "status": "VERIFIED",
+              "age": 16
+            }
+          ],
+          "description": "First Time Miner",
+          "value": "0"
+        },
+        {
+          "votes": [
+            {
+              "address": "0x668fdcf5b34d048f1c55f7f21b2a34ea267e170b",
+              "status": "HUMAN",
+              "age": 8
+            },
+            {
+              "address": "0x4790da821172b4848d931c09e34696a4a7006b2b",
+              "status": "HUMAN",
+              "age": 8
+            }
+          ],
+          "description": "Mining Veteran",
+          "value": "1"
+        },
+        {
+          "votes": [
+            {
+              "address": "0x9a00f25b769bc6dd53adae94c26092948f6e436d",
+              "status": "VERIFIED",
+              "age": 16
+            },
+            {
+              "address": "0x3b264ce7beaac6408c77e9f080508a55f7451d75",
+              "status": "HUMAN",
+              "age": 13
+            },
+            {
+              "address": "0xa1bdc2f3de4908ee464f8695448c3f4390111d26",
+              "status": "HUMAN",
+              "age": 7
+            },
+            {
+              "address": "0x3ef05f183e7fe1356159a0b929c5d33e4d89d7f9",
+              "status": "HUMAN",
+              "age": 31
+            }
+          ],
+          "description": "Some experience",
+          "value": "2"
+        },
+        {
+          "votes": [],
+          "description": "What is mining?",
+          "value": "3"
+        }
+      ],
+      "title": "What is your mining experience?",
+      "description": "How experienced are you?",
+      "creator": "0x8616d84e10dc3298699ecedfef208867337c9b44",
+      "status": "ended",
+      "endsAt": 1592758950907,
+      "settings": {
+        "ageRequirement": "",
+        "statusRequirement": "NEWBIE",
+        "isStatusWeighted": false
+      },
+      "createdAt": 1592154151372,
+      "id": "qgVPOaq"
+    },
+    {
+      "options": [
+        {
+          "votes": [
+            {
+              "address": "0xbe680bfe5c14a7e63060e875541ca0bed110f382",
+              "status": "NEWBIE",
+              "age": 2
+            },
+            {
+              "address": "0x92ab3627cfe74def8d9381373226ab28cba69328",
+              "status": "VERIFIED",
+              "age": 16
+            },
+            {
+              "address": "0xf2aa6822ab360d8c272e379c55e3dd9c8df243e4",
+              "status": "NEWBIE",
+              "age": 2
+            },
+            {
+              "address": "0x4790da821172b4848d931c09e34696a4a7006b2b",
+              "status": "HUMAN",
+              "age": 8
+            }
+          ],
+          "description": "Expanding profile page",
+          "value": "0"
+        },
+        {
+          "votes": [
+            {
+              "address": "0x3ef05f183e7fe1356159a0b929c5d33e4d89d7f9",
+              "status": "HUMAN",
+              "age": 31
+            },
+            {
+              "address": "0x03378fc1ebddfce2cc75cbf602e3285320b91cbd",
+              "status": "HUMAN",
+              "age": 45
+            },
+            {
+              "address": "0xb2e28beae564b111b6ccbaa067136ee55e762d11",
+              "status": "HUMAN",
+              "age": 7
+            },
+            {
+              "address": "0xe76db16f1cb739a25ad3d52e8b65bb21e925ff70",
+              "status": "HUMAN",
+              "age": 14
+            }
+          ],
+          "description": "Add more Poll Options",
+          "value": "1"
+        },
+        {
+          "votes": [
+            {
+              "address": "0x3b264ce7beaac6408c77e9f080508a55f7451d75",
+              "status": "HUMAN",
+              "age": 13
+            },
+            {
+              "address": "0x151aa1f0cf55c071b48c99f30e252f41dacf3e47",
+              "status": "HUMAN",
+              "age": 9
+            },
+            {
+              "address": "0xf040f7547988582845ec491a9bf6c3034d8a132a",
+              "status": "NEWBIE",
+              "age": 1
+            }
+          ],
+          "description": "Dark Mode",
+          "value": "2"
+        },
+        {
+          "votes": [
+            {
+              "address": "0xa519d50a8dddbaad0f7613e9711e01f684f9c713",
+              "status": "NEWBIE",
+              "age": 2
+            },
+            {
+              "address": "0x9a00f25b769bc6dd53adae94c26092948f6e436d",
+              "status": "VERIFIED",
+              "age": 16
+            },
+            {
+              "address": "0xfcfede8accbc4547baa17b99597b00aac500d517",
+              "status": "VERIFIED",
+              "age": 4
+            }
+          ],
+          "description": "Adding tags for easier searching",
+          "value": "3"
+        }
+      ],
+      "title": "What's would you like to see next in IdenaPoll?",
+      "description": "Give us your feedback on what would you like to see next on this website!",
+      "creator": "0x3b264ce7beaac6408c77e9f080508a55f7451d75",
+      "status": "ended",
+      "endsAt": 1592590762872,
+      "settings": {
+        "ageRequirement": null,
+        "statusRequirement": "",
+        "isStatusWeighted": false
+      },
+      "createdAt": 1592331563787,
+      "id": "NoFs0kL"
+    },
+    {
+      "options": [
+        {
+          "votes": [
+            {
+              "address": "0xb2e28beae564b111b6ccbaa067136ee55e762d11",
+              "status": "HUMAN",
+              "age": 7
+            },
+            {
+              "address": "0x4790da821172b4848d931c09e34696a4a7006b2b",
+              "status": "HUMAN",
+              "age": 8
+            }
+          ],
+          "description": "Yes",
+          "value": "0"
+        },
+        {
+          "votes": [],
+          "description": "No",
+          "value": "1"
+        },
+        {
+          "votes": [
+            {
+              "address": "0x3ef05f183e7fe1356159a0b929c5d33e4d89d7f9",
+              "status": "HUMAN",
+              "age": 31
+            },
+            {
+              "address": "0xe76db16f1cb739a25ad3d52e8b65bb21e925ff70",
+              "status": "HUMAN",
+              "age": 14
+            }
+          ],
+          "description": "Maybe",
+          "value": "2"
+        }
+      ],
+      "title": "is schweins brazilian?",
+      "description": "is mr. schweins brazileiro",
+      "creator": "0xb2e28beae564b111b6ccbaa067136ee55e762d11",
+      "status": "ended",
+      "endsAt": 1592595075932,
+      "settings": {
+        "ageRequirement": "",
+        "statusRequirement": "",
+        "isStatusWeighted": false
+      },
+      "createdAt": 1592422276765,
+      "id": "vmOwgtt"
+    },
+    {
+      "options": [
+        {
+          "votes": [
+            {
+              "address": "0x9a00f25b769bc6dd53adae94c26092948f6e436d",
+              "status": "VERIFIED",
+              "age": 16
+            },
+            {
+              "address": "0xbc5119a19f2182edca4ce2f3510e63726c22b938",
+              "status": "VERIFIED",
+              "age": 6
+            },
+            {
+              "address": "0xb874396fe68b31a177df81c20e9bc50d448142a9",
+              "status": "VERIFIED",
+              "age": 3
+            },
+            {
+              "address": "0xfefcb59477e1d301f7d0a63004c147a71635df53",
+              "status": "HUMAN",
+              "age": 23
+            },
+            {
+              "address": "0x3e4d168d7fcda3cd9723bb0772d9eb2c99218409",
+              "status": "NEWBIE",
+              "age": 1
+            },
+            {
+              "address": "0xe5b0688210588ea7bef5274b17b495bf30a1e3d7",
+              "status": "NEWBIE",
+              "age": 1
+            },
+            {
+              "address": "0xc8d363254a33296b9a5534ff082a845ad5730450",
+              "status": "HUMAN",
+              "age": 11
+            },
+            {
+              "address": "0x407f3b02ece16e232bfe15eac80e7f6e68177609",
+              "status": "HUMAN",
+              "age": 15
+            },
+            {
+              "address": "0xbdd480fe2446257b2e782b660f6207b50a7d26fa",
+              "status": "VERIFIED",
+              "age": 6
+            },
+            {
+              "address": "0xb2a3cce6146c88d7b2149a052bafa9e72af862c2",
+              "status": "HUMAN",
+              "age": 8
+            },
+            {
+              "address": "0x1effe69fa5d4bcb0b2ef8bf6bb08a889617742e7",
+              "status": "NEWBIE",
+              "age": 2
+            },
+            {
+              "address": "0xdd63f8c081986ee007b40e7ebd66877aea90ee4e",
+              "status": "HUMAN",
+              "age": 29
+            },
+            {
+              "address": "0xf040f7547988582845ec491a9bf6c3034d8a132a",
+              "status": "NEWBIE",
+              "age": 2
+            },
+            {
+              "address": "0xa05b8649bb615252b487832d31a26180583b2c1d",
+              "status": "VERIFIED",
+              "age": 3
+            },
+            {
+              "address": "0x327052020a4ac8d42ab5c88c0d239a1c4ebddd6d",
+              "status": "NEWBIE",
+              "age": 1
+            },
+            {
+              "address": "0x45e8a3ce92d1549a14612f91b666db65e13306ad",
+              "status": "NEWBIE",
+              "age": 2
+            },
+            {
+              "address": "0xa135a667e9c86ef84ae5aa53c1601309dbf68c11",
+              "status": "NEWBIE",
+              "age": 1
+            }
+          ],
+          "description": "Yes, useful feature",
+          "value": "0"
+        },
+        {
+          "votes": [
+            {
+              "address": "0x9db4518f2d34076ec590b71ba26a73ef45718874",
+              "status": "HUMAN",
+              "age": 31
+            },
+            {
+              "address": "0x20bc0dffe8ed066f057237f92a18d43bd36915cb",
+              "status": "HUMAN",
+              "age": 11
+            },
+            {
+              "address": "0x0da3c0937abc722e28096857372b601a4d2dd900",
+              "status": "NEWBIE",
+              "age": 1
+            },
+            {
+              "address": "0x4219036f3da9786d694ffb14452fbee9a84c66ee",
+              "status": "VERIFIED",
+              "age": 5
+            },
+            {
+              "address": "0x49a6bce5255ffd7977dfe2e9f944d41bdf250384",
+              "status": "VERIFIED",
+              "age": 4
+            },
+            {
+              "address": "0xfa6985f682697f3cc04d29a657a93196b6e6b411",
+              "status": "VERIFIED",
+              "age": 10
+            }
+          ],
+          "description": "No, this won't work",
+          "value": "1"
+        },
+        {
+          "votes": [
+            {
+              "address": "0x39bba148d05c4e8fd6d11358cde72c8e43943fb4",
+              "status": "HUMAN",
+              "age": 35
+            },
+            {
+              "address": "0xdcee6cbd08810c5f3ca984ce2e135ec3678cbaaa",
+              "status": "NEWBIE",
+              "age": 2
+            },
+            {
+              "address": "0x50d6ceb18b82e34a39c946c9db695d6847a6054a",
+              "status": "HUMAN",
+              "age": 8
+            },
+            {
+              "address": "0xd8814bc3949912f2b6adde1b593f80485455068c",
+              "status": "HUMAN",
+              "age": 9
+            }
+          ],
+          "description": "Not sure",
+          "value": "2"
+        }
+      ],
+      "title": "Add peers sharing function",
+      "description": "This supposedly will help newcomers to get connected right before validation sessions. See here full description: https://github.com/idena-network/idena-desktop/issues/340",
+      "creator": "0x9a00f25b769bc6dd53adae94c26092948f6e436d",
+      "status": "ended",
+      "endsAt": 1593436775478,
+      "settings": {
+        "ageRequirement": "",
+        "statusRequirement": "NEWBIE",
+        "isStatusWeighted": false
+      },
+      "createdAt": 1592831976277,
+      "id": "BzKrdmr"
+    },
+    {
+      "options": [
+        {
+          "votes": [
+            {
+              "address": "0x03378fc1ebddfce2cc75cbf602e3285320b91cbd",
+              "status": "HUMAN",
+              "age": 46
+            },
+            {
+              "address": "0x422e2aa5bca28454e8a0bc161e84f306bf764631",
+              "status": "HUMAN",
+              "age": 11
+            },
+            {
+              "address": "0x3ef05f183e7fe1356159a0b929c5d33e4d89d7f9",
+              "status": "HUMAN",
+              "age": 32
+            },
+            {
+              "address": "0xeb127673feead704d72645c487556c8a2d354f20",
+              "status": "NEWBIE",
+              "age": 2
+            },
+            {
+              "address": "0x92ac512f156c713022bf87fad544f46c5d5acf77",
+              "status": "NEWBIE",
+              "age": 1
+            },
+            {
+              "address": "0x7189bfc8fd12fd42ce122a5819bfa249a1b30780",
+              "status": "HUMAN",
+              "age": 7
+            },
+            {
+              "address": "0x9a00f25b769bc6dd53adae94c26092948f6e436d",
+              "status": "VERIFIED",
+              "age": 17
+            },
+            {
+              "address": "0xdb99408da8abf681e57f67348c9c470ce6295a2d",
+              "status": "HUMAN",
+              "age": 5
+            },
+            {
+              "address": "0x199e9e12885ab3aaa1dddf9f76c48014ba7860f0",
+              "status": "HUMAN",
+              "age": 11
+            },
+            {
+              "address": "0x8fcdecbc11f06c4a4a20c96f26570327952c521c",
+              "status": "HUMAN",
+              "age": 47
+            },
+            {
+              "address": "0x9c60a55403b18d7c26bdbf70e8540f517ef3016e",
+              "status": "HUMAN",
+              "age": 24
+            },
+            {
+              "address": "0xf2b4f700d2975abd39000587f9788f66afedf691",
+              "status": "VERIFIED",
+              "age": 14
+            },
+            {
+              "address": "0xf648083c42434a29bd1f993ed8bbcac0196c24b5",
+              "status": "HUMAN",
+              "age": 6
+            },
+            {
+              "address": "0xfefcb59477e1d301f7d0a63004c147a71635df53",
+              "status": "HUMAN",
+              "age": 23
+            },
+            {
+              "address": "0x628fe4244641e6a718311156ff7e9ab34e8d285d",
+              "status": "HUMAN",
+              "age": 7
+            },
+            {
+              "address": "0x668fdcf5b34d048f1c55f7f21b2a34ea267e170b",
+              "status": "HUMAN",
+              "age": 9
+            },
+            {
+              "address": "0xbfa8599063d44ad8213031bd7c5771378cb94cce",
+              "status": "NEWBIE",
+              "age": 2
+            },
+            {
+              "address": "0x3381ccc154d35effafbe6d3fbc78296a43e14d9f",
+              "status": "NEWBIE",
+              "age": 1
+            },
+            {
+              "address": "0x920eea18ba8d31074004856c4cfe94c8c05a87ce",
+              "status": "HUMAN",
+              "age": 13
+            },
+            {
+              "address": "0xdba3de99a3fa39755434cd7133291985b2149685",
+              "status": "HUMAN",
+              "age": 13
+            },
+            {
+              "address": "0x8950fe09ed22aa36f1c6820df612370268e77463",
+              "status": "HUMAN",
+              "age": 31
+            },
+            {
+              "address": "0xdd63f8c081986ee007b40e7ebd66877aea90ee4e",
+              "status": "HUMAN",
+              "age": 29
+            },
+            {
+              "address": "0x5dca941571c74171e70e1c0e6cacdbe427be9503",
+              "status": "HUMAN",
+              "age": 7
+            },
+            {
+              "address": "0x50d6ceb18b82e34a39c946c9db695d6847a6054a",
+              "status": "HUMAN",
+              "age": 8
+            },
+            {
+              "address": "0x6c8e83eaaf379424145e982713dfa60bd431fa4a",
+              "status": "VERIFIED",
+              "age": 3
+            },
+            {
+              "address": "0xf040f7547988582845ec491a9bf6c3034d8a132a",
+              "status": "NEWBIE",
+              "age": 2
+            },
+            {
+              "address": "0x72563cb949bd0167acfff47b5865fe30e1960e70",
+              "status": "HUMAN",
+              "age": 5
+            },
+            {
+              "address": "0x2cb4f6235e9df00742428ff473507266bff2f47c",
+              "status": "HUMAN",
+              "age": 9
+            },
+            {
+              "address": "0xa78fc87b6c78aa54ebfd857fed9ee11e08e38788",
+              "status": "HUMAN",
+              "age": 10
+            },
+            {
+              "address": "0x6d32736b49d9364df8269928f456bda4466124d4",
+              "status": "NEWBIE",
+              "age": 1
+            },
+            {
+              "address": "0xb0f90a830f49ff5ca504fe7cb7d7a33f546dd89f",
+              "status": "HUMAN",
+              "age": 13
+            },
+            {
+              "address": "0x69b3afc2f2fa125b498b5b19c2998664e5b6525c",
+              "status": "HUMAN",
+              "age": 11
+            },
+            {
+              "address": "0xabe48cfdf432b4fa86320b3275e315bdcde84444",
+              "status": "VERIFIED",
+              "age": 9
+            },
+            {
+              "address": "0xd7fab2636dc6fd390f154b252ef953e283ede30a",
+              "status": "NEWBIE",
+              "age": 2
+            },
+            {
+              "address": "0x335fb6797b0eafdc70313dbfb55ea6d6e935c933",
+              "status": "HUMAN",
+              "age": 6
+            },
+            {
+              "address": "0x18e4b09f96ee1079b4a4f9600be92fae3a25b386",
+              "status": "HUMAN",
+              "age": 47
+            },
+            {
+              "address": "0x001b293494416df65c2d3abdd85a7c2e6be3e726",
+              "status": "HUMAN",
+              "age": 10
+            },
+            {
+              "address": "0xf40cd2a2672e89ccdb8964319e698e42ff5d0e69",
+              "status": "HUMAN",
+              "age": 10
+            },
+            {
+              "address": "0x99a0049584890a84b55226638f44f50387d7cf1a",
+              "status": "HUMAN",
+              "age": 9
+            },
+            {
+              "address": "0x5fad2b973917007f6f5d138284c299197c1f6a09",
+              "status": "HUMAN",
+              "age": 6
+            },
+            {
+              "address": "0x240545b45a07b44fec46ad801f79f71eb0722d29",
+              "status": "VERIFIED",
+              "age": 3
+            },
+            {
+              "address": "0xb8e98ecfbb313a8deafdf4f2f6093cf0bcb67ad9",
+              "status": "NEWBIE",
+              "age": 2
+            },
+            {
+              "address": "0x05b233d53e97d29c41c9a64f43b2554e5f649d81",
+              "status": "HUMAN",
+              "age": 7
+            },
+            {
+              "address": "0x2b25246e3267e22fb19dc2129584e9076021ba06",
+              "status": "VERIFIED",
+              "age": 3
+            }
+          ],
+          "description": "Leave the current system of penalties. One reported flip = loss of all rewards from validation.",
+          "value": "0"
+        },
+        {
+          "votes": [
+            {
+              "address": "0x3852c4498b329627dd47a587d0de63860313524e",
+              "status": "HUMAN",
+              "age": 11
+            },
+            {
+              "address": "0xb0144f1d5a497ede72a9d010b41550610154b23e",
+              "status": "HUMAN",
+              "age": 7
+            },
+            {
+              "address": "0xcab70c6b3197549080ff1e94fedb18c750b9ec90",
+              "status": "HUMAN",
+              "age": 43
+            },
+            {
+              "address": "0x88485ce8955f0b834a2fa9f74364a124795b5133",
+              "status": "HUMAN",
+              "age": 25
+            },
+            {
+              "address": "0x1e30f073feb471ef9e62ab7cd64f7bf523603f27",
+              "status": "HUMAN",
+              "age": 23
+            },
+            {
+              "address": "0x1d61d534f2a0150299c12ab2a5de0352a1422c28",
+              "status": "NEWBIE",
+              "age": 2
+            },
+            {
+              "address": "0x8ecddd1aaa86fcfc0c51120777c1c820ca4eb9be",
+              "status": "HUMAN",
+              "age": 8
+            },
+            {
+              "address": "0x49a6bce5255ffd7977dfe2e9f944d41bdf250384",
+              "status": "VERIFIED",
+              "age": 4
+            },
+            {
+              "address": "0x6080084ce14341959e5ab0cf1fc9ba20c576ae8e",
+              "status": "HUMAN",
+              "age": 7
+            },
+            {
+              "address": "0x9db4518f2d34076ec590b71ba26a73ef45718874",
+              "status": "HUMAN",
+              "age": 31
+            },
+            {
+              "address": "0xa1bdc2f3de4908ee464f8695448c3f4390111d26",
+              "status": "HUMAN",
+              "age": 8
+            },
+            {
+              "address": "0x4b04555bd57c3fdc35724d50415501b5c7b838b8",
+              "status": "HUMAN",
+              "age": 10
+            },
+            {
+              "address": "0x20bc0dffe8ed066f057237f92a18d43bd36915cb",
+              "status": "HUMAN",
+              "age": 11
+            },
+            {
+              "address": "0x39bba148d05c4e8fd6d11358cde72c8e43943fb4",
+              "status": "HUMAN",
+              "age": 35
+            },
+            {
+              "address": "0xc393c1a6a5291f115a962745ce5d87a68cc62065",
+              "status": "HUMAN",
+              "age": 24
+            },
+            {
+              "address": "0xab6e36f38e0bdac88e53640c1313c1944a644fcc",
+              "status": "HUMAN",
+              "age": 15
+            },
+            {
+              "address": "0xff9a3f4b0aa00be71fc7490c29882894596fae33",
+              "status": "VERIFIED",
+              "age": 8
+            },
+            {
+              "address": "0xa9ebd29c54e91c04b05662f7717977865626ec6e",
+              "status": "VERIFIED",
+              "age": 3
+            },
+            {
+              "address": "0xea188a64a330788bd2909745f82537765951fe1e",
+              "status": "NEWBIE",
+              "age": 1
+            },
+            {
+              "address": "0xfcfede8accbc4547baa17b99597b00aac500d517",
+              "status": "HUMAN",
+              "age": 5
+            },
+            {
+              "address": "0x120dfb60579f98c829a54901fa84f775e8ca0ebb",
+              "status": "HUMAN",
+              "age": 14
+            },
+            {
+              "address": "0xbe680bfe5c14a7e63060e875541ca0bed110f382",
+              "status": "VERIFIED",
+              "age": 3
+            },
+            {
+              "address": "0xc02aae5d3c26a18a28b8fb62979d340b35e056f2",
+              "status": "HUMAN",
+              "age": 11
+            },
+            {
+              "address": "0x664d30b74a1876d8f846a00e56916129229cd1b4",
+              "status": "NEWBIE",
+              "age": 2
+            },
+            {
+              "address": "0xaf8e4c3995b41a7a1b8e6cafe7b06fde5342b60d",
+              "status": "NEWBIE",
+              "age": 1
+            },
+            {
+              "address": "0x480b82dfc93a4460b10213f142e1e8144d647a2b",
+              "status": "HUMAN",
+              "age": 5
+            },
+            {
+              "address": "0xa53f7563b2e75cd6cfe6f61f35347b226b4f8f56",
+              "status": "HUMAN",
+              "age": 6
+            },
+            {
+              "address": "0x36b556b4b8da54efe190c5af4cd5695ada952c53",
+              "status": "NEWBIE",
+              "age": 1
+            },
+            {
+              "address": "0x37fdb24a1b5e0eadd490a64b9324f8e227d1e6f4",
+              "status": "NEWBIE",
+              "age": 1
+            },
+            {
+              "address": "0x8dfc1c10ab26f4a2613c22db78b88c6ebf6f73a8",
+              "status": "VERIFIED",
+              "age": 7
+            },
+            {
+              "address": "0x132644e4f3e5d7f1e411772c9a7f1a33b9b85de9",
+              "status": "NEWBIE",
+              "age": 2
+            },
+            {
+              "address": "0x7421915e8416fc4a8ffc1c00b7eabe346d951f0c",
+              "status": "NEWBIE",
+              "age": 1
+            },
+            {
+              "address": "0xbc5119a19f2182edca4ce2f3510e63726c22b938",
+              "status": "VERIFIED",
+              "age": 6
+            },
+            {
+              "address": "0x0da3c0937abc722e28096857372b601a4d2dd900",
+              "status": "NEWBIE",
+              "age": 1
+            },
+            {
+              "address": "0x4219036f3da9786d694ffb14452fbee9a84c66ee",
+              "status": "VERIFIED",
+              "age": 5
+            },
+            {
+              "address": "0x140d5add76f3e4cc4538b9809601383bd74689df",
+              "status": "VERIFIED",
+              "age": 10
+            },
+            {
+              "address": "0xb874396fe68b31a177df81c20e9bc50d448142a9",
+              "status": "VERIFIED",
+              "age": 3
+            },
+            {
+              "address": "0x976ae04e22060acca6e917244818f0eb1fcaac5a",
+              "status": "NEWBIE",
+              "age": 1
+            },
+            {
+              "address": "0xd66d9f1b26f6dcc10e776159d0ff220f2b09ec45",
+              "status": "VERIFIED",
+              "age": 3
+            },
+            {
+              "address": "0x9f3f50ef563a15b5f602fd0b5bea66a7ce9acc00",
+              "status": "HUMAN",
+              "age": 7
+            },
+            {
+              "address": "0x1ac912b0f0bce4157d8e349ec988cc4e7fb8944e",
+              "status": "NEWBIE",
+              "age": 2
+            },
+            {
+              "address": "0xd719595a848b7709ff60c3f4f4642456de589789",
+              "status": "VERIFIED",
+              "age": 3
+            },
+            {
+              "address": "0x970954b9730459a52f833a17344367a411c1b601",
+              "status": "NEWBIE",
+              "age": 2
+            },
+            {
+              "address": "0xcd5ffb632716c34bc8d507a84d8a6014d1919766",
+              "status": "HUMAN",
+              "age": 12
+            },
+            {
+              "address": "0x8b9b911c325b800509afff7208ec944a9861659a",
+              "status": "VERIFIED",
+              "age": 3
+            },
+            {
+              "address": "0x88472c7a51a32cc5ccd801cff23313cdec3bf4d7",
+              "status": "VERIFIED",
+              "age": 3
+            },
+            {
+              "address": "0x25866dcf0b749de724b47ef81e3f890d9175eb11",
+              "status": "HUMAN",
+              "age": 9
+            },
+            {
+              "address": "0x52dfb4babbf413a48e3daff85c2e1a3506cbc858",
+              "status": "VERIFIED",
+              "age": 3
+            },
+            {
+              "address": "0xb248c25dacd68fb525fa49a91f9f4ab351352af6",
+              "status": "HUMAN",
+              "age": 9
+            },
+            {
+              "address": "0x06fc7e6c4e6438d25f96a07eed32bb2a3b6a83bf",
+              "status": "NEWBIE",
+              "age": 1
+            },
+            {
+              "address": "0x17ab79ab98525ecf205d151ef4528e893585de47",
+              "status": "HUMAN",
+              "age": 5
+            },
+            {
+              "address": "0xcaf9830a4c7b6ea173678296395c235841ca0cf9",
+              "status": "VERIFIED",
+              "age": 3
+            },
+            {
+              "address": "0x4d6567408fe4cbbc645b2cf2d990daf8c2a692ab",
+              "status": "HUMAN",
+              "age": 7
+            },
+            {
+              "address": "0x9134c321d983ce257691c380c3294750c9cddd9f",
+              "status": "VERIFIED",
+              "age": 3
+            },
+            {
+              "address": "0x2a507a411413c2394482a27c7753a21cefe28dbf",
+              "status": "NEWBIE",
+              "age": 2
+            },
+            {
+              "address": "0xb1fba7343073e5564ed74970d3651a73744efa96",
+              "status": "NEWBIE",
+              "age": 1
+            },
+            {
+              "address": "0x943971fbbe50a86a1f274bdc7a3976361c64bec1",
+              "status": "VERIFIED",
+              "age": 5
+            },
+            {
+              "address": "0x010f8bda4d93a0acc069ff9e5ab3b986f4a782a3",
+              "status": "HUMAN",
+              "age": 7
+            },
+            {
+              "address": "0xeeddb2bcd8b3a5207b21a4e46e32b575e5559dac",
+              "status": "HUMAN",
+              "age": 6
+            },
+            {
+              "address": "0x0359d1b3dbc43e37a28e33fbd836e77ebf554283",
+              "status": "HUMAN",
+              "age": 7
+            },
+            {
+              "address": "0x3e4d168d7fcda3cd9723bb0772d9eb2c99218409",
+              "status": "NEWBIE",
+              "age": 1
+            },
+            {
+              "address": "0xaef81f8a1f73be39d26917ee1dbb4c5f0a551932",
+              "status": "VERIFIED",
+              "age": 3
+            },
+            {
+              "address": "0xf9ea0681bc54599333ca9cf2380b7b4e595042c3",
+              "status": "HUMAN",
+              "age": 10
+            },
+            {
+              "address": "0x3ad6376740f9ff4649b918f27bffb9877c7e3a2b",
+              "status": "HUMAN",
+              "age": 8
+            },
+            {
+              "address": "0x8bc6f4c6b58eb9f4df516b3de1b510b5a5a68581",
+              "status": "HUMAN",
+              "age": 5
+            },
+            {
+              "address": "0xc8d363254a33296b9a5534ff082a845ad5730450",
+              "status": "HUMAN",
+              "age": 11
+            },
+            {
+              "address": "0x83dd051aa01e390dbbdc0fde77f2084df2dfeb0b",
+              "status": "HUMAN",
+              "age": 8
+            },
+            {
+              "address": "0xe5b0688210588ea7bef5274b17b495bf30a1e3d7",
+              "status": "NEWBIE",
+              "age": 1
+            },
+            {
+              "address": "0x407f3b02ece16e232bfe15eac80e7f6e68177609",
+              "status": "HUMAN",
+              "age": 15
+            },
+            {
+              "address": "0xd8bbb5a2685b35cfb925ad13b5cd6f4daad90d5e",
+              "status": "NEWBIE",
+              "age": 2
+            },
+            {
+              "address": "0x2e00dc096018086c6b649e6f8bd416ae79e307be",
+              "status": "NEWBIE",
+              "age": 1
+            },
+            {
+              "address": "0x71aeccf81bd641cbc3d1b77638f1213de704a70c",
+              "status": "NEWBIE",
+              "age": 2
+            },
+            {
+              "address": "0x8c6364058c306e2ee3390614af66bf3851a8a122",
+              "status": "NEWBIE",
+              "age": 2
+            },
+            {
+              "address": "0xa65456c85bfe4e08f24265df3b3f6bf357fa3e26",
+              "status": "VERIFIED",
+              "age": 3
+            },
+            {
+              "address": "0xac4ab3e1d66008c6ff97d695020fe5a9505f72bc",
+              "status": "HUMAN",
+              "age": 47
+            },
+            {
+              "address": "0x97fe811b4a4402634f08b81dd761f1e15e354f6b",
+              "status": "HUMAN",
+              "age": 5
+            },
+            {
+              "address": "0xdc8fe2461be5edda645acfb509f55653f4a0cb76",
+              "status": "VERIFIED",
+              "age": 3
+            },
+            {
+              "address": "0xd8b4d98141f6dd0f47977a7ded0fa99140f71cb6",
+              "status": "VERIFIED",
+              "age": 3
+            },
+            {
+              "address": "0xee202322bce473bef3e4906c70898ea4d6685bbd",
+              "status": "HUMAN",
+              "age": 6
+            },
+            {
+              "address": "0x67e47635104b320253567d1c64d2e5271f510463",
+              "status": "NEWBIE",
+              "age": 2
+            },
+            {
+              "address": "0x67d149bc2990e18fcb50949decec8b362f6bb994",
+              "status": "HUMAN",
+              "age": 7
+            },
+            {
+              "address": "0x3c4d4bf12642ec69d365955305cf8f90b8fa4f73",
+              "status": "HUMAN",
+              "age": 10
+            },
+            {
+              "address": "0xdd325f92df88d4305e9ca0cff67219e34e371882",
+              "status": "NEWBIE",
+              "age": 2
+            },
+            {
+              "address": "0x88a2087e85b98128991fe37751cc3df25bdd3cd8",
+              "status": "NEWBIE",
+              "age": 2
+            },
+            {
+              "address": "0x2b251028b5d96cff415d47965f23c19ca9a4291f",
+              "status": "NEWBIE",
+              "age": 2
+            },
+            {
+              "address": "0x732844d48d18b513ba259d78e1fb48ebddd9c367",
+              "status": "NEWBIE",
+              "age": 2
+            },
+            {
+              "address": "0x69c10fa67da9d42d06b14b7be3277a11b71bab89",
+              "status": "NEWBIE",
+              "age": 2
+            },
+            {
+              "address": "0x88773da0adb5d21fa51ae57b60f7c8cece0f4fb0",
+              "status": "VERIFIED",
+              "age": 3
+            },
+            {
+              "address": "0xfa6985f682697f3cc04d29a657a93196b6e6b411",
+              "status": "VERIFIED",
+              "age": 10
+            },
+            {
+              "address": "0x39aac1ea7131e248832c08643c541b35225060a8",
+              "status": "NEWBIE",
+              "age": 2
+            },
+            {
+              "address": "0x1d5ff850b5f84d2027c0bea36378eec1ef2e8b50",
+              "status": "HUMAN",
+              "age": 6
+            },
+            {
+              "address": "0xc1de3f57e3d95a1189e71f16d5deae4ceae4ae07",
+              "status": "VERIFIED",
+              "age": 4
+            },
+            {
+              "address": "0xfdbc49ca285a4cbea59a3acf02f557a1c32a3d66",
+              "status": "VERIFIED",
+              "age": 3
+            },
+            {
+              "address": "0x368056934d6c1bb6edfa3d14c1c67e67ca3fd5c7",
+              "status": "HUMAN",
+              "age": 10
+            },
+            {
+              "address": "0xe94c36c56359d456bface416e50db7202fbbfb06",
+              "status": "HUMAN",
+              "age": 7
+            },
+            {
+              "address": "0x73afa2880496bd87587c246b3894aa1f24ebe8ed",
+              "status": "NEWBIE",
+              "age": 2
+            },
+            {
+              "address": "0x3456c46ada29e0ca62dc25873c333c47d39ef46f",
+              "status": "VERIFIED",
+              "age": 9
+            },
+            {
+              "address": "0xbdd480fe2446257b2e782b660f6207b50a7d26fa",
+              "status": "VERIFIED",
+              "age": 6
+            },
+            {
+              "address": "0xb2a3cce6146c88d7b2149a052bafa9e72af862c2",
+              "status": "HUMAN",
+              "age": 8
+            },
+            {
+              "address": "0x1effe69fa5d4bcb0b2ef8bf6bb08a889617742e7",
+              "status": "NEWBIE",
+              "age": 2
+            },
+            {
+              "address": "0x400550789f46dc3177248747e30fb30c1c04bbdd",
+              "status": "HUMAN",
+              "age": 10
+            },
+            {
+              "address": "0x841d2a5a125896deb81f0878f160b10fa3c75ff7",
+              "status": "HUMAN",
+              "age": 6
+            },
+            {
+              "address": "0xf33ed571506010e8c074b8efefeeac196828a672",
+              "status": "VERIFIED",
+              "age": 3
+            },
+            {
+              "address": "0xa0315668da81d0387728884510ace0b94f3d48c9",
+              "status": "VERIFIED",
+              "age": 3
+            },
+            {
+              "address": "0xc698d1da0de3f12f23b837936c051d3d402a17b4",
+              "status": "HUMAN",
+              "age": 6
+            },
+            {
+              "address": "0x150ac333bfb2c31f05fd5e1e84ca0ac967000e41",
+              "status": "HUMAN",
+              "age": 9
+            },
+            {
+              "address": "0x9c217c519f5f1f12439d83d5e832e18969284d74",
+              "status": "NEWBIE",
+              "age": 2
+            },
+            {
+              "address": "0x452ea25440bd4a551b101abca0802778c45eb8b7",
+              "status": "HUMAN",
+              "age": 9
+            },
+            {
+              "address": "0xfd3a8c7b764196a7b24b65797a09bb54ea78cfd9",
+              "status": "VERIFIED",
+              "age": 3
+            },
+            {
+              "address": "0x2270297a7dbc9e2ea44605c7fb18fd60adc0f2ac",
+              "status": "HUMAN",
+              "age": 9
+            },
+            {
+              "address": "0x3c1583abfcf6801438e0783de30f38ac554f9b35",
+              "status": "VERIFIED",
+              "age": 7
+            },
+            {
+              "address": "0xe658ccfa03cc9e13739ec33e04c154b0600b9491",
+              "status": "VERIFIED",
+              "age": 3
+            },
+            {
+              "address": "0xfa3a2a23bd0406ff5502bab8abd76cb0a6c2f210",
+              "status": "HUMAN",
+              "age": 7
+            },
+            {
+              "address": "0xd7a2969b358dc29b52850b96fbd463bcd5df467f",
+              "status": "VERIFIED",
+              "age": 4
+            },
+            {
+              "address": "0xa37c7ee91cba2f5bec04a48e8c02cac6e31c043c",
+              "status": "HUMAN",
+              "age": 8
+            },
+            {
+              "address": "0x7334f46899d125067736acd57e584e279b60115e",
+              "status": "NEWBIE",
+              "age": 1
+            },
+            {
+              "address": "0x3e5a1158a8007851378760e97bb16c1530964d0b",
+              "status": "NEWBIE",
+              "age": 1
+            },
+            {
+              "address": "0x30d02bfbe506af330124612b7fc04ef49541ea82",
+              "status": "HUMAN",
+              "age": 9
+            },
+            {
+              "address": "0x593d58b9d9a4077b082d5b8ad8d06ef3aaf10d19",
+              "status": "VERIFIED",
+              "age": 4
+            },
+            {
+              "address": "0x1307586e582db6d93ec739f2dbf3bf07b6aa2da2",
+              "status": "VERIFIED",
+              "age": 3
+            },
+            {
+              "address": "0x5655df28c33b712cecc424f3f65ae0d970ae3dc3",
+              "status": "NEWBIE",
+              "age": 2
+            },
+            {
+              "address": "0xdcee6cbd08810c5f3ca984ce2e135ec3678cbaaa",
+              "status": "NEWBIE",
+              "age": 2
+            },
+            {
+              "address": "0x277ee817d2372a257667d824b65435cc6385d224",
+              "status": "HUMAN",
+              "age": 17
+            },
+            {
+              "address": "0x20e40e5b8e2e511710c89a4efac93dcbbf7cef77",
+              "status": "HUMAN",
+              "age": 16
+            },
+            {
+              "address": "0x6441a8bd80415329695ee60012053ebabb06e77a",
+              "status": "HUMAN",
+              "age": 25
+            },
+            {
+              "address": "0x2c702956aed3ee6bc413048154a8aaaeef94f106",
+              "status": "VERIFIED",
+              "age": 3
+            },
+            {
+              "address": "0xf2b765b22153394808c8ce048b6d2c5191d011b3",
+              "status": "VERIFIED",
+              "age": 3
+            },
+            {
+              "address": "0xfda3190b9ec8259b080125647d62f00ab34178be",
+              "status": "NEWBIE",
+              "age": 1
+            },
+            {
+              "address": "0xd8814bc3949912f2b6adde1b593f80485455068c",
+              "status": "HUMAN",
+              "age": 9
+            },
+            {
+              "address": "0x361343c214705bb10d312ac3327d6abbb7712d3f",
+              "status": "NEWBIE",
+              "age": 1
+            },
+            {
+              "address": "0x869893f9caf270a5f1df4e9d66d9f602e2c13833",
+              "status": "HUMAN",
+              "age": 7
+            },
+            {
+              "address": "0xc221d3baf2752279fc22dfea873336f4cd434f8a",
+              "status": "NEWBIE",
+              "age": 2
+            },
+            {
+              "address": "0xf2aa6822ab360d8c272e379c55e3dd9c8df243e4",
+              "status": "VERIFIED",
+              "age": 3
+            },
+            {
+              "address": "0xcd18a652b3fa6e385c3d07d9761607f58786a7b0",
+              "status": "HUMAN",
+              "age": 16
+            },
+            {
+              "address": "0x1a31a09e6a3f61a77f536e94069d37864e0d5be2",
+              "status": "HUMAN",
+              "age": 5
+            },
+            {
+              "address": "0x3ae9580afd6577c64bfd6a830a2b62ceb4a6af38",
+              "status": "HUMAN",
+              "age": 5
+            },
+            {
+              "address": "0xa05b8649bb615252b487832d31a26180583b2c1d",
+              "status": "VERIFIED",
+              "age": 3
+            },
+            {
+              "address": "0x1f0705de37d83762c240f24a4e62747b708c77f0",
+              "status": "VERIFIED",
+              "age": 3
+            },
+            {
+              "address": "0x1fafa273a9ff7ccae103dbfa7f3bc74e70ce1685",
+              "status": "HUMAN",
+              "age": 42
+            },
+            {
+              "address": "0xdb8b4d6e6608d82de4c10ab60dc50886ff432a73",
+              "status": "VERIFIED",
+              "age": 3
+            },
+            {
+              "address": "0xfe4fb6103d38514dbd74b11d1a1488438019c4d8",
+              "status": "HUMAN",
+              "age": 10
+            },
+            {
+              "address": "0xbeca526f758e06a0be7e9819e155746c53c552ca",
+              "status": "HUMAN",
+              "age": 10
+            },
+            {
+              "address": "0x327052020a4ac8d42ab5c88c0d239a1c4ebddd6d",
+              "status": "NEWBIE",
+              "age": 1
+            },
+            {
+              "address": "0xf6fef4dea318e1120fed9b00ad60928aa4898077",
+              "status": "HUMAN",
+              "age": 31
+            },
+            {
+              "address": "0xec56ec62966ef9b700838a4f2ff3c1dccaf1f558",
+              "status": "NEWBIE",
+              "age": 2
+            },
+            {
+              "address": "0x5cb0cbfa49f9c25628c1b368091def4fcd9ce48f",
+              "status": "NEWBIE",
+              "age": 1
+            },
+            {
+              "address": "0x004ae36a362001d9d58ced06e4d7252e958a5053",
+              "status": "HUMAN",
+              "age": 42
+            },
+            {
+              "address": "0x45e8a3ce92d1549a14612f91b666db65e13306ad",
+              "status": "NEWBIE",
+              "age": 2
+            },
+            {
+              "address": "0x6141c94b083a19648cf32617d675ba4202d89f99",
+              "status": "HUMAN",
+              "age": 5
+            },
+            {
+              "address": "0xd0d84a3d71b7813711770fd0d8d03ead392f3388",
+              "status": "HUMAN",
+              "age": 5
+            },
+            {
+              "address": "0xa135a667e9c86ef84ae5aa53c1601309dbf68c11",
+              "status": "NEWBIE",
+              "age": 1
+            },
+            {
+              "address": "0xb06f44caa240976ac9fbd016e4d9ca8e474cb04d",
+              "status": "NEWBIE",
+              "age": 1
+            },
+            {
+              "address": "0x8a0363b8ad3dda4756bc1de1433da6a14c77a0da",
+              "status": "VERIFIED",
+              "age": 3
+            },
+            {
+              "address": "0x39d89ac7f8ac35cb5c92d7df9ce8665501141139",
+              "status": "HUMAN",
+              "age": 10
+            },
+            {
+              "address": "0x0e6e935b724b3ca626c166386c36ada7abea0efa",
+              "status": "HUMAN",
+              "age": 24
+            },
+            {
+              "address": "0xde29518e257d27bc50d1082493c06acf2fccd95f",
+              "status": "VERIFIED",
+              "age": 3
+            },
+            {
+              "address": "0xeb8ae733a6b20bf54686a8a5c4fac4d83278ee74",
+              "status": "HUMAN",
+              "age": 22
+            },
+            {
+              "address": "0xf7793f3fb8e06dd5e53a7d4b26c14c83f149c339",
+              "status": "HUMAN",
+              "age": 27
+            },
+            {
+              "address": "0x698d67fa29bb17c42f7b43144c9f1a6b80a6ca04",
+              "status": "HUMAN",
+              "age": 8
+            },
+            {
+              "address": "0x47d1dbe271b8356bc60616fa9a8f29a8b26efb97",
+              "status": "NEWBIE",
+              "age": 2
+            },
+            {
+              "address": "0x75e460f68a5d423cd6eaf768f8f687ec1985ad76",
+              "status": "VERIFIED",
+              "age": 3
+            },
+            {
+              "address": "0xa278400f0766af91e5103740f23c723d5a41bea2",
+              "status": "VERIFIED",
+              "age": 3
+            },
+            {
+              "address": "0x55ef8152de3d91c36943409f06dceb6191e741eb",
+              "status": "HUMAN",
+              "age": 8
+            },
+            {
+              "address": "0x3c8ed260043b917afaf6a4b7863c50b5a171dad5",
+              "status": "HUMAN",
+              "age": 5
+            },
+            {
+              "address": "0xcc5f3c49995a8567d13fd8ea61156b21ea56b3ce",
+              "status": "HUMAN",
+              "age": 17
+            },
+            {
+              "address": "0xd5da967d65bcafa164c996fdf99834c650be1e38",
+              "status": "HUMAN",
+              "age": 8
+            },
+            {
+              "address": "0x94b6c12918be30a63fa17ab81ded62e219c18372",
+              "status": "HUMAN",
+              "age": 7
+            },
+            {
+              "address": "0x5e73a88ace4ee9ce38f14f2c10de0e4923e6e181",
+              "status": "VERIFIED",
+              "age": 3
+            },
+            {
+              "address": "0x557cda62e0317d64bf2357ef24c9686db9bcc0c9",
+              "status": "VERIFIED",
+              "age": 11
+            },
+            {
+              "address": "0x69e645e6c278120e2bf65347294073f8b4e60124",
+              "status": "VERIFIED",
+              "age": 3
+            },
+            {
+              "address": "0xa8454470bed03e7f95ed912208aca4bebe720f9c",
+              "status": "NEWBIE",
+              "age": 1
+            }
+          ],
+          "description": "One reported flip deducts 50% of rewards Two or more reported flips lead to 100% rewards penalty",
+          "value": "1"
+        }
+      ],
+      "title": "Idena Flip Penalty Vote",
+      "description": "This is dev supported vote on the current reward penalty system (meaning change will be made or not made based on outcome).  This vote requires 50% majority of validated identities to be enacted (on either side of the vote, at the time 50% is reached).  All suspended identities will be counted according to their previous state.",
+      "creator": "0x03378fc1ebddfce2cc75cbf602e3285320b91cbd",
+      "status": "active",
+      "endsAt": 1598026417968,
+      "settings": {
+        "ageRequirement": "",
+        "statusRequirement": "NEWBIE",
+        "isStatusWeighted": false
+      },
+      "createdAt": 1592842418822,
+      "id": "WfpWH8_"
+    },
+    {
+      "options": [
+        {
+          "votes": [
+            {
+              "address": "0x9db4518f2d34076ec590b71ba26a73ef45718874",
+              "status": "HUMAN",
+              "age": 31
+            },
+            {
+              "address": "0x20bc0dffe8ed066f057237f92a18d43bd36915cb",
+              "status": "HUMAN",
+              "age": 11
+            },
+            {
+              "address": "0x480b82dfc93a4460b10213f142e1e8144d647a2b",
+              "status": "HUMAN",
+              "age": 5
+            },
+            {
+              "address": "0xfa6985f682697f3cc04d29a657a93196b6e6b411",
+              "status": "VERIFIED",
+              "age": 10
+            },
+            {
+              "address": "0xbdd480fe2446257b2e782b660f6207b50a7d26fa",
+              "status": "VERIFIED",
+              "age": 6
+            }
+          ],
+          "description": "less than 2000",
+          "value": "0"
+        },
+        {
+          "votes": [
+            {
+              "address": "0x4219036f3da9786d694ffb14452fbee9a84c66ee",
+              "status": "VERIFIED",
+              "age": 5
+            },
+            {
+              "address": "0xdcee6cbd08810c5f3ca984ce2e135ec3678cbaaa",
+              "status": "NEWBIE",
+              "age": 2
+            },
+            {
+              "address": "0x47d1dbe271b8356bc60616fa9a8f29a8b26efb97",
+              "status": "NEWBIE",
+              "age": 2
+            },
+            {
+              "address": "0x3c8ed260043b917afaf6a4b7863c50b5a171dad5",
+              "status": "HUMAN",
+              "age": 5
+            },
+            {
+              "address": "0xb8e98ecfbb313a8deafdf4f2f6093cf0bcb67ad9",
+              "status": "NEWBIE",
+              "age": 2
+            }
+          ],
+          "description": "less than 2500",
+          "value": "1"
+        },
+        {
+          "votes": [
+            {
+              "address": "0x9a00f25b769bc6dd53adae94c26092948f6e436d",
+              "status": "VERIFIED",
+              "age": 17
+            },
+            {
+              "address": "0xbc5119a19f2182edca4ce2f3510e63726c22b938",
+              "status": "VERIFIED",
+              "age": 6
+            },
+            {
+              "address": "0xd719595a848b7709ff60c3f4f4642456de589789",
+              "status": "VERIFIED",
+              "age": 3
+            },
+            {
+              "address": "0x970954b9730459a52f833a17344367a411c1b601",
+              "status": "NEWBIE",
+              "age": 2
+            },
+            {
+              "address": "0xfefcb59477e1d301f7d0a63004c147a71635df53",
+              "status": "HUMAN",
+              "age": 23
+            },
+            {
+              "address": "0x49a6bce5255ffd7977dfe2e9f944d41bdf250384",
+              "status": "VERIFIED",
+              "age": 4
+            },
+            {
+              "address": "0x841d2a5a125896deb81f0878f160b10fa3c75ff7",
+              "status": "HUMAN",
+              "age": 6
+            },
+            {
+              "address": "0x8950fe09ed22aa36f1c6820df612370268e77463",
+              "status": "HUMAN",
+              "age": 31
+            },
+            {
+              "address": "0xf040f7547988582845ec491a9bf6c3034d8a132a",
+              "status": "NEWBIE",
+              "age": 2
+            },
+            {
+              "address": "0xd7a2969b358dc29b52850b96fbd463bcd5df467f",
+              "status": "VERIFIED",
+              "age": 4
+            },
+            {
+              "address": "0xd8814bc3949912f2b6adde1b593f80485455068c",
+              "status": "HUMAN",
+              "age": 9
+            },
+            {
+              "address": "0xdb8b4d6e6608d82de4c10ab60dc50886ff432a73",
+              "status": "VERIFIED",
+              "age": 3
+            },
+            {
+              "address": "0xbb36ae1aadea9d51e262b8be39361f12526696db",
+              "status": "VERIFIED",
+              "age": 3
+            },
+            {
+              "address": "0xd0d84a3d71b7813711770fd0d8d03ead392f3388",
+              "status": "HUMAN",
+              "age": 5
+            },
+            {
+              "address": "0x698d67fa29bb17c42f7b43144c9f1a6b80a6ca04",
+              "status": "HUMAN",
+              "age": 8
+            },
+            {
+              "address": "0x5fad2b973917007f6f5d138284c299197c1f6a09",
+              "status": "HUMAN",
+              "age": 6
+            },
+            {
+              "address": "0xd5da967d65bcafa164c996fdf99834c650be1e38",
+              "status": "HUMAN",
+              "age": 8
+            },
+            {
+              "address": "0x94b6c12918be30a63fa17ab81ded62e219c18372",
+              "status": "HUMAN",
+              "age": 7
+            }
+          ],
+          "description": "more than 2500",
+          "value": "2"
+        },
+        {
+          "votes": [
+            {
+              "address": "0x39bba148d05c4e8fd6d11358cde72c8e43943fb4",
+              "status": "HUMAN",
+              "age": 35
+            },
+            {
+              "address": "0x52dfb4babbf413a48e3daff85c2e1a3506cbc858",
+              "status": "VERIFIED",
+              "age": 3
+            },
+            {
+              "address": "0x71aeccf81bd641cbc3d1b77638f1213de704a70c",
+              "status": "NEWBIE",
+              "age": 2
+            },
+            {
+              "address": "0x407f3b02ece16e232bfe15eac80e7f6e68177609",
+              "status": "HUMAN",
+              "age": 15
+            },
+            {
+              "address": "0xb2a3cce6146c88d7b2149a052bafa9e72af862c2",
+              "status": "HUMAN",
+              "age": 8
+            },
+            {
+              "address": "0x1effe69fa5d4bcb0b2ef8bf6bb08a889617742e7",
+              "status": "NEWBIE",
+              "age": 2
+            },
+            {
+              "address": "0xfa3a2a23bd0406ff5502bab8abd76cb0a6c2f210",
+              "status": "HUMAN",
+              "age": 7
+            }
+          ],
+          "description": "more than 3000",
+          "value": "3"
+        }
+      ],
+      "title": "How many valid identites will make it into Epoch 49?",
+      "description": "How many valid identites will make it into Epoch 49?",
+      "creator": "0x39bba148d05c4e8fd6d11358cde72c8e43943fb4",
+      "status": "ended",
+      "endsAt": 1593951294054,
+      "settings": {
+        "ageRequirement": "2",
+        "statusRequirement": "",
+        "isStatusWeighted": true,
+        "newbieWeight": "1",
+        "verifiedWeight": "10",
+        "humanWeight": "100"
+      },
+      "createdAt": 1592846094159,
+      "id": "kOXcJ-3"
+    },
+    {
+      "options": [
+        {
+          "votes": [
+            {
+              "address": "0xd7fab2636dc6fd390f154b252ef953e283ede30a",
+              "status": "NEWBIE",
+              "age": 2
+            },
+            {
+              "address": "0x327052020a4ac8d42ab5c88c0d239a1c4ebddd6d",
+              "status": "NEWBIE",
+              "age": 1
+            },
+            {
+              "address": "0xa135a667e9c86ef84ae5aa53c1601309dbf68c11",
+              "status": "NEWBIE",
+              "age": 1
+            }
+          ],
+          "description": "Leave it as is.",
+          "value": "0"
+        },
+        {
+          "votes": [
+            {
+              "address": "0xa05b8649bb615252b487832d31a26180583b2c1d",
+              "status": "VERIFIED",
+              "age": 3
+            },
+            {
+              "address": "0x1f0705de37d83762c240f24a4e62747b708c77f0",
+              "status": "VERIFIED",
+              "age": 3
+            },
+            {
+              "address": "0xf2aa6822ab360d8c272e379c55e3dd9c8df243e4",
+              "status": "VERIFIED",
+              "age": 3
+            },
+            {
+              "address": "0xbeca526f758e06a0be7e9819e155746c53c552ca",
+              "status": "HUMAN",
+              "age": 10
+            },
+            {
+              "address": "0x361343c214705bb10d312ac3327d6abbb7712d3f",
+              "status": "NEWBIE",
+              "age": 1
+            },
+            {
+              "address": "0xaf8e4c3995b41a7a1b8e6cafe7b06fde5342b60d",
+              "status": "NEWBIE",
+              "age": 1
+            },
+            {
+              "address": "0xd0d84a3d71b7813711770fd0d8d03ead392f3388",
+              "status": "HUMAN",
+              "age": 5
+            },
+            {
+              "address": "0x39d89ac7f8ac35cb5c92d7df9ce8665501141139",
+              "status": "HUMAN",
+              "age": 10
+            },
+            {
+              "address": "0x47d1dbe271b8356bc60616fa9a8f29a8b26efb97",
+              "status": "NEWBIE",
+              "age": 2
+            },
+            {
+              "address": "0xb8e98ecfbb313a8deafdf4f2f6093cf0bcb67ad9",
+              "status": "NEWBIE",
+              "age": 2
+            },
+            {
+              "address": "0x5fad2b973917007f6f5d138284c299197c1f6a09",
+              "status": "HUMAN",
+              "age": 6
+            },
+            {
+              "address": "0xd5da967d65bcafa164c996fdf99834c650be1e38",
+              "status": "HUMAN",
+              "age": 8
+            },
+            {
+              "address": "0x5e73a88ace4ee9ce38f14f2c10de0e4923e6e181",
+              "status": "VERIFIED",
+              "age": 3
+            },
+            {
+              "address": "0x557cda62e0317d64bf2357ef24c9686db9bcc0c9",
+              "status": "VERIFIED",
+              "age": 11
+            },
+            {
+              "address": "0xa8454470bed03e7f95ed912208aca4bebe720f9c",
+              "status": "NEWBIE",
+              "age": 1
+            }
+          ],
+          "description": "Double the number of pairs for everyone.",
+          "value": "1"
+        },
+        {
+          "votes": [
+            {
+              "address": "0xdb8b4d6e6608d82de4c10ab60dc50886ff432a73",
+              "status": "VERIFIED",
+              "age": 3
+            },
+            {
+              "address": "0xdcee6cbd08810c5f3ca984ce2e135ec3678cbaaa",
+              "status": "NEWBIE",
+              "age": 2
+            },
+            {
+              "address": "0xd719595a848b7709ff60c3f4f4642456de589789",
+              "status": "VERIFIED",
+              "age": 3
+            },
+            {
+              "address": "0x3c8ed260043b917afaf6a4b7863c50b5a171dad5",
+              "status": "HUMAN",
+              "age": 5
+            },
+            {
+              "address": "0x94b6c12918be30a63fa17ab81ded62e219c18372",
+              "status": "HUMAN",
+              "age": 7
+            },
+            {
+              "address": "0x69e645e6c278120e2bf65347294073f8b4e60124",
+              "status": "VERIFIED",
+              "age": 3
+            },
+            {
+              "address": "0x2b25246e3267e22fb19dc2129584e9076021ba06",
+              "status": "VERIFIED",
+              "age": 3
+            }
+          ],
+          "description": "Double the  number but only if the node has a certain uptime and/or mining time.",
+          "value": "2"
+        }
+      ],
+      "title": "Increase the number of word pairs for flip creation.",
+      "description": "It would be great to have more word pairs available to create flips.",
+      "creator": "0xa05b8649bb615252b487832d31a26180583b2c1d",
+      "status": "active",
+      "endsAt": 1594288087653,
+      "settings": {
+        "ageRequirement": "",
+        "statusRequirement": "NEWBIE",
+        "isStatusWeighted": false
+      },
+      "createdAt": 1593078494050,
+      "id": "EpovN6E"
+    },
+    {
+      "options": [
+        {
+          "votes": [
+            {
+              "address": "0x1c701fe566888d5c1cb8a7317b00a96ba95a3eb8",
+              "status": "HUMAN",
+              "age": 6
+            },
+            {
+              "address": "0x422e2aa5bca28454e8a0bc161e84f306bf764631",
+              "status": "HUMAN",
+              "age": 11
+            },
+            {
+              "address": "0x9b2bcff41bf0167d53ad5eb85f879cddb6ac5f03",
+              "status": "HUMAN",
+              "age": 10
+            },
+            {
+              "address": "0x2cb4f6235e9df00742428ff473507266bff2f47c",
+              "status": "HUMAN",
+              "age": 9
+            },
+            {
+              "address": "0xef65537d4a649dd1a837453556c2ef08a71a9e79",
+              "status": "HUMAN",
+              "age": 6
+            },
+            {
+              "address": "0xbb36ae1aadea9d51e262b8be39361f12526696db",
+              "status": "VERIFIED",
+              "age": 3
+            }
+          ],
+          "description": "00Johnson",
+          "value": "0"
+        },
+        {
+          "votes": [],
+          "description": "Milosnes",
+          "value": "1"
+        },
+        {
+          "votes": [
+            {
+              "address": "0x8b9b911c325b800509afff7208ec944a9861659a",
+              "status": "VERIFIED",
+              "age": 3
+            }
+          ],
+          "description": "TheDon",
+          "value": "2"
+        }
+      ],
+      "title": "New Idena-Prime",
+      "description": "Who do you like to see as a new member of Idena-Primes?",
+      "creator": "0x1c701fe566888d5c1cb8a7317b00a96ba95a3eb8",
+      "status": "ended",
+      "endsAt": 1593714537034,
+      "settings": {
+        "ageRequirement": "",
+        "statusRequirement": "",
+        "isStatusWeighted": false
+      },
+      "createdAt": 1593109737786,
+      "id": "BJkrDEF"
+    },
+    {
+      "options": [
+        {
+          "votes": [
+            {
+              "address": "0xd5da967d65bcafa164c996fdf99834c650be1e38",
+              "status": "HUMAN",
+              "age": 8
+            },
+            {
+              "address": "0x94b6c12918be30a63fa17ab81ded62e219c18372",
+              "status": "HUMAN",
+              "age": 7
+            },
+            {
+              "address": "0x557cda62e0317d64bf2357ef24c9686db9bcc0c9",
+              "status": "VERIFIED",
+              "age": 11
+            },
+            {
+              "address": "0x9c217c519f5f1f12439d83d5e832e18969284d74",
+              "status": "NEWBIE",
+              "age": 2
+            },
+            {
+              "address": "0x69e645e6c278120e2bf65347294073f8b4e60124",
+              "status": "VERIFIED",
+              "age": 3
+            },
+            {
+              "address": "0x2b25246e3267e22fb19dc2129584e9076021ba06",
+              "status": "VERIFIED",
+              "age": 3
+            },
+            {
+              "address": "0xa8454470bed03e7f95ed912208aca4bebe720f9c",
+              "status": "NEWBIE",
+              "age": 1
+            }
+          ],
+          "description": "Yes",
+          "value": "0"
+        },
+        {
+          "votes": [
+            {
+              "address": "0x50d6ceb18b82e34a39c946c9db695d6847a6054a",
+              "status": "HUMAN",
+              "age": 8
+            }
+          ],
+          "description": "No",
+          "value": "1"
+        }
+      ],
+      "title": "Add a request invite function.",
+      "description": "Allow people new to Idena who need an invite can request an invite directly in the app. The requester has to complete a flip example with words given to them, along with a way to contact them so that the invite holder can get in touch. This is then sent to a random invitation holder, then the invitation holder can review which requests they with to accept. I think this would help accelerate the size of the network.",
+      "creator": "0xd5da967d65bcafa164c996fdf99834c650be1e38",
+      "status": "active",
+      "endsAt": 1594549404912,
+      "settings": {
+        "ageRequirement": "",
+        "statusRequirement": "NEWBIE",
+        "isStatusWeighted": false
+      },
+      "createdAt": 1593944605567,
+      "id": "RRRY6cK"
     }
   ],
   "sessions": [
     {
-      "address": "0x3b264ce7beaac6408c77e9f080508a55f7451d75",
-      "expiresAt": 1590697336187,
-      "createdAt": 1590668536211,
-      "id": 1
+      "address": "0x5fad2b973917007f6f5d138284c299197c1f6a09",
+      "expiresAt": 1593968903318,
+      "createdAt": 1593940103626,
+      "id": 2
     },
     {
-      "address": "0x3852c4498b329627dd47a587d0de63860313524e",
-      "expiresAt": 1590701892260,
-      "createdAt": 1590673092302,
-      "id": 2
+      "address": "0x240545b45a07b44fec46ad801f79f71eb0722d29",
+      "expiresAt": 1593969914030,
+      "createdAt": 1593941114340,
+      "id": 3
+    },
+    {
+      "address": "0xb8e98ecfbb313a8deafdf4f2f6093cf0bcb67ad9",
+      "expiresAt": 1593969987170,
+      "createdAt": 1593941187181,
+      "id": 4
+    },
+    {
+      "address": "0xd5da967d65bcafa164c996fdf99834c650be1e38",
+      "expiresAt": 1593972876375,
+      "createdAt": 1593944076676,
+      "id": 5
+    },
+    {
+      "address": "0x50d6ceb18b82e34a39c946c9db695d6847a6054a",
+      "expiresAt": 1593973611951,
+      "createdAt": 1593944812269,
+      "id": 6
+    },
+    {
+      "address": "0x94b6c12918be30a63fa17ab81ded62e219c18372",
+      "expiresAt": 1593974043039,
+      "createdAt": 1593945243196,
+      "id": 7
+    },
+    {
+      "address": "0xd36aae4239eac88f6a17cff205f74a30838b6e8c",
+      "expiresAt": 1593974367836,
+      "createdAt": 1593945567986,
+      "id": 8
+    },
+    {
+      "address": "0x44d194103e8f98ce0b6ae8323a22b7749f9eec73",
+      "expiresAt": 1593975376354,
+      "createdAt": 1593946576510,
+      "id": 9
+    },
+    {
+      "address": "0x5e73a88ace4ee9ce38f14f2c10de0e4923e6e181",
+      "expiresAt": 1593978048578,
+      "createdAt": 1593949248889,
+      "id": 10
+    },
+    {
+      "address": "0x557cda62e0317d64bf2357ef24c9686db9bcc0c9",
+      "expiresAt": 1593981318209,
+      "createdAt": 1593952518372,
+      "id": 11
+    },
+    {
+      "address": "0x05b233d53e97d29c41c9a64f43b2554e5f649d81",
+      "expiresAt": 1593986153316,
+      "createdAt": 1593957353619,
+      "id": 12
+    },
+    {
+      "address": "0x9c217c519f5f1f12439d83d5e832e18969284d74",
+      "expiresAt": 1593986602486,
+      "createdAt": 1593957802630,
+      "id": 14
+    },
+    {
+      "address": "0x69e645e6c278120e2bf65347294073f8b4e60124",
+      "expiresAt": 1593986609179,
+      "createdAt": 1593957809324,
+      "id": 15
+    },
+    {
+      "address": "0x2b25246e3267e22fb19dc2129584e9076021ba06",
+      "expiresAt": 1593987946011,
+      "createdAt": 1593959146151,
+      "id": 16
+    },
+    {
+      "address": "0x30d02bfbe506af330124612b7fc04ef49541ea82",
+      "expiresAt": 1593989314594,
+      "createdAt": 1593960514906,
+      "id": 17
+    },
+    {
+      "address": "0xa8454470bed03e7f95ed912208aca4bebe720f9c",
+      "expiresAt": 1593994613056,
+      "createdAt": 1593965813216,
+      "id": 18
     }
   ]
 }
