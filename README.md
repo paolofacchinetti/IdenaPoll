@@ -12,7 +12,7 @@ The current supported poll settings include:
 Polls are shareable through a link and can be queried through a simple searchbar.
 The most popular polls (_by number of votes_) and the most recent polls will be shown on IdenaPoll's homepage.
 
-IdenaPoll is open-source, so you're free to fork this project and modify and publish it as you will.
+**IdenaPoll is open-source, so you're free to fork this project and modify and publish it as you will.**
 
 # ANGULAR CLI INFO
 
