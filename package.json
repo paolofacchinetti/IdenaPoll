@@ -34,7 +34,7 @@
     "ethereumjs-util": "^7.0.2",
     "express": "^4.17.1",
     "json-server": "^0.16.1",
-    "moment": "^2.26.0",
+    "moment": "^2.29.2",
     "node-cache": "^5.1.0",
     "node-fetch": "^2.6.0",
     "open-iconic": "^1.1.1",
